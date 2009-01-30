@@ -4,9 +4,15 @@
 
 package vista;
 
+import java.awt.AlphaComposite;
+import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.SplashScreen;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
@@ -34,7 +40,10 @@ public class PrincipalView extends FrameView implements Observador{
         super(app);
 
         _micromundo=micromundo;
-           
+
+        //ThreadSplash sp = new ThreadSplash();
+        //sp.run();
+
         initComponents();
 
         // status bar initialization - message timeout, idle icon and busy animation, etc
@@ -95,6 +104,7 @@ public class PrincipalView extends FrameView implements Observador{
         });
 
         status("Bienvenido al micromundo del Sistema Planetario");
+
     }
 
     @Action
@@ -411,6 +421,7 @@ public class PrincipalView extends FrameView implements Observador{
 
     private void mostrarEstadisticas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mostrarEstadisticas
 
+        getFrame().setAlwaysOnTop(false);
         _micromundo.muestraEstadisticas();
 
         status("Estadisticas activas");
@@ -534,6 +545,56 @@ public class PrincipalView extends FrameView implements Observador{
 		}
 		return -1;
 	}
+
+    void renderSplashFrame(Graphics2D g, int frame) {
+            final String[] comps = {"Modulo de Inteligencia Artificial", "Micromundo del Sistema Planetario", "Algoritmos de busqueda", "Interfaz Grafica"};
+            g.setComposite(AlphaComposite.Clear);
+            // Se obtienen las dimensiones en pixels de la pantalla.
+            Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+
+            int x=(pantalla.width) / 2;
+            int y=(pantalla.height) / 2;
+
+            if(pantalla.width<1024){
+                x=pantalla.width-200;
+                y=pantalla.height-200;
+            }
+
+            g.fillRect(x-10,y-20,280,40);
+            g.setPaintMode();
+            g.setColor(Color.BLACK);
+
+            g.drawString("Cargando "+comps[(frame/5)%4]+"...", x, y);
+            g.fillRect(x,y+20,(frame*18)%280,20);
+        }
+
+    public class ThreadSplash extends Thread {
+        public ThreadSplash() {
+
+        }
+        public void run() {
+
+            final SplashScreen splash = SplashScreen.getSplashScreen();
+            if (splash == null) {
+                System.out.println("SplashScreen.getSplashScreen() returned null");
+            }
+            Graphics2D g = (Graphics2D)splash.createGraphics();
+            if (g == null) {
+                System.out.println("g is null");
+            }
+            for(int i=0; i<20; i++) {
+                renderSplashFrame(g, i);
+                splash.update();
+                try {
+                    Thread.sleep(200);
+                }
+                catch(InterruptedException e) {
+                }
+            }
+            splash.close();
+
+        }
+    }
 
     public class ImagenFondoPanel extends javax.swing.JPanel {
      private Image imgFondo;
