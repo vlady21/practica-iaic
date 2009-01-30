@@ -16,6 +16,7 @@
             g.fillOval( 50, 10, 60, 60 );
          else if ( figura == CUADRADO )
             g.fillRect( 50, 10, 60, 60 );
+
       }
 
       // establecer valor de figura y repintar PanelPersonalizado

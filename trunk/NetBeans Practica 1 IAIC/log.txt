@@ -19,6 +19,6 @@ Paso del planeta 173 al planeta vecino 203 ,COSTE:2
 Paso del planeta 203 al planeta vecino 212 ,COSTE:4
 
 nodesExpanded : 10
-queueSize : 10
-maxQueueSize : 11
+queueSize : 9
+maxQueueSize : 10
 Coste total: 33
