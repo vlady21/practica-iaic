@@ -14,7 +14,7 @@ import aima.search.framework.SuccessorFunction;
 	 * Se trata de un juego para dos jugadores.
 	 * Se parte de 23 palillos.
 	 * Cada jugador, por turno, puede retirar uno, dos o tres palillos.
-	 * Pierde el que retira el último.
+	 * Pierde el que retira el ultimo.
 	 *
 	 */
 
