@@ -6,6 +6,7 @@ package vista;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -21,12 +22,15 @@ import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import modelo.matrices.MatrizConexiones;
 import modelo.micromundo.Estadisticas;
 import modelo.micromundo.Micromundo;
 import observador.Observador;
@@ -346,46 +350,6 @@ public class PrincipalView extends FrameView implements Observador{
         planeta214 = new javax.swing.JButton();
         planeta215 = new javax.swing.JButton();
         planeta216 = new javax.swing.JButton();
-        planeta217 = new javax.swing.JButton();
-        planeta218 = new javax.swing.JButton();
-        planeta219 = new javax.swing.JButton();
-        planeta220 = new javax.swing.JButton();
-        planeta221 = new javax.swing.JButton();
-        planeta222 = new javax.swing.JButton();
-        planeta223 = new javax.swing.JButton();
-        planeta224 = new javax.swing.JButton();
-        planeta225 = new javax.swing.JButton();
-        planeta226 = new javax.swing.JButton();
-        planeta227 = new javax.swing.JButton();
-        planeta228 = new javax.swing.JButton();
-        planeta229 = new javax.swing.JButton();
-        planeta230 = new javax.swing.JButton();
-        planeta231 = new javax.swing.JButton();
-        planeta232 = new javax.swing.JButton();
-        planeta233 = new javax.swing.JButton();
-        planeta234 = new javax.swing.JButton();
-        planeta235 = new javax.swing.JButton();
-        planeta236 = new javax.swing.JButton();
-        planeta237 = new javax.swing.JButton();
-        planeta238 = new javax.swing.JButton();
-        planeta239 = new javax.swing.JButton();
-        planeta240 = new javax.swing.JButton();
-        planeta241 = new javax.swing.JButton();
-        planeta242 = new javax.swing.JButton();
-        planeta243 = new javax.swing.JButton();
-        planeta244 = new javax.swing.JButton();
-        planeta245 = new javax.swing.JButton();
-        planeta246 = new javax.swing.JButton();
-        planeta247 = new javax.swing.JButton();
-        planeta248 = new javax.swing.JButton();
-        planeta249 = new javax.swing.JButton();
-        planeta250 = new javax.swing.JButton();
-        planeta251 = new javax.swing.JButton();
-        planeta252 = new javax.swing.JButton();
-        planeta253 = new javax.swing.JButton();
-        planeta254 = new javax.swing.JButton();
-        planeta255 = new javax.swing.JButton();
-        planeta256 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         _log = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
@@ -426,7 +390,6 @@ public class PrincipalView extends FrameView implements Observador{
         panelUniverso.setMinimumSize(new java.awt.Dimension(1794, 1142));
         panelUniverso.setName("panelUniverso"); // NOI18N
         panelUniverso.setPreferredSize(new java.awt.Dimension(1794, 1142));
-        panelUniverso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         planeta1.setBackground(resourceMap.getColor("planeta1.background")); // NOI18N
         planeta1.setForeground(resourceMap.getColor("planeta1.foreground")); // NOI18N
@@ -436,9 +399,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta1.setContentAreaFilled(false);
         planeta1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta1.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta1.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta1.setName("planeta1"); // NOI18N
-        planeta1.setRolloverIcon(resourceMap.getIcon("planeta1.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        planeta1.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta1.setRolloverIcon(null);
+        panelUniverso.add(planeta1);
 
         planeta2.setBackground(resourceMap.getColor("planeta2.background")); // NOI18N
         planeta2.setForeground(resourceMap.getColor("planeta2.foreground")); // NOI18N
@@ -448,9 +414,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta2.setContentAreaFilled(false);
         planeta2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta2.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta2.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta2.setName("planeta2"); // NOI18N
-        planeta2.setRolloverIcon(resourceMap.getIcon("planeta2.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        planeta2.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta2.setRolloverIcon(null);
+        panelUniverso.add(planeta2);
 
         planeta3.setBackground(resourceMap.getColor("planeta3.background")); // NOI18N
         planeta3.setForeground(resourceMap.getColor("planeta3.foreground")); // NOI18N
@@ -460,9 +429,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta3.setContentAreaFilled(false);
         planeta3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta3.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta3.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta3.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta3.setName("planeta3"); // NOI18N
-        planeta3.setRolloverIcon(resourceMap.getIcon("planeta3.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        planeta3.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta3.setRolloverIcon(null);
+        panelUniverso.add(planeta3);
 
         planeta4.setBackground(resourceMap.getColor("planeta4.background")); // NOI18N
         planeta4.setForeground(resourceMap.getColor("planeta4.foreground")); // NOI18N
@@ -472,9 +444,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta4.setContentAreaFilled(false);
         planeta4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta4.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta4.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta4.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta4.setName("planeta4"); // NOI18N
-        planeta4.setRolloverIcon(resourceMap.getIcon("planeta4.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        planeta4.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta4.setRolloverIcon(null);
+        panelUniverso.add(planeta4);
 
         planeta5.setBackground(resourceMap.getColor("planeta5.background")); // NOI18N
         planeta5.setForeground(resourceMap.getColor("planeta5.foreground")); // NOI18N
@@ -484,9 +459,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta5.setContentAreaFilled(false);
         planeta5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta5.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta5.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta5.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta5.setName("planeta5"); // NOI18N
-        planeta5.setRolloverIcon(resourceMap.getIcon("planeta5.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+        planeta5.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta5.setRolloverIcon(null);
+        panelUniverso.add(planeta5);
 
         planeta6.setBackground(resourceMap.getColor("planeta6.background")); // NOI18N
         planeta6.setForeground(resourceMap.getColor("planeta6.foreground")); // NOI18N
@@ -496,9 +474,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta6.setContentAreaFilled(false);
         planeta6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta6.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta6.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta6.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta6.setName("planeta6"); // NOI18N
-        planeta6.setRolloverIcon(resourceMap.getIcon("planeta6.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+        planeta6.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta6.setRolloverIcon(null);
+        panelUniverso.add(planeta6);
 
         planeta7.setBackground(resourceMap.getColor("planeta7.background")); // NOI18N
         planeta7.setForeground(resourceMap.getColor("planeta7.foreground")); // NOI18N
@@ -508,9 +489,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta7.setContentAreaFilled(false);
         planeta7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta7.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta7.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta7.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta7.setName("planeta7"); // NOI18N
-        planeta7.setRolloverIcon(resourceMap.getIcon("planeta7.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
+        planeta7.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta7.setRolloverIcon(null);
+        panelUniverso.add(planeta7);
 
         planeta8.setBackground(resourceMap.getColor("planeta8.background")); // NOI18N
         planeta8.setForeground(resourceMap.getColor("planeta8.foreground")); // NOI18N
@@ -520,9 +504,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta8.setContentAreaFilled(false);
         planeta8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta8.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta8.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta8.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta8.setName("planeta8"); // NOI18N
-        planeta8.setRolloverIcon(resourceMap.getIcon("planeta8.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
+        planeta8.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta8.setRolloverIcon(null);
+        panelUniverso.add(planeta8);
 
         planeta9.setBackground(resourceMap.getColor("planeta9.background")); // NOI18N
         planeta9.setForeground(resourceMap.getColor("planeta9.foreground")); // NOI18N
@@ -532,9 +519,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta9.setContentAreaFilled(false);
         planeta9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta9.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta9.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta9.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta9.setName("planeta9"); // NOI18N
-        planeta9.setRolloverIcon(resourceMap.getIcon("planeta9.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
+        planeta9.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta9.setRolloverIcon(null);
+        panelUniverso.add(planeta9);
 
         planeta10.setBackground(resourceMap.getColor("planeta10.background")); // NOI18N
         planeta10.setForeground(resourceMap.getColor("planeta10.foreground")); // NOI18N
@@ -544,9 +534,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta10.setContentAreaFilled(false);
         planeta10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta10.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta10.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta10.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta10.setName("planeta10"); // NOI18N
-        planeta10.setRolloverIcon(resourceMap.getIcon("planeta10.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
+        planeta10.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta10.setRolloverIcon(null);
+        panelUniverso.add(planeta10);
 
         planeta11.setBackground(resourceMap.getColor("planeta11.background")); // NOI18N
         planeta11.setForeground(resourceMap.getColor("planeta11.foreground")); // NOI18N
@@ -556,9 +549,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta11.setContentAreaFilled(false);
         planeta11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta11.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta11.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta11.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta11.setName("planeta11"); // NOI18N
-        planeta11.setRolloverIcon(resourceMap.getIcon("planeta11.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+        planeta11.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta11.setRolloverIcon(null);
+        panelUniverso.add(planeta11);
 
         planeta12.setBackground(resourceMap.getColor("planeta12.background")); // NOI18N
         planeta12.setForeground(resourceMap.getColor("planeta12.foreground")); // NOI18N
@@ -568,9 +564,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta12.setContentAreaFilled(false);
         planeta12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta12.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta12.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta12.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta12.setName("planeta12"); // NOI18N
-        planeta12.setRolloverIcon(resourceMap.getIcon("planeta12.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, -1));
+        planeta12.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta12.setRolloverIcon(null);
+        panelUniverso.add(planeta12);
 
         planeta13.setBackground(resourceMap.getColor("planeta13.background")); // NOI18N
         planeta13.setForeground(resourceMap.getColor("planeta13.foreground")); // NOI18N
@@ -580,9 +579,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta13.setContentAreaFilled(false);
         planeta13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta13.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta13.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta13.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta13.setName("planeta13"); // NOI18N
-        planeta13.setRolloverIcon(resourceMap.getIcon("planeta13.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+        planeta13.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta13.setRolloverIcon(null);
+        panelUniverso.add(planeta13);
 
         planeta14.setBackground(resourceMap.getColor("planeta14.background")); // NOI18N
         planeta14.setForeground(resourceMap.getColor("planeta14.foreground")); // NOI18N
@@ -592,9 +594,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta14.setContentAreaFilled(false);
         planeta14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta14.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta14.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta14.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta14.setName("planeta14"); // NOI18N
-        planeta14.setRolloverIcon(resourceMap.getIcon("planeta14.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, -1, -1));
+        planeta14.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta14.setRolloverIcon(null);
+        panelUniverso.add(planeta14);
 
         planeta15.setBackground(resourceMap.getColor("planeta15.background")); // NOI18N
         planeta15.setForeground(resourceMap.getColor("planeta15.foreground")); // NOI18N
@@ -604,9 +609,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta15.setContentAreaFilled(false);
         planeta15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta15.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta15.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta15.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta15.setName("planeta15"); // NOI18N
-        planeta15.setRolloverIcon(resourceMap.getIcon("planeta15.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
+        planeta15.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta15.setRolloverIcon(null);
+        panelUniverso.add(planeta15);
 
         planeta16.setBackground(resourceMap.getColor("planeta16.background")); // NOI18N
         planeta16.setForeground(resourceMap.getColor("planeta16.foreground")); // NOI18N
@@ -616,9 +624,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta16.setContentAreaFilled(false);
         planeta16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta16.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta16.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta16.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta16.setName("planeta16"); // NOI18N
-        planeta16.setRolloverIcon(resourceMap.getIcon("planeta16.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta16, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, -1, -1));
+        planeta16.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta16.setRolloverIcon(null);
+        panelUniverso.add(planeta16);
 
         planeta17.setBackground(resourceMap.getColor("planeta17.background")); // NOI18N
         planeta17.setForeground(resourceMap.getColor("planeta17.foreground")); // NOI18N
@@ -628,9 +639,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta17.setContentAreaFilled(false);
         planeta17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta17.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta17.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta17.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta17.setName("planeta17"); // NOI18N
-        planeta17.setRolloverIcon(resourceMap.getIcon("planeta17.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, -1, -1));
+        planeta17.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta17.setRolloverIcon(null);
+        panelUniverso.add(planeta17);
 
         planeta18.setBackground(resourceMap.getColor("planeta18.background")); // NOI18N
         planeta18.setForeground(resourceMap.getColor("planeta18.foreground")); // NOI18N
@@ -640,9 +654,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta18.setContentAreaFilled(false);
         planeta18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta18.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta18.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta18.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta18.setName("planeta18"); // NOI18N
-        planeta18.setRolloverIcon(resourceMap.getIcon("planeta18.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta18, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, -1, -1));
+        planeta18.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta18.setRolloverIcon(null);
+        panelUniverso.add(planeta18);
 
         planeta19.setBackground(resourceMap.getColor("planeta19.background")); // NOI18N
         planeta19.setForeground(resourceMap.getColor("planeta19.foreground")); // NOI18N
@@ -652,9 +669,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta19.setContentAreaFilled(false);
         planeta19.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta19.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta19.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta19.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta19.setName("planeta19"); // NOI18N
-        planeta19.setRolloverIcon(resourceMap.getIcon("planeta19.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta19, new org.netbeans.lib.awtextra.AbsoluteConstraints(811, 5, -1, -1));
+        planeta19.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta19.setRolloverIcon(null);
+        panelUniverso.add(planeta19);
 
         planeta20.setBackground(resourceMap.getColor("planeta20.background")); // NOI18N
         planeta20.setForeground(resourceMap.getColor("planeta20.foreground")); // NOI18N
@@ -664,9 +684,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta20.setContentAreaFilled(false);
         planeta20.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta20.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta20.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta20.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta20.setName("planeta20"); // NOI18N
-        planeta20.setRolloverIcon(resourceMap.getIcon("planeta20.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta20, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, -1, -1));
+        planeta20.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta20.setRolloverIcon(null);
+        panelUniverso.add(planeta20);
 
         planeta21.setBackground(resourceMap.getColor("planeta21.background")); // NOI18N
         planeta21.setForeground(resourceMap.getColor("planeta21.foreground")); // NOI18N
@@ -676,9 +699,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta21.setContentAreaFilled(false);
         planeta21.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta21.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta21.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta21.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta21.setName("planeta21"); // NOI18N
-        planeta21.setRolloverIcon(resourceMap.getIcon("planeta21.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta21, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 160, -1, -1));
+        planeta21.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta21.setRolloverIcon(null);
+        panelUniverso.add(planeta21);
 
         planeta22.setBackground(resourceMap.getColor("planeta22.background")); // NOI18N
         planeta22.setForeground(resourceMap.getColor("planeta22.foreground")); // NOI18N
@@ -688,9 +714,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta22.setContentAreaFilled(false);
         planeta22.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta22.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta22.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta22.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta22.setName("planeta22"); // NOI18N
-        planeta22.setRolloverIcon(resourceMap.getIcon("planeta22.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta22, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 170, -1, -1));
+        planeta22.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta22.setRolloverIcon(null);
+        panelUniverso.add(planeta22);
 
         planeta23.setBackground(resourceMap.getColor("planeta23.background")); // NOI18N
         planeta23.setForeground(resourceMap.getColor("planeta23.foreground")); // NOI18N
@@ -700,9 +729,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta23.setContentAreaFilled(false);
         planeta23.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta23.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta23.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta23.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta23.setName("planeta23"); // NOI18N
-        planeta23.setRolloverIcon(resourceMap.getIcon("planeta23.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta23, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, -1, -1));
+        planeta23.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta23.setRolloverIcon(null);
+        panelUniverso.add(planeta23);
 
         planeta24.setBackground(resourceMap.getColor("planeta24.background")); // NOI18N
         planeta24.setForeground(resourceMap.getColor("planeta24.foreground")); // NOI18N
@@ -712,9 +744,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta24.setContentAreaFilled(false);
         planeta24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta24.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta24.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta24.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta24.setName("planeta24"); // NOI18N
-        planeta24.setRolloverIcon(resourceMap.getIcon("planeta24.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta24, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 70, -1, -1));
+        planeta24.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta24.setRolloverIcon(null);
+        panelUniverso.add(planeta24);
 
         planeta25.setBackground(resourceMap.getColor("planeta25.background")); // NOI18N
         planeta25.setForeground(resourceMap.getColor("planeta25.foreground")); // NOI18N
@@ -724,9 +759,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta25.setContentAreaFilled(false);
         planeta25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta25.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta25.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta25.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta25.setName("planeta25"); // NOI18N
-        planeta25.setRolloverIcon(resourceMap.getIcon("planeta25.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, -1, -1));
+        planeta25.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta25.setRolloverIcon(null);
+        panelUniverso.add(planeta25);
 
         planeta26.setBackground(resourceMap.getColor("planeta26.background")); // NOI18N
         planeta26.setForeground(resourceMap.getColor("planeta26.foreground")); // NOI18N
@@ -736,9 +774,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta26.setContentAreaFilled(false);
         planeta26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta26.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta26.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta26.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta26.setName("planeta26"); // NOI18N
-        planeta26.setRolloverIcon(resourceMap.getIcon("planeta26.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 60, -1, -1));
+        planeta26.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta26.setRolloverIcon(null);
+        panelUniverso.add(planeta26);
 
         planeta27.setBackground(resourceMap.getColor("planeta27.background")); // NOI18N
         planeta27.setForeground(resourceMap.getColor("planeta27.foreground")); // NOI18N
@@ -748,9 +789,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta27.setContentAreaFilled(false);
         planeta27.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta27.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta27.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta27.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta27.setName("planeta27"); // NOI18N
-        planeta27.setRolloverIcon(resourceMap.getIcon("planeta27.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta27, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, -1, -1));
+        planeta27.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta27.setRolloverIcon(null);
+        panelUniverso.add(planeta27);
 
         planeta28.setBackground(resourceMap.getColor("planeta28.background")); // NOI18N
         planeta28.setForeground(resourceMap.getColor("planeta28.foreground")); // NOI18N
@@ -760,9 +804,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta28.setContentAreaFilled(false);
         planeta28.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta28.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta28.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta28.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta28.setName("planeta28"); // NOI18N
-        planeta28.setRolloverIcon(resourceMap.getIcon("planeta28.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 60, -1, -1));
+        planeta28.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta28.setRolloverIcon(null);
+        panelUniverso.add(planeta28);
 
         planeta29.setBackground(resourceMap.getColor("planeta29.background")); // NOI18N
         planeta29.setForeground(resourceMap.getColor("planeta29.foreground")); // NOI18N
@@ -772,9 +819,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta29.setContentAreaFilled(false);
         planeta29.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta29.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta29.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta29.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta29.setName("planeta29"); // NOI18N
-        planeta29.setRolloverIcon(resourceMap.getIcon("planeta29.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 10, -1, -1));
+        planeta29.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta29.setRolloverIcon(null);
+        panelUniverso.add(planeta29);
 
         planeta30.setBackground(resourceMap.getColor("planeta30.background")); // NOI18N
         planeta30.setForeground(resourceMap.getColor("planeta30.foreground")); // NOI18N
@@ -784,9 +834,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta30.setContentAreaFilled(false);
         planeta30.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta30.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta30.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta30.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta30.setName("planeta30"); // NOI18N
-        planeta30.setRolloverIcon(resourceMap.getIcon("planeta30.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta30, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 70, -1, -1));
+        planeta30.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta30.setRolloverIcon(null);
+        panelUniverso.add(planeta30);
 
         planeta31.setBackground(resourceMap.getColor("planeta31.background")); // NOI18N
         planeta31.setForeground(resourceMap.getColor("planeta31.foreground")); // NOI18N
@@ -796,9 +849,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta31.setContentAreaFilled(false);
         planeta31.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta31.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta31.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta31.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta31.setName("planeta31"); // NOI18N
-        planeta31.setRolloverIcon(resourceMap.getIcon("planeta31.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, -1, -1));
+        planeta31.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta31.setRolloverIcon(null);
+        panelUniverso.add(planeta31);
 
         planeta32.setBackground(resourceMap.getColor("planeta32.background")); // NOI18N
         planeta32.setForeground(resourceMap.getColor("planeta32.foreground")); // NOI18N
@@ -808,9 +864,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta32.setContentAreaFilled(false);
         planeta32.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta32.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta32.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta32.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta32.setName("planeta32"); // NOI18N
-        planeta32.setRolloverIcon(resourceMap.getIcon("planeta32.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta32, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 30, -1, -1));
+        planeta32.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta32.setRolloverIcon(null);
+        panelUniverso.add(planeta32);
 
         planeta33.setBackground(resourceMap.getColor("planeta33.background")); // NOI18N
         planeta33.setForeground(resourceMap.getColor("planeta33.foreground")); // NOI18N
@@ -820,9 +879,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta33.setContentAreaFilled(false);
         planeta33.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta33.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta33.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta33.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta33.setName("planeta33"); // NOI18N
-        planeta33.setRolloverIcon(resourceMap.getIcon("planeta33.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1427, 5, -1, -1));
+        planeta33.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta33.setRolloverIcon(null);
+        panelUniverso.add(planeta33);
 
         planeta34.setBackground(resourceMap.getColor("planeta34.background")); // NOI18N
         planeta34.setForeground(resourceMap.getColor("planeta34.foreground")); // NOI18N
@@ -832,9 +894,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta34.setContentAreaFilled(false);
         planeta34.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta34.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta34.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta34.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta34.setName("planeta34"); // NOI18N
-        planeta34.setRolloverIcon(resourceMap.getIcon("planeta34.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta34, new org.netbeans.lib.awtextra.AbsoluteConstraints(1560, 30, -1, -1));
+        planeta34.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta34.setRolloverIcon(null);
+        panelUniverso.add(planeta34);
 
         planeta35.setBackground(resourceMap.getColor("planeta35.background")); // NOI18N
         planeta35.setForeground(resourceMap.getColor("planeta35.foreground")); // NOI18N
@@ -844,9 +909,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta35.setContentAreaFilled(false);
         planeta35.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta35.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta35.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta35.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta35.setName("planeta35"); // NOI18N
-        planeta35.setRolloverIcon(resourceMap.getIcon("planeta35.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 180, -1, -1));
+        planeta35.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta35.setRolloverIcon(null);
+        panelUniverso.add(planeta35);
 
         planeta36.setBackground(resourceMap.getColor("planeta36.background")); // NOI18N
         planeta36.setForeground(resourceMap.getColor("planeta36.foreground")); // NOI18N
@@ -856,9 +924,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta36.setContentAreaFilled(false);
         planeta36.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta36.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta36.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta36.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta36.setName("planeta36"); // NOI18N
-        planeta36.setRolloverIcon(resourceMap.getIcon("planeta36.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta36, new org.netbeans.lib.awtextra.AbsoluteConstraints(1570, 100, -1, -1));
+        planeta36.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta36.setRolloverIcon(null);
+        panelUniverso.add(planeta36);
 
         planeta37.setBackground(resourceMap.getColor("planeta37.background")); // NOI18N
         planeta37.setForeground(resourceMap.getColor("planeta37.foreground")); // NOI18N
@@ -868,9 +939,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta37.setContentAreaFilled(false);
         planeta37.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta37.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta37.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta37.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta37.setName("planeta37"); // NOI18N
-        planeta37.setRolloverIcon(resourceMap.getIcon("planeta37.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta37, new org.netbeans.lib.awtextra.AbsoluteConstraints(1603, 5, -1, -1));
+        planeta37.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta37.setRolloverIcon(null);
+        panelUniverso.add(planeta37);
 
         planeta38.setBackground(resourceMap.getColor("planeta38.background")); // NOI18N
         planeta38.setForeground(resourceMap.getColor("planeta38.foreground")); // NOI18N
@@ -880,9 +954,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta38.setContentAreaFilled(false);
         planeta38.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta38.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta38.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta38.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta38.setName("planeta38"); // NOI18N
-        planeta38.setRolloverIcon(resourceMap.getIcon("planeta38.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 10, -1, -1));
+        planeta38.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta38.setRolloverIcon(null);
+        panelUniverso.add(planeta38);
 
         planeta39.setBackground(resourceMap.getColor("planeta39.background")); // NOI18N
         planeta39.setForeground(resourceMap.getColor("planeta39.foreground")); // NOI18N
@@ -892,9 +969,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta39.setContentAreaFilled(false);
         planeta39.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta39.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta39.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta39.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta39.setName("planeta39"); // NOI18N
-        planeta39.setRolloverIcon(resourceMap.getIcon("planeta39.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1690, 60, -1, -1));
+        planeta39.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta39.setRolloverIcon(null);
+        panelUniverso.add(planeta39);
 
         planeta40.setBackground(resourceMap.getColor("planeta40.background")); // NOI18N
         planeta40.setForeground(resourceMap.getColor("planeta40.foreground")); // NOI18N
@@ -904,9 +984,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta40.setContentAreaFilled(false);
         planeta40.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta40.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta40.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta40.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta40.setName("planeta40"); // NOI18N
-        planeta40.setRolloverIcon(resourceMap.getIcon("planeta40.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta40, new org.netbeans.lib.awtextra.AbsoluteConstraints(1735, 5, -1, -1));
+        planeta40.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta40.setRolloverIcon(null);
+        panelUniverso.add(planeta40);
 
         planeta41.setBackground(resourceMap.getColor("planeta41.background")); // NOI18N
         planeta41.setForeground(resourceMap.getColor("planeta41.foreground")); // NOI18N
@@ -916,9 +999,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta41.setContentAreaFilled(false);
         planeta41.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta41.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta41.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta41.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta41.setName("planeta41"); // NOI18N
-        planeta41.setRolloverIcon(resourceMap.getIcon("planeta41.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta41, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        planeta41.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta41.setRolloverIcon(null);
+        panelUniverso.add(planeta41);
 
         planeta42.setBackground(resourceMap.getColor("planeta42.background")); // NOI18N
         planeta42.setForeground(resourceMap.getColor("planeta42.foreground")); // NOI18N
@@ -928,9 +1014,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta42.setContentAreaFilled(false);
         planeta42.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta42.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta42.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta42.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta42.setName("planeta42"); // NOI18N
-        planeta42.setRolloverIcon(resourceMap.getIcon("planeta42.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        planeta42.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta42.setRolloverIcon(null);
+        panelUniverso.add(planeta42);
 
         planeta43.setBackground(resourceMap.getColor("planeta43.background")); // NOI18N
         planeta43.setForeground(resourceMap.getColor("planeta43.foreground")); // NOI18N
@@ -940,9 +1029,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta43.setContentAreaFilled(false);
         planeta43.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta43.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta43.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta43.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta43.setName("planeta43"); // NOI18N
-        planeta43.setRolloverIcon(resourceMap.getIcon("planeta43.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta43, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+        planeta43.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta43.setRolloverIcon(null);
+        panelUniverso.add(planeta43);
 
         planeta44.setBackground(resourceMap.getColor("planeta44.background")); // NOI18N
         planeta44.setForeground(resourceMap.getColor("planeta44.foreground")); // NOI18N
@@ -952,9 +1044,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta44.setContentAreaFilled(false);
         planeta44.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta44.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta44.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta44.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta44.setName("planeta44"); // NOI18N
-        planeta44.setRolloverIcon(resourceMap.getIcon("planeta44.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta44, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
+        planeta44.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta44.setRolloverIcon(null);
+        panelUniverso.add(planeta44);
 
         planeta45.setBackground(resourceMap.getColor("planeta45.background")); // NOI18N
         planeta45.setForeground(resourceMap.getColor("planeta45.foreground")); // NOI18N
@@ -964,9 +1059,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta45.setContentAreaFilled(false);
         planeta45.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta45.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta45.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta45.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta45.setName("planeta45"); // NOI18N
-        planeta45.setRolloverIcon(resourceMap.getIcon("planeta45.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta45, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+        planeta45.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta45.setRolloverIcon(null);
+        panelUniverso.add(planeta45);
 
         planeta46.setBackground(resourceMap.getColor("planeta46.background")); // NOI18N
         planeta46.setForeground(resourceMap.getColor("planeta46.foreground")); // NOI18N
@@ -976,9 +1074,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta46.setContentAreaFilled(false);
         planeta46.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta46.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta46.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta46.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta46.setName("planeta46"); // NOI18N
-        planeta46.setRolloverIcon(resourceMap.getIcon("planeta46.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta46, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+        planeta46.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta46.setRolloverIcon(null);
+        panelUniverso.add(planeta46);
 
         planeta47.setBackground(resourceMap.getColor("planeta47.background")); // NOI18N
         planeta47.setForeground(resourceMap.getColor("planeta47.foreground")); // NOI18N
@@ -988,9 +1089,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta47.setContentAreaFilled(false);
         planeta47.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta47.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta47.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta47.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta47.setName("planeta47"); // NOI18N
-        planeta47.setRolloverIcon(resourceMap.getIcon("planeta47.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta47, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, -1, -1));
+        planeta47.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta47.setRolloverIcon(null);
+        panelUniverso.add(planeta47);
 
         planeta48.setBackground(resourceMap.getColor("planeta48.background")); // NOI18N
         planeta48.setForeground(resourceMap.getColor("planeta48.foreground")); // NOI18N
@@ -1000,9 +1104,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta48.setContentAreaFilled(false);
         planeta48.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta48.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta48.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta48.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta48.setName("planeta48"); // NOI18N
-        planeta48.setRolloverIcon(resourceMap.getIcon("planeta48.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta48, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, -1, -1));
+        planeta48.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta48.setRolloverIcon(null);
+        panelUniverso.add(planeta48);
 
         planeta49.setBackground(resourceMap.getColor("planeta49.background")); // NOI18N
         planeta49.setForeground(resourceMap.getColor("planeta49.foreground")); // NOI18N
@@ -1012,9 +1119,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta49.setContentAreaFilled(false);
         planeta49.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta49.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta49.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta49.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta49.setName("planeta49"); // NOI18N
-        planeta49.setRolloverIcon(resourceMap.getIcon("planeta49.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta49, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
+        planeta49.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta49.setRolloverIcon(null);
+        panelUniverso.add(planeta49);
 
         planeta50.setBackground(resourceMap.getColor("planeta50.background")); // NOI18N
         planeta50.setForeground(resourceMap.getColor("planeta50.foreground")); // NOI18N
@@ -1024,9 +1134,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta50.setContentAreaFilled(false);
         planeta50.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta50.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta50.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta50.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta50.setName("planeta50"); // NOI18N
-        planeta50.setRolloverIcon(resourceMap.getIcon("planeta50.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta50, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, -1, -1));
+        planeta50.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta50.setRolloverIcon(null);
+        panelUniverso.add(planeta50);
 
         planeta51.setBackground(resourceMap.getColor("planeta51.background")); // NOI18N
         planeta51.setForeground(resourceMap.getColor("planeta51.foreground")); // NOI18N
@@ -1036,9 +1149,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta51.setContentAreaFilled(false);
         planeta51.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta51.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta51.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta51.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta51.setName("planeta51"); // NOI18N
-        planeta51.setRolloverIcon(resourceMap.getIcon("planeta51.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta51, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
+        planeta51.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta51.setRolloverIcon(null);
+        panelUniverso.add(planeta51);
 
         planeta52.setBackground(resourceMap.getColor("planeta52.background")); // NOI18N
         planeta52.setForeground(resourceMap.getColor("planeta52.foreground")); // NOI18N
@@ -1048,9 +1164,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta52.setContentAreaFilled(false);
         planeta52.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta52.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta52.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta52.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta52.setName("planeta52"); // NOI18N
-        planeta52.setRolloverIcon(resourceMap.getIcon("planeta52.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta52, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, -1, -1));
+        planeta52.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta52.setRolloverIcon(null);
+        panelUniverso.add(planeta52);
 
         planeta53.setBackground(resourceMap.getColor("planeta53.background")); // NOI18N
         planeta53.setForeground(resourceMap.getColor("planeta53.foreground")); // NOI18N
@@ -1060,9 +1179,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta53.setContentAreaFilled(false);
         planeta53.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta53.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta53.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta53.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta53.setName("planeta53"); // NOI18N
-        planeta53.setRolloverIcon(resourceMap.getIcon("planeta53.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta53, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, -1, -1));
+        planeta53.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta53.setRolloverIcon(null);
+        panelUniverso.add(planeta53);
 
         planeta54.setBackground(resourceMap.getColor("planeta54.background")); // NOI18N
         planeta54.setForeground(resourceMap.getColor("planeta54.foreground")); // NOI18N
@@ -1072,9 +1194,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta54.setContentAreaFilled(false);
         planeta54.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta54.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta54.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta54.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta54.setName("planeta54"); // NOI18N
-        planeta54.setRolloverIcon(resourceMap.getIcon("planeta54.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta54, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 110, -1, -1));
+        planeta54.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta54.setRolloverIcon(null);
+        panelUniverso.add(planeta54);
 
         planeta55.setBackground(resourceMap.getColor("planeta55.background")); // NOI18N
         planeta55.setForeground(resourceMap.getColor("planeta55.foreground")); // NOI18N
@@ -1084,9 +1209,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta55.setContentAreaFilled(false);
         planeta55.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta55.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta55.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta55.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta55.setName("planeta55"); // NOI18N
-        planeta55.setRolloverIcon(resourceMap.getIcon("planeta55.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta55, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 180, -1, -1));
+        planeta55.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta55.setRolloverIcon(null);
+        panelUniverso.add(planeta55);
 
         planeta56.setBackground(resourceMap.getColor("planeta56.background")); // NOI18N
         planeta56.setForeground(resourceMap.getColor("planeta56.foreground")); // NOI18N
@@ -1096,9 +1224,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta56.setContentAreaFilled(false);
         planeta56.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta56.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta56.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta56.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta56.setName("planeta56"); // NOI18N
-        planeta56.setRolloverIcon(resourceMap.getIcon("planeta56.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta56, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 120, -1, -1));
+        planeta56.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta56.setRolloverIcon(null);
+        panelUniverso.add(planeta56);
 
         planeta57.setBackground(resourceMap.getColor("planeta57.background")); // NOI18N
         planeta57.setForeground(resourceMap.getColor("planeta57.foreground")); // NOI18N
@@ -1108,9 +1239,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta57.setContentAreaFilled(false);
         planeta57.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta57.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta57.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta57.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta57.setName("planeta57"); // NOI18N
-        planeta57.setRolloverIcon(resourceMap.getIcon("planeta57.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta57, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, -1, -1));
+        planeta57.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta57.setRolloverIcon(null);
+        panelUniverso.add(planeta57);
 
         planeta58.setBackground(resourceMap.getColor("planeta58.background")); // NOI18N
         planeta58.setForeground(resourceMap.getColor("planeta58.foreground")); // NOI18N
@@ -1120,9 +1254,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta58.setContentAreaFilled(false);
         planeta58.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta58.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta58.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta58.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta58.setName("planeta58"); // NOI18N
-        planeta58.setRolloverIcon(resourceMap.getIcon("planeta58.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta58, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 130, -1, -1));
+        planeta58.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta58.setRolloverIcon(null);
+        panelUniverso.add(planeta58);
 
         planeta59.setBackground(resourceMap.getColor("planeta59.background")); // NOI18N
         planeta59.setForeground(resourceMap.getColor("planeta59.foreground")); // NOI18N
@@ -1132,9 +1269,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta59.setContentAreaFilled(false);
         planeta59.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta59.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta59.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta59.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta59.setName("planeta59"); // NOI18N
-        planeta59.setRolloverIcon(resourceMap.getIcon("planeta59.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta59, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 110, -1, -1));
+        planeta59.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta59.setRolloverIcon(null);
+        panelUniverso.add(planeta59);
 
         planeta60.setBackground(resourceMap.getColor("planeta60.background")); // NOI18N
         planeta60.setForeground(resourceMap.getColor("planeta60.foreground")); // NOI18N
@@ -1144,9 +1284,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta60.setContentAreaFilled(false);
         planeta60.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta60.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta60.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta60.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta60.setName("planeta60"); // NOI18N
-        planeta60.setRolloverIcon(resourceMap.getIcon("planeta60.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta60, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 190, -1, -1));
+        planeta60.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta60.setRolloverIcon(null);
+        panelUniverso.add(planeta60);
 
         planeta61.setBackground(resourceMap.getColor("planeta61.background")); // NOI18N
         planeta61.setForeground(resourceMap.getColor("planeta61.foreground")); // NOI18N
@@ -1156,9 +1299,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta61.setContentAreaFilled(false);
         planeta61.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta61.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta61.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta61.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta61.setName("planeta61"); // NOI18N
-        planeta61.setRolloverIcon(resourceMap.getIcon("planeta61.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta61, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 100, -1, -1));
+        planeta61.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta61.setRolloverIcon(null);
+        panelUniverso.add(planeta61);
 
         planeta62.setBackground(resourceMap.getColor("planeta62.background")); // NOI18N
         planeta62.setForeground(resourceMap.getColor("planeta62.foreground")); // NOI18N
@@ -1168,9 +1314,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta62.setContentAreaFilled(false);
         planeta62.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta62.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta62.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta62.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta62.setName("planeta62"); // NOI18N
-        planeta62.setRolloverIcon(resourceMap.getIcon("planeta62.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta62, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 190, -1, -1));
+        planeta62.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta62.setRolloverIcon(null);
+        panelUniverso.add(planeta62);
 
         planeta63.setBackground(resourceMap.getColor("planeta63.background")); // NOI18N
         planeta63.setForeground(resourceMap.getColor("planeta63.foreground")); // NOI18N
@@ -1180,9 +1329,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta63.setContentAreaFilled(false);
         planeta63.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta63.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta63.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta63.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta63.setName("planeta63"); // NOI18N
-        planeta63.setRolloverIcon(resourceMap.getIcon("planeta63.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta63, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 110, -1, -1));
+        planeta63.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta63.setRolloverIcon(null);
+        panelUniverso.add(planeta63);
 
         planeta64.setBackground(resourceMap.getColor("planeta64.background")); // NOI18N
         planeta64.setForeground(resourceMap.getColor("planeta64.foreground")); // NOI18N
@@ -1192,9 +1344,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta64.setContentAreaFilled(false);
         planeta64.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta64.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta64.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta64.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta64.setName("planeta64"); // NOI18N
-        planeta64.setRolloverIcon(resourceMap.getIcon("planeta64.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta64, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 180, -1, -1));
+        planeta64.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta64.setRolloverIcon(null);
+        panelUniverso.add(planeta64);
 
         planeta65.setBackground(resourceMap.getColor("planeta65.background")); // NOI18N
         planeta65.setForeground(resourceMap.getColor("planeta65.foreground")); // NOI18N
@@ -1204,9 +1359,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta65.setContentAreaFilled(false);
         planeta65.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta65.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta65.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta65.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta65.setName("planeta65"); // NOI18N
-        planeta65.setRolloverIcon(resourceMap.getIcon("planeta65.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta65, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 100, -1, -1));
+        planeta65.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta65.setRolloverIcon(null);
+        panelUniverso.add(planeta65);
 
         planeta66.setBackground(resourceMap.getColor("planeta66.background")); // NOI18N
         planeta66.setForeground(resourceMap.getColor("planeta66.foreground")); // NOI18N
@@ -1216,9 +1374,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta66.setContentAreaFilled(false);
         planeta66.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta66.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta66.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta66.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta66.setName("planeta66"); // NOI18N
-        planeta66.setRolloverIcon(resourceMap.getIcon("planeta66.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta66, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 220, -1, -1));
+        planeta66.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta66.setRolloverIcon(null);
+        panelUniverso.add(planeta66);
 
         planeta67.setBackground(resourceMap.getColor("planeta67.background")); // NOI18N
         planeta67.setForeground(resourceMap.getColor("planeta67.foreground")); // NOI18N
@@ -1228,9 +1389,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta67.setContentAreaFilled(false);
         planeta67.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta67.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta67.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta67.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta67.setName("planeta67"); // NOI18N
-        planeta67.setRolloverIcon(resourceMap.getIcon("planeta67.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta67, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 160, -1, -1));
+        planeta67.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta67.setRolloverIcon(null);
+        panelUniverso.add(planeta67);
 
         planeta68.setBackground(resourceMap.getColor("planeta68.background")); // NOI18N
         planeta68.setForeground(resourceMap.getColor("planeta68.foreground")); // NOI18N
@@ -1240,9 +1404,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta68.setContentAreaFilled(false);
         planeta68.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta68.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta68.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta68.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta68.setName("planeta68"); // NOI18N
-        planeta68.setRolloverIcon(resourceMap.getIcon("planeta68.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta68, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 90, -1, -1));
+        planeta68.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta68.setRolloverIcon(null);
+        panelUniverso.add(planeta68);
 
         planeta69.setBackground(resourceMap.getColor("planeta69.background")); // NOI18N
         planeta69.setForeground(resourceMap.getColor("planeta69.foreground")); // NOI18N
@@ -1252,9 +1419,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta69.setContentAreaFilled(false);
         planeta69.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta69.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta69.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta69.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta69.setName("planeta69"); // NOI18N
-        planeta69.setRolloverIcon(resourceMap.getIcon("planeta69.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta69, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 170, -1, -1));
+        planeta69.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta69.setRolloverIcon(null);
+        panelUniverso.add(planeta69);
 
         planeta70.setBackground(resourceMap.getColor("planeta70.background")); // NOI18N
         planeta70.setForeground(resourceMap.getColor("planeta70.foreground")); // NOI18N
@@ -1264,9 +1434,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta70.setContentAreaFilled(false);
         planeta70.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta70.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta70.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta70.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta70.setName("planeta70"); // NOI18N
-        planeta70.setRolloverIcon(resourceMap.getIcon("planeta70.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta70, new org.netbeans.lib.awtextra.AbsoluteConstraints(1295, 49, -1, -1));
+        planeta70.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta70.setRolloverIcon(null);
+        panelUniverso.add(planeta70);
 
         planeta71.setBackground(resourceMap.getColor("planeta71.background")); // NOI18N
         planeta71.setForeground(resourceMap.getColor("planeta71.foreground")); // NOI18N
@@ -1276,9 +1449,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta71.setContentAreaFilled(false);
         planeta71.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta71.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta71.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta71.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta71.setName("planeta71"); // NOI18N
-        planeta71.setRolloverIcon(resourceMap.getIcon("planeta71.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta71, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 120, -1, -1));
+        planeta71.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta71.setRolloverIcon(null);
+        panelUniverso.add(planeta71);
 
         planeta72.setBackground(resourceMap.getColor("planeta72.background")); // NOI18N
         planeta72.setForeground(resourceMap.getColor("planeta72.foreground")); // NOI18N
@@ -1288,9 +1464,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta72.setContentAreaFilled(false);
         planeta72.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta72.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta72.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta72.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta72.setName("planeta72"); // NOI18N
-        planeta72.setRolloverIcon(resourceMap.getIcon("planeta72.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta72, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 140, -1, -1));
+        planeta72.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta72.setRolloverIcon(null);
+        panelUniverso.add(planeta72);
 
         planeta73.setBackground(resourceMap.getColor("planeta73.background")); // NOI18N
         planeta73.setForeground(resourceMap.getColor("planeta73.foreground")); // NOI18N
@@ -1300,9 +1479,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta73.setContentAreaFilled(false);
         planeta73.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta73.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta73.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta73.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta73.setName("planeta73"); // NOI18N
-        planeta73.setRolloverIcon(resourceMap.getIcon("planeta73.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta73, new org.netbeans.lib.awtextra.AbsoluteConstraints(1427, 49, -1, -1));
+        planeta73.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta73.setRolloverIcon(null);
+        panelUniverso.add(planeta73);
 
         planeta74.setBackground(resourceMap.getColor("planeta74.background")); // NOI18N
         planeta74.setForeground(resourceMap.getColor("planeta74.foreground")); // NOI18N
@@ -1312,9 +1494,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta74.setContentAreaFilled(false);
         planeta74.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta74.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta74.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta74.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta74.setName("planeta74"); // NOI18N
-        planeta74.setRolloverIcon(resourceMap.getIcon("planeta74.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta74, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 100, -1, -1));
+        planeta74.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta74.setRolloverIcon(null);
+        panelUniverso.add(planeta74);
 
         planeta75.setBackground(resourceMap.getColor("planeta75.background")); // NOI18N
         planeta75.setForeground(resourceMap.getColor("planeta75.foreground")); // NOI18N
@@ -1324,9 +1509,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta75.setContentAreaFilled(false);
         planeta75.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta75.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta75.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta75.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta75.setName("planeta75"); // NOI18N
-        planeta75.setRolloverIcon(resourceMap.getIcon("planeta75.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta75, new org.netbeans.lib.awtextra.AbsoluteConstraints(1515, 49, -1, -1));
+        planeta75.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta75.setRolloverIcon(null);
+        panelUniverso.add(planeta75);
 
         planeta76.setBackground(resourceMap.getColor("planeta76.background")); // NOI18N
         planeta76.setForeground(resourceMap.getColor("planeta76.foreground")); // NOI18N
@@ -1336,9 +1524,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta76.setContentAreaFilled(false);
         planeta76.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta76.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta76.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta76.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta76.setName("planeta76"); // NOI18N
-        planeta76.setRolloverIcon(resourceMap.getIcon("planeta76.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta76, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 230, -1, -1));
+        planeta76.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta76.setRolloverIcon(null);
+        panelUniverso.add(planeta76);
 
         planeta77.setBackground(resourceMap.getColor("planeta77.background")); // NOI18N
         planeta77.setForeground(resourceMap.getColor("planeta77.foreground")); // NOI18N
@@ -1348,9 +1539,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta77.setContentAreaFilled(false);
         planeta77.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta77.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta77.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta77.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta77.setName("planeta77"); // NOI18N
-        planeta77.setRolloverIcon(resourceMap.getIcon("planeta77.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta77, new org.netbeans.lib.awtextra.AbsoluteConstraints(1603, 49, -1, -1));
+        planeta77.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta77.setRolloverIcon(null);
+        panelUniverso.add(planeta77);
 
         planeta78.setBackground(resourceMap.getColor("planeta78.background")); // NOI18N
         planeta78.setForeground(resourceMap.getColor("planeta78.foreground")); // NOI18N
@@ -1360,9 +1554,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta78.setContentAreaFilled(false);
         planeta78.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta78.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta78.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta78.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta78.setName("planeta78"); // NOI18N
-        planeta78.setRolloverIcon(resourceMap.getIcon("planeta78.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta78, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 110, -1, -1));
+        planeta78.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta78.setRolloverIcon(null);
+        panelUniverso.add(planeta78);
 
         planeta79.setBackground(resourceMap.getColor("planeta79.background")); // NOI18N
         planeta79.setForeground(resourceMap.getColor("planeta79.foreground")); // NOI18N
@@ -1372,9 +1569,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta79.setContentAreaFilled(false);
         planeta79.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta79.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta79.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta79.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta79.setName("planeta79"); // NOI18N
-        planeta79.setRolloverIcon(resourceMap.getIcon("planeta79.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta79, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 140, -1, -1));
+        planeta79.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta79.setRolloverIcon(null);
+        panelUniverso.add(planeta79);
 
         planeta80.setBackground(resourceMap.getColor("planeta80.background")); // NOI18N
         planeta80.setForeground(resourceMap.getColor("planeta80.foreground")); // NOI18N
@@ -1384,9 +1584,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta80.setContentAreaFilled(false);
         planeta80.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta80.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta80.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta80.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta80.setName("planeta80"); // NOI18N
-        planeta80.setRolloverIcon(resourceMap.getIcon("planeta80.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta80, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 100, -1, -1));
+        planeta80.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta80.setRolloverIcon(null);
+        panelUniverso.add(planeta80);
 
         planeta81.setBackground(resourceMap.getColor("planeta81.background")); // NOI18N
         planeta81.setForeground(resourceMap.getColor("planeta81.foreground")); // NOI18N
@@ -1396,9 +1599,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta81.setContentAreaFilled(false);
         planeta81.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta81.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta81.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta81.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta81.setName("planeta81"); // NOI18N
-        planeta81.setRolloverIcon(resourceMap.getIcon("planeta81.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta81, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1060, -1, -1));
+        planeta81.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta81.setRolloverIcon(null);
+        panelUniverso.add(planeta81);
 
         planeta82.setBackground(resourceMap.getColor("planeta82.background")); // NOI18N
         planeta82.setForeground(resourceMap.getColor("planeta82.foreground")); // NOI18N
@@ -1408,9 +1614,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta82.setContentAreaFilled(false);
         planeta82.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta82.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta82.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta82.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta82.setName("planeta82"); // NOI18N
-        planeta82.setRolloverIcon(resourceMap.getIcon("planeta82.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta82, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 780, -1, -1));
+        planeta82.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta82.setRolloverIcon(null);
+        panelUniverso.add(planeta82);
 
         planeta83.setBackground(resourceMap.getColor("planeta83.background")); // NOI18N
         planeta83.setForeground(resourceMap.getColor("planeta83.foreground")); // NOI18N
@@ -1420,9 +1629,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta83.setContentAreaFilled(false);
         planeta83.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta83.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta83.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta83.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta83.setName("planeta83"); // NOI18N
-        planeta83.setRolloverIcon(resourceMap.getIcon("planeta83.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta83, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 780, -1, -1));
+        planeta83.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta83.setRolloverIcon(null);
+        panelUniverso.add(planeta83);
 
         planeta84.setBackground(resourceMap.getColor("planeta84.background")); // NOI18N
         planeta84.setForeground(resourceMap.getColor("planeta84.foreground")); // NOI18N
@@ -1432,9 +1644,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta84.setContentAreaFilled(false);
         planeta84.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta84.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta84.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta84.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta84.setName("planeta84"); // NOI18N
-        planeta84.setRolloverIcon(resourceMap.getIcon("planeta84.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta84, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 750, -1, -1));
+        planeta84.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta84.setRolloverIcon(null);
+        panelUniverso.add(planeta84);
 
         planeta85.setBackground(resourceMap.getColor("planeta85.background")); // NOI18N
         planeta85.setForeground(resourceMap.getColor("planeta85.foreground")); // NOI18N
@@ -1444,9 +1659,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta85.setContentAreaFilled(false);
         planeta85.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta85.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta85.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta85.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta85.setName("planeta85"); // NOI18N
-        planeta85.setRolloverIcon(resourceMap.getIcon("planeta85.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta85, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 690, -1, -1));
+        planeta85.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta85.setRolloverIcon(null);
+        panelUniverso.add(planeta85);
 
         planeta86.setBackground(resourceMap.getColor("planeta86.background")); // NOI18N
         planeta86.setForeground(resourceMap.getColor("planeta86.foreground")); // NOI18N
@@ -1456,9 +1674,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta86.setContentAreaFilled(false);
         planeta86.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta86.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta86.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta86.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta86.setName("planeta86"); // NOI18N
-        planeta86.setRolloverIcon(resourceMap.getIcon("planeta86.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta86, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 590, -1, -1));
+        planeta86.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta86.setRolloverIcon(null);
+        panelUniverso.add(planeta86);
 
         planeta87.setBackground(resourceMap.getColor("planeta87.background")); // NOI18N
         planeta87.setForeground(resourceMap.getColor("planeta87.foreground")); // NOI18N
@@ -1468,9 +1689,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta87.setContentAreaFilled(false);
         planeta87.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta87.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta87.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta87.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta87.setName("planeta87"); // NOI18N
-        planeta87.setRolloverIcon(resourceMap.getIcon("planeta87.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta87, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, -1, -1));
+        planeta87.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta87.setRolloverIcon(null);
+        panelUniverso.add(planeta87);
 
         planeta88.setBackground(resourceMap.getColor("planeta88.background")); // NOI18N
         planeta88.setForeground(resourceMap.getColor("planeta88.foreground")); // NOI18N
@@ -1480,9 +1704,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta88.setContentAreaFilled(false);
         planeta88.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta88.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta88.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta88.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta88.setName("planeta88"); // NOI18N
-        planeta88.setRolloverIcon(resourceMap.getIcon("planeta88.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta88, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
+        planeta88.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta88.setRolloverIcon(null);
+        panelUniverso.add(planeta88);
 
         planeta89.setBackground(resourceMap.getColor("planeta89.background")); // NOI18N
         planeta89.setForeground(resourceMap.getColor("planeta89.foreground")); // NOI18N
@@ -1492,9 +1719,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta89.setContentAreaFilled(false);
         planeta89.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta89.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta89.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta89.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta89.setName("planeta89"); // NOI18N
-        planeta89.setRolloverIcon(resourceMap.getIcon("planeta89.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta89, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+        planeta89.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta89.setRolloverIcon(null);
+        panelUniverso.add(planeta89);
 
         planeta90.setBackground(resourceMap.getColor("planeta90.background")); // NOI18N
         planeta90.setForeground(resourceMap.getColor("planeta90.foreground")); // NOI18N
@@ -1504,9 +1734,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta90.setContentAreaFilled(false);
         planeta90.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta90.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta90.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta90.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta90.setName("planeta90"); // NOI18N
-        planeta90.setRolloverIcon(resourceMap.getIcon("planeta90.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta90, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
+        planeta90.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta90.setRolloverIcon(null);
+        panelUniverso.add(planeta90);
 
         planeta91.setBackground(resourceMap.getColor("planeta91.background")); // NOI18N
         planeta91.setForeground(resourceMap.getColor("planeta91.foreground")); // NOI18N
@@ -1516,9 +1749,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta91.setContentAreaFilled(false);
         planeta91.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta91.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta91.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta91.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta91.setName("planeta91"); // NOI18N
-        planeta91.setRolloverIcon(resourceMap.getIcon("planeta91.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta91, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, -1, -1));
+        planeta91.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta91.setRolloverIcon(null);
+        panelUniverso.add(planeta91);
 
         planeta92.setBackground(resourceMap.getColor("planeta92.background")); // NOI18N
         planeta92.setForeground(resourceMap.getColor("planeta92.foreground")); // NOI18N
@@ -1528,9 +1764,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta92.setContentAreaFilled(false);
         planeta92.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta92.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta92.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta92.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta92.setName("planeta92"); // NOI18N
-        planeta92.setRolloverIcon(resourceMap.getIcon("planeta92.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta92, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
+        planeta92.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta92.setRolloverIcon(null);
+        panelUniverso.add(planeta92);
 
         planeta93.setBackground(resourceMap.getColor("planeta93.background")); // NOI18N
         planeta93.setForeground(resourceMap.getColor("planeta93.foreground")); // NOI18N
@@ -1540,9 +1779,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta93.setContentAreaFilled(false);
         planeta93.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta93.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta93.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta93.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta93.setName("planeta93"); // NOI18N
-        planeta93.setRolloverIcon(resourceMap.getIcon("planeta93.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta93, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, -1, -1));
+        planeta93.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta93.setRolloverIcon(null);
+        panelUniverso.add(planeta93);
 
         planeta94.setBackground(resourceMap.getColor("planeta94.background")); // NOI18N
         planeta94.setForeground(resourceMap.getColor("planeta94.foreground")); // NOI18N
@@ -1552,9 +1794,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta94.setContentAreaFilled(false);
         planeta94.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta94.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta94.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta94.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta94.setName("planeta94"); // NOI18N
-        planeta94.setRolloverIcon(resourceMap.getIcon("planeta94.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta94, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, -1, -1));
+        planeta94.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta94.setRolloverIcon(null);
+        panelUniverso.add(planeta94);
 
         planeta95.setBackground(resourceMap.getColor("planeta95.background")); // NOI18N
         planeta95.setForeground(resourceMap.getColor("planeta95.foreground")); // NOI18N
@@ -1564,9 +1809,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta95.setContentAreaFilled(false);
         planeta95.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta95.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta95.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta95.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta95.setName("planeta95"); // NOI18N
-        planeta95.setRolloverIcon(resourceMap.getIcon("planeta95.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta95, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, -1, -1));
+        planeta95.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta95.setRolloverIcon(null);
+        panelUniverso.add(planeta95);
 
         planeta96.setBackground(resourceMap.getColor("planeta96.background")); // NOI18N
         planeta96.setForeground(resourceMap.getColor("planeta96.foreground")); // NOI18N
@@ -1576,9 +1824,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta96.setContentAreaFilled(false);
         planeta96.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta96.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta96.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta96.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta96.setName("planeta96"); // NOI18N
-        planeta96.setRolloverIcon(resourceMap.getIcon("planeta96.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta96, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, -1, -1));
+        planeta96.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta96.setRolloverIcon(null);
+        panelUniverso.add(planeta96);
 
         planeta97.setBackground(resourceMap.getColor("planeta97.background")); // NOI18N
         planeta97.setForeground(resourceMap.getColor("planeta97.foreground")); // NOI18N
@@ -1588,9 +1839,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta97.setContentAreaFilled(false);
         planeta97.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta97.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta97.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta97.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta97.setName("planeta97"); // NOI18N
-        planeta97.setRolloverIcon(resourceMap.getIcon("planeta97.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta97, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        planeta97.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta97.setRolloverIcon(null);
+        panelUniverso.add(planeta97);
 
         planeta98.setBackground(resourceMap.getColor("planeta98.background")); // NOI18N
         planeta98.setForeground(resourceMap.getColor("planeta98.foreground")); // NOI18N
@@ -1600,9 +1854,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta98.setContentAreaFilled(false);
         planeta98.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta98.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta98.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta98.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta98.setName("planeta98"); // NOI18N
-        planeta98.setRolloverIcon(resourceMap.getIcon("planeta98.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta98, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+        planeta98.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta98.setRolloverIcon(null);
+        panelUniverso.add(planeta98);
 
         planeta99.setBackground(resourceMap.getColor("planeta99.background")); // NOI18N
         planeta99.setForeground(resourceMap.getColor("planeta99.foreground")); // NOI18N
@@ -1612,9 +1869,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta99.setContentAreaFilled(false);
         planeta99.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta99.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta99.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta99.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta99.setName("planeta99"); // NOI18N
-        planeta99.setRolloverIcon(resourceMap.getIcon("planeta99.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta99, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
+        planeta99.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta99.setRolloverIcon(null);
+        panelUniverso.add(planeta99);
 
         planeta100.setBackground(resourceMap.getColor("planeta100.background")); // NOI18N
         planeta100.setForeground(resourceMap.getColor("planeta100.foreground")); // NOI18N
@@ -1624,9 +1884,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta100.setContentAreaFilled(false);
         planeta100.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta100.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta100.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta100.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta100.setName("planeta100"); // NOI18N
-        planeta100.setRolloverIcon(resourceMap.getIcon("planeta100.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta100, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        planeta100.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta100.setRolloverIcon(null);
+        panelUniverso.add(planeta100);
 
         planeta101.setBackground(resourceMap.getColor("planeta101.background")); // NOI18N
         planeta101.setForeground(resourceMap.getColor("planeta101.foreground")); // NOI18N
@@ -1636,9 +1899,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta101.setContentAreaFilled(false);
         planeta101.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta101.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta101.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta101.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta101.setName("planeta101"); // NOI18N
-        planeta101.setRolloverIcon(resourceMap.getIcon("planeta101.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta101, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+        planeta101.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta101.setRolloverIcon(null);
+        panelUniverso.add(planeta101);
 
         planeta102.setBackground(resourceMap.getColor("planeta102.background")); // NOI18N
         planeta102.setForeground(resourceMap.getColor("planeta102.foreground")); // NOI18N
@@ -1648,9 +1914,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta102.setContentAreaFilled(false);
         planeta102.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta102.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta102.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta102.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta102.setName("planeta102"); // NOI18N
-        planeta102.setRolloverIcon(resourceMap.getIcon("planeta102.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta102, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
+        planeta102.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta102.setRolloverIcon(null);
+        panelUniverso.add(planeta102);
 
         planeta103.setBackground(resourceMap.getColor("planeta103.background")); // NOI18N
         planeta103.setForeground(resourceMap.getColor("planeta103.foreground")); // NOI18N
@@ -1660,9 +1929,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta103.setContentAreaFilled(false);
         planeta103.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta103.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta103.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta103.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta103.setName("planeta103"); // NOI18N
-        planeta103.setRolloverIcon(resourceMap.getIcon("planeta103.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta103, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        planeta103.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta103.setRolloverIcon(null);
+        panelUniverso.add(planeta103);
 
         planeta104.setBackground(resourceMap.getColor("planeta104.background")); // NOI18N
         planeta104.setForeground(resourceMap.getColor("planeta104.foreground")); // NOI18N
@@ -1672,9 +1944,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta104.setContentAreaFilled(false);
         planeta104.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta104.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta104.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta104.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta104.setName("planeta104"); // NOI18N
-        planeta104.setRolloverIcon(resourceMap.getIcon("planeta104.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta104, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+        planeta104.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta104.setRolloverIcon(null);
+        panelUniverso.add(planeta104);
 
         planeta105.setBackground(resourceMap.getColor("planeta105.background")); // NOI18N
         planeta105.setForeground(resourceMap.getColor("planeta105.foreground")); // NOI18N
@@ -1684,9 +1959,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta105.setContentAreaFilled(false);
         planeta105.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta105.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta105.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta105.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta105.setName("planeta105"); // NOI18N
-        planeta105.setRolloverIcon(resourceMap.getIcon("planeta105.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta105, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+        planeta105.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta105.setRolloverIcon(null);
+        panelUniverso.add(planeta105);
 
         planeta106.setBackground(resourceMap.getColor("planeta106.background")); // NOI18N
         planeta106.setForeground(resourceMap.getColor("planeta106.foreground")); // NOI18N
@@ -1696,9 +1974,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta106.setContentAreaFilled(false);
         planeta106.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta106.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta106.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta106.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta106.setName("planeta106"); // NOI18N
-        planeta106.setRolloverIcon(resourceMap.getIcon("planeta106.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta106, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, -1, -1));
+        planeta106.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta106.setRolloverIcon(null);
+        panelUniverso.add(planeta106);
 
         planeta107.setBackground(resourceMap.getColor("planeta107.background")); // NOI18N
         planeta107.setForeground(resourceMap.getColor("planeta107.foreground")); // NOI18N
@@ -1708,9 +1989,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta107.setContentAreaFilled(false);
         planeta107.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta107.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta107.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta107.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta107.setName("planeta107"); // NOI18N
-        planeta107.setRolloverIcon(resourceMap.getIcon("planeta107.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta107, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, -1, -1));
+        planeta107.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta107.setRolloverIcon(null);
+        panelUniverso.add(planeta107);
 
         planeta108.setBackground(resourceMap.getColor("planeta108.background")); // NOI18N
         planeta108.setForeground(resourceMap.getColor("planeta108.foreground")); // NOI18N
@@ -1720,9 +2004,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta108.setContentAreaFilled(false);
         planeta108.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta108.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta108.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta108.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta108.setName("planeta108"); // NOI18N
-        planeta108.setRolloverIcon(resourceMap.getIcon("planeta108.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta108, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 300, -1, -1));
+        planeta108.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta108.setRolloverIcon(null);
+        panelUniverso.add(planeta108);
 
         planeta109.setBackground(resourceMap.getColor("planeta109.background")); // NOI18N
         planeta109.setForeground(resourceMap.getColor("planeta109.foreground")); // NOI18N
@@ -1732,9 +2019,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta109.setContentAreaFilled(false);
         planeta109.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta109.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta109.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta109.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta109.setName("planeta109"); // NOI18N
-        planeta109.setRolloverIcon(resourceMap.getIcon("planeta109.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta109, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, -1, -1));
+        planeta109.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta109.setRolloverIcon(null);
+        panelUniverso.add(planeta109);
 
         planeta110.setBackground(resourceMap.getColor("planeta110.background")); // NOI18N
         planeta110.setForeground(resourceMap.getColor("planeta110.foreground")); // NOI18N
@@ -1744,9 +2034,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta110.setContentAreaFilled(false);
         planeta110.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta110.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta110.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta110.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta110.setName("planeta110"); // NOI18N
-        planeta110.setRolloverIcon(resourceMap.getIcon("planeta110.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta110, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 240, -1, -1));
+        planeta110.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta110.setRolloverIcon(null);
+        panelUniverso.add(planeta110);
 
         planeta111.setBackground(resourceMap.getColor("planeta111.background")); // NOI18N
         planeta111.setForeground(resourceMap.getColor("planeta111.foreground")); // NOI18N
@@ -1756,9 +2049,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta111.setContentAreaFilled(false);
         planeta111.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta111.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta111.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta111.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta111.setName("planeta111"); // NOI18N
-        planeta111.setRolloverIcon(resourceMap.getIcon("planeta111.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta111, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 270, -1, -1));
+        planeta111.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta111.setRolloverIcon(null);
+        panelUniverso.add(planeta111);
 
         planeta112.setBackground(resourceMap.getColor("planeta112.background")); // NOI18N
         planeta112.setForeground(resourceMap.getColor("planeta112.foreground")); // NOI18N
@@ -1768,9 +2064,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta112.setContentAreaFilled(false);
         planeta112.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta112.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta112.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta112.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta112.setName("planeta112"); // NOI18N
-        planeta112.setRolloverIcon(resourceMap.getIcon("planeta112.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta112, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 250, -1, -1));
+        planeta112.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta112.setRolloverIcon(null);
+        panelUniverso.add(planeta112);
 
         planeta113.setBackground(resourceMap.getColor("planeta113.background")); // NOI18N
         planeta113.setForeground(resourceMap.getColor("planeta113.foreground")); // NOI18N
@@ -1780,9 +2079,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta113.setContentAreaFilled(false);
         planeta113.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta113.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta113.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta113.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta113.setName("planeta113"); // NOI18N
-        planeta113.setRolloverIcon(resourceMap.getIcon("planeta113.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta113, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 240, -1, -1));
+        planeta113.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta113.setRolloverIcon(null);
+        panelUniverso.add(planeta113);
 
         planeta114.setBackground(resourceMap.getColor("planeta114.background")); // NOI18N
         planeta114.setForeground(resourceMap.getColor("planeta114.foreground")); // NOI18N
@@ -1792,9 +2094,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta114.setContentAreaFilled(false);
         planeta114.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta114.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta114.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta114.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta114.setName("planeta114"); // NOI18N
-        planeta114.setRolloverIcon(resourceMap.getIcon("planeta114.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta114, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 200, -1, -1));
+        planeta114.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta114.setRolloverIcon(null);
+        panelUniverso.add(planeta114);
 
         planeta115.setBackground(resourceMap.getColor("planeta115.background")); // NOI18N
         planeta115.setForeground(resourceMap.getColor("planeta115.foreground")); // NOI18N
@@ -1804,9 +2109,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta115.setContentAreaFilled(false);
         planeta115.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta115.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta115.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta115.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta115.setName("planeta115"); // NOI18N
-        planeta115.setRolloverIcon(resourceMap.getIcon("planeta115.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta115, new org.netbeans.lib.awtextra.AbsoluteConstraints(1550, 220, -1, -1));
+        planeta115.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta115.setRolloverIcon(null);
+        panelUniverso.add(planeta115);
 
         planeta116.setBackground(resourceMap.getColor("planeta116.background")); // NOI18N
         planeta116.setForeground(resourceMap.getColor("planeta116.foreground")); // NOI18N
@@ -1816,9 +2124,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta116.setContentAreaFilled(false);
         planeta116.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta116.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta116.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta116.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta116.setName("planeta116"); // NOI18N
-        planeta116.setRolloverIcon(resourceMap.getIcon("planeta116.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta116, new org.netbeans.lib.awtextra.AbsoluteConstraints(1560, 150, -1, -1));
+        planeta116.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta116.setRolloverIcon(null);
+        panelUniverso.add(planeta116);
 
         planeta117.setBackground(resourceMap.getColor("planeta117.background")); // NOI18N
         planeta117.setForeground(resourceMap.getColor("planeta117.foreground")); // NOI18N
@@ -1828,9 +2139,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta117.setContentAreaFilled(false);
         planeta117.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta117.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta117.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta117.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta117.setName("planeta117"); // NOI18N
-        planeta117.setRolloverIcon(resourceMap.getIcon("planeta117.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta117, new org.netbeans.lib.awtextra.AbsoluteConstraints(1600, 230, -1, -1));
+        planeta117.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta117.setRolloverIcon(null);
+        panelUniverso.add(planeta117);
 
         planeta118.setBackground(resourceMap.getColor("planeta118.background")); // NOI18N
         planeta118.setForeground(resourceMap.getColor("planeta118.foreground")); // NOI18N
@@ -1840,9 +2154,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta118.setContentAreaFilled(false);
         planeta118.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta118.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta118.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta118.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta118.setName("planeta118"); // NOI18N
-        planeta118.setRolloverIcon(resourceMap.getIcon("planeta118.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta118, new org.netbeans.lib.awtextra.AbsoluteConstraints(1610, 180, -1, -1));
+        planeta118.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta118.setRolloverIcon(null);
+        panelUniverso.add(planeta118);
 
         planeta119.setBackground(resourceMap.getColor("planeta119.background")); // NOI18N
         planeta119.setForeground(resourceMap.getColor("planeta119.foreground")); // NOI18N
@@ -1852,9 +2169,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta119.setContentAreaFilled(false);
         planeta119.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta119.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta119.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta119.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta119.setName("planeta119"); // NOI18N
-        planeta119.setRolloverIcon(resourceMap.getIcon("planeta119.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta119, new org.netbeans.lib.awtextra.AbsoluteConstraints(1660, 210, -1, -1));
+        planeta119.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta119.setRolloverIcon(null);
+        panelUniverso.add(planeta119);
 
         planeta120.setBackground(resourceMap.getColor("planeta120.background")); // NOI18N
         planeta120.setForeground(resourceMap.getColor("planeta120.foreground")); // NOI18N
@@ -1864,9 +2184,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta120.setContentAreaFilled(false);
         planeta120.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta120.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta120.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta120.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta120.setName("planeta120"); // NOI18N
-        planeta120.setRolloverIcon(resourceMap.getIcon("planeta120.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta120, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 150, -1, -1));
+        planeta120.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta120.setRolloverIcon(null);
+        panelUniverso.add(planeta120);
 
         planeta121.setBackground(resourceMap.getColor("planeta121.background")); // NOI18N
         planeta121.setForeground(resourceMap.getColor("planeta121.foreground")); // NOI18N
@@ -1876,9 +2199,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta121.setContentAreaFilled(false);
         planeta121.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta121.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta121.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta121.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta121.setName("planeta121"); // NOI18N
-        planeta121.setRolloverIcon(resourceMap.getIcon("planeta121.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta121, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 730, -1, -1));
+        planeta121.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta121.setRolloverIcon(null);
+        panelUniverso.add(planeta121);
 
         planeta122.setBackground(resourceMap.getColor("planeta122.background")); // NOI18N
         planeta122.setForeground(resourceMap.getColor("planeta122.foreground")); // NOI18N
@@ -1888,9 +2214,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta122.setContentAreaFilled(false);
         planeta122.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta122.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta122.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta122.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta122.setName("planeta122"); // NOI18N
-        planeta122.setRolloverIcon(resourceMap.getIcon("planeta122.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta122, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 650, -1, -1));
+        planeta122.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta122.setRolloverIcon(null);
+        panelUniverso.add(planeta122);
 
         planeta123.setBackground(resourceMap.getColor("planeta123.background")); // NOI18N
         planeta123.setForeground(resourceMap.getColor("planeta123.foreground")); // NOI18N
@@ -1900,9 +2229,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta123.setContentAreaFilled(false);
         planeta123.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta123.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta123.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta123.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta123.setName("planeta123"); // NOI18N
-        planeta123.setRolloverIcon(resourceMap.getIcon("planeta123.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta123, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 660, -1, -1));
+        planeta123.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta123.setRolloverIcon(null);
+        panelUniverso.add(planeta123);
 
         planeta124.setBackground(resourceMap.getColor("planeta124.background")); // NOI18N
         planeta124.setForeground(resourceMap.getColor("planeta124.foreground")); // NOI18N
@@ -1912,9 +2244,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta124.setContentAreaFilled(false);
         planeta124.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta124.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta124.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta124.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta124.setName("planeta124"); // NOI18N
-        planeta124.setRolloverIcon(resourceMap.getIcon("planeta124.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta124, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 630, -1, -1));
+        planeta124.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta124.setRolloverIcon(null);
+        panelUniverso.add(planeta124);
 
         planeta125.setBackground(resourceMap.getColor("planeta125.background")); // NOI18N
         planeta125.setForeground(resourceMap.getColor("planeta125.foreground")); // NOI18N
@@ -1924,9 +2259,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta125.setContentAreaFilled(false);
         planeta125.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta125.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta125.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta125.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta125.setName("planeta125"); // NOI18N
-        planeta125.setRolloverIcon(resourceMap.getIcon("planeta125.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta125, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 700, -1, -1));
+        planeta125.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta125.setRolloverIcon(null);
+        panelUniverso.add(planeta125);
 
         planeta126.setBackground(resourceMap.getColor("planeta126.background")); // NOI18N
         planeta126.setForeground(resourceMap.getColor("planeta126.foreground")); // NOI18N
@@ -1936,9 +2274,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta126.setContentAreaFilled(false);
         planeta126.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta126.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta126.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta126.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta126.setName("planeta126"); // NOI18N
-        planeta126.setRolloverIcon(resourceMap.getIcon("planeta126.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta126, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, -1, -1));
+        planeta126.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta126.setRolloverIcon(null);
+        panelUniverso.add(planeta126);
 
         planeta127.setBackground(resourceMap.getColor("planeta127.background")); // NOI18N
         planeta127.setForeground(resourceMap.getColor("planeta127.foreground")); // NOI18N
@@ -1948,9 +2289,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta127.setContentAreaFilled(false);
         planeta127.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta127.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta127.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta127.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta127.setName("planeta127"); // NOI18N
-        planeta127.setRolloverIcon(resourceMap.getIcon("planeta127.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta127, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
+        planeta127.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta127.setRolloverIcon(null);
+        panelUniverso.add(planeta127);
 
         planeta128.setBackground(resourceMap.getColor("planeta128.background")); // NOI18N
         planeta128.setForeground(resourceMap.getColor("planeta128.foreground")); // NOI18N
@@ -1960,9 +2304,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta128.setContentAreaFilled(false);
         planeta128.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta128.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta128.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta128.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta128.setName("planeta128"); // NOI18N
-        planeta128.setRolloverIcon(resourceMap.getIcon("planeta128.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta128, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, -1, -1));
+        planeta128.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta128.setRolloverIcon(null);
+        panelUniverso.add(planeta128);
 
         planeta129.setBackground(resourceMap.getColor("planeta129.background")); // NOI18N
         planeta129.setForeground(resourceMap.getColor("planeta129.foreground")); // NOI18N
@@ -1972,9 +2319,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta129.setContentAreaFilled(false);
         planeta129.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta129.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta129.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta129.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta129.setName("planeta129"); // NOI18N
-        planeta129.setRolloverIcon(resourceMap.getIcon("planeta129.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta129, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 430, -1, -1));
+        planeta129.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta129.setRolloverIcon(null);
+        panelUniverso.add(planeta129);
 
         planeta130.setBackground(resourceMap.getColor("planeta130.background")); // NOI18N
         planeta130.setForeground(resourceMap.getColor("planeta130.foreground")); // NOI18N
@@ -1984,9 +2334,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta130.setContentAreaFilled(false);
         planeta130.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta130.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta130.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta130.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta130.setName("planeta130"); // NOI18N
-        planeta130.setRolloverIcon(resourceMap.getIcon("planeta130.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta130, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 610, -1, -1));
+        planeta130.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta130.setRolloverIcon(null);
+        panelUniverso.add(planeta130);
 
         planeta131.setBackground(resourceMap.getColor("planeta131.background")); // NOI18N
         planeta131.setForeground(resourceMap.getColor("planeta131.foreground")); // NOI18N
@@ -1996,9 +2349,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta131.setContentAreaFilled(false);
         planeta131.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta131.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta131.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta131.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta131.setName("planeta131"); // NOI18N
-        planeta131.setRolloverIcon(resourceMap.getIcon("planeta131.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta131, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 610, -1, -1));
+        planeta131.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta131.setRolloverIcon(null);
+        panelUniverso.add(planeta131);
 
         planeta132.setBackground(resourceMap.getColor("planeta132.background")); // NOI18N
         planeta132.setForeground(resourceMap.getColor("planeta132.foreground")); // NOI18N
@@ -2008,9 +2364,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta132.setContentAreaFilled(false);
         planeta132.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta132.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta132.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta132.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta132.setName("planeta132"); // NOI18N
-        planeta132.setRolloverIcon(resourceMap.getIcon("planeta132.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta132, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, -1, -1));
+        planeta132.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta132.setRolloverIcon(null);
+        panelUniverso.add(planeta132);
 
         planeta133.setBackground(resourceMap.getColor("planeta133.background")); // NOI18N
         planeta133.setForeground(resourceMap.getColor("planeta133.foreground")); // NOI18N
@@ -2020,9 +2379,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta133.setContentAreaFilled(false);
         planeta133.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta133.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta133.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta133.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta133.setName("planeta133"); // NOI18N
-        planeta133.setRolloverIcon(resourceMap.getIcon("planeta133.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta133, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, -1, -1));
+        planeta133.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta133.setRolloverIcon(null);
+        panelUniverso.add(planeta133);
 
         planeta134.setBackground(resourceMap.getColor("planeta134.background")); // NOI18N
         planeta134.setForeground(resourceMap.getColor("planeta134.foreground")); // NOI18N
@@ -2032,9 +2394,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta134.setContentAreaFilled(false);
         planeta134.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta134.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta134.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta134.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta134.setName("planeta134"); // NOI18N
-        planeta134.setRolloverIcon(resourceMap.getIcon("planeta134.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta134, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, -1, -1));
+        planeta134.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta134.setRolloverIcon(null);
+        panelUniverso.add(planeta134);
 
         planeta135.setBackground(resourceMap.getColor("planeta135.background")); // NOI18N
         planeta135.setForeground(resourceMap.getColor("planeta135.foreground")); // NOI18N
@@ -2044,9 +2409,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta135.setContentAreaFilled(false);
         planeta135.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta135.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta135.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta135.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta135.setName("planeta135"); // NOI18N
-        planeta135.setRolloverIcon(resourceMap.getIcon("planeta135.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta135, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 610, -1, -1));
+        planeta135.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta135.setRolloverIcon(null);
+        panelUniverso.add(planeta135);
 
         planeta136.setBackground(resourceMap.getColor("planeta136.background")); // NOI18N
         planeta136.setForeground(resourceMap.getColor("planeta136.foreground")); // NOI18N
@@ -2056,9 +2424,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta136.setContentAreaFilled(false);
         planeta136.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta136.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta136.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta136.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta136.setName("planeta136"); // NOI18N
-        planeta136.setRolloverIcon(resourceMap.getIcon("planeta136.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta136, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, -1, -1));
+        planeta136.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta136.setRolloverIcon(null);
+        panelUniverso.add(planeta136);
 
         planeta137.setBackground(resourceMap.getColor("planeta137.background")); // NOI18N
         planeta137.setForeground(resourceMap.getColor("planeta137.foreground")); // NOI18N
@@ -2068,9 +2439,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta137.setContentAreaFilled(false);
         planeta137.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta137.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta137.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta137.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta137.setName("planeta137"); // NOI18N
-        planeta137.setRolloverIcon(resourceMap.getIcon("planeta137.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta137, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 550, -1, -1));
+        planeta137.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta137.setRolloverIcon(null);
+        panelUniverso.add(planeta137);
 
         planeta138.setBackground(resourceMap.getColor("planeta138.background")); // NOI18N
         planeta138.setForeground(resourceMap.getColor("planeta138.foreground")); // NOI18N
@@ -2080,9 +2454,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta138.setContentAreaFilled(false);
         planeta138.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta138.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta138.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta138.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta138.setName("planeta138"); // NOI18N
-        planeta138.setRolloverIcon(resourceMap.getIcon("planeta138.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta138, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 570, -1, -1));
+        planeta138.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta138.setRolloverIcon(null);
+        panelUniverso.add(planeta138);
 
         planeta139.setBackground(resourceMap.getColor("planeta139.background")); // NOI18N
         planeta139.setForeground(resourceMap.getColor("planeta139.foreground")); // NOI18N
@@ -2092,9 +2469,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta139.setContentAreaFilled(false);
         planeta139.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta139.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta139.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta139.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta139.setName("planeta139"); // NOI18N
-        planeta139.setRolloverIcon(resourceMap.getIcon("planeta139.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta139, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 440, -1, -1));
+        planeta139.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta139.setRolloverIcon(null);
+        panelUniverso.add(planeta139);
 
         planeta140.setBackground(resourceMap.getColor("planeta140.background")); // NOI18N
         planeta140.setForeground(resourceMap.getColor("planeta140.foreground")); // NOI18N
@@ -2104,9 +2484,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta140.setContentAreaFilled(false);
         planeta140.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta140.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta140.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta140.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta140.setName("planeta140"); // NOI18N
-        planeta140.setRolloverIcon(resourceMap.getIcon("planeta140.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta140, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
+        planeta140.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta140.setRolloverIcon(null);
+        panelUniverso.add(planeta140);
 
         planeta141.setBackground(resourceMap.getColor("planeta141.background")); // NOI18N
         planeta141.setForeground(resourceMap.getColor("planeta141.foreground")); // NOI18N
@@ -2116,9 +2499,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta141.setContentAreaFilled(false);
         planeta141.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta141.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta141.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta141.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta141.setName("planeta141"); // NOI18N
-        planeta141.setRolloverIcon(resourceMap.getIcon("planeta141.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta141, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 390, -1, -1));
+        planeta141.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta141.setRolloverIcon(null);
+        panelUniverso.add(planeta141);
 
         planeta142.setBackground(resourceMap.getColor("planeta142.background")); // NOI18N
         planeta142.setForeground(resourceMap.getColor("planeta142.foreground")); // NOI18N
@@ -2128,9 +2514,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta142.setContentAreaFilled(false);
         planeta142.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta142.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta142.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta142.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta142.setName("planeta142"); // NOI18N
-        planeta142.setRolloverIcon(resourceMap.getIcon("planeta142.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta142, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 480, -1, -1));
+        planeta142.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta142.setRolloverIcon(null);
+        panelUniverso.add(planeta142);
 
         planeta143.setBackground(resourceMap.getColor("planeta143.background")); // NOI18N
         planeta143.setForeground(resourceMap.getColor("planeta143.foreground")); // NOI18N
@@ -2140,9 +2529,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta143.setContentAreaFilled(false);
         planeta143.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta143.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta143.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta143.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta143.setName("planeta143"); // NOI18N
-        planeta143.setRolloverIcon(resourceMap.getIcon("planeta143.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta143, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 400, -1, -1));
+        planeta143.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta143.setRolloverIcon(null);
+        panelUniverso.add(planeta143);
 
         planeta144.setBackground(resourceMap.getColor("planeta144.background")); // NOI18N
         planeta144.setForeground(resourceMap.getColor("planeta144.foreground")); // NOI18N
@@ -2152,9 +2544,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta144.setContentAreaFilled(false);
         planeta144.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta144.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta144.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta144.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta144.setName("planeta144"); // NOI18N
-        planeta144.setRolloverIcon(resourceMap.getIcon("planeta144.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta144, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 430, -1, -1));
+        planeta144.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta144.setRolloverIcon(null);
+        panelUniverso.add(planeta144);
 
         planeta145.setBackground(resourceMap.getColor("planeta145.background")); // NOI18N
         planeta145.setForeground(resourceMap.getColor("planeta145.foreground")); // NOI18N
@@ -2164,9 +2559,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta145.setContentAreaFilled(false);
         planeta145.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta145.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta145.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta145.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta145.setName("planeta145"); // NOI18N
-        planeta145.setRolloverIcon(resourceMap.getIcon("planeta145.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta145, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 370, -1, -1));
+        planeta145.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta145.setRolloverIcon(null);
+        panelUniverso.add(planeta145);
 
         planeta146.setBackground(resourceMap.getColor("planeta146.background")); // NOI18N
         planeta146.setForeground(resourceMap.getColor("planeta146.foreground")); // NOI18N
@@ -2176,9 +2574,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta146.setContentAreaFilled(false);
         planeta146.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta146.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta146.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta146.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta146.setName("planeta146"); // NOI18N
-        planeta146.setRolloverIcon(resourceMap.getIcon("planeta146.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta146, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 300, -1, -1));
+        planeta146.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta146.setRolloverIcon(null);
+        panelUniverso.add(planeta146);
 
         planeta147.setBackground(resourceMap.getColor("planeta147.background")); // NOI18N
         planeta147.setForeground(resourceMap.getColor("planeta147.foreground")); // NOI18N
@@ -2188,9 +2589,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta147.setContentAreaFilled(false);
         planeta147.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta147.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta147.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta147.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta147.setName("planeta147"); // NOI18N
-        planeta147.setRolloverIcon(resourceMap.getIcon("planeta147.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta147, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, -1, -1));
+        planeta147.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta147.setRolloverIcon(null);
+        panelUniverso.add(planeta147);
 
         planeta148.setBackground(resourceMap.getColor("planeta148.background")); // NOI18N
         planeta148.setForeground(resourceMap.getColor("planeta148.foreground")); // NOI18N
@@ -2200,9 +2604,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta148.setContentAreaFilled(false);
         planeta148.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta148.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta148.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta148.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta148.setName("planeta148"); // NOI18N
-        planeta148.setRolloverIcon(resourceMap.getIcon("planeta148.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta148, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, -1, -1));
+        planeta148.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta148.setRolloverIcon(null);
+        panelUniverso.add(planeta148);
 
         planeta149.setBackground(resourceMap.getColor("planeta149.background")); // NOI18N
         planeta149.setForeground(resourceMap.getColor("planeta149.foreground")); // NOI18N
@@ -2212,9 +2619,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta149.setContentAreaFilled(false);
         planeta149.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta149.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta149.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta149.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta149.setName("planeta149"); // NOI18N
-        planeta149.setRolloverIcon(resourceMap.getIcon("planeta149.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta149, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 340, -1, -1));
+        planeta149.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta149.setRolloverIcon(null);
+        panelUniverso.add(planeta149);
 
         planeta150.setBackground(resourceMap.getColor("planeta150.background")); // NOI18N
         planeta150.setForeground(resourceMap.getColor("planeta150.foreground")); // NOI18N
@@ -2224,9 +2634,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta150.setContentAreaFilled(false);
         planeta150.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta150.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta150.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta150.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta150.setName("planeta150"); // NOI18N
-        planeta150.setRolloverIcon(resourceMap.getIcon("planeta150.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta150, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 260, -1, -1));
+        planeta150.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta150.setRolloverIcon(null);
+        panelUniverso.add(planeta150);
 
         planeta151.setBackground(resourceMap.getColor("planeta151.background")); // NOI18N
         planeta151.setForeground(resourceMap.getColor("planeta151.foreground")); // NOI18N
@@ -2236,9 +2649,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta151.setContentAreaFilled(false);
         planeta151.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta151.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta151.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta151.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta151.setName("planeta151"); // NOI18N
-        planeta151.setRolloverIcon(resourceMap.getIcon("planeta151.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta151, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 310, -1, -1));
+        planeta151.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta151.setRolloverIcon(null);
+        panelUniverso.add(planeta151);
 
         planeta152.setBackground(resourceMap.getColor("planeta152.background")); // NOI18N
         planeta152.setForeground(resourceMap.getColor("planeta152.foreground")); // NOI18N
@@ -2248,9 +2664,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta152.setContentAreaFilled(false);
         planeta152.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta152.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta152.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta152.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta152.setName("planeta152"); // NOI18N
-        planeta152.setRolloverIcon(resourceMap.getIcon("planeta152.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta152, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 290, -1, -1));
+        planeta152.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta152.setRolloverIcon(null);
+        panelUniverso.add(planeta152);
 
         planeta153.setBackground(resourceMap.getColor("planeta153.background")); // NOI18N
         planeta153.setForeground(resourceMap.getColor("planeta153.foreground")); // NOI18N
@@ -2260,9 +2679,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta153.setContentAreaFilled(false);
         planeta153.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta153.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta153.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta153.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta153.setName("planeta153"); // NOI18N
-        planeta153.setRolloverIcon(resourceMap.getIcon("planeta153.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta153, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 280, -1, -1));
+        planeta153.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta153.setRolloverIcon(null);
+        panelUniverso.add(planeta153);
 
         planeta154.setBackground(resourceMap.getColor("planeta154.background")); // NOI18N
         planeta154.setForeground(resourceMap.getColor("planeta154.foreground")); // NOI18N
@@ -2272,9 +2694,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta154.setContentAreaFilled(false);
         planeta154.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta154.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta154.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta154.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta154.setName("planeta154"); // NOI18N
-        planeta154.setRolloverIcon(resourceMap.getIcon("planeta154.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta154, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 340, -1, -1));
+        planeta154.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta154.setRolloverIcon(null);
+        panelUniverso.add(planeta154);
 
         planeta155.setBackground(resourceMap.getColor("planeta155.background")); // NOI18N
         planeta155.setForeground(resourceMap.getColor("planeta155.foreground")); // NOI18N
@@ -2284,9 +2709,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta155.setContentAreaFilled(false);
         planeta155.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta155.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta155.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta155.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta155.setName("planeta155"); // NOI18N
-        planeta155.setRolloverIcon(resourceMap.getIcon("planeta155.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta155, new org.netbeans.lib.awtextra.AbsoluteConstraints(1560, 320, -1, -1));
+        planeta155.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta155.setRolloverIcon(null);
+        panelUniverso.add(planeta155);
 
         planeta156.setBackground(resourceMap.getColor("planeta156.background")); // NOI18N
         planeta156.setForeground(resourceMap.getColor("planeta156.foreground")); // NOI18N
@@ -2296,9 +2724,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta156.setContentAreaFilled(false);
         planeta156.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta156.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta156.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta156.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta156.setName("planeta156"); // NOI18N
-        planeta156.setRolloverIcon(resourceMap.getIcon("planeta156.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta156, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 280, -1, -1));
+        planeta156.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta156.setRolloverIcon(null);
+        panelUniverso.add(planeta156);
 
         planeta157.setBackground(resourceMap.getColor("planeta157.background")); // NOI18N
         planeta157.setForeground(resourceMap.getColor("planeta157.foreground")); // NOI18N
@@ -2308,9 +2739,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta157.setContentAreaFilled(false);
         planeta157.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta157.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta157.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta157.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta157.setName("planeta157"); // NOI18N
-        planeta157.setRolloverIcon(resourceMap.getIcon("planeta157.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta157, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 340, -1, -1));
+        planeta157.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta157.setRolloverIcon(null);
+        panelUniverso.add(planeta157);
 
         planeta158.setBackground(resourceMap.getColor("planeta158.background")); // NOI18N
         planeta158.setForeground(resourceMap.getColor("planeta158.foreground")); // NOI18N
@@ -2320,9 +2754,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta158.setContentAreaFilled(false);
         planeta158.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta158.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta158.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta158.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta158.setName("planeta158"); // NOI18N
-        planeta158.setRolloverIcon(resourceMap.getIcon("planeta158.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta158, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 260, -1, -1));
+        planeta158.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta158.setRolloverIcon(null);
+        panelUniverso.add(planeta158);
 
         planeta159.setBackground(resourceMap.getColor("planeta159.background")); // NOI18N
         planeta159.setForeground(resourceMap.getColor("planeta159.foreground")); // NOI18N
@@ -2332,9 +2769,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta159.setContentAreaFilled(false);
         planeta159.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta159.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta159.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta159.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta159.setName("planeta159"); // NOI18N
-        planeta159.setRolloverIcon(resourceMap.getIcon("planeta159.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta159, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 240, -1, -1));
+        planeta159.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta159.setRolloverIcon(null);
+        panelUniverso.add(planeta159);
 
         planeta160.setBackground(resourceMap.getColor("planeta160.background")); // NOI18N
         planeta160.setForeground(resourceMap.getColor("planeta160.foreground")); // NOI18N
@@ -2344,9 +2784,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta160.setContentAreaFilled(false);
         planeta160.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta160.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta160.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta160.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta160.setName("planeta160"); // NOI18N
-        planeta160.setRolloverIcon(resourceMap.getIcon("planeta160.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta160, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 320, -1, -1));
+        planeta160.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta160.setRolloverIcon(null);
+        panelUniverso.add(planeta160);
 
         planeta161.setBackground(resourceMap.getColor("planeta161.background")); // NOI18N
         planeta161.setForeground(resourceMap.getColor("planeta161.foreground")); // NOI18N
@@ -2356,9 +2799,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta161.setContentAreaFilled(false);
         planeta161.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta161.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta161.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta161.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta161.setName("planeta161"); // NOI18N
-        planeta161.setRolloverIcon(resourceMap.getIcon("planeta161.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta161, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 970, -1, -1));
+        planeta161.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta161.setRolloverIcon(null);
+        panelUniverso.add(planeta161);
 
         planeta162.setBackground(resourceMap.getColor("planeta162.background")); // NOI18N
         planeta162.setForeground(resourceMap.getColor("planeta162.foreground")); // NOI18N
@@ -2368,9 +2814,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta162.setContentAreaFilled(false);
         planeta162.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta162.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta162.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta162.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta162.setName("planeta162"); // NOI18N
-        planeta162.setRolloverIcon(resourceMap.getIcon("planeta162.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta162, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 1060, -1, -1));
+        planeta162.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta162.setRolloverIcon(null);
+        panelUniverso.add(planeta162);
 
         planeta163.setBackground(resourceMap.getColor("planeta163.background")); // NOI18N
         planeta163.setForeground(resourceMap.getColor("planeta163.foreground")); // NOI18N
@@ -2380,9 +2829,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta163.setContentAreaFilled(false);
         planeta163.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta163.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta163.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta163.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta163.setName("planeta163"); // NOI18N
-        planeta163.setRolloverIcon(resourceMap.getIcon("planeta163.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta163, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 1050, -1, -1));
+        planeta163.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta163.setRolloverIcon(null);
+        panelUniverso.add(planeta163);
 
         planeta164.setBackground(resourceMap.getColor("planeta164.background")); // NOI18N
         planeta164.setForeground(resourceMap.getColor("planeta164.foreground")); // NOI18N
@@ -2392,9 +2844,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta164.setContentAreaFilled(false);
         planeta164.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta164.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta164.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta164.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta164.setName("planeta164"); // NOI18N
-        planeta164.setRolloverIcon(resourceMap.getIcon("planeta164.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta164, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 1070, -1, -1));
+        planeta164.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta164.setRolloverIcon(null);
+        panelUniverso.add(planeta164);
 
         planeta165.setBackground(resourceMap.getColor("planeta165.background")); // NOI18N
         planeta165.setForeground(resourceMap.getColor("planeta165.foreground")); // NOI18N
@@ -2404,9 +2859,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta165.setContentAreaFilled(false);
         planeta165.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta165.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta165.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta165.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta165.setName("planeta165"); // NOI18N
-        planeta165.setRolloverIcon(resourceMap.getIcon("planeta165.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta165, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 990, -1, -1));
+        planeta165.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta165.setRolloverIcon(null);
+        panelUniverso.add(planeta165);
 
         planeta166.setBackground(resourceMap.getColor("planeta166.background")); // NOI18N
         planeta166.setForeground(resourceMap.getColor("planeta166.foreground")); // NOI18N
@@ -2416,9 +2874,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta166.setContentAreaFilled(false);
         planeta166.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta166.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta166.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta166.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta166.setName("planeta166"); // NOI18N
-        planeta166.setRolloverIcon(resourceMap.getIcon("planeta166.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta166, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 940, -1, -1));
+        planeta166.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta166.setRolloverIcon(null);
+        panelUniverso.add(planeta166);
 
         planeta167.setBackground(resourceMap.getColor("planeta167.background")); // NOI18N
         planeta167.setForeground(resourceMap.getColor("planeta167.foreground")); // NOI18N
@@ -2428,9 +2889,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta167.setContentAreaFilled(false);
         planeta167.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta167.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta167.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta167.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta167.setName("planeta167"); // NOI18N
-        planeta167.setRolloverIcon(resourceMap.getIcon("planeta167.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta167, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 920, -1, -1));
+        planeta167.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta167.setRolloverIcon(null);
+        panelUniverso.add(planeta167);
 
         planeta168.setBackground(resourceMap.getColor("planeta168.background")); // NOI18N
         planeta168.setForeground(resourceMap.getColor("planeta168.foreground")); // NOI18N
@@ -2440,9 +2904,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta168.setContentAreaFilled(false);
         planeta168.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta168.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta168.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta168.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta168.setName("planeta168"); // NOI18N
-        planeta168.setRolloverIcon(resourceMap.getIcon("planeta168.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta168, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 850, -1, -1));
+        planeta168.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta168.setRolloverIcon(null);
+        panelUniverso.add(planeta168);
 
         planeta169.setBackground(resourceMap.getColor("planeta169.background")); // NOI18N
         planeta169.setForeground(resourceMap.getColor("planeta169.foreground")); // NOI18N
@@ -2452,9 +2919,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta169.setContentAreaFilled(false);
         planeta169.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta169.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta169.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta169.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta169.setName("planeta169"); // NOI18N
-        planeta169.setRolloverIcon(resourceMap.getIcon("planeta169.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta169, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 790, -1, -1));
+        planeta169.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta169.setRolloverIcon(null);
+        panelUniverso.add(planeta169);
 
         planeta170.setBackground(resourceMap.getColor("planeta170.background")); // NOI18N
         planeta170.setForeground(resourceMap.getColor("planeta170.foreground")); // NOI18N
@@ -2464,9 +2934,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta170.setContentAreaFilled(false);
         planeta170.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta170.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta170.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta170.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta170.setName("planeta170"); // NOI18N
-        planeta170.setRolloverIcon(resourceMap.getIcon("planeta170.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta170, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 710, -1, -1));
+        planeta170.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta170.setRolloverIcon(null);
+        panelUniverso.add(planeta170);
 
         planeta171.setBackground(resourceMap.getColor("planeta171.background")); // NOI18N
         planeta171.setForeground(resourceMap.getColor("planeta171.foreground")); // NOI18N
@@ -2476,9 +2949,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta171.setContentAreaFilled(false);
         planeta171.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta171.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta171.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta171.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta171.setName("planeta171"); // NOI18N
-        planeta171.setRolloverIcon(resourceMap.getIcon("planeta171.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta171, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, -1, -1));
+        planeta171.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta171.setRolloverIcon(null);
+        panelUniverso.add(planeta171);
 
         planeta172.setBackground(resourceMap.getColor("planeta172.background")); // NOI18N
         planeta172.setForeground(resourceMap.getColor("planeta172.foreground")); // NOI18N
@@ -2488,9 +2964,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta172.setContentAreaFilled(false);
         planeta172.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta172.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta172.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta172.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta172.setName("planeta172"); // NOI18N
-        planeta172.setRolloverIcon(resourceMap.getIcon("planeta172.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta172, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 500, -1, -1));
+        planeta172.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta172.setRolloverIcon(null);
+        panelUniverso.add(planeta172);
 
         planeta173.setBackground(resourceMap.getColor("planeta173.background")); // NOI18N
         planeta173.setForeground(resourceMap.getColor("planeta173.foreground")); // NOI18N
@@ -2500,9 +2979,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta173.setContentAreaFilled(false);
         planeta173.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta173.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta173.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta173.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta173.setName("planeta173"); // NOI18N
-        planeta173.setRolloverIcon(resourceMap.getIcon("planeta173.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta173, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 430, -1, -1));
+        planeta173.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta173.setRolloverIcon(null);
+        panelUniverso.add(planeta173);
 
         planeta174.setBackground(resourceMap.getColor("planeta174.background")); // NOI18N
         planeta174.setForeground(resourceMap.getColor("planeta174.foreground")); // NOI18N
@@ -2512,9 +2994,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta174.setContentAreaFilled(false);
         planeta174.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta174.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta174.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta174.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta174.setName("planeta174"); // NOI18N
-        planeta174.setRolloverIcon(resourceMap.getIcon("planeta174.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta174, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 430, -1, -1));
+        planeta174.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta174.setRolloverIcon(null);
+        panelUniverso.add(planeta174);
 
         planeta175.setBackground(resourceMap.getColor("planeta175.background")); // NOI18N
         planeta175.setForeground(resourceMap.getColor("planeta175.foreground")); // NOI18N
@@ -2524,9 +3009,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta175.setContentAreaFilled(false);
         planeta175.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta175.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta175.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta175.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta175.setName("planeta175"); // NOI18N
-        planeta175.setRolloverIcon(resourceMap.getIcon("planeta175.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta175, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 460, -1, -1));
+        planeta175.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta175.setRolloverIcon(null);
+        panelUniverso.add(planeta175);
 
         planeta176.setBackground(resourceMap.getColor("planeta176.background")); // NOI18N
         planeta176.setForeground(resourceMap.getColor("planeta176.foreground")); // NOI18N
@@ -2536,9 +3024,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta176.setContentAreaFilled(false);
         planeta176.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta176.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta176.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta176.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta176.setName("planeta176"); // NOI18N
-        planeta176.setRolloverIcon(resourceMap.getIcon("planeta176.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta176, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 430, -1, -1));
+        planeta176.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta176.setRolloverIcon(null);
+        panelUniverso.add(planeta176);
 
         planeta177.setBackground(resourceMap.getColor("planeta177.background")); // NOI18N
         planeta177.setForeground(resourceMap.getColor("planeta177.foreground")); // NOI18N
@@ -2548,9 +3039,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta177.setContentAreaFilled(false);
         planeta177.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta177.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta177.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta177.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta177.setName("planeta177"); // NOI18N
-        planeta177.setRolloverIcon(resourceMap.getIcon("planeta177.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta177, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 430, -1, -1));
+        planeta177.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta177.setRolloverIcon(null);
+        panelUniverso.add(planeta177);
 
         planeta178.setBackground(resourceMap.getColor("planeta178.background")); // NOI18N
         planeta178.setForeground(resourceMap.getColor("planeta178.foreground")); // NOI18N
@@ -2560,9 +3054,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta178.setContentAreaFilled(false);
         planeta178.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta178.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta178.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta178.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta178.setName("planeta178"); // NOI18N
-        planeta178.setRolloverIcon(resourceMap.getIcon("planeta178.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta178, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 400, -1, -1));
+        planeta178.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta178.setRolloverIcon(null);
+        panelUniverso.add(planeta178);
 
         planeta179.setBackground(resourceMap.getColor("planeta179.background")); // NOI18N
         planeta179.setForeground(resourceMap.getColor("planeta179.foreground")); // NOI18N
@@ -2572,9 +3069,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta179.setContentAreaFilled(false);
         planeta179.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta179.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta179.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta179.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta179.setName("planeta179"); // NOI18N
-        planeta179.setRolloverIcon(resourceMap.getIcon("planeta179.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta179, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 420, -1, -1));
+        planeta179.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta179.setRolloverIcon(null);
+        panelUniverso.add(planeta179);
 
         planeta180.setBackground(resourceMap.getColor("planeta180.background")); // NOI18N
         planeta180.setForeground(resourceMap.getColor("planeta180.foreground")); // NOI18N
@@ -2584,9 +3084,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta180.setContentAreaFilled(false);
         planeta180.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta180.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta180.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta180.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta180.setName("planeta180"); // NOI18N
-        planeta180.setRolloverIcon(resourceMap.getIcon("planeta180.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta180, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 870, -1, -1));
+        planeta180.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta180.setRolloverIcon(null);
+        panelUniverso.add(planeta180);
 
         planeta181.setBackground(resourceMap.getColor("planeta181.background")); // NOI18N
         planeta181.setForeground(resourceMap.getColor("planeta181.foreground")); // NOI18N
@@ -2596,9 +3099,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta181.setContentAreaFilled(false);
         planeta181.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta181.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta181.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta181.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta181.setName("planeta181"); // NOI18N
-        planeta181.setRolloverIcon(resourceMap.getIcon("planeta181.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta181, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 740, -1, -1));
+        planeta181.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta181.setRolloverIcon(null);
+        panelUniverso.add(planeta181);
 
         planeta182.setBackground(resourceMap.getColor("planeta182.background")); // NOI18N
         planeta182.setForeground(resourceMap.getColor("planeta182.foreground")); // NOI18N
@@ -2608,9 +3114,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta182.setContentAreaFilled(false);
         planeta182.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta182.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta182.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta182.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta182.setName("planeta182"); // NOI18N
-        planeta182.setRolloverIcon(resourceMap.getIcon("planeta182.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta182, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 840, -1, -1));
+        planeta182.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta182.setRolloverIcon(null);
+        panelUniverso.add(planeta182);
 
         planeta183.setBackground(resourceMap.getColor("planeta183.background")); // NOI18N
         planeta183.setForeground(resourceMap.getColor("planeta183.foreground")); // NOI18N
@@ -2620,9 +3129,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta183.setContentAreaFilled(false);
         planeta183.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta183.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta183.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta183.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta183.setName("planeta183"); // NOI18N
-        planeta183.setRolloverIcon(resourceMap.getIcon("planeta183.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta183, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 730, -1, -1));
+        planeta183.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta183.setRolloverIcon(null);
+        panelUniverso.add(planeta183);
 
         planeta184.setBackground(resourceMap.getColor("planeta184.background")); // NOI18N
         planeta184.setForeground(resourceMap.getColor("planeta184.foreground")); // NOI18N
@@ -2632,9 +3144,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta184.setContentAreaFilled(false);
         planeta184.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta184.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta184.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta184.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta184.setName("planeta184"); // NOI18N
-        planeta184.setRolloverIcon(resourceMap.getIcon("planeta184.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta184, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 670, -1, -1));
+        planeta184.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta184.setRolloverIcon(null);
+        panelUniverso.add(planeta184);
 
         planeta185.setBackground(resourceMap.getColor("planeta185.background")); // NOI18N
         planeta185.setForeground(resourceMap.getColor("planeta185.foreground")); // NOI18N
@@ -2644,9 +3159,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta185.setContentAreaFilled(false);
         planeta185.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta185.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta185.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta185.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta185.setName("planeta185"); // NOI18N
-        planeta185.setRolloverIcon(resourceMap.getIcon("planeta185.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta185, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 610, -1, -1));
+        planeta185.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta185.setRolloverIcon(null);
+        panelUniverso.add(planeta185);
 
         planeta186.setBackground(resourceMap.getColor("planeta186.background")); // NOI18N
         planeta186.setForeground(resourceMap.getColor("planeta186.foreground")); // NOI18N
@@ -2656,9 +3174,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta186.setContentAreaFilled(false);
         planeta186.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta186.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta186.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta186.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta186.setName("planeta186"); // NOI18N
-        planeta186.setRolloverIcon(resourceMap.getIcon("planeta186.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta186, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 580, -1, -1));
+        planeta186.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta186.setRolloverIcon(null);
+        panelUniverso.add(planeta186);
 
         planeta187.setBackground(resourceMap.getColor("planeta187.background")); // NOI18N
         planeta187.setForeground(resourceMap.getColor("planeta187.foreground")); // NOI18N
@@ -2668,9 +3189,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta187.setContentAreaFilled(false);
         planeta187.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta187.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta187.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta187.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta187.setName("planeta187"); // NOI18N
-        planeta187.setRolloverIcon(resourceMap.getIcon("planeta187.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta187, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 500, -1, -1));
+        planeta187.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta187.setRolloverIcon(null);
+        panelUniverso.add(planeta187);
 
         planeta188.setBackground(resourceMap.getColor("planeta188.background")); // NOI18N
         planeta188.setForeground(resourceMap.getColor("planeta188.foreground")); // NOI18N
@@ -2680,9 +3204,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta188.setContentAreaFilled(false);
         planeta188.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta188.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta188.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta188.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta188.setName("planeta188"); // NOI18N
-        planeta188.setRolloverIcon(resourceMap.getIcon("planeta188.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta188, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, -1));
+        planeta188.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta188.setRolloverIcon(null);
+        panelUniverso.add(planeta188);
 
         planeta189.setBackground(resourceMap.getColor("planeta189.background")); // NOI18N
         planeta189.setForeground(resourceMap.getColor("planeta189.foreground")); // NOI18N
@@ -2692,9 +3219,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta189.setContentAreaFilled(false);
         planeta189.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta189.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta189.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta189.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta189.setName("planeta189"); // NOI18N
-        planeta189.setRolloverIcon(resourceMap.getIcon("planeta189.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta189, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, -1, -1));
+        planeta189.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta189.setRolloverIcon(null);
+        panelUniverso.add(planeta189);
 
         planeta190.setBackground(resourceMap.getColor("planeta190.background")); // NOI18N
         planeta190.setForeground(resourceMap.getColor("planeta190.foreground")); // NOI18N
@@ -2704,9 +3234,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta190.setContentAreaFilled(false);
         planeta190.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta190.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta190.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta190.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta190.setName("planeta190"); // NOI18N
-        planeta190.setRolloverIcon(resourceMap.getIcon("planeta190.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta190, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 350, -1, -1));
+        planeta190.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta190.setRolloverIcon(null);
+        panelUniverso.add(planeta190);
 
         planeta191.setBackground(resourceMap.getColor("planeta191.background")); // NOI18N
         planeta191.setForeground(resourceMap.getColor("planeta191.foreground")); // NOI18N
@@ -2716,9 +3249,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta191.setContentAreaFilled(false);
         planeta191.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta191.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta191.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta191.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta191.setName("planeta191"); // NOI18N
-        planeta191.setRolloverIcon(resourceMap.getIcon("planeta191.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta191, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 360, -1, -1));
+        planeta191.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta191.setRolloverIcon(null);
+        panelUniverso.add(planeta191);
 
         planeta192.setBackground(resourceMap.getColor("planeta192.background")); // NOI18N
         planeta192.setForeground(resourceMap.getColor("planeta192.foreground")); // NOI18N
@@ -2728,9 +3264,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta192.setContentAreaFilled(false);
         planeta192.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta192.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta192.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta192.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta192.setName("planeta192"); // NOI18N
-        planeta192.setRolloverIcon(resourceMap.getIcon("planeta192.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta192, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 400, -1, -1));
+        planeta192.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta192.setRolloverIcon(null);
+        panelUniverso.add(planeta192);
 
         planeta193.setBackground(resourceMap.getColor("planeta193.background")); // NOI18N
         planeta193.setForeground(resourceMap.getColor("planeta193.foreground")); // NOI18N
@@ -2740,9 +3279,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta193.setContentAreaFilled(false);
         planeta193.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta193.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta193.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta193.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta193.setName("planeta193"); // NOI18N
-        planeta193.setRolloverIcon(resourceMap.getIcon("planeta193.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta193, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 360, -1, -1));
+        planeta193.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta193.setRolloverIcon(null);
+        panelUniverso.add(planeta193);
 
         planeta194.setBackground(resourceMap.getColor("planeta194.background")); // NOI18N
         planeta194.setForeground(resourceMap.getColor("planeta194.foreground")); // NOI18N
@@ -2752,9 +3294,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta194.setContentAreaFilled(false);
         planeta194.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta194.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta194.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta194.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta194.setName("planeta194"); // NOI18N
-        planeta194.setRolloverIcon(resourceMap.getIcon("planeta194.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta194, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 350, -1, -1));
+        planeta194.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta194.setRolloverIcon(null);
+        panelUniverso.add(planeta194);
 
         planeta195.setBackground(resourceMap.getColor("planeta195.background")); // NOI18N
         planeta195.setForeground(resourceMap.getColor("planeta195.foreground")); // NOI18N
@@ -2764,9 +3309,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta195.setContentAreaFilled(false);
         planeta195.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta195.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta195.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta195.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta195.setName("planeta195"); // NOI18N
-        planeta195.setRolloverIcon(resourceMap.getIcon("planeta195.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta195, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 550, -1, -1));
+        planeta195.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta195.setRolloverIcon(null);
+        panelUniverso.add(planeta195);
 
         planeta196.setBackground(resourceMap.getColor("planeta196.background")); // NOI18N
         planeta196.setForeground(resourceMap.getColor("planeta196.foreground")); // NOI18N
@@ -2776,9 +3324,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta196.setContentAreaFilled(false);
         planeta196.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta196.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta196.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta196.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta196.setName("planeta196"); // NOI18N
-        planeta196.setRolloverIcon(resourceMap.getIcon("planeta196.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta196, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 480, -1, -1));
+        planeta196.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta196.setRolloverIcon(null);
+        panelUniverso.add(planeta196);
 
         planeta197.setBackground(resourceMap.getColor("planeta197.background")); // NOI18N
         planeta197.setForeground(resourceMap.getColor("planeta197.foreground")); // NOI18N
@@ -2788,9 +3339,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta197.setContentAreaFilled(false);
         planeta197.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta197.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta197.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta197.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta197.setName("planeta197"); // NOI18N
-        planeta197.setRolloverIcon(resourceMap.getIcon("planeta197.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta197, new org.netbeans.lib.awtextra.AbsoluteConstraints(1610, 460, -1, -1));
+        planeta197.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta197.setRolloverIcon(null);
+        panelUniverso.add(planeta197);
 
         planeta198.setBackground(resourceMap.getColor("planeta198.background")); // NOI18N
         planeta198.setForeground(resourceMap.getColor("planeta198.foreground")); // NOI18N
@@ -2800,9 +3354,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta198.setContentAreaFilled(false);
         planeta198.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta198.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta198.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta198.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta198.setName("planeta198"); // NOI18N
-        planeta198.setRolloverIcon(resourceMap.getIcon("planeta198.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta198, new org.netbeans.lib.awtextra.AbsoluteConstraints(1600, 370, -1, -1));
+        planeta198.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta198.setRolloverIcon(null);
+        panelUniverso.add(planeta198);
 
         planeta199.setBackground(resourceMap.getColor("planeta199.background")); // NOI18N
         planeta199.setForeground(resourceMap.getColor("planeta199.foreground")); // NOI18N
@@ -2812,9 +3369,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta199.setContentAreaFilled(false);
         planeta199.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta199.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta199.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta199.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta199.setName("planeta199"); // NOI18N
-        planeta199.setRolloverIcon(resourceMap.getIcon("planeta199.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta199, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 430, -1, -1));
+        planeta199.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta199.setRolloverIcon(null);
+        panelUniverso.add(planeta199);
 
         planeta200.setBackground(resourceMap.getColor("planeta200.background")); // NOI18N
         planeta200.setForeground(resourceMap.getColor("planeta200.foreground")); // NOI18N
@@ -2824,9 +3384,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta200.setContentAreaFilled(false);
         planeta200.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta200.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta200.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta200.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta200.setName("planeta200"); // NOI18N
-        planeta200.setRolloverIcon(resourceMap.getIcon("planeta200.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta200, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 420, -1, -1));
+        planeta200.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta200.setRolloverIcon(null);
+        panelUniverso.add(planeta200);
 
         planeta201.setBackground(resourceMap.getColor("planeta201.background")); // NOI18N
         planeta201.setForeground(resourceMap.getColor("planeta201.foreground")); // NOI18N
@@ -2836,9 +3399,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta201.setContentAreaFilled(false);
         planeta201.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta201.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta201.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta201.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta201.setName("planeta201"); // NOI18N
-        planeta201.setRolloverIcon(resourceMap.getIcon("planeta201.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta201, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 540, -1, -1));
+        planeta201.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta201.setRolloverIcon(null);
+        panelUniverso.add(planeta201);
 
         planeta202.setBackground(resourceMap.getColor("planeta202.background")); // NOI18N
         planeta202.setForeground(resourceMap.getColor("planeta202.foreground")); // NOI18N
@@ -2848,9 +3414,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta202.setContentAreaFilled(false);
         planeta202.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta202.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta202.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta202.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta202.setName("planeta202"); // NOI18N
-        planeta202.setRolloverIcon(resourceMap.getIcon("planeta202.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta202, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 490, -1, -1));
+        planeta202.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta202.setRolloverIcon(null);
+        panelUniverso.add(planeta202);
 
         planeta203.setBackground(resourceMap.getColor("planeta203.background")); // NOI18N
         planeta203.setForeground(resourceMap.getColor("planeta203.foreground")); // NOI18N
@@ -2860,9 +3429,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta203.setContentAreaFilled(false);
         planeta203.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta203.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta203.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta203.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta203.setName("planeta203"); // NOI18N
-        planeta203.setRolloverIcon(resourceMap.getIcon("planeta203.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta203, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 540, -1, -1));
+        planeta203.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta203.setRolloverIcon(null);
+        panelUniverso.add(planeta203);
 
         planeta204.setBackground(resourceMap.getColor("planeta204.background")); // NOI18N
         planeta204.setForeground(resourceMap.getColor("planeta204.foreground")); // NOI18N
@@ -2872,9 +3444,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta204.setContentAreaFilled(false);
         planeta204.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta204.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta204.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta204.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta204.setName("planeta204"); // NOI18N
-        planeta204.setRolloverIcon(resourceMap.getIcon("planeta204.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta204, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 1000, -1, -1));
+        planeta204.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta204.setRolloverIcon(null);
+        panelUniverso.add(planeta204);
 
         planeta205.setBackground(resourceMap.getColor("planeta205.background")); // NOI18N
         planeta205.setForeground(resourceMap.getColor("planeta205.foreground")); // NOI18N
@@ -2884,9 +3459,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta205.setContentAreaFilled(false);
         planeta205.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta205.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta205.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta205.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta205.setName("planeta205"); // NOI18N
-        planeta205.setRolloverIcon(resourceMap.getIcon("planeta205.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta205, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 910, -1, -1));
+        planeta205.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta205.setRolloverIcon(null);
+        panelUniverso.add(planeta205);
 
         planeta206.setBackground(resourceMap.getColor("planeta206.background")); // NOI18N
         planeta206.setForeground(resourceMap.getColor("planeta206.foreground")); // NOI18N
@@ -2896,9 +3474,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta206.setContentAreaFilled(false);
         planeta206.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta206.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta206.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta206.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta206.setName("planeta206"); // NOI18N
-        planeta206.setRolloverIcon(resourceMap.getIcon("planeta206.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta206, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 840, -1, -1));
+        planeta206.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta206.setRolloverIcon(null);
+        panelUniverso.add(planeta206);
 
         planeta207.setBackground(resourceMap.getColor("planeta207.background")); // NOI18N
         planeta207.setForeground(resourceMap.getColor("planeta207.foreground")); // NOI18N
@@ -2908,9 +3489,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta207.setContentAreaFilled(false);
         planeta207.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta207.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta207.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta207.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta207.setName("planeta207"); // NOI18N
-        planeta207.setRolloverIcon(resourceMap.getIcon("planeta207.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta207, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 750, -1, -1));
+        planeta207.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta207.setRolloverIcon(null);
+        panelUniverso.add(planeta207);
 
         planeta208.setBackground(resourceMap.getColor("planeta208.background")); // NOI18N
         planeta208.setForeground(resourceMap.getColor("planeta208.foreground")); // NOI18N
@@ -2920,9 +3504,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta208.setContentAreaFilled(false);
         planeta208.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta208.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta208.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta208.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta208.setName("planeta208"); // NOI18N
-        planeta208.setRolloverIcon(resourceMap.getIcon("planeta208.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta208, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 640, -1, -1));
+        planeta208.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta208.setRolloverIcon(null);
+        panelUniverso.add(planeta208);
 
         planeta209.setBackground(resourceMap.getColor("planeta209.background")); // NOI18N
         planeta209.setForeground(resourceMap.getColor("planeta209.foreground")); // NOI18N
@@ -2932,9 +3519,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta209.setContentAreaFilled(false);
         planeta209.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta209.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta209.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta209.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta209.setName("planeta209"); // NOI18N
-        planeta209.setRolloverIcon(resourceMap.getIcon("planeta209.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta209, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 1040, -1, -1));
+        planeta209.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta209.setRolloverIcon(null);
+        panelUniverso.add(planeta209);
 
         planeta210.setBackground(resourceMap.getColor("planeta210.background")); // NOI18N
         planeta210.setForeground(resourceMap.getColor("planeta210.foreground")); // NOI18N
@@ -2944,9 +3534,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta210.setContentAreaFilled(false);
         planeta210.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta210.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta210.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta210.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta210.setName("planeta210"); // NOI18N
-        planeta210.setRolloverIcon(resourceMap.getIcon("planeta210.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta210, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 960, -1, -1));
+        planeta210.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta210.setRolloverIcon(null);
+        panelUniverso.add(planeta210);
 
         planeta211.setBackground(resourceMap.getColor("planeta211.background")); // NOI18N
         planeta211.setForeground(resourceMap.getColor("planeta211.foreground")); // NOI18N
@@ -2956,9 +3549,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta211.setContentAreaFilled(false);
         planeta211.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta211.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta211.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta211.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta211.setName("planeta211"); // NOI18N
-        planeta211.setRolloverIcon(resourceMap.getIcon("planeta211.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta211, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 860, -1, -1));
+        planeta211.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta211.setRolloverIcon(null);
+        panelUniverso.add(planeta211);
 
         planeta212.setBackground(resourceMap.getColor("planeta212.background")); // NOI18N
         planeta212.setForeground(resourceMap.getColor("planeta212.foreground")); // NOI18N
@@ -2968,9 +3564,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta212.setContentAreaFilled(false);
         planeta212.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta212.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta212.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta212.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta212.setName("planeta212"); // NOI18N
-        planeta212.setRolloverIcon(resourceMap.getIcon("planeta212.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta212, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 1070, -1, -1));
+        planeta212.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta212.setRolloverIcon(null);
+        panelUniverso.add(planeta212);
 
         planeta213.setBackground(resourceMap.getColor("planeta213.background")); // NOI18N
         planeta213.setForeground(resourceMap.getColor("planeta213.foreground")); // NOI18N
@@ -2980,9 +3579,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta213.setContentAreaFilled(false);
         planeta213.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta213.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta213.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta213.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta213.setName("planeta213"); // NOI18N
-        planeta213.setRolloverIcon(resourceMap.getIcon("planeta213.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta213, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 1040, -1, -1));
+        planeta213.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta213.setRolloverIcon(null);
+        panelUniverso.add(planeta213);
 
         planeta214.setBackground(resourceMap.getColor("planeta214.background")); // NOI18N
         planeta214.setForeground(resourceMap.getColor("planeta214.foreground")); // NOI18N
@@ -2992,9 +3594,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta214.setContentAreaFilled(false);
         planeta214.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta214.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta214.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta214.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta214.setName("planeta214"); // NOI18N
-        planeta214.setRolloverIcon(resourceMap.getIcon("planeta214.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta214, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 980, -1, -1));
+        planeta214.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta214.setRolloverIcon(null);
+        panelUniverso.add(planeta214);
 
         planeta215.setBackground(resourceMap.getColor("planeta215.background")); // NOI18N
         planeta215.setForeground(resourceMap.getColor("planeta215.foreground")); // NOI18N
@@ -3004,9 +3609,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta215.setContentAreaFilled(false);
         planeta215.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta215.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta215.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta215.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta215.setName("planeta215"); // NOI18N
-        planeta215.setRolloverIcon(resourceMap.getIcon("planeta215.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta215, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 860, -1, -1));
+        planeta215.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta215.setRolloverIcon(null);
+        panelUniverso.add(planeta215);
 
         planeta216.setBackground(resourceMap.getColor("planeta216.background")); // NOI18N
         planeta216.setForeground(resourceMap.getColor("planeta216.foreground")); // NOI18N
@@ -3016,489 +3624,12 @@ public class PrincipalView extends FrameView implements Observador{
         planeta216.setContentAreaFilled(false);
         planeta216.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         planeta216.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        planeta216.setMaximumSize(new java.awt.Dimension(90, 90));
+        planeta216.setMinimumSize(new java.awt.Dimension(90, 90));
         planeta216.setName("planeta216"); // NOI18N
-        planeta216.setRolloverIcon(resourceMap.getIcon("planeta216.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta216, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 780, -1, -1));
-
-        planeta217.setBackground(resourceMap.getColor("planeta217.background")); // NOI18N
-        planeta217.setForeground(resourceMap.getColor("planeta217.foreground")); // NOI18N
-        planeta217.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta217.setText(resourceMap.getString("planeta217.text")); // NOI18N
-        planeta217.setBorderPainted(false);
-        planeta217.setContentAreaFilled(false);
-        planeta217.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta217.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta217.setName("planeta217"); // NOI18N
-        planeta217.setRolloverIcon(resourceMap.getIcon("planeta217.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta217, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 790, -1, -1));
-
-        planeta218.setBackground(resourceMap.getColor("planeta218.background")); // NOI18N
-        planeta218.setForeground(resourceMap.getColor("planeta218.foreground")); // NOI18N
-        planeta218.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta218.setText(resourceMap.getString("planeta218.text")); // NOI18N
-        planeta218.setBorderPainted(false);
-        planeta218.setContentAreaFilled(false);
-        planeta218.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta218.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta218.setName("planeta218"); // NOI18N
-        planeta218.setRolloverIcon(resourceMap.getIcon("planeta218.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta218, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 710, -1, -1));
-
-        planeta219.setBackground(resourceMap.getColor("planeta219.background")); // NOI18N
-        planeta219.setForeground(resourceMap.getColor("planeta219.foreground")); // NOI18N
-        planeta219.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta219.setText(resourceMap.getString("planeta219.text")); // NOI18N
-        planeta219.setBorderPainted(false);
-        planeta219.setContentAreaFilled(false);
-        planeta219.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta219.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta219.setName("planeta219"); // NOI18N
-        planeta219.setRolloverIcon(resourceMap.getIcon("planeta219.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta219, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 620, -1, -1));
-
-        planeta220.setBackground(resourceMap.getColor("planeta220.background")); // NOI18N
-        planeta220.setForeground(resourceMap.getColor("planeta220.foreground")); // NOI18N
-        planeta220.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta220.setText(resourceMap.getString("planeta220.text")); // NOI18N
-        planeta220.setBorderPainted(false);
-        planeta220.setContentAreaFilled(false);
-        planeta220.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta220.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta220.setName("planeta220"); // NOI18N
-        planeta220.setRolloverIcon(resourceMap.getIcon("planeta220.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta220, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 710, -1, -1));
-
-        planeta221.setBackground(resourceMap.getColor("planeta221.background")); // NOI18N
-        planeta221.setForeground(resourceMap.getColor("planeta221.foreground")); // NOI18N
-        planeta221.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta221.setText(resourceMap.getString("planeta221.text")); // NOI18N
-        planeta221.setBorderPainted(false);
-        planeta221.setContentAreaFilled(false);
-        planeta221.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta221.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta221.setName("planeta221"); // NOI18N
-        planeta221.setRolloverIcon(resourceMap.getIcon("planeta221.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta221, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 550, -1, -1));
-
-        planeta222.setBackground(resourceMap.getColor("planeta222.background")); // NOI18N
-        planeta222.setForeground(resourceMap.getColor("planeta222.foreground")); // NOI18N
-        planeta222.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta222.setText(resourceMap.getString("planeta222.text")); // NOI18N
-        planeta222.setBorderPainted(false);
-        planeta222.setContentAreaFilled(false);
-        planeta222.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta222.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta222.setName("planeta222"); // NOI18N
-        planeta222.setRolloverIcon(resourceMap.getIcon("planeta222.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta222, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 650, -1, -1));
-
-        planeta223.setBackground(resourceMap.getColor("planeta223.background")); // NOI18N
-        planeta223.setForeground(resourceMap.getColor("planeta223.foreground")); // NOI18N
-        planeta223.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta223.setText(resourceMap.getString("planeta223.text")); // NOI18N
-        planeta223.setBorderPainted(false);
-        planeta223.setContentAreaFilled(false);
-        planeta223.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta223.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta223.setName("planeta223"); // NOI18N
-        planeta223.setRolloverIcon(resourceMap.getIcon("planeta223.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta223, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 600, -1, -1));
-
-        planeta224.setBackground(resourceMap.getColor("planeta224.background")); // NOI18N
-        planeta224.setForeground(resourceMap.getColor("planeta224.foreground")); // NOI18N
-        planeta224.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta224.setText(resourceMap.getString("planeta224.text")); // NOI18N
-        planeta224.setBorderPainted(false);
-        planeta224.setContentAreaFilled(false);
-        planeta224.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta224.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta224.setName("planeta224"); // NOI18N
-        planeta224.setRolloverIcon(resourceMap.getIcon("planeta224.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta224, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 540, -1, -1));
-
-        planeta225.setBackground(resourceMap.getColor("planeta225.background")); // NOI18N
-        planeta225.setForeground(resourceMap.getColor("planeta225.foreground")); // NOI18N
-        planeta225.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta225.setText(resourceMap.getString("planeta225.text")); // NOI18N
-        planeta225.setBorderPainted(false);
-        planeta225.setContentAreaFilled(false);
-        planeta225.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta225.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta225.setName("planeta225"); // NOI18N
-        planeta225.setRolloverIcon(resourceMap.getIcon("planeta225.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta225, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 560, -1, -1));
-
-        planeta226.setBackground(resourceMap.getColor("planeta226.background")); // NOI18N
-        planeta226.setForeground(resourceMap.getColor("planeta226.foreground")); // NOI18N
-        planeta226.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta226.setText(resourceMap.getString("planeta226.text")); // NOI18N
-        planeta226.setBorderPainted(false);
-        planeta226.setContentAreaFilled(false);
-        planeta226.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta226.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta226.setName("planeta226"); // NOI18N
-        planeta226.setRolloverIcon(resourceMap.getIcon("planeta226.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta226, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 480, -1, -1));
-
-        planeta227.setBackground(resourceMap.getColor("planeta227.background")); // NOI18N
-        planeta227.setForeground(resourceMap.getColor("planeta227.foreground")); // NOI18N
-        planeta227.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta227.setText(resourceMap.getString("planeta227.text")); // NOI18N
-        planeta227.setBorderPainted(false);
-        planeta227.setContentAreaFilled(false);
-        planeta227.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta227.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta227.setName("planeta227"); // NOI18N
-        planeta227.setRolloverIcon(resourceMap.getIcon("planeta227.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta227, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 550, -1, -1));
-
-        planeta228.setBackground(resourceMap.getColor("planeta228.background")); // NOI18N
-        planeta228.setForeground(resourceMap.getColor("planeta228.foreground")); // NOI18N
-        planeta228.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta228.setText(resourceMap.getString("planeta228.text")); // NOI18N
-        planeta228.setBorderPainted(false);
-        planeta228.setContentAreaFilled(false);
-        planeta228.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta228.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta228.setName("planeta228"); // NOI18N
-        planeta228.setRolloverIcon(resourceMap.getIcon("planeta228.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta228, new org.netbeans.lib.awtextra.AbsoluteConstraints(1690, 500, -1, -1));
-
-        planeta229.setBackground(resourceMap.getColor("planeta229.background")); // NOI18N
-        planeta229.setForeground(resourceMap.getColor("planeta229.foreground")); // NOI18N
-        planeta229.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta229.setText(resourceMap.getString("planeta229.text")); // NOI18N
-        planeta229.setBorderPainted(false);
-        planeta229.setContentAreaFilled(false);
-        planeta229.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta229.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta229.setName("planeta229"); // NOI18N
-        planeta229.setRolloverIcon(resourceMap.getIcon("planeta229.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta229, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 1070, -1, -1));
-
-        planeta230.setBackground(resourceMap.getColor("planeta230.background")); // NOI18N
-        planeta230.setForeground(resourceMap.getColor("planeta230.foreground")); // NOI18N
-        planeta230.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta230.setText(resourceMap.getString("planeta230.text")); // NOI18N
-        planeta230.setBorderPainted(false);
-        planeta230.setContentAreaFilled(false);
-        planeta230.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta230.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta230.setName("planeta230"); // NOI18N
-        planeta230.setRolloverIcon(resourceMap.getIcon("planeta230.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta230, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 990, -1, -1));
-
-        planeta231.setBackground(resourceMap.getColor("planeta231.background")); // NOI18N
-        planeta231.setForeground(resourceMap.getColor("planeta231.foreground")); // NOI18N
-        planeta231.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta231.setText(resourceMap.getString("planeta231.text")); // NOI18N
-        planeta231.setBorderPainted(false);
-        planeta231.setContentAreaFilled(false);
-        planeta231.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta231.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta231.setName("planeta231"); // NOI18N
-        planeta231.setRolloverIcon(resourceMap.getIcon("planeta231.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta231, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 900, -1, -1));
-
-        planeta232.setBackground(resourceMap.getColor("planeta232.background")); // NOI18N
-        planeta232.setForeground(resourceMap.getColor("planeta232.foreground")); // NOI18N
-        planeta232.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta232.setText(resourceMap.getString("planeta232.text")); // NOI18N
-        planeta232.setBorderPainted(false);
-        planeta232.setContentAreaFilled(false);
-        planeta232.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta232.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta232.setName("planeta232"); // NOI18N
-        planeta232.setRolloverIcon(resourceMap.getIcon("planeta232.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta232, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 810, -1, -1));
-
-        planeta233.setBackground(resourceMap.getColor("planeta233.background")); // NOI18N
-        planeta233.setForeground(resourceMap.getColor("planeta233.foreground")); // NOI18N
-        planeta233.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta233.setText(resourceMap.getString("planeta233.text")); // NOI18N
-        planeta233.setBorderPainted(false);
-        planeta233.setContentAreaFilled(false);
-        planeta233.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta233.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta233.setName("planeta233"); // NOI18N
-        planeta233.setRolloverIcon(resourceMap.getIcon("planeta233.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta233, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 750, -1, -1));
-
-        planeta234.setBackground(resourceMap.getColor("planeta234.background")); // NOI18N
-        planeta234.setForeground(resourceMap.getColor("planeta234.foreground")); // NOI18N
-        planeta234.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta234.setText(resourceMap.getString("planeta234.text")); // NOI18N
-        planeta234.setBorderPainted(false);
-        planeta234.setContentAreaFilled(false);
-        planeta234.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta234.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta234.setName("planeta234"); // NOI18N
-        planeta234.setRolloverIcon(resourceMap.getIcon("planeta234.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta234, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 720, -1, -1));
-
-        planeta235.setBackground(resourceMap.getColor("planeta235.background")); // NOI18N
-        planeta235.setForeground(resourceMap.getColor("planeta235.foreground")); // NOI18N
-        planeta235.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta235.setText(resourceMap.getString("planeta235.text")); // NOI18N
-        planeta235.setBorderPainted(false);
-        planeta235.setContentAreaFilled(false);
-        planeta235.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta235.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta235.setName("planeta235"); // NOI18N
-        planeta235.setRolloverIcon(resourceMap.getIcon("planeta235.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta235, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 670, -1, -1));
-
-        planeta236.setBackground(resourceMap.getColor("planeta236.background")); // NOI18N
-        planeta236.setForeground(resourceMap.getColor("planeta236.foreground")); // NOI18N
-        planeta236.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta236.setText(resourceMap.getString("planeta236.text")); // NOI18N
-        planeta236.setBorderPainted(false);
-        planeta236.setContentAreaFilled(false);
-        planeta236.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta236.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta236.setName("planeta236"); // NOI18N
-        planeta236.setRolloverIcon(resourceMap.getIcon("planeta236.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta236, new org.netbeans.lib.awtextra.AbsoluteConstraints(1530, 640, -1, -1));
-
-        planeta237.setBackground(resourceMap.getColor("planeta237.background")); // NOI18N
-        planeta237.setForeground(resourceMap.getColor("planeta237.foreground")); // NOI18N
-        planeta237.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta237.setText(resourceMap.getString("planeta237.text")); // NOI18N
-        planeta237.setBorderPainted(false);
-        planeta237.setContentAreaFilled(false);
-        planeta237.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta237.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta237.setName("planeta237"); // NOI18N
-        planeta237.setRolloverIcon(resourceMap.getIcon("planeta237.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta237, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 650, -1, -1));
-
-        planeta238.setBackground(resourceMap.getColor("planeta238.background")); // NOI18N
-        planeta238.setForeground(resourceMap.getColor("planeta238.foreground")); // NOI18N
-        planeta238.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta238.setText(resourceMap.getString("planeta238.text")); // NOI18N
-        planeta238.setBorderPainted(false);
-        planeta238.setContentAreaFilled(false);
-        planeta238.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta238.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta238.setName("planeta238"); // NOI18N
-        planeta238.setRolloverIcon(resourceMap.getIcon("planeta238.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta238, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 640, -1, -1));
-
-        planeta239.setBackground(resourceMap.getColor("planeta239.background")); // NOI18N
-        planeta239.setForeground(resourceMap.getColor("planeta239.foreground")); // NOI18N
-        planeta239.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta239.setText(resourceMap.getString("planeta239.text")); // NOI18N
-        planeta239.setBorderPainted(false);
-        planeta239.setContentAreaFilled(false);
-        planeta239.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta239.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta239.setName("planeta239"); // NOI18N
-        planeta239.setRolloverIcon(resourceMap.getIcon("planeta239.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta239, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 780, -1, -1));
-
-        planeta240.setBackground(resourceMap.getColor("planeta240.background")); // NOI18N
-        planeta240.setForeground(resourceMap.getColor("planeta240.foreground")); // NOI18N
-        planeta240.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta240.setText(resourceMap.getString("planeta240.text")); // NOI18N
-        planeta240.setBorderPainted(false);
-        planeta240.setContentAreaFilled(false);
-        planeta240.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta240.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta240.setName("planeta240"); // NOI18N
-        planeta240.setRolloverIcon(resourceMap.getIcon("planeta240.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta240, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 740, -1, -1));
-
-        planeta241.setBackground(resourceMap.getColor("planeta241.background")); // NOI18N
-        planeta241.setForeground(resourceMap.getColor("planeta241.foreground")); // NOI18N
-        planeta241.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta241.setText(resourceMap.getString("planeta241.text")); // NOI18N
-        planeta241.setBorderPainted(false);
-        planeta241.setContentAreaFilled(false);
-        planeta241.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta241.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta241.setName("planeta241"); // NOI18N
-        planeta241.setRolloverIcon(resourceMap.getIcon("planeta241.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta241, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 1050, -1, -1));
-
-        planeta242.setBackground(resourceMap.getColor("planeta242.background")); // NOI18N
-        planeta242.setForeground(resourceMap.getColor("planeta242.foreground")); // NOI18N
-        planeta242.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta242.setText(resourceMap.getString("planeta242.text")); // NOI18N
-        planeta242.setBorderPainted(false);
-        planeta242.setContentAreaFilled(false);
-        planeta242.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta242.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta242.setName("planeta242"); // NOI18N
-        planeta242.setRolloverIcon(resourceMap.getIcon("planeta242.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta242, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 800, -1, -1));
-
-        planeta243.setBackground(resourceMap.getColor("planeta243.background")); // NOI18N
-        planeta243.setForeground(resourceMap.getColor("planeta243.foreground")); // NOI18N
-        planeta243.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta243.setText(resourceMap.getString("planeta243.text")); // NOI18N
-        planeta243.setBorderPainted(false);
-        planeta243.setContentAreaFilled(false);
-        planeta243.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta243.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta243.setName("planeta243"); // NOI18N
-        planeta243.setRolloverIcon(resourceMap.getIcon("planeta243.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta243, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 840, -1, -1));
-
-        planeta244.setBackground(resourceMap.getColor("planeta244.background")); // NOI18N
-        planeta244.setForeground(resourceMap.getColor("planeta244.foreground")); // NOI18N
-        planeta244.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta244.setText(resourceMap.getString("planeta244.text")); // NOI18N
-        planeta244.setBorderPainted(false);
-        planeta244.setContentAreaFilled(false);
-        planeta244.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta244.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta244.setName("planeta244"); // NOI18N
-        planeta244.setRolloverIcon(resourceMap.getIcon("planeta244.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta244, new org.netbeans.lib.awtextra.AbsoluteConstraints(1520, 770, -1, -1));
-
-        planeta245.setBackground(resourceMap.getColor("planeta245.background")); // NOI18N
-        planeta245.setForeground(resourceMap.getColor("planeta245.foreground")); // NOI18N
-        planeta245.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta245.setText(resourceMap.getString("planeta245.text")); // NOI18N
-        planeta245.setBorderPainted(false);
-        planeta245.setContentAreaFilled(false);
-        planeta245.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta245.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta245.setName("planeta245"); // NOI18N
-        planeta245.setRolloverIcon(resourceMap.getIcon("planeta245.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta245, new org.netbeans.lib.awtextra.AbsoluteConstraints(1540, 870, -1, -1));
-
-        planeta246.setBackground(resourceMap.getColor("planeta246.background")); // NOI18N
-        planeta246.setForeground(resourceMap.getColor("planeta246.foreground")); // NOI18N
-        planeta246.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta246.setText(resourceMap.getString("planeta246.text")); // NOI18N
-        planeta246.setBorderPainted(false);
-        planeta246.setContentAreaFilled(false);
-        planeta246.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta246.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta246.setName("planeta246"); // NOI18N
-        planeta246.setRolloverIcon(resourceMap.getIcon("planeta246.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta246, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 960, -1, -1));
-
-        planeta247.setBackground(resourceMap.getColor("planeta247.background")); // NOI18N
-        planeta247.setForeground(resourceMap.getColor("planeta247.foreground")); // NOI18N
-        planeta247.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta247.setText(resourceMap.getString("planeta247.text")); // NOI18N
-        planeta247.setBorderPainted(false);
-        planeta247.setContentAreaFilled(false);
-        planeta247.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta247.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta247.setName("planeta247"); // NOI18N
-        planeta247.setRolloverIcon(resourceMap.getIcon("planeta247.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta247, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 860, -1, -1));
-
-        planeta248.setBackground(resourceMap.getColor("planeta248.background")); // NOI18N
-        planeta248.setForeground(resourceMap.getColor("planeta248.foreground")); // NOI18N
-        planeta248.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta248.setText(resourceMap.getString("planeta248.text")); // NOI18N
-        planeta248.setBorderPainted(false);
-        planeta248.setContentAreaFilled(false);
-        planeta248.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta248.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta248.setName("planeta248"); // NOI18N
-        planeta248.setRolloverIcon(resourceMap.getIcon("planeta248.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta248, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 880, -1, -1));
-
-        planeta249.setBackground(resourceMap.getColor("planeta249.background")); // NOI18N
-        planeta249.setForeground(resourceMap.getColor("planeta249.foreground")); // NOI18N
-        planeta249.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta249.setText(resourceMap.getString("planeta249.text")); // NOI18N
-        planeta249.setBorderPainted(false);
-        planeta249.setContentAreaFilled(false);
-        planeta249.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta249.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta249.setName("planeta249"); // NOI18N
-        planeta249.setRolloverIcon(resourceMap.getIcon("planeta249.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta249, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 1070, -1, -1));
-
-        planeta250.setBackground(resourceMap.getColor("planeta250.background")); // NOI18N
-        planeta250.setForeground(resourceMap.getColor("planeta250.foreground")); // NOI18N
-        planeta250.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta250.setText(resourceMap.getString("planeta250.text")); // NOI18N
-        planeta250.setBorderPainted(false);
-        planeta250.setContentAreaFilled(false);
-        planeta250.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta250.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta250.setName("planeta250"); // NOI18N
-        planeta250.setRolloverIcon(resourceMap.getIcon("planeta250.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta250, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 970, -1, -1));
-
-        planeta251.setBackground(resourceMap.getColor("planeta251.background")); // NOI18N
-        planeta251.setForeground(resourceMap.getColor("planeta251.foreground")); // NOI18N
-        planeta251.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta251.setText(resourceMap.getString("planeta251.text")); // NOI18N
-        planeta251.setBorderPainted(false);
-        planeta251.setContentAreaFilled(false);
-        planeta251.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta251.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta251.setName("planeta251"); // NOI18N
-        planeta251.setRolloverIcon(resourceMap.getIcon("planeta251.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta251, new org.netbeans.lib.awtextra.AbsoluteConstraints(1710, 940, -1, -1));
-
-        planeta252.setBackground(resourceMap.getColor("planeta252.background")); // NOI18N
-        planeta252.setForeground(resourceMap.getColor("planeta252.foreground")); // NOI18N
-        planeta252.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta252.setText(resourceMap.getString("planeta252.text")); // NOI18N
-        planeta252.setBorderPainted(false);
-        planeta252.setContentAreaFilled(false);
-        planeta252.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta252.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta252.setName("planeta252"); // NOI18N
-        planeta252.setRolloverIcon(resourceMap.getIcon("planeta252.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta252, new org.netbeans.lib.awtextra.AbsoluteConstraints(1490, 990, -1, -1));
-
-        planeta253.setBackground(resourceMap.getColor("planeta253.background")); // NOI18N
-        planeta253.setForeground(resourceMap.getColor("planeta253.foreground")); // NOI18N
-        planeta253.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta253.setText(resourceMap.getString("planeta253.text")); // NOI18N
-        planeta253.setBorderPainted(false);
-        planeta253.setContentAreaFilled(false);
-        planeta253.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta253.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta253.setName("planeta253"); // NOI18N
-        planeta253.setRolloverIcon(resourceMap.getIcon("planeta253.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta253, new org.netbeans.lib.awtextra.AbsoluteConstraints(1600, 940, -1, -1));
-
-        planeta254.setBackground(resourceMap.getColor("planeta254.background")); // NOI18N
-        planeta254.setForeground(resourceMap.getColor("planeta254.foreground")); // NOI18N
-        planeta254.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta254.setText(resourceMap.getString("planeta254.text")); // NOI18N
-        planeta254.setBorderPainted(false);
-        planeta254.setContentAreaFilled(false);
-        planeta254.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta254.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta254.setName("planeta254"); // NOI18N
-        planeta254.setRolloverIcon(resourceMap.getIcon("planeta254.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta254, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 1070, -1, -1));
-
-        planeta255.setBackground(resourceMap.getColor("planeta255.background")); // NOI18N
-        planeta255.setForeground(resourceMap.getColor("planeta255.foreground")); // NOI18N
-        planeta255.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta255.setText(resourceMap.getString("planeta255.text")); // NOI18N
-        planeta255.setBorderPainted(false);
-        planeta255.setContentAreaFilled(false);
-        planeta255.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta255.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta255.setName("planeta255"); // NOI18N
-        planeta255.setRolloverIcon(resourceMap.getIcon("planeta255.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta255, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 1030, -1, -1));
-
-        planeta256.setBackground(resourceMap.getColor("planeta256.background")); // NOI18N
-        planeta256.setForeground(resourceMap.getColor("planeta256.foreground")); // NOI18N
-        planeta256.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
-        planeta256.setText(resourceMap.getString("planeta256.text")); // NOI18N
-        planeta256.setBorderPainted(false);
-        planeta256.setContentAreaFilled(false);
-        planeta256.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        planeta256.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        planeta256.setName("planeta256"); // NOI18N
-        planeta256.setRolloverIcon(resourceMap.getIcon("planeta256.rolloverIcon")); // NOI18N
-        panelUniverso.add(planeta256, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 1090, -1, -1));
+        planeta216.setPreferredSize(new java.awt.Dimension(90, 90));
+        planeta216.setRolloverIcon(null);
+        panelUniverso.add(planeta216);
 
         jScrollPane1.setViewportView(panelUniverso);
 
@@ -3920,50 +4051,10 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JButton planeta214;
     private javax.swing.JButton planeta215;
     private javax.swing.JButton planeta216;
-    private javax.swing.JButton planeta217;
-    private javax.swing.JButton planeta218;
-    private javax.swing.JButton planeta219;
     private javax.swing.JButton planeta22;
-    private javax.swing.JButton planeta220;
-    private javax.swing.JButton planeta221;
-    private javax.swing.JButton planeta222;
-    private javax.swing.JButton planeta223;
-    private javax.swing.JButton planeta224;
-    private javax.swing.JButton planeta225;
-    private javax.swing.JButton planeta226;
-    private javax.swing.JButton planeta227;
-    private javax.swing.JButton planeta228;
-    private javax.swing.JButton planeta229;
     private javax.swing.JButton planeta23;
-    private javax.swing.JButton planeta230;
-    private javax.swing.JButton planeta231;
-    private javax.swing.JButton planeta232;
-    private javax.swing.JButton planeta233;
-    private javax.swing.JButton planeta234;
-    private javax.swing.JButton planeta235;
-    private javax.swing.JButton planeta236;
-    private javax.swing.JButton planeta237;
-    private javax.swing.JButton planeta238;
-    private javax.swing.JButton planeta239;
     private javax.swing.JButton planeta24;
-    private javax.swing.JButton planeta240;
-    private javax.swing.JButton planeta241;
-    private javax.swing.JButton planeta242;
-    private javax.swing.JButton planeta243;
-    private javax.swing.JButton planeta244;
-    private javax.swing.JButton planeta245;
-    private javax.swing.JButton planeta246;
-    private javax.swing.JButton planeta247;
-    private javax.swing.JButton planeta248;
-    private javax.swing.JButton planeta249;
     private javax.swing.JButton planeta25;
-    private javax.swing.JButton planeta250;
-    private javax.swing.JButton planeta251;
-    private javax.swing.JButton planeta252;
-    private javax.swing.JButton planeta253;
-    private javax.swing.JButton planeta254;
-    private javax.swing.JButton planeta255;
-    private javax.swing.JButton planeta256;
     private javax.swing.JButton planeta26;
     private javax.swing.JButton planeta27;
     private javax.swing.JButton planeta28;
@@ -4172,6 +4263,9 @@ public class PrincipalView extends FrameView implements Observador{
 
     public class ImagenFondoPanel extends javax.swing.JPanel {
      private Image imgFondo;
+     private Vector <Linea> lineas;
+     private Vector <JButton> listaPlanetas;
+     private boolean stop = false;
 
      public ImagenFondoPanel() {
       preInit();
@@ -4183,13 +4277,108 @@ public class PrincipalView extends FrameView implements Observador{
 
      private void preInit(){
 
+         Component componente;
          ResourceMap resourceMap = getResourceMap();
+         listaPlanetas = new Vector();
 
          imgFondo = resourceMap.getImageIcon("aplicacion.universo").getImage();
+
+         for(int i = 0; i<this.getComponentCount(); i++){
+
+            componente = this.getComponent(i);
+
+            if(componente.getClass().getName().equals("javax.swing.JButton")){
+
+                listaPlanetas.add((JButton)componente);
+
+            }
+        }
+        
+         stop = false;
+
+         lineas = new Vector();
+
+
      }
 
      protected void paintComponent(Graphics g) {
-      g.drawImage(imgFondo,0,0,null);
+        
+        int i,j,par,alto,ancho;
+        Linea linea;
+        JButton planeta1 = null, planeta2;
+        Component componente;
+        String ia;
+        ArrayList<Integer> pc = new ArrayList(1);
+
+        g.drawImage(imgFondo,0,0,null);
+
+        if(lineas != null){
+
+            for(i = 0; i<lineas.size(); i++){
+
+                linea = lineas.elementAt(i);
+
+                g.setColor(linea.getColor());
+                g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
+
+            }
+            stop = true;
+        }
+        if(lineas.size()==0){
+
+            
+            for(i = 0; i<this.getComponentCount(); i++){
+
+                componente = this.getComponent(i);
+
+                if(componente.getClass().getName().equals("javax.swing.JButton")){
+
+                    listaPlanetas.add((JButton)componente);
+
+                }
+            }
+
+            for(i = 0; i<listaPlanetas.size(); i++){
+
+                try{
+                pc = MatrizConexiones.getInstancia().damePlanetasContiguos(i);
+                }catch(Exception e){pc.clear();}
+
+                planeta1 = listaPlanetas.elementAt(i);
+                planeta1.setText(""+(i+1));
+
+                for(j=0;j<pc.size();j++){
+
+                    planeta2 = listaPlanetas.elementAt(pc.get(j).intValue());
+
+                    alto = planeta1.getHeight()/2;
+                    ancho = planeta1.getWidth()/2;
+
+                    linea = new Linea(planeta1.getX()+ancho,planeta1.getY()+alto,planeta2.getX()+ancho,planeta2.getY()+alto,Color.ORANGE);
+                    System.out.println(linea.toString());
+                    lineas.add(linea);
+
+                }
+            }
+
+            if(lineas != null){
+
+                for(i = 0; i<lineas.size(); i++){
+
+                    linea = lineas.elementAt(i);
+
+                    g.setColor(linea.getColor());
+                    g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
+
+                }
+                stop = true;
+            }
+        }
      }
+
+     protected void cargarLineas(Vector <Linea> lineas) {
+        this.lineas = lineas;
+     }
+
     }
 }

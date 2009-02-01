@@ -1,24 +1,26 @@
-Paso del planeta 0 al planeta vecino 1 ,COSTE:2
+Paso del planeta 1 al planeta vecino 25 ,COSTE:3
 
-Paso del planeta 1 al planeta vecino 21 ,COSTE:4
+Paso del planeta 25 al planeta vecino 31 ,COSTE:4
 
-Paso del planeta 21 al planeta vecino 52 ,COSTE:4
+Paso del planeta 31 al planeta vecino 32 ,COSTE:4
 
-Paso del planeta 52 al planeta vecino 87 ,COSTE:4
+Paso del planeta 32 al planeta vecino 66 ,COSTE:4
 
-Paso del planeta 87 al planeta vecino 97 ,COSTE:3
+Paso del planeta 66 al planeta vecino 71 ,COSTE:4
 
-Paso del planeta 97 al planeta vecino 125 ,COSTE:4
+Paso del planeta 71 al planeta vecino 97 ,COSTE:3
 
-Paso del planeta 125 al planeta vecino 139 ,COSTE:4
+Paso del planeta 97 al planeta vecino 108 ,COSTE:4
 
-Paso del planeta 139 al planeta vecino 173 ,COSTE:2
+Paso del planeta 108 al planeta vecino 138 ,COSTE:4
 
-Paso del planeta 173 al planeta vecino 203 ,COSTE:2
+Paso del planeta 138 al planeta vecino 148 ,COSTE:3
 
-Paso del planeta 203 al planeta vecino 212 ,COSTE:4
+Paso del planeta 148 al planeta vecino 186 ,COSTE:3
 
-nodesExpanded : 10
-queueSize : 9
-maxQueueSize : 10
-Coste total: 33
+Paso del planeta 186 al planeta vecino 214 ,COSTE:4
+
+nodesExpanded : 11
+queueSize : 19
+maxQueueSize : 20
+Coste total: 40

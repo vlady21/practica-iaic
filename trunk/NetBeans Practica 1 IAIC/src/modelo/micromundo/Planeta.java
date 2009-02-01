@@ -196,7 +196,7 @@ public class Planeta extends InterfazPlaneta{
 			//si hay que expandir comprobamos si podemos viajar a sus hijos
 			for(int siguiente=0;(siguiente<vecinos.size() && expandir);siguiente++){
 				int planetaVecino=vecinos.get(siguiente);
-				movimiento="Paso del planeta "+valorPlaneta+" al planeta vecino "+planetaVecino;
+				movimiento="Paso del planeta "+(valorPlaneta+1)+" al planeta vecino "+(planetaVecino+1);
 				boolean pasar=resolverProblema(valorPlaneta,planetaVecino);
 				//como hemos cargado el juego, obtenemos su valor
 				coste=GestorJuegos.dameCosteProblema();
