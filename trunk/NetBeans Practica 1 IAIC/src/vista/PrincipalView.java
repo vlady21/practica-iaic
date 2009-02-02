@@ -3827,6 +3827,9 @@ public class PrincipalView extends FrameView implements Observador{
 
     private void ejecutarCompleto(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ejecutarCompleto
 
+        ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
+        panel.limpiarRecorrido();
+
         _pasoApaso.setEnabled(false);
         _continuo.setEnabled(false);
         _botonestadisticas.setEnabled(false);
@@ -3852,7 +3855,10 @@ public class PrincipalView extends FrameView implements Observador{
 
     private void ejecutarPasoAPaso(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ejecutarPasoAPaso
 
+        
         if(!_iniciado){
+            ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
+            panel.limpiarRecorrido();
             _pasoApaso.setText("Siguiente");
             _continuo.setEnabled(false);
             _botonestadisticas.setEnabled(false);
@@ -3886,13 +3892,16 @@ public class PrincipalView extends FrameView implements Observador{
 
     private void reiniciar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar
 
+        ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
+        panel.limpiarRecorrido();
+        panel.repaint();
         _pasoApaso.setEnabled(true);
-		_continuo.setEnabled(true);
-		_botonestadisticas.setEnabled(true);
-		_iniciado=false;
-		_micromundo=new Micromundo();
-		_micromundo.setObserver(this);
-		Estadisticas.dameInstancia().setObserver(this);
+        _continuo.setEnabled(true);
+        _botonestadisticas.setEnabled(true);
+        _iniciado=false;
+        _micromundo=new Micromundo();
+        _micromundo.setObserver(this);
+        Estadisticas.dameInstancia().setObserver(this);
         status("Busqueda finalizada");
         mainPanel.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         busyIconTimer.stop();
@@ -4269,6 +4278,7 @@ public class PrincipalView extends FrameView implements Observador{
     public class ImagenFondoPanel extends javax.swing.JPanel {
      private Image imgFondo;
      private Vector <Linea> lineas;
+     private Vector <Linea> recorrido;
      private Vector <JButton> listaPlanetas;
      private Linea line = null;
      private boolean stop = false;
@@ -4305,6 +4315,8 @@ public class PrincipalView extends FrameView implements Observador{
 
          lineas = new Vector();
 
+         recorrido = new Vector();
+         
          line=new Linea(0,0,0,0);
 
          primera = true;
@@ -4457,6 +4469,23 @@ public class PrincipalView extends FrameView implements Observador{
                     g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
 
                 }
+            
+            for(i = 0; i<recorrido.size(); i++){
+
+                   linea = recorrido.elementAt(i);
+
+                   g.setColor(linea.getColor());
+                   g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
+                   g.setColor(linea.getColor());
+                   g.drawLine(linea.getX1()+1, linea.getY1()+1, linea.getX2()+1, linea.getY2()+1);
+                   g.setColor(linea.getColor());
+                   g.drawLine(linea.getX1()+2, linea.getY1()+2, linea.getX2()+2, linea.getY2()+2);
+                   g.setColor(linea.getColor());
+                   g.drawLine(linea.getX1()-1, linea.getY1()-1, linea.getX2()-1, linea.getY2()-1);
+                   g.setColor(linea.getColor());
+                   g.drawLine(linea.getX1()-2, linea.getY1()-2, linea.getX2()-2, linea.getY2()-2);
+  
+           }
         }
 
 
@@ -4489,12 +4518,18 @@ public class PrincipalView extends FrameView implements Observador{
 */
          Linea linea = new Linea(planeta1.getX() + ancho, planeta1.getY() + alto, planeta2.getX() + ancho, planeta2.getY() + alto, color);
 
-         this.line = linea;
+         //this.line = linea;
 
-         lineas.add(line);
+         recorrido.add(linea);
+         //lineas.add(line);
          paintComponent(this.getGraphics());
          repaint();
      }
+     
+     private void limpiarRecorrido() {
+         
+         recorrido.clear();
 
+     }
     }
 }
