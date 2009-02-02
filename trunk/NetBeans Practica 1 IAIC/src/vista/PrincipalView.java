@@ -3874,6 +3874,9 @@ public class PrincipalView extends FrameView implements Observador{
         _micromundo.muestraEstadisticas();
 
         status("Estadisticas activas");
+
+        //conectaPlanetas(116, 152, 0);
+
     }//GEN-LAST:event_mostrarEstadisticas
 
     private void salir(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salir
@@ -4163,6 +4166,8 @@ public class PrincipalView extends FrameView implements Observador{
 
 	public void conectaPlanetas(int planeta1, int planeta2, int tipo) {
 
+        ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
+        panel.pintaLinea(planeta1,planeta2,tipo);
 
 	}
 
@@ -4265,7 +4270,9 @@ public class PrincipalView extends FrameView implements Observador{
      private Image imgFondo;
      private Vector <Linea> lineas;
      private Vector <JButton> listaPlanetas;
+     private Linea line = null;
      private boolean stop = false;
+     boolean primera = false;
 
      public ImagenFondoPanel() {
       preInit();
@@ -4298,7 +4305,9 @@ public class PrincipalView extends FrameView implements Observador{
 
          lineas = new Vector();
 
+         line=new Linea(0,0,0,0);
 
+         primera = true;
      }
 
      protected void paintComponent(Graphics g) {
@@ -4309,75 +4318,177 @@ public class PrincipalView extends FrameView implements Observador{
         Component componente;
         String ia;
         ArrayList<Integer> pc = new ArrayList(1);
+        int posicion = -1;
 
-        g.drawImage(imgFondo,0,0,null);
+        if(primera){
+            g.drawImage(imgFondo,0,0,null);
 
-        if(lineas != null){
-
-            for(i = 0; i<lineas.size(); i++){
-
-                linea = lineas.elementAt(i);
-
-                g.setColor(linea.getColor());
-                g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
-
-            }
-            stop = true;
-        }
-        if(lineas.size()==0){
-
-            
-            for(i = 0; i<this.getComponentCount(); i++){
-
-                componente = this.getComponent(i);
-
-                if(componente.getClass().getName().equals("javax.swing.JButton")){
-
-                    listaPlanetas.add((JButton)componente);
-
-                }
-            }
-
-            for(i = 0; i<listaPlanetas.size(); i++){
-
-                try{
-                pc = MatrizConexiones.getInstancia().damePlanetasContiguos(i);
-                }catch(Exception e){pc.clear();}
-
-                planeta1 = listaPlanetas.elementAt(i);
-                planeta1.setText(""+(i+1));
-
-                for(j=0;j<pc.size();j++){
-
-                    planeta2 = listaPlanetas.elementAt(pc.get(j).intValue());
-
-                    alto = planeta1.getHeight()/2;
-                    ancho = planeta1.getWidth()/2;
-
-                    linea = new Linea(planeta1.getX()+ancho,planeta1.getY()+alto,planeta2.getX()+ancho,planeta2.getY()+alto,Color.ORANGE);
-                    System.out.println(linea.toString());
-                    lineas.add(linea);
-
-                }
-            }
-
-            if(lineas != null){
+            if(lineas != null && lineas.size()>0){
 
                 for(i = 0; i<lineas.size(); i++){
 
                     linea = lineas.elementAt(i);
+
+                   if(line!=null){
+                        if(linea.isEqual(line)){
+
+                            posicion = i;
+                            //Linea l = new Linea(line.x1+5,line.y1+5,line.x2+5,line.y2+5,line.color);
+                            Linea l = new Linea(line.x1,line.y1,line.x2,line.y2,line.color);
+                            lineas.setElementAt(l, i);
+                            linea = l;
+                            line=new Linea(0,0,0,0);
+                        }
+                    }
+
 
                     g.setColor(linea.getColor());
                     g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
 
                 }
                 stop = true;
+            }else{
+            //if(lineas.size()==0){
+
+
+                for(i = 0; i<this.getComponentCount(); i++){
+
+                    componente = this.getComponent(i);
+
+                    if(componente.getClass().getName().equals("javax.swing.JButton")){
+
+                        listaPlanetas.add((JButton)componente);
+
+                    }
+                }
+
+                for(i = 0; i<listaPlanetas.size(); i++){
+
+                    try{
+                    pc = MatrizConexiones.getInstancia().damePlanetasContiguos(i);
+                    }catch(Exception e){pc.clear();}
+
+                    planeta1 = listaPlanetas.elementAt(i);
+                    planeta1.setText(""+(i+1));
+
+                    for(j=0;j<pc.size();j++){
+
+                        planeta2 = listaPlanetas.elementAt(pc.get(j).intValue());
+
+                        alto = planeta1.getHeight()/2;
+                        ancho = planeta1.getWidth()/2;
+
+                        linea = new Linea(planeta1.getX()+ancho,planeta1.getY()+alto,planeta2.getX()+ancho,planeta2.getY()+alto,Color.ORANGE);
+
+                        if(line!=null){
+                            if(linea.isEqual(line)){
+
+                                linea = line;
+                                line=new Linea(0,0,0,0);
+                            }
+                        }
+
+                        System.out.println(linea.toString());
+                        lineas.add(linea);
+
+                    }
+                }
+
+                if(lineas != null){
+
+                    for(i = 0; i<lineas.size(); i++){
+
+                        linea = lineas.elementAt(i);
+
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
+
+                    }
+                    stop = true;
+                }
             }
+
+            primera = false;
+
+        }else{
+
+            g.drawImage(imgFondo,0,0,null);
+
+            for(i = 0; i<lineas.size(); i++){
+
+                   linea = lineas.elementAt(i);
+
+                   if(line!=null){
+                        if(linea.isEqual(line)){
+
+                            posicion = i;
+                            //Linea l = new Linea(line.x1+5,line.y1+5,line.x2+5,line.y2+5,line.color);
+                            Linea l = new Linea(line.x1,line.y1,line.x2,line.y2,line.color);
+                            lineas.setElementAt(l, i);
+                            linea = l;
+                            line=new Linea(0,0,0,0);
+
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()+1, linea.getY1()+1, linea.getX2()+1, linea.getY2()+1);
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()+2, linea.getY1()+2, linea.getX2()+2, linea.getY2()+2);
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()-1, linea.getY1()-1, linea.getX2()-1, linea.getY2()-1);
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()-2, linea.getY1()-2, linea.getX2()-2, linea.getY2()-2);
+
+                            
+                        }
+                    }
+                   
+                    if(linea.getColor()!=Color.ORANGE){
+                        
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()+1, linea.getY1()+1, linea.getX2()+1, linea.getY2()+1);
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()+2, linea.getY1()+2, linea.getX2()+2, linea.getY2()+2);
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()-1, linea.getY1()-1, linea.getX2()-1, linea.getY2()-1);
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()-2, linea.getY1()-2, linea.getX2()-2, linea.getY2()-2);
+
+                    }
+
+                    g.setColor(linea.getColor());
+                    g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
+
+                }
         }
+
+
      }
 
      protected void cargarLineas(Vector <Linea> lineas) {
         this.lineas = lineas;
+     }
+
+     private void pintaLinea(int planet1, int planet2, int tipo) {
+
+         planeta1 = listaPlanetas.elementAt(planet1);
+         planeta2 = listaPlanetas.elementAt(planet2);
+         int alto = planeta1.getHeight() / 2;
+         int ancho = planeta1.getWidth() / 2;
+         Color color = Color.ORANGE;
+
+         //conexion 0 incorrecta-rojo, 1 correcta-verde, 2 final-morado
+         if(tipo==0){
+             color = Color.RED;
+         }else if(tipo==1){
+             color = Color.GREEN;
+         }else if(tipo==2){
+             color = Color.BLUE;
+         }
+
+         Linea linea = new Linea(planeta1.getX() + ancho, planeta1.getY() + alto, planeta2.getX() + ancho, planeta2.getY() + alto, color);
+
+         this.line = linea;
+
+         paintComponent(this.getGraphics());
      }
 
     }

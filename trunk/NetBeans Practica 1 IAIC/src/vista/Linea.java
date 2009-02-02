@@ -73,4 +73,12 @@ public class Linea {
 
         return "("+x1+","+y1+","+x2+","+y2+")";
     }
+
+    public boolean isEqual(Linea l){
+
+        if(l.getX1()==x1&&l.getX2()==x2&&l.getY1()==y1&&l.getY2()==y1)
+            return true;
+        else
+            return false;
+    }
 }
