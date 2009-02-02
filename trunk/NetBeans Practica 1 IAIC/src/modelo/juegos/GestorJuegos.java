@@ -18,7 +18,8 @@ import aima.search.uninformed.DepthFirstSearch;
 public class GestorJuegos {
 
 	private Problem _problema;
-	private static InterfazJuego _juego;
+    private String _nombreAlgoritmo;
+	private static InterfazJuego _juego=new Jarras();
 	private static int _coste=0;
 	private static GestorJuegos _instancia=null;
 	
@@ -30,49 +31,49 @@ public class GestorJuegos {
 	}
 	
 	public static int dameCosteProblema(){
-		return getJuego().dificultad();
+		return _juego.dificultad();
 	}
 	
 	public void asignarProblema(int numero){
 		switch(numero){
 			case 0://problema de las jarras
-				setJuego(new Jarras());
+				_juego=new Jarras();
 				break;
 			case 1://problema de los misioneros y canibales
-				setJuego(new MisionerosYCanibales());
+				_juego=new MisionerosYCanibales();
 				break;
 			case 2:
-				setJuego(new Puzzle8());
+				_juego=new Puzzle8();
 				break;
 			case 3:
-				setJuego(new RejillaRojoAzul());
+				_juego=new RejillaRojoAzul();
 				break;
 			case 4:
-				setJuego(new Diccionario());
+				_juego=new Diccionario();
 				break;
 			case 5:
-				setJuego(new LoboOvejaYCol());
+				_juego=new LoboOvejaYCol();
 				break;
 			case 6:
-				setJuego(new Calculadora());
+				_juego=new Calculadora();
 				break;
 			case 7:
-				setJuego(new ConejosRojiNegros());
+				_juego=new ConejosRojiNegros();
 				break;
 			case 8:
-				setJuego(new RejillaRojoAzul());
+				_juego=new RejillaRojoAzul();
 				break;
 			case 9:
-				setJuego(new Palillos());
+				_juego=new Palillos();
 				break;
 			case 10:
-				setJuego(new RejillaRojoAzul());
+				_juego=new RejillaRojoAzul();
 				break;
 			case 11:
-				setJuego(new RejillaRojoAzul());
+				_juego=new RejillaRojoAzul();
 				break;
 		}
-		_problema=getJuego().getProblema();
+		_problema=_juego.getProblema();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -81,32 +82,40 @@ public class GestorJuegos {
 		switch(numero){
 			case 0://Voraz
 				search=new GreedyBestFirstSearch(new GraphSearch());
+                _nombreAlgoritmo="Busqueda Voraz";
 				break;
 			case 1:// A*
 				search=new AStarSearch(new GraphSearch()) ;
+                _nombreAlgoritmo="Algoritmo A*";
 				break;
 			case 2://Primero en anchura
 				search=new BreadthFirstSearch(new TreeSearch()) ;
+                _nombreAlgoritmo="Primero en anchura";
 				break;
 			case 3://Profundidad limitada de maxima prof 7
 				search=new DepthLimitedSearch(7);
+                _nombreAlgoritmo="Profundidad limitada a 7";
 				break;
 			case 4://Profundidad iterativa
 				search=new IterativeDeepeningSearch();
+                _nombreAlgoritmo="Profundidad iterativa";
 				break;
 			case 5://Simulada
 				search=new SimulatedAnnealingSearch();
+                _nombreAlgoritmo="Simulada";
 				break;
 			case 6://Escalada simple
 				search=new HillClimbingSearch();
+                _nombreAlgoritmo="Escalada simple";
 				break;
 			case 7://Primero en profundidad
 				search=new DepthFirstSearch(new GraphSearch());
+                _nombreAlgoritmo="Primero en profundidad";
 				break;
 		}
 		try {
 			SearchAgent agent = new SearchAgent (_problema , search) ;
-			if(getJuego().resuelto()){
+			if(_juego.resuelto()){
 				printActions(agent.getActions());
 				/*printInstrumentation(agent.getInstrumentation());*/
 				
@@ -119,14 +128,6 @@ public class GestorJuegos {
 		}
 	}
 
-	public static void setJuego(InterfazJuego _juego) {
-		GestorJuegos._juego = _juego;
-	}
-
-	public static InterfazJuego getJuego() {
-		return _juego;
-	}
-	
 	public static int costeProblema(int numero){
 		switch(numero){
 		case 0://problema de las jarras
@@ -156,6 +157,14 @@ public class GestorJuegos {
 		}
 		return 0;
 	}
+
+    public String dameEnunciadoProblema(){
+        return _juego.dameEnunciadoProblema();
+    }
+
+    public String dameNombreAlgoritmo(){
+        return _nombreAlgoritmo;
+    }
 	
 	/* son datos del problema no la solucion
 	 

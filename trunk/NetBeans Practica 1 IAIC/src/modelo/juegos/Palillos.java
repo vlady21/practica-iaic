@@ -29,9 +29,10 @@ public class Palillos  extends InterfazJuego{
 	 */
 	private int _turno;
     
-    private int _dificultad=3;
+    private int _dificultad=1;
 
     public Palillos() {
+        _enunciadoProblema="Palillos";
 	    _palillos = 23;
 	    _turno = 1;
 	    _nodosExpandidos=0;
@@ -51,7 +52,7 @@ public class Palillos  extends InterfazJuego{
 	
 
 	public Problem getProblema() {
-		Problem problem = new Problem(new Palillos(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new Palillos(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 

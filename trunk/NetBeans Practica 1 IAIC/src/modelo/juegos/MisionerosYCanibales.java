@@ -30,6 +30,7 @@ public class MisionerosYCanibales  extends InterfazJuego{
     private int _dificultad=3;
 
     public MisionerosYCanibales() {
+        _enunciadoProblema="En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros.";
     	_nodosExpandidos=0;
     	_resuelto=false;
 	    _misionerosIzq = 3;
@@ -53,7 +54,7 @@ public class MisionerosYCanibales  extends InterfazJuego{
 	
 
 	public Problem getProblema() {
-		Problem problem = new Problem(new MisionerosYCanibales(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new MisionerosYCanibales(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 

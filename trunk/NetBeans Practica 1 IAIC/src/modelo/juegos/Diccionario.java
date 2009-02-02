@@ -12,11 +12,12 @@ import aima.search.framework.SuccessorFunction;
 
 public class Diccionario extends InterfazJuego{
 
-	private int _dificultad=1;
+	private int _dificultad=4;
 	private String _palabra = "ARTE";
 	private Vector<String> _diccionario = new Vector<String>();
 	
 	public Diccionario(){
+        _enunciadoProblema="Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras.";
 		_nodosExpandidos=0;
 		_resuelto=false;
 		_diccionario.add("TERA");
@@ -30,7 +31,7 @@ public class Diccionario extends InterfazJuego{
 	}
 	
 	public Problem getProblema() {
-		Problem problem = new Problem(new Diccionario(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new Diccionario(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 
@@ -132,24 +133,17 @@ public class Diccionario extends InterfazJuego{
 					result = diferencia(_diccionario.get(i),dic._palabra);
 				else
 					result = result*diferencia(_diccionario.get(i),dic._palabra);
-				
 			}
-			
 			return result;
 		}
 		
 		public int diferencia(String dic, String pal){
-			
 			int result = 0;
-			
 			for(int i = 0;i<4;i++){
 				if(dic.charAt(i)!=pal.charAt(i))
 					result++;
 			}
-			
 			return result;
-			
 		}
 	}
-
 }

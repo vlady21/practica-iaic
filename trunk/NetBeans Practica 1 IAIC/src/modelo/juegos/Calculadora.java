@@ -15,6 +15,7 @@ public class Calculadora extends InterfazJuego{
 	private int _num1, _num2, _num3, _num4;
 	
 	public Calculadora(){
+        _enunciadoProblema="Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado.";
 		_nodosExpandidos=0;
 		_resuelto=false;
 		_num1 =2;
@@ -33,7 +34,7 @@ public class Calculadora extends InterfazJuego{
 	}
 	
 	public Problem getProblema() {
-		Problem problem = new Problem(new Calculadora(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new Calculadora(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 

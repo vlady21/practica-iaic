@@ -103,16 +103,20 @@ public class Micromundo extends Thread {
 	
 	public void run(){
 		try {
+            _observer.limpiarRecorrido();
 			Log.dameInstancia().abrirLog();
 			Estadisticas.dameInstancia().reiniciar();
 			SearchAgent agent = new SearchAgent (_problema , _search) ;
-            for(int i=0;i<agent.getActions().size();i++)
-                System.out.println(agent.getAttribute(i));
 			if(_planeta.resuelto()){
+                Log.dameInstancia().agregar("\n\nSOLUCION DEL PROBLEMA GLOBAL\n ");
+                _observer.escribeLog("\n\nSOLUCION DEL PROBLEMA GLOBAL\n ");
 				printActions(agent.getActions());
 				printInstrumentation(agent.getInstrumentation());
                 pintaSolucion();
-			}
+			}else{
+                Log.dameInstancia().agregar("\n\nNO SE HA ENCONTRADO SOLUCION AL PROBLEMA GLOBAL\n ");
+                _observer.escribeLog("\n\nNO SE HA ENCONTRADO SOLUCION AL PROBLEMA GLOBAL\n ");
+            }
 			_observer.reiniciar();
 			Log.dameInstancia().cerrarLog();
 		}catch (Exception e){e.printStackTrace();}
@@ -132,6 +136,8 @@ public class Micromundo extends Thread {
     }
 	private static void printInstrumentation(Properties properties) {
 		Iterator keys = properties.keySet().iterator();
+        Log.dameInstancia().agregar("\n\nDATOS DEL PROBLEMA\n");
+		_observer.escribeLog("\n\nDATOS DEL PROBLEMA\n");
 		while (keys.hasNext()) {
 			String key = (String) keys.next();
 			String property = properties.getProperty(key);

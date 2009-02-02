@@ -15,6 +15,7 @@ import aima.search.framework.HeuristicFunction;
 import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
+import aima.search.framework.StepCostFunction;
 
 public class Planeta extends InterfazPlaneta{	
 
@@ -120,8 +121,8 @@ public class Planeta extends InterfazPlaneta{
 	}
 	
 	public Problem getProblema(ArrayList<Planeta> planetas) {
-		Problem problem = new Problem(new Planeta(planetas), new Sucesores(), new EsFinal(), new ValorHeuristico());
-		return problem;	
+		Problem problem = new Problem(new Planeta(planetas), new Sucesores(), new EsFinal(),new ValorReal(), new ValorHeuristico());
+        return problem;
 	}
 	
 	public boolean resuelto() {
@@ -149,16 +150,6 @@ public class Planeta extends InterfazPlaneta{
 		return _numeroPlaneta;
 	}
 
-	public void guardar(int valor,String z){
-		PrintWriter writer;
-		try {
-			writer = new PrintWriter("problemas/problemas"+valor+".properties");
-			writer.append(z);
-	    	writer.close();	
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
 	//------------------------------------------------- CLASES FUNCIONES
 
 	@SuppressWarnings({"unchecked"})
@@ -174,25 +165,18 @@ public class Planeta extends InterfazPlaneta{
             //colocamos la nave
             posicionarNave(valorPlaneta);
             
-			//-------------
-			System.out.println("PLANETA: "+valorPlaneta);
-			System.out.println(_listaPlanetasExpandidos);
-			System.out.println("BUSQUEDA: "+_listaPlanetasExpandidos.indexOf(valorPlaneta));
-			//-------------
 			//comprobamos si ya ha sido explorado el planeta y si no lo esta lo agregmos y expandimos
 			boolean expandir=false;
 			if(_listaPlanetasExpandidos.indexOf(valorPlaneta)==-1){
 				_listaPlanetasExpandidos.add(valorPlaneta);
 				expandir=true;
 			}
-			
-			System.out.println("ANTES "+valorPlaneta);
-           
-            //System.out.println("DESPUES "+valorPlaneta);
+
+            Log.dameInstancia().agregar("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
+			_observer.escribeLog("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
 
 			String movimiento="";
 			int coste=0;
-			String guardar="TENGO "+vecinos.size()+" VECINOS\n";
 			
 			//si hay que expandir comprobamos si podemos viajar a sus hijos
 			for(int siguiente=0;(siguiente<vecinos.size() && expandir);siguiente++){
@@ -212,11 +196,16 @@ public class Planeta extends InterfazPlaneta{
 					//obtenemos el valor del algoritmo para resolver el problema
 					int solucion=MatrizSolucionProblema.getInstancia().algoritmo(valorPlaneta, planetaVecino);
 					
-					guardar+=("Voy del planeta "+valorPlaneta+" al planeta "+planetaVecino+" e intento resolver el problema "+problema+" con el algoritmo "+solucion+" y no puedo.\n");
-                    conectaPlanetas(valorPlaneta, planetaVecino, 0);
+					conectaPlanetas(valorPlaneta, planetaVecino, 0);
+                    Log.dameInstancia().agregar("No puedo resolver el problema \""+GestorJuegos.dameInstancia().dameEnunciadoProblema()+"\" con el algoritmo \""+GestorJuegos.dameInstancia().dameNombreAlgoritmo()+"\" para viajar al planeta "+(planetaVecino+1));
+                    _observer.escribeLog("No puedo resolver el problema \""+GestorJuegos.dameInstancia().dameEnunciadoProblema()+"\" con el algoritmo \""+GestorJuegos.dameInstancia().dameNombreAlgoritmo()+"\" para viajar al planeta "+(planetaVecino+1));
+
 				}else{
                     //puede pasar
                     conectaPlanetas(valorPlaneta, planetaVecino, 1);
+                    int heuristicaVecino=pla._listaPlanetas.get(planetaVecino).dameValorHeuristico();
+                    Log.dameInstancia().agregar("* Puedo resolver el problema \""+GestorJuegos.dameInstancia().dameEnunciadoProblema()+"\" con el algoritmo \""+GestorJuegos.dameInstancia().dameNombreAlgoritmo()+"\" para viajar al planeta "+(planetaVecino+1)+" con coste real "+coste+" y heuristica "+heuristicaVecino);
+                    _observer.escribeLog("* Puedo resolver el problema \""+GestorJuegos.dameInstancia().dameEnunciadoProblema()+"\" con el algoritmo \""+GestorJuegos.dameInstancia().dameNombreAlgoritmo()+"\" para viajar al planeta "+(planetaVecino+1)+" con coste real "+coste+" y heuristica "+heuristicaVecino);
                 }
 
 				Planeta nuevoEstado=_listaPlanetas.get(planetaVecino);
@@ -224,13 +213,10 @@ public class Planeta extends InterfazPlaneta{
 				if (pasar && nuevoEstado.valido()){
 					Estadisticas.dameInstancia().insertaValorReal(coste);
 					Estadisticas.dameInstancia().insertaValorHeuristico(heuristica);
-					String datos=movimiento+" ,COSTE:"+coste+"\n";
+					String datos=movimiento+" ,COSTE:"+coste;
 					sucesores.add(new Successor(datos, nuevoEstado));
 				}
 
-			}
-			if(guardar.length()>20){
-				guardar(valorPlaneta,guardar);
 			}
 			return sucesores;
 		}
@@ -252,5 +238,18 @@ public class Planeta extends InterfazPlaneta{
 			return pla.dameValorHeuristico();
 		}
 	}
+
+    public class ValorReal implements StepCostFunction {
+        public Double calculateStepCost(Object fromState, Object toState, String action) {
+            String coste=action.substring(action.lastIndexOf("COSTE:")+6);
+			int cont=0;
+			String numero="";
+			while(cont<coste.length() && Character.isDigit(coste.charAt(cont))){
+				numero+=coste.charAt(cont);
+				cont++;
+			}
+            return Double.parseDouble(""+numero);
+        }
+    }
 	
 }

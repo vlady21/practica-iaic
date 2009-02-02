@@ -39,7 +39,7 @@ import observador.Observador;
  * The application's main frame.
  */
 public class PrincipalView extends FrameView implements Observador{
-
+    private ResourceMap resourceMap ;
     public PrincipalView(SingleFrameApplication app, Micromundo micromundo) {
         super(app);
 
@@ -51,7 +51,7 @@ public class PrincipalView extends FrameView implements Observador{
         initComponents();
 
         // status bar initialization - message timeout, idle icon and busy animation, etc
-        ResourceMap resourceMap = getResourceMap();
+        resourceMap = getResourceMap();
 
         getFrame().setIconImage(resourceMap.getImageIcon("aplicacion.icon").getImage());
 
@@ -3867,7 +3867,9 @@ public class PrincipalView extends FrameView implements Observador{
             //agregar opcion elegida
             _micromundo.solucionar(dameAlgoritmo());
             _micromundo.pasoApaso();
+            try{
             _micromundo.start();
+            }catch(Throwable e){}
         }
         _micromundo.siguiente();
 
@@ -3886,19 +3888,15 @@ public class PrincipalView extends FrameView implements Observador{
     }//GEN-LAST:event_mostrarEstadisticas
 
     private void salir(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salir
-
         System.exit(busyIconIndex);
     }//GEN-LAST:event_salir
 
     private void reiniciar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar
-
-        ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
-        panel.limpiarRecorrido();
-        panel.repaint();
         _pasoApaso.setEnabled(true);
         _continuo.setEnabled(true);
         _botonestadisticas.setEnabled(true);
         _iniciado=false;
+        _micromundo.stop();
         _micromundo=new Micromundo();
         _micromundo.setObserver(this);
         Estadisticas.dameInstancia().setObserver(this);
@@ -3911,7 +3909,6 @@ public class PrincipalView extends FrameView implements Observador{
     }//GEN-LAST:event_reiniciar
 
     private void status(String s) {
-
         statusMessageLabel.setText(s);
     }
 
@@ -4168,20 +4165,16 @@ public class PrincipalView extends FrameView implements Observador{
 		if(_log==null){
 			_log=new JTextArea();
 			_log.setEditable(false);
-			_log.setText("LOG");
 		}
 		return _log;
 	}
 
 	public void conectaPlanetas(int planeta1, int planeta2, int tipo) {
-
         ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
         panel.pintaLinea(planeta1,planeta2,tipo);
-
 	}
 
-	public void escribeLog(String datos) {
-        
+	public void escribeLog(String datos) {        
 		dameLog().append(datos+"\n");
 	}
 
@@ -4198,7 +4191,7 @@ public class PrincipalView extends FrameView implements Observador{
 	}
 
 	public void reiniciar(){
-		_pasoApaso.setEnabled(true);
+       _pasoApaso.setEnabled(true);
 		_continuo.setEnabled(true);
 		_botonestadisticas.setEnabled(true);
 		_iniciado=false;
@@ -4211,7 +4204,6 @@ public class PrincipalView extends FrameView implements Observador{
         statusAnimationLabel.setIcon(idleIcon);
         progressBar.setVisible(false);
         progressBar.setValue(0);
-
 	}
 
 	public int dameAlgoritmo(){
@@ -4399,10 +4391,7 @@ public class PrincipalView extends FrameView implements Observador{
                                 line=new Linea(0,0,0,0);
                             }
                         }
-
-                        System.out.println(linea.toString());
                         lineas.add(linea);
-
                     }
                 }
 
@@ -4511,6 +4500,10 @@ public class PrincipalView extends FrameView implements Observador{
              color = Color.GREEN;
          }else if(tipo==2){
              color = Color.BLUE;
+             
+             ((JButton)panelUniverso.getComponent(planet1)).setIcon(resourceMap.getIcon("planeta3.icon"));
+             ((JButton)panelUniverso.getComponent(planet2)).setIcon(resourceMap.getIcon("planeta3.icon"));
+             _pasoApaso.setText("Paso a paso");
          }
 
          /*System.out.println("P1X: "+planeta1.getX()+" P1Y: "+planeta1.getY());
@@ -4527,9 +4520,20 @@ public class PrincipalView extends FrameView implements Observador{
      }
      
      private void limpiarRecorrido() {
-         
          recorrido.clear();
-
+         for(int i=0;i<212;i++){
+            ((JButton)panelUniverso.getComponent(i)).setIcon(resourceMap.getIcon("planeta1.icon"));
+         }
+         for(int i=212;i<216;i++){
+            ((JButton)panelUniverso.getComponent(i)).setIcon(resourceMap.getIcon("planeta2.icon"));
+         }
      }
     }
+
+     public void limpiarRecorrido() {
+        ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
+        panel.limpiarRecorrido();
+        panel.repaint();
+     }
+
 }

@@ -27,9 +27,10 @@ public class Puzzle8  extends InterfazJuego{
 	 */
 	private int [][] _tablero;
 	
-	private int _dificultad=4;
+	private int _dificultad=6;
 
     public Puzzle8() {
+        _enunciadoProblema="Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden.";
     		_nodosExpandidos=0;
     		_resuelto=false;
     	  	_tablero = new int[3][3];
@@ -59,7 +60,7 @@ public class Puzzle8  extends InterfazJuego{
 	
 
 	public Problem getProblema() {
-		Problem problem = new Problem(new Puzzle8(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new Puzzle8(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 

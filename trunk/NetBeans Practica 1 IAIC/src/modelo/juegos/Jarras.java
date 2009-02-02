@@ -15,6 +15,7 @@ public class Jarras extends InterfazJuego{
 	private int _dificultad=2;
 	
 	public Jarras(){
+        _enunciadoProblema="Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos.";
 		_nodosExpandidos=0;
 		_resuelto=false;
 		_jarra3=0;
@@ -27,7 +28,7 @@ public class Jarras extends InterfazJuego{
 	}
 	
 	public Problem getProblema() {
-		Problem problem = new Problem(new Jarras(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new Jarras(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 

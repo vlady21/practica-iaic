@@ -19,13 +19,13 @@ public class RejillaRojoAzul extends InterfazJuego{
 	private int _dificultad=4;
 
     public RejillaRojoAzul() {
-    		_nodosExpandidos=0;
-    		_resuelto=false;
-    	  	_tablero = new String[3][3];
-
-    	  	_tablero[0][0] = "R"; _tablero[0][1] = "R"; _tablero[0][2] = "R";
-    	  	_tablero[1][0] = "A"; _tablero[1][1] = "R"; _tablero[1][2] = "R";
-    	  	_tablero[2][0] = "A"; _tablero[2][1] = "A"; _tablero[2][2] = "A";
+        _enunciadoProblema="Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo.";
+    	_nodosExpandidos=0;
+    	_resuelto=false;
+   	 	_tablero = new String[3][3];
+   	  	_tablero[0][0] = "R"; _tablero[0][1] = "R"; _tablero[0][2] = "R";
+   	  	_tablero[1][0] = "A"; _tablero[1][1] = "R"; _tablero[1][2] = "R";
+   	  	_tablero[2][0] = "A"; _tablero[2][1] = "A"; _tablero[2][2] = "A";
 	} 
   
 	/**
@@ -43,7 +43,7 @@ public class RejillaRojoAzul extends InterfazJuego{
 	
 
 	public Problem getProblema() {
-		Problem problem = new Problem(new RejillaRojoAzul(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new RejillaRojoAzul(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 

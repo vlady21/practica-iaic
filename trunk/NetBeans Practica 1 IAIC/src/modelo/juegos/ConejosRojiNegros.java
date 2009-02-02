@@ -25,14 +25,15 @@ public class ConejosRojiNegros  extends InterfazJuego{
 	private int _dificultad=3;
 
 	public ConejosRojiNegros() {
-			_nodosExpandidos=0;
-			_resuelto=false;
-    	  	_tablero = new int[7];
+        _enunciadoProblema="Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original.";
+		_nodosExpandidos=0;
+		_resuelto=false;
+    	_tablero = new int[7];
 
-    	  	_tablero[0] = 'R'; _tablero[1] = 'R'; _tablero[2] = 'R';
-    	  	_tablero[3] = ' '; _tablero[4] = 'N'; _tablero[5] = 'N';
-    	  	_tablero[6] = 'N';
-	        _x = 3;
+    	_tablero[0] = 'R'; _tablero[1] = 'R'; _tablero[2] = 'R';
+    	_tablero[3] = ' '; _tablero[4] = 'N'; _tablero[5] = 'N';
+    	_tablero[6] = 'N';
+	    _x = 3;
 	} 
   
 	/**
@@ -52,7 +53,7 @@ public class ConejosRojiNegros  extends InterfazJuego{
 	
 
 	public Problem getProblema() {
-		Problem problem = new Problem(new ConejosRojiNegros(), new Sucesores(), new EsFinal(), new ValorHeuristico());
+		Problem problem = new Problem(new ConejosRojiNegros(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
 	}
 
