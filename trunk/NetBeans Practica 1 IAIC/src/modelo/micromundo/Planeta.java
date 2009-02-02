@@ -144,7 +144,10 @@ public class Planeta extends InterfazPlaneta{
 		_siguiente=false;
 		_pasoApaso=false;
 	}
-	
+
+    public int numeroPlaneta(){
+		return _numeroPlaneta;
+	}
 
 	public void guardar(int valor,String z){
 		PrintWriter writer;
@@ -168,6 +171,9 @@ public class Planeta extends InterfazPlaneta{
 			int valorPlaneta=pla._numeroPlaneta;
 			_nodosExpandidos++;
 			
+            //colocamos la nave
+            posicionarNave(valorPlaneta);
+            
 			//-------------
 			System.out.println("PLANETA: "+valorPlaneta);
 			System.out.println(_listaPlanetasExpandidos);
@@ -181,12 +187,7 @@ public class Planeta extends InterfazPlaneta{
 			}
 			
 			System.out.println("ANTES "+valorPlaneta);
-            
-			if(_pasoApaso){
-				while(!_siguiente){}
-				_siguiente=false;
-			}
-
+           
             //System.out.println("DESPUES "+valorPlaneta);
 
 			String movimiento="";
@@ -195,7 +196,12 @@ public class Planeta extends InterfazPlaneta{
 			
 			//si hay que expandir comprobamos si podemos viajar a sus hijos
 			for(int siguiente=0;(siguiente<vecinos.size() && expandir);siguiente++){
-				int planetaVecino=vecinos.get(siguiente);
+				if(_pasoApaso){
+                    while(!_siguiente){}
+                    _siguiente=false;
+                }
+
+                int planetaVecino=vecinos.get(siguiente);
 				movimiento="Paso del planeta "+(valorPlaneta+1)+" al planeta vecino "+(planetaVecino+1);
 				boolean pasar=resolverProblema(valorPlaneta,planetaVecino);
 				//como hemos cargado el juego, obtenemos su valor
@@ -207,7 +213,12 @@ public class Planeta extends InterfazPlaneta{
 					int solucion=MatrizSolucionProblema.getInstancia().algoritmo(valorPlaneta, planetaVecino);
 					
 					guardar+=("Voy del planeta "+valorPlaneta+" al planeta "+planetaVecino+" e intento resolver el problema "+problema+" con el algoritmo "+solucion+" y no puedo.\n");
-				}
+                    conectaPlanetas(valorPlaneta, planetaVecino, 0);
+				}else{
+                    //puede pasar
+                    conectaPlanetas(valorPlaneta, planetaVecino, 1);
+                }
+
 				Planeta nuevoEstado=_listaPlanetas.get(planetaVecino);
 				
 				if (pasar && nuevoEstado.valido()){
@@ -216,6 +227,7 @@ public class Planeta extends InterfazPlaneta{
 					String datos=movimiento+" ,COSTE:"+coste+"\n";
 					sucesores.add(new Successor(datos, nuevoEstado));
 				}
+
 			}
 			if(guardar.length()>20){
 				guardar(valorPlaneta,guardar);

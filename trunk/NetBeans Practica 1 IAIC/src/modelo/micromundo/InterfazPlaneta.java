@@ -3,6 +3,7 @@ package modelo.micromundo;
 import java.util.ArrayList;
 
 import aima.search.framework.Problem;
+import observador.Observador;
 
 public abstract class InterfazPlaneta {
 	protected static ArrayList<Planeta> _listaPlanetas;
@@ -17,4 +18,17 @@ public abstract class InterfazPlaneta {
 	public abstract void continuo();
 	public abstract boolean resuelto();
 	public abstract Problem getProblema(ArrayList<Planeta> planetas);
+    public abstract int numeroPlaneta();
+    
+    protected static Observador _observer;
+    public void setObserver(Observador observer){
+        _observer=observer;
+    }
+    public void posicionarNave(int numeroPlaneta){
+        _observer.posicionarNave(numeroPlaneta);
+    }
+    public static void conectaPlanetas(int planeta1, int planeta2, int tipo){
+        _observer.conectaPlanetas(planeta1, planeta2, tipo);
+    }
+
 }

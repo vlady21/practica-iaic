@@ -3573,7 +3573,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta213.setBackground(resourceMap.getColor("planeta213.background")); // NOI18N
         planeta213.setForeground(resourceMap.getColor("planeta213.foreground")); // NOI18N
-        planeta213.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta213.setIcon(resourceMap.getIcon("planeta2.icon")); // NOI18N
         planeta213.setText(resourceMap.getString("planeta213.text")); // NOI18N
         planeta213.setBorderPainted(false);
         planeta213.setContentAreaFilled(false);
@@ -3588,7 +3588,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta214.setBackground(resourceMap.getColor("planeta214.background")); // NOI18N
         planeta214.setForeground(resourceMap.getColor("planeta214.foreground")); // NOI18N
-        planeta214.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta214.setIcon(resourceMap.getIcon("planeta2.icon")); // NOI18N
         planeta214.setText(resourceMap.getString("planeta214.text")); // NOI18N
         planeta214.setBorderPainted(false);
         planeta214.setContentAreaFilled(false);
@@ -3603,7 +3603,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta215.setBackground(resourceMap.getColor("planeta215.background")); // NOI18N
         planeta215.setForeground(resourceMap.getColor("planeta215.foreground")); // NOI18N
-        planeta215.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta215.setIcon(resourceMap.getIcon("planeta2.icon")); // NOI18N
         planeta215.setText(resourceMap.getString("planeta215.text")); // NOI18N
         planeta215.setBorderPainted(false);
         planeta215.setContentAreaFilled(false);
@@ -3618,7 +3618,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta216.setBackground(resourceMap.getColor("planeta216.background")); // NOI18N
         planeta216.setForeground(resourceMap.getColor("planeta216.foreground")); // NOI18N
-        planeta216.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta216.setIcon(resourceMap.getIcon("planeta2.icon")); // NOI18N
         planeta216.setText(resourceMap.getString("planeta216.text")); // NOI18N
         planeta216.setBorderPainted(false);
         planeta216.setContentAreaFilled(false);
@@ -4451,8 +4451,7 @@ public class PrincipalView extends FrameView implements Observador{
                         g.drawLine(linea.getX1()-1, linea.getY1()-1, linea.getX2()-1, linea.getY2()-1);
                         g.setColor(linea.getColor());
                         g.drawLine(linea.getX1()-2, linea.getY1()-2, linea.getX2()-2, linea.getY2()-2);
-
-                    }
+                  }
 
                     g.setColor(linea.getColor());
                     g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
@@ -4469,8 +4468,9 @@ public class PrincipalView extends FrameView implements Observador{
 
      private void pintaLinea(int planet1, int planet2, int tipo) {
 
-         planeta1 = listaPlanetas.elementAt(planet1);
-         planeta2 = listaPlanetas.elementAt(planet2);
+         planeta1 = listaPlanetas.get(planet1);
+         planeta2 = listaPlanetas.get(planet2);
+
          int alto = planeta1.getHeight() / 2;
          int ancho = planeta1.getWidth() / 2;
          Color color = Color.ORANGE;
@@ -4484,11 +4484,16 @@ public class PrincipalView extends FrameView implements Observador{
              color = Color.BLUE;
          }
 
+         /*System.out.println("P1X: "+planeta1.getX()+" P1Y: "+planeta1.getY());
+         System.out.println("P2X: "+planeta2.getX()+" P2Y: "+planeta2.getY());
+*/
          Linea linea = new Linea(planeta1.getX() + ancho, planeta1.getY() + alto, planeta2.getX() + ancho, planeta2.getY() + alto, color);
 
          this.line = linea;
 
+         lineas.add(line);
          paintComponent(this.getGraphics());
+         repaint();
      }
 
     }

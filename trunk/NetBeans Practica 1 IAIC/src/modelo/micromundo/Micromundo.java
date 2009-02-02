@@ -28,11 +28,12 @@ public class Micromundo extends Thread {
 	private static int _coste=0;
 	private int _semilla=0;
 	private static ArrayList<Planeta> _listaPlanetas=new ArrayList<Planeta>();
-	
+	private static ArrayList<String> _solucion=new ArrayList<String>();
 
 	public Micromundo(){
 		_coste=0;
 		_listaPlanetas=new ArrayList<Planeta>();
+        _solucion=new ArrayList<String>();
 		_semilla=GeneraMatrices.dameInstancia().dameSemilla();
 		generarValoresParaHeuristica();
 		generaInstaciaProblemaGlobal();
@@ -74,6 +75,7 @@ public class Micromundo extends Thread {
 	
 	public void generaInstaciaProblemaGlobal(){
 		_planeta=new Planeta(_listaPlanetas);
+        _planeta.setObserver(_observer);
 		_problema=_planeta.getProblema(_listaPlanetas);
 	}
 	
@@ -104,9 +106,12 @@ public class Micromundo extends Thread {
 			Log.dameInstancia().abrirLog();
 			Estadisticas.dameInstancia().reiniciar();
 			SearchAgent agent = new SearchAgent (_problema , _search) ;
+            for(int i=0;i<agent.getActions().size();i++)
+                System.out.println(agent.getAttribute(i));
 			if(_planeta.resuelto()){
 				printActions(agent.getActions());
 				printInstrumentation(agent.getInstrumentation());
+                pintaSolucion();
 			}
 			_observer.reiniciar();
 			Log.dameInstancia().cerrarLog();
@@ -115,8 +120,16 @@ public class Micromundo extends Thread {
 	
 	public void setObserver(Observador obs){
 		_observer=obs;
+        _planeta.setObserver(_observer);
 	}
-	
+
+    public void pintaSolucion(){
+        for(int i=0;i<_solucion.size()-1;i++){
+            int pla1=Integer.parseInt(_solucion.get(i))-1;
+            int pla2=Integer.parseInt(_solucion.get(i+1))-1;
+            _observer.conectaPlanetas(pla1, pla2, 2);
+        }
+    }
 	private static void printInstrumentation(Properties properties) {
 		Iterator keys = properties.keySet().iterator();
 		while (keys.hasNext()) {
@@ -139,6 +152,19 @@ public class Micromundo extends Thread {
 				numero+=coste.charAt(cont);
 				cont++;
 			}
+
+            int inicio=action.indexOf("planeta")+8;
+            int fin=action.indexOf("al")-1;
+            String planeta1=action.substring(inicio,fin);
+            _solucion.add(planeta1);
+
+            if(i == actions.size()-1){
+                int inicio2=action.indexOf("vecino")+7;
+                int fin2=action.lastIndexOf(",")-1;
+                String planeta2=action.substring(inicio2,fin2);
+                _solucion.add(planeta2);
+            }
+
 			_coste+=Integer.parseInt(numero.trim());
 			Log.dameInstancia().agregar(action);
 			_observer.escribeLog(action);

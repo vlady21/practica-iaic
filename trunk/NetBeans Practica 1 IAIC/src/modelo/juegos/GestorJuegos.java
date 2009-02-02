@@ -189,7 +189,7 @@ public class GestorJuegos {
 				_coste+=Integer.parseInt(numero.trim());
 			}
 			//acciones de los minijuegos
-			System.out.println(action);
+			//System.out.println(action);
 		}
 	}
 }
