@@ -4,6 +4,7 @@
 
 package vista;
 
+import main.Principal;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Component;
@@ -391,7 +392,7 @@ public class PrincipalView extends FrameView implements Observador{
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
         jSplitPane1.setName("jSplitPane1"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(PrincipalView.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(main.Principal.class).getContext().getResourceMap(PrincipalView.class);
         scrollUniverso.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("scrollUniverso.border.title"))); // NOI18N
         scrollUniverso.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollUniverso.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -3525,7 +3526,7 @@ public class PrincipalView extends FrameView implements Observador{
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getActionMap(PrincipalView.class, this);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(main.Principal.class).getContext().getActionMap(PrincipalView.class, this);
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
         exitMenuItem.setText(resourceMap.getString("exitMenuItem.text")); // NOI18N
         exitMenuItem.setToolTipText(resourceMap.getString("exitMenuItem.toolTipText")); // NOI18N

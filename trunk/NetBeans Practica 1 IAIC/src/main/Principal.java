@@ -2,8 +2,9 @@
  * Principal.java
  */
 
-package vista;
+package main;
 
+import vista.*;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Dimension;

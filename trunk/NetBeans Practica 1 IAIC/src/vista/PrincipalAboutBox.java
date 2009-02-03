@@ -39,7 +39,7 @@ public class PrincipalAboutBox extends javax.swing.JDialog {
         javax.swing.JLabel imageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(PrincipalAboutBox.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(main.Principal.class).getContext().getResourceMap(PrincipalAboutBox.class);
         setTitle(resourceMap.getString("title")); // NOI18N
         setBackground(resourceMap.getColor("aboutBox.background")); // NOI18N
         setIconImage(null);
@@ -52,7 +52,7 @@ public class PrincipalAboutBox extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setName("jPanel1"); // NOI18N
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getActionMap(PrincipalAboutBox.class, this);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(main.Principal.class).getContext().getActionMap(PrincipalAboutBox.class, this);
         closeButton.setAction(actionMap.get("closeAboutBox")); // NOI18N
         closeButton.setName("closeButton"); // NOI18N
 
