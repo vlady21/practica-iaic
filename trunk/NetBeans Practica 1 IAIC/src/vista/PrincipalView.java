@@ -735,7 +735,7 @@ public class PrincipalView extends FrameView implements Observador{
         planeta23.setPreferredSize(new java.awt.Dimension(90, 90));
         panelUniverso.add(planeta23, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 100, -1, -1));
 
-        planeta24.setBackground(resourceMap.getColor("planeta24.background")); // NOI18N
+		planeta24.setBackground(resourceMap.getColor("planeta24.background")); // NOI18N
         planeta24.setForeground(resourceMap.getColor("planeta24.foreground")); // NOI18N
         planeta24.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
         planeta24.setText(resourceMap.getString("planeta24.text")); // NOI18N
@@ -3533,7 +3533,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         jLabel12.setText(resourceMap.getString("jLabel12.text")); // NOI18N
         jLabel12.setName("jLabel12"); // NOI18N
-        jLabel12.setIcon(resourceMap.getIcon("planeta2.icon"));
+        jLabel12.setIcon(resourceMap.getIcon("planeta3.icon"));
         jPanel2.add(jLabel12);
 
         jLabel9.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
@@ -3719,16 +3719,22 @@ public class PrincipalView extends FrameView implements Observador{
         jLabel1.setName("jLabel1"); // NOI18N
         jToolBar1.add(jLabel1);
 
-        _algoritmo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Busqueda Voraz", "Algoritmo A*", "Primero en anchura", "Profundidad Limitada", "Primero en profundidad"}));
+        _algoritmo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Busqueda Voraz", "Algoritmo A*", "Primero en anchura", "Profundidad Limitada", "Primero en profundidad" }));
         _algoritmo.setAlignmentX(0.0F);
         _algoritmo.setMaximumSize(new java.awt.Dimension(145, 25));
         _algoritmo.setMinimumSize(new java.awt.Dimension(145, 25));
         _algoritmo.setName("_algoritmo"); // NOI18N
         _algoritmo.setPreferredSize(new java.awt.Dimension(145, 25));
+        _algoritmo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                _algoritmoItemStateChanged(evt);
+            }
+        });
         jToolBar1.add(_algoritmo);
 
         jLabel11.setText(resourceMap.getString("_labelprofundidad.text")); // NOI18N
         jLabel11.setName("_labelprofundidad"); // NOI18N
+		jLabel11.setVisible(false);
         jToolBar1.add(jLabel11);
 
         jTextField1.setText(resourceMap.getString("_profundidad.text")); // NOI18N
@@ -3736,6 +3742,7 @@ public class PrincipalView extends FrameView implements Observador{
         jTextField1.setMinimumSize(new java.awt.Dimension(145, 25));
         jTextField1.setName("_profundidad"); // NOI18N
         jTextField1.setPreferredSize(new java.awt.Dimension(145, 25));
+		jTextField1.setVisible(false);
         jToolBar1.add(jTextField1);
 
         setComponent(mainPanel);
@@ -3827,6 +3834,16 @@ public class PrincipalView extends FrameView implements Observador{
         progressBar.setVisible(false);
         progressBar.setValue(0);
     }//GEN-LAST:event_reiniciar
+
+    private void _algoritmoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event__algoritmoItemStateChanged
+        if(_algoritmo.getSelectedItem().equals("Profundidad Limitada")){
+            jTextField1.setVisible(true);
+            jLabel11.setVisible(true);
+		}else{
+            jTextField1.setVisible(false);
+            jLabel11.setVisible(false);
+        }
+    }//GEN-LAST:event__algoritmoItemStateChanged
 
     private void status(String s) {
         statusMessageLabel.setText(s);
@@ -3995,7 +4012,6 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JButton planeta214;
     private javax.swing.JButton planeta215;
     private javax.swing.JButton planeta216;
-
     private javax.swing.JButton planeta22;
     private javax.swing.JButton planeta23;
     private javax.swing.JButton planeta24;
