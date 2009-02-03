@@ -353,7 +353,7 @@ public class PrincipalView extends FrameView implements Observador{
         planeta216 = new javax.swing.JButton();
         nave = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        scrollLog = new javax.swing.JScrollPane();
         _log = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -3440,16 +3440,16 @@ public class PrincipalView extends FrameView implements Observador{
         jPanel1.setName("jPanel1"); // NOI18N
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jScrollPane2.border.title"))); // NOI18N
-        jScrollPane2.setName("jScrollPane2"); // NOI18N
+        scrollLog.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("scrollLog.border.title"))); // NOI18N
+        scrollLog.setName("scrollLog"); // NOI18N
 
         _log.setBackground(resourceMap.getColor("_log.background")); // NOI18N
         _log.setColumns(20);
         _log.setRows(5);
         _log.setName("_log"); // NOI18N
-        jScrollPane2.setViewportView(_log);
+        scrollLog.setViewportView(_log);
 
-        jPanel1.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        jPanel1.add(scrollLog, java.awt.BorderLayout.CENTER);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel2.border.title"))); // NOI18N
         jPanel2.setName("jPanel2"); // NOI18N
@@ -3800,7 +3800,6 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel mainPanel;
@@ -4024,6 +4023,7 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JButton planeta98;
     private javax.swing.JButton planeta99;
     private javax.swing.JProgressBar progressBar;
+    private javax.swing.JScrollPane scrollLog;
     private javax.swing.JScrollPane scrollUniverso;
     private javax.swing.JLabel statusAnimationLabel;
     private javax.swing.JLabel statusMessageLabel;
@@ -4053,7 +4053,14 @@ public class PrincipalView extends FrameView implements Observador{
         panel.pintaLinea(planeta1,planeta2,tipo);
 	}
 
-	public void escribeLog(String datos) {        
+	public void escribeLog(String datos) {
+
+        JScrollBar sV = scrollLog.getVerticalScrollBar();
+
+        sV.setValue(sV.getMaximum());
+
+        scrollLog.setVerticalScrollBar(sV);
+
 		dameLog().append(datos+"\n");
 	}
 
@@ -4085,6 +4092,11 @@ public class PrincipalView extends FrameView implements Observador{
         statusAnimationLabel.setIcon(idleIcon);
         progressBar.setVisible(false);
         progressBar.setValue(0);
+        JScrollBar sV = scrollLog.getVerticalScrollBar();
+
+        sV.setValue(sV.getMaximum());
+
+        scrollLog.setVerticalScrollBar(sV);
         
 	}
 
