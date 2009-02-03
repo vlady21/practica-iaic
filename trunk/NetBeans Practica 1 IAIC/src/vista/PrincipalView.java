@@ -29,9 +29,11 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JScrollBar;
 import javax.swing.JTextArea;
+import javax.swing.text.MaskFormatter;
 import modelo.matrices.MatrizConexiones;
 import modelo.micromundo.Estadisticas;
 import modelo.micromundo.Micromundo;
@@ -389,7 +391,11 @@ public class PrincipalView extends FrameView implements Observador{
         jLabel1 = new javax.swing.JLabel();
         _algoritmo = new javax.swing.JComboBox();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+		try{
+			MaskFormatter mascara = new MaskFormatter("#####");
+			jTextField1 = new javax.swing.JFormattedTextField(mascara);
+			jTextField1.setColumns(5);
+		}catch(Throwable e){}
 
         mainPanel.setMaximumSize(new java.awt.Dimension(4000, 4000));
         mainPanel.setMinimumSize(new java.awt.Dimension(400, 400));
@@ -3875,7 +3881,7 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JFormattedTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
