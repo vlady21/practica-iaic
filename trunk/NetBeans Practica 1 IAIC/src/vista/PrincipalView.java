@@ -353,6 +353,7 @@ public class PrincipalView extends FrameView implements Observador{
         planeta215 = new javax.swing.JButton();
         planeta216 = new javax.swing.JButton();
         nave = new javax.swing.JLabel();
+		
         jPanel1 = new javax.swing.JPanel();
         scrollLog = new javax.swing.JScrollPane();
         _log = new javax.swing.JTextArea();
@@ -363,6 +364,12 @@ public class PrincipalView extends FrameView implements Observador{
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
@@ -381,6 +388,8 @@ public class PrincipalView extends FrameView implements Observador{
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         _algoritmo = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         mainPanel.setMaximumSize(new java.awt.Dimension(4000, 4000));
         mainPanel.setMinimumSize(new java.awt.Dimension(400, 400));
@@ -739,7 +748,6 @@ public class PrincipalView extends FrameView implements Observador{
         planeta24.setName("planeta24"); // NOI18N
         planeta24.setPreferredSize(new java.awt.Dimension(90, 90));
         panelUniverso.add(planeta24, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 100, -1, -1));
-
         planeta25.setBackground(resourceMap.getColor("planeta25.background")); // NOI18N
         planeta25.setForeground(resourceMap.getColor("planeta25.foreground")); // NOI18N
         planeta25.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
@@ -3513,6 +3521,36 @@ public class PrincipalView extends FrameView implements Observador{
         jLabel7.setName("jLabel7"); // NOI18N
         jPanel2.add(jLabel7);
 
+        jLabel13.setText(resourceMap.getString("jLabel13.text")); // NOI18N
+        jLabel13.setName("jLabel13"); // NOI18N
+        jLabel13.setIcon(resourceMap.getIcon("planeta1.icon"));
+        jPanel2.add(jLabel13);
+
+        jLabel8.setForeground(resourceMap.getColor("jLabel8.foreground")); // NOI18N
+        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
+        jLabel8.setName("jLabel8"); // NOI18N
+        jPanel2.add(jLabel8);
+
+        jLabel12.setText(resourceMap.getString("jLabel12.text")); // NOI18N
+        jLabel12.setName("jLabel12"); // NOI18N
+        jLabel12.setIcon(resourceMap.getIcon("planeta2.icon"));
+        jPanel2.add(jLabel12);
+
+        jLabel9.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
+        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
+        jLabel9.setName("jLabel9"); // NOI18N
+        jPanel2.add(jLabel9);
+
+        jLabel14.setText(resourceMap.getString("jLabel14.text")); // NOI18N
+        jLabel14.setName("jLabel14"); // NOI18N
+        jLabel14.setIcon(resourceMap.getIcon("planetaObjetivo"));
+        jPanel2.add(jLabel14);
+
+        jLabel10.setForeground(resourceMap.getColor("jLabel10.foreground")); // NOI18N
+        jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
+        jLabel10.setName("jLabel10"); // NOI18N
+        jPanel2.add(jLabel10);
+
         jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         jSplitPane1.setBottomComponent(jPanel1);
@@ -3562,11 +3600,11 @@ public class PrincipalView extends FrameView implements Observador{
         statusPanel.setLayout(statusPanelLayout);
         statusPanelLayout.setHorizontalGroup(
             statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(statusPanelSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 793, Short.MAX_VALUE)
+            .addComponent(statusPanelSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 891, Short.MAX_VALUE)
             .addGroup(statusPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statusMessageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 623, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 721, Short.MAX_VALUE)
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(statusAnimationLabel)
@@ -3681,13 +3719,24 @@ public class PrincipalView extends FrameView implements Observador{
         jLabel1.setName("jLabel1"); // NOI18N
         jToolBar1.add(jLabel1);
 
-        _algoritmo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Busqueda Voraz", "Algoritmo A*", "Primero en anchura" }));
+        _algoritmo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Busqueda Voraz", "Algoritmo A*", "Primero en anchura", "Profundidad Limitada", "Primero en profundidad"}));
         _algoritmo.setAlignmentX(0.0F);
         _algoritmo.setMaximumSize(new java.awt.Dimension(145, 25));
         _algoritmo.setMinimumSize(new java.awt.Dimension(145, 25));
         _algoritmo.setName("_algoritmo"); // NOI18N
         _algoritmo.setPreferredSize(new java.awt.Dimension(145, 25));
         jToolBar1.add(_algoritmo);
+
+        jLabel11.setText(resourceMap.getString("_labelprofundidad.text")); // NOI18N
+        jLabel11.setName("_labelprofundidad"); // NOI18N
+        jToolBar1.add(jLabel11);
+
+        jTextField1.setText(resourceMap.getString("_profundidad.text")); // NOI18N
+        jTextField1.setMaximumSize(new java.awt.Dimension(145, 25));
+        jTextField1.setMinimumSize(new java.awt.Dimension(145, 25));
+        jTextField1.setName("_profundidad"); // NOI18N
+        jTextField1.setPreferredSize(new java.awt.Dimension(145, 25));
+        jToolBar1.add(jTextField1);
 
         setComponent(mainPanel);
         setMenuBar(menuBar);
@@ -3707,7 +3756,7 @@ public class PrincipalView extends FrameView implements Observador{
             _iniciado=true;
             dameLog().setText("");
             //agregar opcion elegida
-            _micromundo.solucionar(dameAlgoritmo());
+            _micromundo.solucionar(dameAlgoritmo(),Integer.parseInt(jTextField1.getText()));
             _micromundo.start();
         }
 
@@ -3735,7 +3784,7 @@ public class PrincipalView extends FrameView implements Observador{
             _iniciado=true;
             dameLog().setText("");
             //agregar opcion elegida
-            _micromundo.solucionar(dameAlgoritmo());
+            _micromundo.solucionar(dameAlgoritmo(),Integer.parseInt(jTextField1.getText()));
             _micromundo.pasoApaso();
             try{
             _micromundo.start();
@@ -3793,15 +3842,23 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
@@ -3938,6 +3995,7 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JButton planeta214;
     private javax.swing.JButton planeta215;
     private javax.swing.JButton planeta216;
+
     private javax.swing.JButton planeta22;
     private javax.swing.JButton planeta23;
     private javax.swing.JButton planeta24;
@@ -4102,12 +4160,20 @@ public class PrincipalView extends FrameView implements Observador{
 	}
 
 	public int dameAlgoritmo(){
+        jTextField1.setVisible(false);
+        jLabel11.setVisible(false);
 		if(_algoritmo.getSelectedItem().equals("Busqueda Voraz")){
 			return 0;
 		}else if(_algoritmo.getSelectedItem().equals("Algoritmo A*")){
 			return 1;
 		}else if(_algoritmo.getSelectedItem().equals("Primero en anchura")){
 			return 2;
+		}else if(_algoritmo.getSelectedItem().equals("Profundidad Limitada")){
+            jTextField1.setVisible(true);
+            jLabel11.setVisible(true);
+			return 3;
+		}else if(_algoritmo.getSelectedItem().equals("Primero en profundidad")){
+			return 4;
 		}
 		return -1;
 	}
@@ -4339,8 +4405,14 @@ public class PrincipalView extends FrameView implements Observador{
                             g.drawLine(linea.getX1()-1, linea.getY1()-1, linea.getX2()-1, linea.getY2()-1);
                             g.setColor(linea.getColor());
                             g.drawLine(linea.getX1()-2, linea.getY1()-2, linea.getX2()-2, linea.getY2()-2);
-
-                            
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()-2, linea.getY1(), linea.getX2()-2, linea.getY2());
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()+2, linea.getY1(), linea.getX2()+2, linea.getY2());
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()-1, linea.getY1(), linea.getX2()-1, linea.getY2());
+                            g.setColor(linea.getColor());
+                            g.drawLine(linea.getX1()+1, linea.getY1(), linea.getX2()+1, linea.getY2());
                         }
                     }
                    
@@ -4354,7 +4426,15 @@ public class PrincipalView extends FrameView implements Observador{
                         g.drawLine(linea.getX1()-1, linea.getY1()-1, linea.getX2()-1, linea.getY2()-1);
                         g.setColor(linea.getColor());
                         g.drawLine(linea.getX1()-2, linea.getY1()-2, linea.getX2()-2, linea.getY2()-2);
-                  }
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()-2, linea.getY1(), linea.getX2()-2, linea.getY2());
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()+2, linea.getY1(), linea.getX2()+2, linea.getY2());
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()-1, linea.getY1(), linea.getX2()-1, linea.getY2());
+                        g.setColor(linea.getColor());
+                        g.drawLine(linea.getX1()+1, linea.getY1(), linea.getX2()+1, linea.getY2());
+                    }
 
                     g.setColor(linea.getColor());
                     g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
@@ -4375,7 +4455,14 @@ public class PrincipalView extends FrameView implements Observador{
                    g.drawLine(linea.getX1()-1, linea.getY1()-1, linea.getX2()-1, linea.getY2()-1);
                    g.setColor(linea.getColor());
                    g.drawLine(linea.getX1()-2, linea.getY1()-2, linea.getX2()-2, linea.getY2()-2);
-  
+                    g.setColor(linea.getColor());
+                    g.drawLine(linea.getX1()-2, linea.getY1(), linea.getX2()-2, linea.getY2());
+                    g.setColor(linea.getColor());
+                    g.drawLine(linea.getX1()+2, linea.getY1(), linea.getX2()+2, linea.getY2());
+                    g.setColor(linea.getColor());
+                    g.drawLine(linea.getX1()-1, linea.getY1(), linea.getX2()-1, linea.getY2());
+                    g.setColor(linea.getColor());
+                    g.drawLine(linea.getX1()+1, linea.getY1(), linea.getX2()+1, linea.getY2());
            }
         }
 
@@ -4429,8 +4516,6 @@ public class PrincipalView extends FrameView implements Observador{
      }
 
      private void posicionarNave(int planet1) {
-
-         System.out.println("Posicionar en planeta: " + planet1);
          planeta1 = listaPlanetas.get(planet1);
 
          xNave = planeta1.getX()-20;
@@ -4484,6 +4569,10 @@ public class PrincipalView extends FrameView implements Observador{
         ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
         panel.limpiarRecorrido();
         panel.repaint();
+     }
+
+     public void informacionStatus(String info){
+        status("Buscando mundo con niveles de oxigeno y agua adecuados para vivir - "+info);
      }
 
 }

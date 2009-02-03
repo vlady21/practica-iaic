@@ -1,0 +1,80 @@
+
+-- EXPLORO EL PLANETA 1
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad iterativa" para viajar al planeta 2 con coste real 2 y heuristica 108
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Simulada" para viajar al planeta 3
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 4
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 25 con coste real 3 y heuristica 111
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 38
+
+-- EXPLORO EL PLANETA 25
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 30 con coste real 6 y heuristica 91
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Busqueda Voraz" para viajar al planeta 31 con coste real 4 y heuristica 85
+
+-- EXPLORO EL PLANETA 31
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Algoritmo A*" para viajar al planeta 32 con coste real 4 y heuristica 85
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en anchura" para viajar al planeta 35 con coste real 4 y heuristica 86
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Simulada" para viajar al planeta 49
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 51
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 56
+
+-- EXPLORO EL PLANETA 35
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Busqueda Voraz" para viajar al planeta 40 con coste real 4 y heuristica 77
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Escalada simple" para viajar al planeta 46
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 67 con coste real 1 y heuristica 72
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 71 con coste real 6 y heuristica 67
+
+-- EXPLORO EL PLANETA 71
+* Puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Algoritmo A*" para viajar al planeta 87 con coste real 3 y heuristica 63
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 97 con coste real 3 y heuristica 64
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Busqueda Voraz" para viajar al planeta 105 con coste real 4 y heuristica 57
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Escalada simple" para viajar al planeta 107
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad iterativa" para viajar al planeta 108
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 110
+
+-- EXPLORO EL PLANETA 105
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 115
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 132 con coste real 2 y heuristica 44
+
+-- EXPLORO EL PLANETA 132
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 133
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en profundidad" para viajar al planeta 140
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 153
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Algoritmo A*" para viajar al planeta 161 con coste real 4 y heuristica 23
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 166
+
+-- EXPLORO EL PLANETA 161
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 166 con coste real 3 y heuristica 43
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 172
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en profundidad" para viajar al planeta 183 con coste real 3 y heuristica 46
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Escalada simple" para viajar al planeta 196
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad iterativa" para viajar al planeta 199 con coste real 6 y heuristica 24
+
+-- EXPLORO EL PLANETA 199
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 212 con coste real 3 y heuristica 16
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 215
+
+-- EXPLORO EL PLANETA 212
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 213 con coste real 6 y heuristica 0
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 215
+
+
+SOLUCION DEL PROBLEMA GLOBAL
+ 
+Paso del planeta 1 al planeta vecino 25 ,COSTE:3
+Paso del planeta 25 al planeta vecino 31 ,COSTE:4
+Paso del planeta 31 al planeta vecino 35 ,COSTE:4
+Paso del planeta 35 al planeta vecino 71 ,COSTE:6
+Paso del planeta 71 al planeta vecino 105 ,COSTE:4
+Paso del planeta 105 al planeta vecino 132 ,COSTE:2
+Paso del planeta 132 al planeta vecino 161 ,COSTE:4
+Paso del planeta 161 al planeta vecino 199 ,COSTE:6
+Paso del planeta 199 al planeta vecino 212 ,COSTE:3
+Paso del planeta 212 al planeta vecino 213 ,COSTE:6
+
+
+DATOS DEL PROBLEMA
+
+nodesExpanded : 10
+queueSize : 9
+maxQueueSize : 10
+Coste total: 42

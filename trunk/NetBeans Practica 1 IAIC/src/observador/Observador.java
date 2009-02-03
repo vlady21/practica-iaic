@@ -11,4 +11,5 @@ public interface Observador {
 	public void estadisticas(ArrayList<Integer> real, ArrayList<Integer> heuristica);
 	public void reiniciar();
     public void limpiarRecorrido();
+     public void informacionStatus(String info);
 }

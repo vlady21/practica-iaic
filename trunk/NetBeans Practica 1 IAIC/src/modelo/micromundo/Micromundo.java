@@ -18,6 +18,8 @@ import aima.search.framework.TreeSearch;
 import aima.search.informed.AStarSearch;
 import aima.search.informed.GreedyBestFirstSearch;
 import aima.search.uninformed.BreadthFirstSearch;
+import aima.search.uninformed.DepthFirstSearch;
+import aima.search.uninformed.DepthLimitedSearch;
 
 @SuppressWarnings("unchecked")
 public class Micromundo extends Thread {
@@ -87,7 +89,7 @@ public class Micromundo extends Thread {
 		_planeta.siguiente();
 	}
 
-	public void solucionar(int numero){
+	public void solucionar(int numero,int profundidad){
 		switch(numero){
 			case 0://Voraz
 				_search=new GreedyBestFirstSearch(new GraphSearch());
@@ -97,6 +99,12 @@ public class Micromundo extends Thread {
 				break;
 			case 2://Primero en anchura
 				_search=new BreadthFirstSearch(new TreeSearch()) ;
+				break;
+            case 3://Voraz
+				_search=new DepthLimitedSearch(profundidad);
+				break;
+			case 4://Primero en anchura
+				_search=new DepthFirstSearch(new GraphSearch());
 				break;
 		}
 	}

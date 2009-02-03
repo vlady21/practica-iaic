@@ -180,14 +180,16 @@ public class Planeta extends InterfazPlaneta{
 			
 			//si hay que expandir comprobamos si podemos viajar a sus hijos
 			for(int siguiente=0;(siguiente<vecinos.size() && expandir);siguiente++){
-				if(_pasoApaso){
+				_observer.informacionStatus("Explorando Planeta "+(valorPlaneta+1));
+                if(_pasoApaso){
                     while(!_siguiente){}
                     _siguiente=false;
                 }
 
                 int planetaVecino=vecinos.get(siguiente);
 				movimiento="Paso del planeta "+(valorPlaneta+1)+" al planeta vecino "+(planetaVecino+1);
-				boolean pasar=resolverProblema(valorPlaneta,planetaVecino);
+				_observer.informacionStatus("Explorando Planeta "+(valorPlaneta+1)+": resolviendo problema para intentar viajar al Planeta "+(planetaVecino+1));
+                boolean pasar=resolverProblema(valorPlaneta,planetaVecino);
 				//como hemos cargado el juego, obtenemos su valor
 				coste=GestorJuegos.dameCosteProblema();
 				if(!pasar){
