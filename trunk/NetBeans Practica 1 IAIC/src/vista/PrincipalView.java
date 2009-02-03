@@ -3769,7 +3769,8 @@ public class PrincipalView extends FrameView implements Observador{
             _iniciado=true;
             dameLog().setText("");
             //agregar opcion elegida
-            _micromundo.solucionar(dameAlgoritmo(),Integer.parseInt(jTextField1.getText()));
+            _micromundo.solucionar(dameAlgoritmo(),Integer.parseInt(jTextField1.getText().trim()));
+            jTextField1.setText(jTextField1.getText().trim());
             _micromundo.start();
         }
 
@@ -3786,8 +3787,6 @@ public class PrincipalView extends FrameView implements Observador{
     }//GEN-LAST:event_ejecutarCompleto
 
     private void ejecutarPasoAPaso(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ejecutarPasoAPaso
-
-        
         if(!_iniciado){
             ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
             panel.limpiarRecorrido();
@@ -3797,7 +3796,8 @@ public class PrincipalView extends FrameView implements Observador{
             _iniciado=true;
             dameLog().setText("");
             //agregar opcion elegida
-            _micromundo.solucionar(dameAlgoritmo(),Integer.parseInt(jTextField1.getText()));
+            _micromundo.solucionar(dameAlgoritmo(),Integer.parseInt(jTextField1.getText().trim()));
+            jTextField1.setText(jTextField1.getText().trim());
             _micromundo.pasoApaso();
             try{
             _micromundo.start();
@@ -4184,6 +4184,9 @@ public class PrincipalView extends FrameView implements Observador{
 	public int dameAlgoritmo(){
         jTextField1.setVisible(false);
         jLabel11.setVisible(false);
+        if(jTextField1.getText().trim().equals("")){
+            jTextField1.setText("0");
+        }
 		if(_algoritmo.getSelectedItem().equals("Busqueda Voraz")){
 			return 0;
 		}else if(_algoritmo.getSelectedItem().equals("Algoritmo A*")){
