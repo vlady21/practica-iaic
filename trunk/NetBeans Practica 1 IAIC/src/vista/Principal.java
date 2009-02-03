@@ -39,9 +39,12 @@ public class Principal extends SingleFrameApplication {
             PrincipalView vista = new PrincipalView(this,micromundo);
             show(vista);
 
-            //vista.getFrame().setAlwaysOnTop(true);
+            vista.getFrame().setAlwaysOnTop(true);
 			micromundo.setObserver(vista);
 			Estadisticas.dameInstancia().setObserver(vista);
+
+            vista.getFrame().setAlwaysOnTop(false);
+
 
 		}catch(Throwable e){e.printStackTrace();}
     }
