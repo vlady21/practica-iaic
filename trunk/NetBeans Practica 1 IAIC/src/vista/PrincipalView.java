@@ -352,8 +352,16 @@ public class PrincipalView extends FrameView implements Observador{
         planeta215 = new javax.swing.JButton();
         planeta216 = new javax.swing.JButton();
         nave = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         _log = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
@@ -379,6 +387,7 @@ public class PrincipalView extends FrameView implements Observador{
         mainPanel.setPreferredSize(new java.awt.Dimension(793, 424));
         mainPanel.setLayout(new javax.swing.BoxLayout(mainPanel, javax.swing.BoxLayout.LINE_AXIS));
 
+        jSplitPane1.setDividerLocation(200);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
         jSplitPane1.setName("jSplitPane1"); // NOI18N
 
@@ -3364,7 +3373,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta213.setBackground(resourceMap.getColor("planeta213.background")); // NOI18N
         planeta213.setForeground(resourceMap.getColor("planeta213.foreground")); // NOI18N
-        planeta213.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta213.setIcon(resourceMap.getIcon("planetaObjetivo")); // NOI18N
         planeta213.setText(resourceMap.getString("planeta213.text")); // NOI18N
         planeta213.setBorderPainted(false);
         planeta213.setContentAreaFilled(false);
@@ -3378,7 +3387,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta214.setBackground(resourceMap.getColor("planeta214.background")); // NOI18N
         planeta214.setForeground(resourceMap.getColor("planeta214.foreground")); // NOI18N
-        planeta214.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta214.setIcon(resourceMap.getIcon("planetaObjetivo")); // NOI18N
         planeta214.setText(resourceMap.getString("planeta214.text")); // NOI18N
         planeta214.setBorderPainted(false);
         planeta214.setContentAreaFilled(false);
@@ -3392,7 +3401,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta215.setBackground(resourceMap.getColor("planeta215.background")); // NOI18N
         planeta215.setForeground(resourceMap.getColor("planeta215.foreground")); // NOI18N
-        planeta215.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta215.setIcon(resourceMap.getIcon("planetaObjetivo")); // NOI18N
         planeta215.setText(resourceMap.getString("planeta215.text")); // NOI18N
         planeta215.setBorderPainted(false);
         planeta215.setContentAreaFilled(false);
@@ -3406,7 +3415,7 @@ public class PrincipalView extends FrameView implements Observador{
 
         planeta216.setBackground(resourceMap.getColor("planeta216.background")); // NOI18N
         planeta216.setForeground(resourceMap.getColor("planeta216.foreground")); // NOI18N
-        planeta216.setIcon(resourceMap.getIcon("planeta1.icon")); // NOI18N
+        planeta216.setIcon(resourceMap.getIcon("planetaObjetivo")); // NOI18N
         planeta216.setText(resourceMap.getString("planeta216.text")); // NOI18N
         planeta216.setBorderPainted(false);
         planeta216.setContentAreaFilled(false);
@@ -3428,6 +3437,9 @@ public class PrincipalView extends FrameView implements Observador{
         jSplitPane1.setTopComponent(scrollUniverso);
         scrollUniverso.getAccessibleContext().setAccessibleParent(jSplitPane1);
 
+        jPanel1.setName("jPanel1"); // NOI18N
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
         jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jScrollPane2.border.title"))); // NOI18N
         jScrollPane2.setName("jScrollPane2"); // NOI18N
 
@@ -3437,7 +3449,72 @@ public class PrincipalView extends FrameView implements Observador{
         _log.setName("_log"); // NOI18N
         jScrollPane2.setViewportView(_log);
 
-        jSplitPane1.setRightComponent(jScrollPane2);
+        jPanel1.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel2.border.title"))); // NOI18N
+        jPanel2.setName("jPanel2"); // NOI18N
+
+        jLabel2.setBackground(resourceMap.getColor("jLabel2.background")); // NOI18N
+        jLabel2.setForeground(resourceMap.getColor("jLabel2.foreground")); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel2.setIcon(resourceMap.getIcon("jLabel2.icon")); // NOI18N
+        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel2.setAlignmentX(0.5F);
+        jLabel2.setIconTextGap(0);
+        jLabel2.setMaximumSize(new java.awt.Dimension(60, 22));
+        jLabel2.setMinimumSize(new java.awt.Dimension(60, 22));
+        jLabel2.setName("jLabel2"); // NOI18N
+        jLabel2.setPreferredSize(new java.awt.Dimension(60, 22));
+        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel2);
+
+        jLabel5.setForeground(resourceMap.getColor("jLabel5.foreground")); // NOI18N
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+        jPanel2.add(jLabel5);
+
+        jLabel3.setBackground(resourceMap.getColor("jLabel3.background")); // NOI18N
+        jLabel3.setForeground(resourceMap.getColor("jLabel3.foreground")); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setIcon(resourceMap.getIcon("jLabel3.icon")); // NOI18N
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel3.setAlignmentX(0.5F);
+        jLabel3.setIconTextGap(0);
+        jLabel3.setMaximumSize(new java.awt.Dimension(60, 22));
+        jLabel3.setMinimumSize(new java.awt.Dimension(60, 22));
+        jLabel3.setName("jLabel3"); // NOI18N
+        jLabel3.setPreferredSize(new java.awt.Dimension(60, 22));
+        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel3);
+
+        jLabel6.setForeground(resourceMap.getColor("jLabel6.foreground")); // NOI18N
+        jLabel6.setText(resourceMap.getString("jLabel6.text")); // NOI18N
+        jLabel6.setName("jLabel6"); // NOI18N
+        jPanel2.add(jLabel6);
+
+        jLabel4.setBackground(resourceMap.getColor("jLabel4.background")); // NOI18N
+        jLabel4.setForeground(resourceMap.getColor("jLabel4.foreground")); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setIcon(resourceMap.getIcon("jLabel4.icon")); // NOI18N
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel4.setAlignmentX(0.5F);
+        jLabel4.setIconTextGap(0);
+        jLabel4.setMaximumSize(new java.awt.Dimension(60, 22));
+        jLabel4.setMinimumSize(new java.awt.Dimension(60, 22));
+        jLabel4.setName("jLabel4"); // NOI18N
+        jLabel4.setPreferredSize(new java.awt.Dimension(60, 22));
+        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel4);
+
+        jLabel7.setForeground(resourceMap.getColor("jLabel7.foreground")); // NOI18N
+        jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
+        jLabel7.setName("jLabel7"); // NOI18N
+        jPanel2.add(jLabel7);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_START);
+
+        jSplitPane1.setBottomComponent(jPanel1);
 
         mainPanel.add(jSplitPane1);
 
@@ -3715,6 +3792,14 @@ public class PrincipalView extends FrameView implements Observador{
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JToolBar jToolBar1;
@@ -4375,7 +4460,7 @@ public class PrincipalView extends FrameView implements Observador{
             ((JButton)panelUniverso.getComponent(i)).setIcon(resourceMap.getIcon("planeta1.icon"));
          }
          for(i=212;i<216;i++){
-            ((JButton)panelUniverso.getComponent(i)).setIcon(resourceMap.getIcon("planeta2.icon"));
+            ((JButton)panelUniverso.getComponent(i)).setIcon(resourceMap.getIcon("planetaObjetivo"));
          }
          posicionarNave(0);
 
