@@ -188,4 +188,12 @@ public class Micromundo extends Thread {
 	public void muestraEstadisticas(){
 		Estadisticas.dameInstancia().enviaValores();
 	}
+
+    public ArrayList<Integer> dameValoresHeuristica(){
+        ArrayList<Integer> lista=new ArrayList<Integer>();
+        for(int i=0;i<216;i++){
+            lista.add(_listaPlanetas.get(i).dameValorHeuristico());
+        }
+        return lista;
+    }
 }
