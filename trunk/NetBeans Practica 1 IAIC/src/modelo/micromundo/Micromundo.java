@@ -20,6 +20,8 @@ import aima.search.informed.GreedyBestFirstSearch;
 import aima.search.uninformed.BreadthFirstSearch;
 import aima.search.uninformed.DepthFirstSearch;
 import aima.search.uninformed.DepthLimitedSearch;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 @SuppressWarnings("unchecked")
 public class Micromundo extends Thread {
@@ -31,6 +33,7 @@ public class Micromundo extends Thread {
 	private int _semilla=0;
 	private static ArrayList<Planeta> _listaPlanetas=new ArrayList<Planeta>();
 	private static ArrayList<String> _solucion=new ArrayList<String>();
+    private Calendar _t0,_t1;
 
 	public Micromundo(){
 		_coste=0;
@@ -108,12 +111,26 @@ public class Micromundo extends Thread {
 				break;
 		}
 	}
-	
+
+    public void inicializa(){
+        _t0=new GregorianCalendar();
+    }
+
+    public String tiempoTranscurrido(){
+         _t1=new GregorianCalendar();
+         long diff=_t1.getTimeInMillis()-_t0.getTimeInMillis();
+         Calendar diferencia=new GregorianCalendar();
+         diferencia.setTimeInMillis(diff);
+        return (diferencia.get(Calendar.MINUTE)+" minutos "+diferencia.get(Calendar.SECOND)+" segundos "+diferencia.get(Calendar.MILLISECOND)+" milisegundos.");
+    }
+
 	public void run(){
 		try {
             _observer.limpiarRecorrido();
 			Estadisticas.dameInstancia().reiniciar();
+            inicializa();
 			SearchAgent agent = new SearchAgent (_problema , _search) ;
+            String tiempo=tiempoTranscurrido();
 			if(_planeta.resuelto()){
                 Log.dameInstancia().agregar("\n\nSOLUCION DEL PROBLEMA GLOBAL\n ");
                 _observer.escribeLog("\n\nSOLUCION DEL PROBLEMA GLOBAL\n ");
@@ -124,6 +141,8 @@ public class Micromundo extends Thread {
                 Log.dameInstancia().agregar("\n\nNO SE HA ENCONTRADO SOLUCION AL PROBLEMA GLOBAL\n ");
                 _observer.escribeLog("\n\nNO SE HA ENCONTRADO SOLUCION AL PROBLEMA GLOBAL\n ");
             }
+            Log.dameInstancia().agregar("Tiempo invertido en la busqueda: "+tiempo);
+                _observer.escribeLog("Tiempo invertido en la busqueda: "+tiempo);
 			_observer.reiniciar();
 			Log.dameInstancia().cerrarLog();
 		}catch (Exception e){e.printStackTrace();}

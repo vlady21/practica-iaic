@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
@@ -24,6 +25,7 @@ public class VentanaComparativaGraficas extends JFrame{
 	}
 	
 	public void initComponents(){
+        setIconImage(new ImageIcon("imagenes/icono.png").getImage());
 		setSize(710,610);
 		setTitle("Grafica comparativa");
 		setResizable(false);

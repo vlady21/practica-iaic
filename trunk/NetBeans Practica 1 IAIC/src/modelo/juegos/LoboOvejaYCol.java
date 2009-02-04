@@ -38,7 +38,7 @@ public class LoboOvejaYCol extends InterfazJuego{
 	private int _dificultad=3;
 	
 	public LoboOvejaYCol() {
-        _enunciadoProblema="En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra.";
+        _enunciadoProblema="En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se pueden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra.";
 		_nodosExpandidos=0;
 		_resuelto=false;
 		_lobo = true;
