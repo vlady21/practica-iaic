@@ -4203,6 +4203,7 @@ public class PrincipalView extends FrameView implements Observador{
 			algoritmo="Primero en profundidad";
             devuelve= 4;
 		}
+        Log.dameInstancia().abrirLog();
         Log.dameInstancia().agregar("RESOLUCION DEL PROBLEMA GLOBAL CON EL ALGORITMO: "+algoritmo);
         escribeLog("RESOLUCION DEL PROBLEMA GLOBAL CON EL ALGORITMO: "+algoritmo);
 		return devuelve;

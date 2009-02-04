@@ -112,7 +112,6 @@ public class Micromundo extends Thread {
 	public void run(){
 		try {
             _observer.limpiarRecorrido();
-			Log.dameInstancia().abrirLog();
 			Estadisticas.dameInstancia().reiniciar();
 			SearchAgent agent = new SearchAgent (_problema , _search) ;
 			if(_planeta.resuelto()){

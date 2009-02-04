@@ -1,0 +1,1087 @@
+RESOLUCION DEL PROBLEMA GLOBAL CON EL ALGORITMO: Primero en anchura
+
+-- EXPLORO EL PLANETA 1
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Profundidad iterativa" para viajar al planeta 2
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Simulada" para viajar al planeta 3
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 4
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 19 con coste real 6 y heuristica 102
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 25 con coste real 3 y heuristica 107
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 38
+
+-- EXPLORO EL PLANETA 19
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 24 con coste real 3 y heuristica 104
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Simulada" para viajar al planeta 29
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 31 con coste real 1 y heuristica 96
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Busqueda Voraz" para viajar al planeta 39 con coste real 1 y heuristica 92
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 51 con coste real 6 y heuristica 80
+
+-- EXPLORO EL PLANETA 25
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 30 con coste real 6 y heuristica 90
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Busqueda Voraz" para viajar al planeta 31 con coste real 3 y heuristica 96
+
+-- EXPLORO EL PLANETA 24
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 34
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad iterativa" para viajar al planeta 47 con coste real 4 y heuristica 85
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 54
+
+-- EXPLORO EL PLANETA 31
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Algoritmo A*" para viajar al planeta 32 con coste real 4 y heuristica 89
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en anchura" para viajar al planeta 35 con coste real 3 y heuristica 82
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Simulada" para viajar al planeta 49
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 51
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 56
+
+-- EXPLORO EL PLANETA 39
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 41
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 52 con coste real 2 y heuristica 80
+
+-- EXPLORO EL PLANETA 51
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en profundidad" para viajar al planeta 53
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 55
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 66
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en anchura" para viajar al planeta 71 con coste real 2 y heuristica 67
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Escalada simple" para viajar al planeta 87
+
+-- EXPLORO EL PLANETA 30
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 46 con coste real 3 y heuristica 77
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 48
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 52 con coste real 2 y heuristica 80
+
+-- EXPLORO EL PLANETA 31
+
+-- EXPLORO EL PLANETA 47
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Algoritmo A*" para viajar al planeta 55 con coste real 2 y heuristica 92
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 58 con coste real 2 y heuristica 75
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Simulada" para viajar al planeta 62
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 76 con coste real 4 y heuristica 68
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 79 con coste real 4 y heuristica 75
+
+-- EXPLORO EL PLANETA 32
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Algoritmo A*" para viajar al planeta 34 con coste real 1 y heuristica 98
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Escalada simple" para viajar al planeta 35
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 41 con coste real 1 y heuristica 79
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 46 con coste real 3 y heuristica 77
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 66 con coste real 1 y heuristica 64
+
+-- EXPLORO EL PLANETA 35
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Busqueda Voraz" para viajar al planeta 40 con coste real 1 y heuristica 81
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Escalada simple" para viajar al planeta 46
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 67 con coste real 1 y heuristica 71
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 71 con coste real 6 y heuristica 67
+
+-- EXPLORO EL PLANETA 52
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 53 con coste real 1 y heuristica 75
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en profundidad" para viajar al planeta 60 con coste real 3 y heuristica 77
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en profundidad" para viajar al planeta 63
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 70
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 75 con coste real 1 y heuristica 88
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 80 con coste real 1 y heuristica 71
+
+-- EXPLORO EL PLANETA 71
+* Puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Algoritmo A*" para viajar al planeta 87 con coste real 3 y heuristica 70
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 97 con coste real 3 y heuristica 60
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Busqueda Voraz" para viajar al planeta 105 con coste real 3 y heuristica 55
+No puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Escalada simple" para viajar al planeta 107
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad iterativa" para viajar al planeta 108
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en profundidad" para viajar al planeta 110 con coste real 3 y heuristica 57
+
+-- EXPLORO EL PLANETA 46
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en profundidad" para viajar al planeta 49 con coste real 3 y heuristica 79
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en anchura" para viajar al planeta 50
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 72 con coste real 3 y heuristica 74
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 78
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Simulada" para viajar al planeta 83
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 85 con coste real 4 y heuristica 58
+
+-- EXPLORO EL PLANETA 52
+
+-- EXPLORO EL PLANETA 55
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en profundidad" para viajar al planeta 56
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 59
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en profundidad" para viajar al planeta 93 con coste real 1 y heuristica 67
+
+-- EXPLORO EL PLANETA 58
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en profundidad" para viajar al planeta 64
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 78 con coste real 1 y heuristica 64
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 85 con coste real 2 y heuristica 58
+
+-- EXPLORO EL PLANETA 76
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Simulada" para viajar al planeta 85 con coste real 1 y heuristica 58
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Escalada simple" para viajar al planeta 88
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en profundidad" para viajar al planeta 97 con coste real 1 y heuristica 60
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en anchura" para viajar al planeta 104
+
+-- EXPLORO EL PLANETA 79
+No puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Escalada simple" para viajar al planeta 87
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Escalada simple" para viajar al planeta 90
+
+-- EXPLORO EL PLANETA 34
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Busqueda Voraz" para viajar al planeta 35 con coste real 3 y heuristica 82
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad iterativa" para viajar al planeta 43 con coste real 2 y heuristica 93
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 48
+
+-- EXPLORO EL PLANETA 41
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en anchura" para viajar al planeta 51 con coste real 3 y heuristica 80
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Simulada" para viajar al planeta 54
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 63
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 64 con coste real 1 y heuristica 79
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad iterativa" para viajar al planeta 71 con coste real 2 y heuristica 67
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad iterativa" para viajar al planeta 76 con coste real 4 y heuristica 68
+
+-- EXPLORO EL PLANETA 46
+
+-- EXPLORO EL PLANETA 66
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Escalada simple" para viajar al planeta 70
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Busqueda Voraz" para viajar al planeta 71 con coste real 3 y heuristica 67
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad iterativa" para viajar al planeta 84 con coste real 3 y heuristica 68
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 98
+
+-- EXPLORO EL PLANETA 40
+No puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Escalada simple" para viajar al planeta 41
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Escalada simple" para viajar al planeta 57
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 60 con coste real 1 y heuristica 77
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 63
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 71 con coste real 1 y heuristica 67
+
+-- EXPLORO EL PLANETA 67
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Simulada" para viajar al planeta 73
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 75
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 95
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 96 con coste real 1 y heuristica 65
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 104
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en anchura" para viajar al planeta 105 con coste real 2 y heuristica 55
+
+-- EXPLORO EL PLANETA 71
+
+-- EXPLORO EL PLANETA 53
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 83
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 88
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Escalada simple" para viajar al planeta 89
+
+-- EXPLORO EL PLANETA 60
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 65 con coste real 6 y heuristica 69
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 94
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 97 con coste real 4 y heuristica 60
+
+-- EXPLORO EL PLANETA 75
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 76 con coste real 1 y heuristica 68
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Busqueda Voraz" para viajar al planeta 79 con coste real 3 y heuristica 75
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Algoritmo A*" para viajar al planeta 89 con coste real 3 y heuristica 67
+
+-- EXPLORO EL PLANETA 80
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Primero en anchura" para viajar al planeta 84
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Simulada" para viajar al planeta 85 con coste real 1 y heuristica 58
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 88
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en anchura" para viajar al planeta 118 con coste real 1 y heuristica 60
+
+-- EXPLORO EL PLANETA 87
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 93
+No puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Escalada simple" para viajar al planeta 98
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Simulada" para viajar al planeta 99 con coste real 1 y heuristica 59
+* Puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Algoritmo A*" para viajar al planeta 104 con coste real 3 y heuristica 66
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en profundidad" para viajar al planeta 113
+
+-- EXPLORO EL PLANETA 97
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad iterativa" para viajar al planeta 98 con coste real 4 y heuristica 54
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Simulada" para viajar al planeta 99
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Algoritmo A*" para viajar al planeta 108 con coste real 1 y heuristica 56
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Simulada" para viajar al planeta 118
+
+-- EXPLORO EL PLANETA 105
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 115
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 132 con coste real 2 y heuristica 42
+
+-- EXPLORO EL PLANETA 110
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 113 con coste real 4 y heuristica 63
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 121
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Algoritmo A*" para viajar al planeta 122 con coste real 1 y heuristica 64
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 129 con coste real 3 y heuristica 55
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en anchura" para viajar al planeta 140 con coste real 1 y heuristica 38
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 143
+
+-- EXPLORO EL PLANETA 49
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Escalada simple" para viajar al planeta 53
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 56
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad iterativa" para viajar al planeta 71 con coste real 4 y heuristica 67
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Busqueda Voraz" para viajar al planeta 74 con coste real 2 y heuristica 61
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Algoritmo A*" para viajar al planeta 80 con coste real 1 y heuristica 71
+
+-- EXPLORO EL PLANETA 72
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 73 con coste real 3 y heuristica 62
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad iterativa" para viajar al planeta 77 con coste real 6 y heuristica 80
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Escalada simple" para viajar al planeta 86
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 88 con coste real 6 y heuristica 73
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Busqueda Voraz" para viajar al planeta 91 con coste real 3 y heuristica 66
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en profundidad" para viajar al planeta 105
+
+-- EXPLORO EL PLANETA 85
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 102
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Escalada simple" para viajar al planeta 111
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 116 con coste real 2 y heuristica 45
+
+-- EXPLORO EL PLANETA 93
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 115
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 119 con coste real 4 y heuristica 48
+
+-- EXPLORO EL PLANETA 78
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en profundidad" para viajar al planeta 80 con coste real 3 y heuristica 71
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 83 con coste real 4 y heuristica 64
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Escalada simple" para viajar al planeta 94
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en anchura" para viajar al planeta 116 con coste real 3 y heuristica 45
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 117
+
+-- EXPLORO EL PLANETA 85
+
+-- EXPLORO EL PLANETA 85
+
+-- EXPLORO EL PLANETA 97
+
+-- EXPLORO EL PLANETA 35
+
+-- EXPLORO EL PLANETA 43
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 52 con coste real 2 y heuristica 80
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 55
+
+-- EXPLORO EL PLANETA 51
+
+-- EXPLORO EL PLANETA 64
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 66 con coste real 3 y heuristica 64
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 97 con coste real 4 y heuristica 60
+
+-- EXPLORO EL PLANETA 71
+
+-- EXPLORO EL PLANETA 76
+
+-- EXPLORO EL PLANETA 71
+
+-- EXPLORO EL PLANETA 84
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 88 con coste real 4 y heuristica 73
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en anchura" para viajar al planeta 89 con coste real 4 y heuristica 67
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 92 con coste real 3 y heuristica 59
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 100
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 102 con coste real 3 y heuristica 57
+
+-- EXPLORO EL PLANETA 60
+
+-- EXPLORO EL PLANETA 71
+
+-- EXPLORO EL PLANETA 96
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en anchura" para viajar al planeta 100
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 112 con coste real 1 y heuristica 48
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Escalada simple" para viajar al planeta 133
+
+-- EXPLORO EL PLANETA 105
+
+-- EXPLORO EL PLANETA 65
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 82 con coste real 1 y heuristica 71
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 90 con coste real 4 y heuristica 63
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 103
+
+-- EXPLORO EL PLANETA 97
+
+-- EXPLORO EL PLANETA 76
+
+-- EXPLORO EL PLANETA 79
+
+-- EXPLORO EL PLANETA 89
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en profundidad" para viajar al planeta 94
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 97 con coste real 2 y heuristica 60
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Busqueda Voraz" para viajar al planeta 110 con coste real 3 y heuristica 57
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 116
+
+-- EXPLORO EL PLANETA 85
+
+-- EXPLORO EL PLANETA 118
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en profundidad" para viajar al planeta 126
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad iterativa" para viajar al planeta 140 con coste real 3 y heuristica 38
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 142
+
+-- EXPLORO EL PLANETA 99
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 108 con coste real 1 y heuristica 56
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 111
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 129
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 139 con coste real 1 y heuristica 49
+
+-- EXPLORO EL PLANETA 104
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Simulada" para viajar al planeta 113
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en anchura" para viajar al planeta 128 con coste real 2 y heuristica 48
+
+-- EXPLORO EL PLANETA 98
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Escalada simple" para viajar al planeta 110
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Escalada simple" para viajar al planeta 120
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Algoritmo A*" para viajar al planeta 121 con coste real 1 y heuristica 50
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 126 con coste real 1 y heuristica 43
+
+-- EXPLORO EL PLANETA 108
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 115
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Simulada" para viajar al planeta 120 con coste real 3 y heuristica 42
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 121 con coste real 3 y heuristica 50
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 126
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 138 con coste real 3 y heuristica 48
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 146
+
+-- EXPLORO EL PLANETA 132
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 133
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en profundidad" para viajar al planeta 140
+* Puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Primero en profundidad" para viajar al planeta 153 con coste real 15 y heuristica 40
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Algoritmo A*" para viajar al planeta 161 con coste real 3 y heuristica 23
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 166
+
+-- EXPLORO EL PLANETA 113
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 123 con coste real 3 y heuristica 51
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 134
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 139
+
+-- EXPLORO EL PLANETA 122
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 126
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Escalada simple" para viajar al planeta 137
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 151
+
+-- EXPLORO EL PLANETA 129
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 136 con coste real 4 y heuristica 52
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 152 con coste real 6 y heuristica 57
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en anchura" para viajar al planeta 155
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Busqueda Voraz" para viajar al planeta 165 con coste real 4 y heuristica 36
+
+-- EXPLORO EL PLANETA 140
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Simulada" para viajar al planeta 146 con coste real 1 y heuristica 37
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Simulada" para viajar al planeta 155
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Profundidad iterativa" para viajar al planeta 159 con coste real 1 y heuristica 39
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en profundidad" para viajar al planeta 169
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Busqueda Voraz" para viajar al planeta 174 con coste real 2 y heuristica 28
+
+-- EXPLORO EL PLANETA 71
+
+-- EXPLORO EL PLANETA 74
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en profundidad" para viajar al planeta 87
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Busqueda Voraz" para viajar al planeta 105 con coste real 3 y heuristica 55
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en anchura" para viajar al planeta 111 con coste real 1 y heuristica 47
+
+-- EXPLORO EL PLANETA 80
+
+-- EXPLORO EL PLANETA 73
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 89 con coste real 3 y heuristica 67
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 101 con coste real 6 y heuristica 52
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en profundidad" para viajar al planeta 111 con coste real 1 y heuristica 47
+
+-- EXPLORO EL PLANETA 77
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 83 con coste real 3 y heuristica 64
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 96 con coste real 3 y heuristica 65
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 104
+
+-- EXPLORO EL PLANETA 88
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 98 con coste real 3 y heuristica 54
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Escalada simple" para viajar al planeta 121
+
+-- EXPLORO EL PLANETA 91
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 109
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 124 con coste real 6 y heuristica 56
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 128
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Busqueda Voraz" para viajar al planeta 129
+
+-- EXPLORO EL PLANETA 116
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 122 con coste real 2 y heuristica 64
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en profundidad" para viajar al planeta 130 con coste real 3 y heuristica 49
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 148 con coste real 2 y heuristica 32
+
+-- EXPLORO EL PLANETA 119
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 127 con coste real 6 y heuristica 52
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en anchura" para viajar al planeta 129 con coste real 2 y heuristica 55
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 139 con coste real 4 y heuristica 49
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en profundidad" para viajar al planeta 146 con coste real 3 y heuristica 37
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en anchura" para viajar al planeta 148
+
+-- EXPLORO EL PLANETA 80
+
+-- EXPLORO EL PLANETA 83
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en profundidad" para viajar al planeta 91
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 98
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Escalada simple" para viajar al planeta 103
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad iterativa" para viajar al planeta 111 con coste real 3 y heuristica 47
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 115 con coste real 1 y heuristica 57
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 122 con coste real 4 y heuristica 64
+
+-- EXPLORO EL PLANETA 116
+
+-- EXPLORO EL PLANETA 52
+
+-- EXPLORO EL PLANETA 66
+
+-- EXPLORO EL PLANETA 97
+
+-- EXPLORO EL PLANETA 88
+
+-- EXPLORO EL PLANETA 89
+
+-- EXPLORO EL PLANETA 92
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 107 con coste real 1 y heuristica 53
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 125 con coste real 3 y heuristica 40
+
+-- EXPLORO EL PLANETA 102
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 123
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en anchura" para viajar al planeta 126 con coste real 1 y heuristica 43
+
+-- EXPLORO EL PLANETA 112
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 117 con coste real 6 y heuristica 59
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Algoritmo A*" para viajar al planeta 119 con coste real 3 y heuristica 48
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 138
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en profundidad" para viajar al planeta 149
+
+-- EXPLORO EL PLANETA 82
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 92 con coste real 1 y heuristica 59
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 113 con coste real 4 y heuristica 63
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Escalada simple" para viajar al planeta 114
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Simulada" para viajar al planeta 118
+
+-- EXPLORO EL PLANETA 90
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en anchura" para viajar al planeta 108 con coste real 3 y heuristica 56
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Simulada" para viajar al planeta 118
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 124 con coste real 1 y heuristica 56
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 125
+
+-- EXPLORO EL PLANETA 97
+
+-- EXPLORO EL PLANETA 110
+
+-- EXPLORO EL PLANETA 140
+
+-- EXPLORO EL PLANETA 108
+
+-- EXPLORO EL PLANETA 139
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Algoritmo A*" para viajar al planeta 146 con coste real 1 y heuristica 37
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Simulada" para viajar al planeta 147 con coste real 1 y heuristica 39
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 155
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Busqueda Voraz" para viajar al planeta 159 con coste real 4 y heuristica 39
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Simulada" para viajar al planeta 169 con coste real 3 y heuristica 45
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 170 con coste real 3 y heuristica 35
+
+-- EXPLORO EL PLANETA 128
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en profundidad" para viajar al planeta 133
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 141
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Algoritmo A*" para viajar al planeta 147 con coste real 3 y heuristica 39
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en profundidad" para viajar al planeta 151
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en anchura" para viajar al planeta 156 con coste real 1 y heuristica 36
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 159
+
+-- EXPLORO EL PLANETA 121
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad iterativa" para viajar al planeta 129 con coste real 4 y heuristica 55
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en profundidad" para viajar al planeta 140 con coste real 3 y heuristica 38
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Busqueda Voraz" para viajar al planeta 143 con coste real 3 y heuristica 46
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Escalada simple" para viajar al planeta 146
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 154
+
+-- EXPLORO EL PLANETA 126
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 140 con coste real 1 y heuristica 38
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Algoritmo A*" para viajar al planeta 158 con coste real 1 y heuristica 33
+No puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Escalada simple" para viajar al planeta 162
+
+-- EXPLORO EL PLANETA 120
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 123 con coste real 2 y heuristica 51
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 124
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 144 con coste real 2 y heuristica 38
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Busqueda Voraz" para viajar al planeta 147 con coste real 1 y heuristica 39
+* Puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Busqueda Voraz" para viajar al planeta 156 con coste real 15 y heuristica 36
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Busqueda Voraz" para viajar al planeta 159 con coste real 3 y heuristica 39
+
+-- EXPLORO EL PLANETA 121
+
+-- EXPLORO EL PLANETA 138
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 143
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 148 con coste real 3 y heuristica 32
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 160 con coste real 3 y heuristica 44
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 162
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en anchura" para viajar al planeta 170 con coste real 1 y heuristica 35
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 174
+
+-- EXPLORO EL PLANETA 153
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 159 con coste real 1 y heuristica 39
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en profundidad" para viajar al planeta 167 con coste real 3 y heuristica 33
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 173 con coste real 1 y heuristica 31
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 177 con coste real 2 y heuristica 29
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Algoritmo A*" para viajar al planeta 181 con coste real 3 y heuristica 33
+
+-- EXPLORO EL PLANETA 161
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 166 con coste real 3 y heuristica 36
+* Puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Algoritmo A*" para viajar al planeta 172 con coste real 3 y heuristica 34
+* Puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Busqueda Voraz" para viajar al planeta 174 con coste real 15 y heuristica 28
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en profundidad" para viajar al planeta 183 con coste real 3 y heuristica 39
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 196
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 199
+
+-- EXPLORO EL PLANETA 123
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en profundidad" para viajar al planeta 124 con coste real 1 y heuristica 56
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 125 con coste real 4 y heuristica 40
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 126 con coste real 1 y heuristica 43
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Simulada" para viajar al planeta 154
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Simulada" para viajar al planeta 156 con coste real 3 y heuristica 36
+
+-- EXPLORO EL PLANETA 136
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad iterativa" para viajar al planeta 144 con coste real 3 y heuristica 38
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 155 con coste real 2 y heuristica 44
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 160 con coste real 1 y heuristica 44
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Busqueda Voraz" para viajar al planeta 168
+
+-- EXPLORO EL PLANETA 152
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 154 con coste real 1 y heuristica 33
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 160 con coste real 4 y heuristica 44
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 162 con coste real 1 y heuristica 43
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Busqueda Voraz" para viajar al planeta 163 con coste real 1 y heuristica 38
+
+-- EXPLORO EL PLANETA 165
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 189 con coste real 2 y heuristica 42
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Escalada simple" para viajar al planeta 199
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad iterativa" para viajar al planeta 200 con coste real 3 y heuristica 38
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 204
+
+-- EXPLORO EL PLANETA 146
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 148 con coste real 1 y heuristica 32
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad iterativa" para viajar al planeta 153 con coste real 4 y heuristica 40
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Algoritmo A*" para viajar al planeta 160 con coste real 1 y heuristica 44
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Busqueda Voraz" para viajar al planeta 161 con coste real 3 y heuristica 23
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en anchura" para viajar al planeta 164 con coste real 1 y heuristica 29
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 184 con coste real 6 y heuristica 26
+
+-- EXPLORO EL PLANETA 159
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 161
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 169 con coste real 2 y heuristica 45
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 171
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Simulada" para viajar al planeta 173 con coste real 3 y heuristica 31
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 179 con coste real 3 y heuristica 36
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 197
+
+-- EXPLORO EL PLANETA 174
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 190
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 198 con coste real 4 y heuristica 22
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Busqueda Voraz" para viajar al planeta 204 con coste real 2 y heuristica 10
+
+-- EXPLORO EL PLANETA 105
+
+-- EXPLORO EL PLANETA 111
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad iterativa" para viajar al planeta 112 con coste real 4 y heuristica 48
+* Puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Primero en profundidad" para viajar al planeta 143 con coste real 15 y heuristica 46
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en anchura" para viajar al planeta 144 con coste real 2 y heuristica 38
+
+-- EXPLORO EL PLANETA 89
+
+-- EXPLORO EL PLANETA 101
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 109 con coste real 4 y heuristica 55
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Escalada simple" para viajar al planeta 113
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Algoritmo A*" para viajar al planeta 120 con coste real 1 y heuristica 42
+
+-- EXPLORO EL PLANETA 111
+
+-- EXPLORO EL PLANETA 83
+
+-- EXPLORO EL PLANETA 96
+
+-- EXPLORO EL PLANETA 98
+
+-- EXPLORO EL PLANETA 124
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad iterativa" para viajar al planeta 128 con coste real 4 y heuristica 48
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 134 con coste real 3 y heuristica 49
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 151 con coste real 1 y heuristica 47
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Simulada" para viajar al planeta 155
+
+-- EXPLORO EL PLANETA 122
+
+-- EXPLORO EL PLANETA 130
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 139 con coste real 2 y heuristica 49
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Algoritmo A*" para viajar al planeta 143
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad iterativa" para viajar al planeta 146 con coste real 3 y heuristica 37
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Escalada simple" para viajar al planeta 150
+
+-- EXPLORO EL PLANETA 148
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 151 con coste real 1 y heuristica 47
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 152 con coste real 1 y heuristica 57
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Algoritmo A*" para viajar al planeta 186 con coste real 2 y heuristica 19
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 187 con coste real 4 y heuristica 39
+
+-- EXPLORO EL PLANETA 127
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Busqueda Voraz" para viajar al planeta 141 con coste real 3 y heuristica 38
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en profundidad" para viajar al planeta 151
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en anchura" para viajar al planeta 153 con coste real 4 y heuristica 40
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en profundidad" para viajar al planeta 155
+
+-- EXPLORO EL PLANETA 129
+
+-- EXPLORO EL PLANETA 139
+
+-- EXPLORO EL PLANETA 146
+
+-- EXPLORO EL PLANETA 111
+
+-- EXPLORO EL PLANETA 115
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en anchura" para viajar al planeta 116 con coste real 1 y heuristica 45
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Algoritmo A*" para viajar al planeta 123 con coste real 1 y heuristica 51
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Simulada" para viajar al planeta 140
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 150
+
+-- EXPLORO EL PLANETA 122
+
+-- EXPLORO EL PLANETA 107
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Escalada simple" para viajar al planeta 110
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Algoritmo A*" para viajar al planeta 116 con coste real 2 y heuristica 45
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 120 con coste real 4 y heuristica 42
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Simulada" para viajar al planeta 129
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 130 con coste real 3 y heuristica 49
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 140 con coste real 3 y heuristica 38
+
+-- EXPLORO EL PLANETA 125
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 133 con coste real 1 y heuristica 46
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 143 con coste real 6 y heuristica 46
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Simulada" para viajar al planeta 144
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 145 con coste real 4 y heuristica 35
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 154
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 161 con coste real 4 y heuristica 23
+
+-- EXPLORO EL PLANETA 126
+
+-- EXPLORO EL PLANETA 117
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 139
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Escalada simple" para viajar al planeta 153
+
+-- EXPLORO EL PLANETA 119
+
+-- EXPLORO EL PLANETA 92
+
+-- EXPLORO EL PLANETA 113
+
+-- EXPLORO EL PLANETA 108
+
+-- EXPLORO EL PLANETA 124
+
+-- EXPLORO EL PLANETA 146
+
+-- EXPLORO EL PLANETA 147
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 155
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 167 con coste real 4 y heuristica 33
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 175
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 176
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en profundidad" para viajar al planeta 180 con coste real 1 y heuristica 24
+
+-- EXPLORO EL PLANETA 159
+
+-- EXPLORO EL PLANETA 169
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Simulada" para viajar al planeta 171
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Busqueda Voraz" para viajar al planeta 185
+
+-- EXPLORO EL PLANETA 170
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 173
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 177 con coste real 3 y heuristica 29
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Escalada simple" para viajar al planeta 200
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 201 con coste real 6 y heuristica 10
+
+-- EXPLORO EL PLANETA 147
+
+-- EXPLORO EL PLANETA 156
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Escalada simple" para viajar al planeta 171
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 192
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Busqueda Voraz" para viajar al planeta 195 con coste real 1 y heuristica 10
+
+-- EXPLORO EL PLANETA 129
+
+-- EXPLORO EL PLANETA 140
+
+-- EXPLORO EL PLANETA 143
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 144 con coste real 2 y heuristica 38
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Simulada" para viajar al planeta 145
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 164 con coste real 3 y heuristica 29
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en anchura" para viajar al planeta 169 con coste real 4 y heuristica 45
+
+-- EXPLORO EL PLANETA 140
+
+-- EXPLORO EL PLANETA 158
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 163
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Simulada" para viajar al planeta 178
+
+-- EXPLORO EL PLANETA 123
+
+-- EXPLORO EL PLANETA 144
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Profundidad iterativa" para viajar al planeta 145 con coste real 1 y heuristica 35
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Simulada" para viajar al planeta 158 con coste real 1 y heuristica 33
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Primero en profundidad" para viajar al planeta 175
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 176
+No puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Escalada simple" para viajar al planeta 177
+
+-- EXPLORO EL PLANETA 147
+
+-- EXPLORO EL PLANETA 156
+
+-- EXPLORO EL PLANETA 159
+
+-- EXPLORO EL PLANETA 148
+
+-- EXPLORO EL PLANETA 160
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en profundidad" para viajar al planeta 163 con coste real 3 y heuristica 38
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Primero en profundidad" para viajar al planeta 170 con coste real 2 y heuristica 35
+No puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Escalada simple" para viajar al planeta 180
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 185 con coste real 4 y heuristica 29
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Algoritmo A*" para viajar al planeta 189 con coste real 2 y heuristica 42
+
+-- EXPLORO EL PLANETA 170
+
+-- EXPLORO EL PLANETA 159
+
+-- EXPLORO EL PLANETA 167
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 179
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en profundidad" para viajar al planeta 185
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Primero en anchura" para viajar al planeta 191 con coste real 1 y heuristica 36
+No puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Escalada simple" para viajar al planeta 205
+
+-- EXPLORO EL PLANETA 173
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en anchura" para viajar al planeta 174 con coste real 1 y heuristica 28
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 189 con coste real 4 y heuristica 42
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 194
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Algoritmo A*" para viajar al planeta 200 con coste real 3 y heuristica 38
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 208 con coste real 2 y heuristica 16
+
+-- EXPLORO EL PLANETA 177
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Busqueda Voraz" para viajar al planeta 189
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 196
+
+-- EXPLORO EL PLANETA 181
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad iterativa" para viajar al planeta 186 con coste real 6 y heuristica 19
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad iterativa" para viajar al planeta 198 con coste real 4 y heuristica 22
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 202 con coste real 6 y heuristica 17
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 208
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en profundidad" para viajar al planeta 212
+
+-- EXPLORO EL PLANETA 166
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 169 con coste real 2 y heuristica 45
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 173 con coste real 4 y heuristica 31
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Algoritmo A*" para viajar al planeta 204 con coste real 3 y heuristica 10
+
+-- EXPLORO EL PLANETA 172
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad iterativa" para viajar al planeta 177 con coste real 2 y heuristica 29
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 197
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 202 con coste real 6 y heuristica 17
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en profundidad" para viajar al planeta 207 con coste real 3 y heuristica 40
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Escalada simple" para viajar al planeta 211
+
+-- EXPLORO EL PLANETA 174
+
+-- EXPLORO EL PLANETA 183
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 187 con coste real 1 y heuristica 39
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Busqueda Voraz" para viajar al planeta 194 con coste real 1 y heuristica 48
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 198 con coste real 4 y heuristica 22
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Escalada simple" para viajar al planeta 205
+
+-- EXPLORO EL PLANETA 124
+
+-- EXPLORO EL PLANETA 125
+
+-- EXPLORO EL PLANETA 126
+
+-- EXPLORO EL PLANETA 156
+
+-- EXPLORO EL PLANETA 144
+
+-- EXPLORO EL PLANETA 155
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Busqueda Voraz" para viajar al planeta 173
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en anchura" para viajar al planeta 181 con coste real 2 y heuristica 33
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en anchura" para viajar al planeta 182 con coste real 3 y heuristica 26
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Simulada" para viajar al planeta 187
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en anchura" para viajar al planeta 190 con coste real 3 y heuristica 29
+
+-- EXPLORO EL PLANETA 160
+
+-- EXPLORO EL PLANETA 154
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Algoritmo A*" para viajar al planeta 157 con coste real 2 y heuristica 55
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Escalada simple" para viajar al planeta 161
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Algoritmo A*" para viajar al planeta 162 con coste real 3 y heuristica 43
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 179 con coste real 3 y heuristica 36
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 182
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Simulada" para viajar al planeta 183
+
+-- EXPLORO EL PLANETA 160
+
+-- EXPLORO EL PLANETA 162
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad iterativa" para viajar al planeta 172 con coste real 4 y heuristica 34
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 180
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 186 con coste real 6 y heuristica 19
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 190 con coste real 3 y heuristica 29
+
+-- EXPLORO EL PLANETA 163
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en anchura" para viajar al planeta 172 con coste real 3 y heuristica 34
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 175
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en profundidad" para viajar al planeta 194
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Algoritmo A*" para viajar al planeta 196 con coste real 6 y heuristica 13
+
+-- EXPLORO EL PLANETA 189
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 193
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 200
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 212 con coste real 6 y heuristica 16
+
+-- EXPLORO EL PLANETA 200
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Profundidad iterativa" para viajar al planeta 206
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Escalada simple" para viajar al planeta 209
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Escalada simple" para viajar al planeta 211
+
+-- EXPLORO EL PLANETA 148
+
+-- EXPLORO EL PLANETA 153
+
+-- EXPLORO EL PLANETA 160
+
+-- EXPLORO EL PLANETA 161
+
+-- EXPLORO EL PLANETA 164
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 176 con coste real 1 y heuristica 19
+
+-- EXPLORO EL PLANETA 184
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 213 con coste real 4 y heuristica 0
+
+-- EXPLORO EL PLANETA 169
+
+-- EXPLORO EL PLANETA 173
+
+-- EXPLORO EL PLANETA 179
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Busqueda Voraz" para viajar al planeta 192 con coste real 3 y heuristica 45
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Primero en anchura" para viajar al planeta 199
+
+-- EXPLORO EL PLANETA 198
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad iterativa" para viajar al planeta 203 con coste real 4 y heuristica 42
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en profundidad" para viajar al planeta 211
+* Puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Algoritmo A*" para viajar al planeta 215 con coste real 3 y heuristica 0
+
+-- EXPLORO EL PLANETA 204
+* Puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Primero en profundidad" para viajar al planeta 213 con coste real 15 y heuristica 0
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 215
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Escalada simple" para viajar al planeta 216
+
+-- EXPLORO EL PLANETA 112
+
+-- EXPLORO EL PLANETA 143
+
+-- EXPLORO EL PLANETA 144
+
+-- EXPLORO EL PLANETA 109
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Simulada" para viajar al planeta 134
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en anchura" para viajar al planeta 137 con coste real 2 y heuristica 42
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 140 con coste real 3 y heuristica 38
+
+-- EXPLORO EL PLANETA 120
+
+-- EXPLORO EL PLANETA 128
+
+-- EXPLORO EL PLANETA 134
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Simulada" para viajar al planeta 135
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 139 con coste real 1 y heuristica 49
+No puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Busqueda Voraz" para viajar al planeta 141
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Primero en anchura" para viajar al planeta 148 con coste real 3 y heuristica 32
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Busqueda Voraz" para viajar al planeta 159 con coste real 1 y heuristica 39
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 166 con coste real 1 y heuristica 36
+
+-- EXPLORO EL PLANETA 151
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad iterativa" para viajar al planeta 159 con coste real 3 y heuristica 39
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Primero en profundidad" para viajar al planeta 168 con coste real 3 y heuristica 31
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 182 con coste real 6 y heuristica 26
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en profundidad" para viajar al planeta 187
+
+-- EXPLORO EL PLANETA 139
+
+-- EXPLORO EL PLANETA 146
+
+-- EXPLORO EL PLANETA 151
+
+-- EXPLORO EL PLANETA 152
+
+-- EXPLORO EL PLANETA 186
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 188
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 190 con coste real 1 y heuristica 29
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Algoritmo A*" para viajar al planeta 195 con coste real 2 y heuristica 10
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 207 con coste real 3 y heuristica 40
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Busqueda Voraz" para viajar al planeta 208 con coste real 1 y heuristica 16
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Primero en anchura" para viajar al planeta 214 con coste real 1 y heuristica 0
+
+-- EXPLORO EL PLANETA 187
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 197 con coste real 3 y heuristica 26
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en anchura" para viajar al planeta 203 con coste real 4 y heuristica 42
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en anchura" para viajar al planeta 205 con coste real 3 y heuristica 19
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Profundidad iterativa" para viajar al planeta 207 con coste real 4 y heuristica 40
+
+-- EXPLORO EL PLANETA 141
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 156 con coste real 4 y heuristica 36
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Busqueda Voraz" para viajar al planeta 159 con coste real 3 y heuristica 39
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Primero en anchura" para viajar al planeta 163 con coste real 2 y heuristica 38
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad iterativa" para viajar al planeta 169
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 176
+
+-- EXPLORO EL PLANETA 153
+
+-- EXPLORO EL PLANETA 116
+
+-- EXPLORO EL PLANETA 123
+
+-- EXPLORO EL PLANETA 116
+
+-- EXPLORO EL PLANETA 120
+
+-- EXPLORO EL PLANETA 130
+
+-- EXPLORO EL PLANETA 140
+
+-- EXPLORO EL PLANETA 133
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Profundidad iterativa" para viajar al planeta 144 con coste real 3 y heuristica 38
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Simulada" para viajar al planeta 148 con coste real 4 y heuristica 32
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Algoritmo A*" para viajar al planeta 152 con coste real 1 y heuristica 57
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 162 con coste real 1 y heuristica 43
+
+-- EXPLORO EL PLANETA 143
+
+-- EXPLORO EL PLANETA 145
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Algoritmo A*" para viajar al planeta 155 con coste real 4 y heuristica 44
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad iterativa" para viajar al planeta 163 con coste real 3 y heuristica 38
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en profundidad" para viajar al planeta 170
+* Puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Algoritmo A*" para viajar al planeta 176 con coste real 3 y heuristica 19
+
+-- EXPLORO EL PLANETA 161
+
+-- EXPLORO EL PLANETA 167
+
+-- EXPLORO EL PLANETA 180
+* Puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Profundidad iterativa" para viajar al planeta 186 con coste real 1 y heuristica 19
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Profundidad iterativa" para viajar al planeta 191
+* Puedo resolver el problema "En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 192 con coste real 3 y heuristica 45
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad iterativa" para viajar al planeta 205 con coste real 4 y heuristica 19
+
+-- EXPLORO EL PLANETA 177
+
+-- EXPLORO EL PLANETA 201
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en profundidad" para viajar al planeta 215
+
+-- EXPLORO EL PLANETA 195
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Simulada" para viajar al planeta 209
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Busqueda Voraz" para viajar al planeta 212 con coste real 2 y heuristica 16
+* Puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Primero en profundidad" para viajar al planeta 213 con coste real 15 y heuristica 0
+
+-- EXPLORO EL PLANETA 144
+
+-- EXPLORO EL PLANETA 164
+
+-- EXPLORO EL PLANETA 169
+
+-- EXPLORO EL PLANETA 145
+
+-- EXPLORO EL PLANETA 158
+
+-- EXPLORO EL PLANETA 163
+
+-- EXPLORO EL PLANETA 170
+
+-- EXPLORO EL PLANETA 185
+No puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Escalada simple" para viajar al planeta 188
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Algoritmo A*" para viajar al planeta 197 con coste real 3 y heuristica 26
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad iterativa" para viajar al planeta 208 con coste real 2 y heuristica 16
+
+-- EXPLORO EL PLANETA 189
+
+-- EXPLORO EL PLANETA 191
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Escalada simple" para viajar al planeta 201
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Primero en profundidad" para viajar al planeta 203
+
+-- EXPLORO EL PLANETA 174
+
+-- EXPLORO EL PLANETA 189
+
+-- EXPLORO EL PLANETA 200
+
+-- EXPLORO EL PLANETA 208
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Busqueda Voraz" para viajar al planeta 210 con coste real 4 y heuristica 42
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Algoritmo A*" para viajar al planeta 211
+* Puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 216 con coste real 3 y heuristica 0
+
+-- EXPLORO EL PLANETA 186
+
+-- EXPLORO EL PLANETA 198
+
+-- EXPLORO EL PLANETA 202
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Escalada simple" para viajar al planeta 204
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Algoritmo A*" para viajar al planeta 213 con coste real 3 y heuristica 0
+
+-- EXPLORO EL PLANETA 169
+
+-- EXPLORO EL PLANETA 173
+
+-- EXPLORO EL PLANETA 204
+
+-- EXPLORO EL PLANETA 177
+
+-- EXPLORO EL PLANETA 202
+
+-- EXPLORO EL PLANETA 207
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Primero en profundidad" para viajar al planeta 209
+
+-- EXPLORO EL PLANETA 187
+
+-- EXPLORO EL PLANETA 194
+* Puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Algoritmo A*" para viajar al planeta 199 con coste real 1 y heuristica 29
+
+-- EXPLORO EL PLANETA 198
+
+-- EXPLORO EL PLANETA 181
+
+-- EXPLORO EL PLANETA 182
+* Puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 195 con coste real 4 y heuristica 10
+No puedo resolver el problema "Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle." con el algoritmo "Profundidad iterativa" para viajar al planeta 197
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Busqueda Voraz" para viajar al planeta 202
+No puedo resolver el problema "En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros." con el algoritmo "Busqueda Voraz" para viajar al planeta 204
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Escalada simple" para viajar al planeta 207
+
+-- EXPLORO EL PLANETA 190
+* Puedo resolver el problema "Tenemos una operación matemática cuyos operandos estan desordenados y queremos ordenarlos para que se cumpla el resultado ordenado." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 197 con coste real 2 y heuristica 26
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Busqueda Voraz" para viajar al planeta 198
+* Puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 212 con coste real 2 y heuristica 16
+
+-- EXPLORO EL PLANETA 157
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Escalada simple" para viajar al planeta 165
+* Puedo resolver el problema "Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 171 con coste real 1 y heuristica 41
+
+-- EXPLORO EL PLANETA 162
+
+-- EXPLORO EL PLANETA 179
+
+-- EXPLORO EL PLANETA 172
+
+-- EXPLORO EL PLANETA 186
+
+-- EXPLORO EL PLANETA 190
+
+-- EXPLORO EL PLANETA 172
+
+-- EXPLORO EL PLANETA 196
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 206
+No puedo resolver el problema "Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo." con el algoritmo "Primero en profundidad" para viajar al planeta 214
+No puedo resolver el problema "Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos." con el algoritmo "Escalada simple" para viajar al planeta 216
+
+-- EXPLORO EL PLANETA 212
+* Puedo resolver el problema "Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden." con el algoritmo "Primero en anchura" para viajar al planeta 213 con coste real 6 y heuristica 0
+No puedo resolver el problema "En una orilla hay un Granjero, una Cabra, un Lobo y una Col, y hay que cruzar a la otra orilla sabiendo que no se peuden quedar solos (sin el granjero) la Cabra con la Col o el Lobo con la Cabra." con el algoritmo "Simulada" para viajar al planeta 215
+
+-- EXPLORO EL PLANETA 176
+* Puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Algoritmo A*" para viajar al planeta 193 con coste real 3 y heuristica 17
+* Puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Algoritmo A*" para viajar al planeta 194 con coste real 4 y heuristica 48
+No puedo resolver el problema "Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original." con el algoritmo "Escalada simple" para viajar al planeta 205
+No puedo resolver el problema "Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo." con el algoritmo "Escalada simple" para viajar al planeta 206
+No puedo resolver el problema "Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último." con el algoritmo "Profundidad limitada a 7" para viajar al planeta 212
+No puedo resolver el problema "Tenemos un conjunto de letras desordenadas y queremos conseguir formar una palabra del diccionario mediante la ordenacion de esas letras." con el algoritmo "Primero en profundidad" para viajar al planeta 214
+
+
+SOLUCION DEL PROBLEMA GLOBAL
+ 
+Paso del planeta 1 al planeta vecino 19 ,COSTE:6
+Paso del planeta 19 al planeta vecino 51 ,COSTE:6
+Paso del planeta 51 al planeta vecino 71 ,COSTE:2
+Paso del planeta 71 al planeta vecino 110 ,COSTE:3
+Paso del planeta 110 al planeta vecino 140 ,COSTE:1
+Paso del planeta 140 al planeta vecino 146 ,COSTE:1
+Paso del planeta 146 al planeta vecino 184 ,COSTE:6
+Paso del planeta 184 al planeta vecino 213 ,COSTE:4
+
+
+DATOS DEL PROBLEMA
+
+nodesExpanded : 264
+queueSize : 50
+maxQueueSize : 86
+Coste total: 29
