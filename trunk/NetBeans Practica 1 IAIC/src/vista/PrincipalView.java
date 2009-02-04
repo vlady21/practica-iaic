@@ -3759,13 +3759,14 @@ public class PrincipalView extends FrameView implements Observador{
     }// </editor-fold>//GEN-END:initComponents
 
     private void ejecutarCompleto(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ejecutarCompleto
-
         ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
         panel.limpiarRecorrido();
 
         _pasoApaso.setEnabled(false);
         _continuo.setEnabled(false);
         _botonestadisticas.setEnabled(false);
+        _algoritmo.setEnabled(false);
+        jTextField1.setEnabled(false);
         if(!_iniciado){
             _iniciado=true;
             dameLog().setText("");
@@ -3778,7 +3779,6 @@ public class PrincipalView extends FrameView implements Observador{
         status("Buscando mundo con niveles de oxigeno y agua adecuados para vivir");
 
         mainPanel.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-
         statusAnimationLabel.setIcon(busyIcons[0]);
         busyIconIndex = 0;
         busyIconTimer.start();
@@ -3794,6 +3794,8 @@ public class PrincipalView extends FrameView implements Observador{
             _pasoApaso.setText("Siguiente");
             _continuo.setEnabled(false);
             _botonestadisticas.setEnabled(false);
+            _algoritmo.setEnabled(false);
+            jTextField1.setEnabled(false);
             _iniciado=true;
             dameLog().setText("");
             //agregar opcion elegida
@@ -3805,19 +3807,13 @@ public class PrincipalView extends FrameView implements Observador{
             }catch(Throwable e){}
         }
         _micromundo.siguiente();
-
         status("Planeta recorrido");
     }//GEN-LAST:event_ejecutarPasoAPaso
 
     private void mostrarEstadisticas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mostrarEstadisticas
-
         getFrame().setAlwaysOnTop(false);
         _micromundo.muestraEstadisticas();
-
         status("Estadisticas activas");
-
-        //conectaPlanetas(116, 152, 0);
-
     }//GEN-LAST:event_mostrarEstadisticas
 
     private void salir(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salir
@@ -3829,6 +3825,8 @@ public class PrincipalView extends FrameView implements Observador{
         _pasoApaso.setEnabled(true);
         _continuo.setEnabled(true);
         _botonestadisticas.setEnabled(true);
+        _algoritmo.setEnabled(true);
+        jTextField1.setEnabled(true);
         _iniciado=false;
         _micromundo.stop();
         _micromundo=new Micromundo();
@@ -4136,13 +4134,9 @@ public class PrincipalView extends FrameView implements Observador{
 	}
 
 	public void escribeLog(String datos) {
-
         JScrollBar sV = scrollLog.getVerticalScrollBar();
-
         sV.setValue(sV.getMaximum());
-
         scrollLog.setVerticalScrollBar(sV);
-
 		dameLog().append(datos+"\n");
 	}
 
@@ -4154,7 +4148,6 @@ public class PrincipalView extends FrameView implements Observador{
 	}
 
 	public void posicionarNave(int numeroPlaneta) {
-
         ImagenFondoPanel panel = (ImagenFondoPanel) panelUniverso;
         panel.posicionarNave(numeroPlaneta);
 
@@ -4164,6 +4157,8 @@ public class PrincipalView extends FrameView implements Observador{
         _pasoApaso.setEnabled(true);
 		_continuo.setEnabled(true);
 		_botonestadisticas.setEnabled(true);
+        _algoritmo.setEnabled(true);
+        jTextField1.setEnabled(true);
 		_iniciado=false;
 		_micromundo=new Micromundo();
 		_micromundo.setObserver(this);
@@ -4200,7 +4195,7 @@ public class PrincipalView extends FrameView implements Observador{
             algoritmo="Primero en anchura";
 			devuelve= 2;
 		}else if(_algoritmo.getSelectedItem().equals("Profundidad Limitada")){
-            algoritmo="Profundidad Limitada";
+            algoritmo="Profundidad Limitada a "+jTextField1.getText().trim();
             jTextField1.setVisible(true);
             jLabel11.setVisible(true);
 			devuelve= 3;
@@ -4301,13 +4296,9 @@ public class PrincipalView extends FrameView implements Observador{
         }
         
          stop = false;
-
          lineas = new Vector();
-
          recorrido = new Vector();
-         
          line=new Linea(0,0,0,0);
-
          primera = true;
      }
 
@@ -4329,11 +4320,10 @@ public class PrincipalView extends FrameView implements Observador{
 
                 for(i = 0; i<lineas.size(); i++){
 
-                    linea = lineas.elementAt(i);
+                   linea = lineas.elementAt(i);
 
                    if(line!=null){
                         if(linea.isEqual(line)){
-
                             posicion = i;
                             //Linea l = new Linea(line.x1+5,line.y1+5,line.x2+5,line.y2+5,line.color);
                             Linea l = new Linea(line.x1,line.y1,line.x2,line.y2,line.color);
@@ -4342,27 +4332,18 @@ public class PrincipalView extends FrameView implements Observador{
                             line=new Linea(0,0,0,0);
                         }
                     }
-
-
                     g.setColor(linea.getColor());
                     g.drawLine(linea.getX1(), linea.getY1(), linea.getX2(), linea.getY2());
-
                 }
                 stop = true;
             }else{
-            //if(lineas.size()==0){
-
-
-                for(i = 0; i<this.getComponentCount(); i++){
+                  for(i = 0; i<this.getComponentCount(); i++){
 
                     componente = this.getComponent(i);
 
                     if(componente.getClass().getName().equals("javax.swing.JButton")){
-
                         listaPlanetas.add((JButton)componente);
-
                         listaPlanetas.elementAt(i).setEnabled(false);
-
                     }
                 }
 
@@ -4410,10 +4391,6 @@ public class PrincipalView extends FrameView implements Observador{
             }
 
             primera = false;
-
-            //posicionarNave(0);
-            
-
         }else{
 
             g.drawImage(imgFondo,0,0,null);
@@ -4534,39 +4511,25 @@ public class PrincipalView extends FrameView implements Observador{
              _pasoApaso.setText("Paso a paso");
          }
 
-         /*System.out.println("P1X: "+planeta1.getX()+" P1Y: "+planeta1.getY());
-         System.out.println("P2X: "+planeta2.getX()+" P2Y: "+planeta2.getY());
-*/
          Linea linea = new Linea(planeta1.getX() + ancho, planeta1.getY() + alto, planeta2.getX() + ancho, planeta2.getY() + alto, color);
-
-         //this.line = linea;
-
          if(planet2>=212&&planet2<=215&&tipo==2)
              posicionarNave(planet2);
 
          recorrido.add(linea);
-         //lineas.add(line);
          paintComponent(this.getGraphics());
          repaint();
      }
 
      private void posicionarNave(int planet1) {
          planeta1 = listaPlanetas.get(planet1);
-
          xNave = planeta1.getX()-20;
          yNave = planeta1.getY()+20;
          JScrollBar sV = scrollUniverso.getVerticalScrollBar();
-
          sV.setValue(yNave - (scrollUniverso.getHeight()/2));
-
          scrollUniverso.setVerticalScrollBar(sV);
-
          JScrollBar sH = scrollUniverso.getHorizontalScrollBar();
-
          sH.setValue(xNave - (scrollUniverso.getWidth()/2));
-
          scrollUniverso.setHorizontalScrollBar(sH);
-
          try {
              Thread.sleep(1000);
          }
@@ -4580,12 +4543,8 @@ public class PrincipalView extends FrameView implements Observador{
      
      private void limpiarRecorrido() {
          int i;
-
-
          for(i = 0; i<listaPlanetas.size(); i++){
-
             listaPlanetas.elementAt(i).setEnabled(false);
-
          }
 
          recorrido.clear();
@@ -4596,7 +4555,6 @@ public class PrincipalView extends FrameView implements Observador{
             ((JButton)panelUniverso.getComponent(i)).setIcon(resourceMap.getIcon("planetaObjetivo"));
          }
          posicionarNave(0);
-
      }
     }
 

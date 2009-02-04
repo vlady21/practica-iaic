@@ -34,7 +34,7 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 	private int _dificultad=15;
 
     public KhunPhanPuzzle() {
-            _enunciadoProblema="puzzle donde tienes q conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle.";
+            _enunciadoProblema="Puzzle donde tienes que conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle.";
         	_nodosExpandidos=0;
             _resuelto=false;
     	  	_tablero = new String[4][5];
@@ -174,8 +174,6 @@ public class KhunPhanPuzzle  extends InterfazJuego{
                 	mitablero[i][j] = puzzle._tablero[i][j];
 	        
 	        for(int operadores = 0; operadores<=23; operadores++){
-	        	 	System.out.println("operador: " + operadores);
-		        
 	                generado = false;
 	                int newx1 = mix1; 
 	    	        int newy1 = miy1;
@@ -598,7 +596,6 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 	                	KhunPhanPuzzle nuevoEstado = new KhunPhanPuzzle(newtablero, newx1, newy1, newx2, newy2, recorrido);
 	                	
 	                	String datos=movimiento+" ,COSTE:"+coste+"\n"+nuevoEstado;
-	                	System.out.println(datos);
 						sucesores.add(new Successor(datos, nuevoEstado));
 		                
 	                }
