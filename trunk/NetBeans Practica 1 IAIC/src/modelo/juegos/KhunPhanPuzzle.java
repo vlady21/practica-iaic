@@ -84,7 +84,6 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 	}
 
 	public boolean valido(String [][] _newTablero){
-		
 		boolean result = true;
 		if(_nodosExpandidos>5000||contiene(_newTablero))
 			result = false;
@@ -96,12 +95,10 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 
 		int i,j,k,iguales;
 		String[][] t;
-		
-		
+
 		for(i = 0;i<recorrido.size();i++){
 		
 			 t = recorrido.elementAt(i);
-			 
 			 iguales = 0;
 			 
 			 for(j = 0; j<=3; j++){
@@ -110,12 +107,10 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 	                        	iguales++;
 	                }
 			 }
-			 
 			 if(iguales==20){
 				 return true;
 			 }
 		}
-		
 		return false;
 	}
 
@@ -143,10 +138,6 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 	                                tabla += ")" + "\n";
 	                }
 	        }
-	        
-	        if(_tablero[1][3] == " " && _tablero[3][2] == " ")
-	        	System.out.println("operador: ");
-	        
 	        return tabla; 
 	}
 	
@@ -184,7 +175,6 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 	                    for(int j = 0; j<=4; j++)
 	                    	newtablero[i][j] = mitablero[i][j];
 
-	    	        //System.out.println("operador: " + operadores);
 	                switch(operadores){
 	                
 		                case 0://Mover cuadrado grande a la derecha 
@@ -625,28 +615,10 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 			KhunPhanPuzzle puzzle=(KhunPhanPuzzle)state;
 
 	        int valor = 0;
-	        
-	        /*if (puzzle._tablero[0][0] != "V") valor++;
-	        if (puzzle._tablero[0][1] != "V") valor++;
-	        if (puzzle._tablero[0][2] != "H") valor++;
-	        if (puzzle._tablero[0][3] != "S") valor++;
-	        if (puzzle._tablero[0][4] != "S") valor++;
-	        if (puzzle._tablero[1][0] != "V") valor++;
-	        if (puzzle._tablero[1][1] != "V") valor++;
-	        if (puzzle._tablero[1][2] != "H") valor++;
-	        */if (puzzle._tablero[1][3] != "C") valor++;
+	        if (puzzle._tablero[1][3] != "C") valor++;
 	        if (puzzle._tablero[1][4] != "C") valor++;
-	        /*if (puzzle._tablero[2][0] != "V") valor++;
-	        if (puzzle._tablero[2][1] != "V") valor++;
-	        if (puzzle._tablero[2][2] != "S") valor++;
-	        */if (puzzle._tablero[2][3] != "C") valor++;
+	        if (puzzle._tablero[2][3] != "C") valor++;
 	        if (puzzle._tablero[2][4] != "C") valor++;
-	        /*if (puzzle._tablero[3][0] != "V") valor++;
-	        if (puzzle._tablero[3][1] != "V") valor++;
-	        if (puzzle._tablero[3][2] != "S") valor++;
-	        if (puzzle._tablero[3][3] != " ") valor++;
-	        if (puzzle._tablero[3][4] != " ") valor++;
-	                */
 	        return valor;
 		}
 	}
