@@ -4230,34 +4230,6 @@ public class PrincipalView extends FrameView implements Observador{
             g.fillRect(x,y+20,(frame*18)%280,20);
         }
 
-    public class ThreadSplash extends Thread {
-        public ThreadSplash() {
-
-        }
-        public void run() {
-
-            final SplashScreen splash = SplashScreen.getSplashScreen();
-            if (splash == null) {
-                System.out.println("SplashScreen.getSplashScreen() returned null");
-            }
-            Graphics2D g = (Graphics2D)splash.createGraphics();
-            if (g == null) {
-                System.out.println("g is null");
-            }
-            for(int i=0; i<20; i++) {
-                renderSplashFrame(g, i);
-                splash.update();
-                try {
-                    Thread.sleep(200);
-                }
-                catch(InterruptedException e) {
-                }
-            }
-            splash.close();
-
-        }
-    }
-
     public class ImagenFondoPanel extends javax.swing.JPanel {
      private Image imgFondo;
      private Vector <Linea> lineas;
