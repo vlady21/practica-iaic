@@ -169,11 +169,11 @@ public class Planeta extends InterfazPlaneta{
             posicionarNave(valorPlaneta);
             
 			//comprobamos si ya ha sido explorado el planeta y si no lo esta lo agregmos y expandimos
-			boolean expandir=false;
+			/*boolean expandir=false;
 			if(_listaPlanetasExpandidos.indexOf(valorPlaneta)==-1){
 				_listaPlanetasExpandidos.add(valorPlaneta);
 				expandir=true;
-			}
+			}*/
 
             Log.dameInstancia().agregar("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
 			_observer.escribeLog("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
@@ -182,7 +182,7 @@ public class Planeta extends InterfazPlaneta{
 			int coste=0;
 			
 			//si hay que expandir comprobamos si podemos viajar a sus hijos
-			for(int siguiente=0;(siguiente<vecinos.size() && expandir);siguiente++){
+			for(int siguiente=0;(siguiente<vecinos.size()/* && expandir*/);siguiente++){
 				_observer.informacionStatus("Explorando Planeta "+(valorPlaneta+1));
                 if(_pasoApaso){
                     while(!_siguiente){}
