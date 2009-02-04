@@ -66,11 +66,14 @@ public class GestorJuegos {
 			case 9:
 				_juego=new Palillos();
 				break;
-			case 10://quitar
-				_juego=new RejillaRojoAzul();
+			case 10:
+				_juego=new Puente();
 				break;
-			case 11://quitar
-				_juego=new RejillaRojoAzul();
+			case 11:
+				_juego=new Robot();
+				break;
+            case 12:
+				_juego=new KhunPhanPuzzle();
 				break;
 		}
 		_problema=_juego.getProblema();

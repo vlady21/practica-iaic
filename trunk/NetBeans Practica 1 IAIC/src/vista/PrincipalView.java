@@ -36,6 +36,7 @@ import javax.swing.JTextArea;
 import javax.swing.text.MaskFormatter;
 import modelo.matrices.MatrizConexiones;
 import modelo.micromundo.Estadisticas;
+import modelo.micromundo.Log;
 import modelo.micromundo.Micromundo;
 import observador.Observador;
 
@@ -4187,20 +4188,29 @@ public class PrincipalView extends FrameView implements Observador{
         if(jTextField1.getText().trim().equals("")){
             jTextField1.setText("0");
         }
+        String algoritmo="";
+        int devuelve= -1;
 		if(_algoritmo.getSelectedItem().equals("Busqueda Voraz")){
-			return 0;
+            algoritmo="Busqueda Voraz";
+			devuelve= 0;
 		}else if(_algoritmo.getSelectedItem().equals("Algoritmo A*")){
-			return 1;
+            algoritmo="Algoritmo A*";
+			devuelve= 1;
 		}else if(_algoritmo.getSelectedItem().equals("Primero en anchura")){
-			return 2;
+            algoritmo="Primero en anchura";
+			devuelve= 2;
 		}else if(_algoritmo.getSelectedItem().equals("Profundidad Limitada")){
+            algoritmo="Profundidad Limitada";
             jTextField1.setVisible(true);
             jLabel11.setVisible(true);
-			return 3;
+			devuelve= 3;
 		}else if(_algoritmo.getSelectedItem().equals("Primero en profundidad")){
-			return 4;
+			algoritmo="Primero en profundidad";
+            devuelve= 4;
 		}
-		return -1;
+        Log.dameInstancia().agregar("RESOLUCION DEL PROBLEMA GLOBAL CON EL ALGORITMO: "+algoritmo);
+        escribeLog("RESOLUCION DEL PROBLEMA GLOBAL CON EL ALGORITMO: "+algoritmo);
+		return devuelve;
 	}
 
     void renderSplashFrame(Graphics2D g, int frame) {
