@@ -54,6 +54,7 @@ public class Robot  extends InterfazJuego{
 
     
 	public Robot() {
+        _enunciadoProblema="En un minimundo hay 3 habitaciones que pueden estar sucias, para ello hay un robot que las va a limpiar.";
 	    _nodosExpandidos=0;
 		_resuelto=false;
 		Random generador = new Random();

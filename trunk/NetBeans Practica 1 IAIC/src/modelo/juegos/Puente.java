@@ -52,6 +52,7 @@ public class Puente extends InterfazJuego{
 	private int _dificultad=1;
 	
 	public Puente() {
+        _enunciadoProblema="Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar.";
 		_nodosExpandidos=0;
 		_resuelto=false;
 		_posLinterna = 1;		

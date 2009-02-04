@@ -11,13 +11,13 @@ import aima.search.framework.SuccessorFunction;
 
 
 	/** <b>Juego del Mono:</b><br>
-	 * Hay un mono en la puerta de una habitación. En el centro de la habitación hay un
-	 * plátano colgado del techo. El mono está hambriento y quiere conseguir el plátano
-	 * pero no alcanza porque está muy alto. En la habitación también hay una ventana y
-	 * debajo de ella hay una caja que le permitiría alcanzar el plátano si se subiera a ella.
+	 * Hay un mono en la puerta de una habitaciï¿½n. En el centro de la habitaciï¿½n hay un
+	 * plï¿½tano colgado del techo. El mono estï¿½ hambriento y quiere conseguir el plï¿½tano
+	 * pero no alcanza porque estï¿½ muy alto. En la habitaciï¿½n tambiï¿½n hay una ventana y
+	 * debajo de ella hay una caja que le permitirï¿½a alcanzar el plï¿½tano si se subiera a ella.
 	 * El mono puede realizar las siguientes acciones: andar por el suelo, subirse a la caja,
-	 * empujar la caja (si el mono está en la misma posición que la caja) y coger el plátano
-	 * (si está subido encima de la caja y la caja está justo debajo del plátano).<br>
+	 * empujar la caja (si el mono estï¿½ en la misma posiciï¿½n que la caja) y coger el plï¿½tano
+	 * (si estï¿½ subido encima de la caja y la caja estï¿½ justo debajo del plï¿½tano).<br>
 	 * 0: el mono/caja se encuentran en la puerta<br>
 	 * 1: el mono/caja se encuentran en la centro<br>
 	 * 2: el mono/caja se encuentran en el ventana
@@ -48,6 +48,7 @@ public class Mono  extends InterfazJuego{
 
     
 	public Mono() {
+        _enunciadoProblema="Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo.";
 	    _pos = 0;
 	    _caja = 2;
 	    _sobreCaja = false;
@@ -188,10 +189,10 @@ public class Mono  extends InterfazJuego{
 		}
 	}
 
-	/* Para cada condición que no se cumpla para el objetivo, se suma uno. 
+	/* Para cada condiciï¿½n que no se cumpla para el objetivo, se suma uno. 
 	Por ejemplo, si el mono no esta encima de la caja, en el centro de la 
-	habitación, la caja no esta en el centro y el mono no tiene el plátano, la 
-	heurística vale 4.*/
+	habitaciï¿½n, la caja no esta en el centro y el mono no tiene el plï¿½tano, la 
+	heurï¿½stica vale 4.*/
 
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {

@@ -34,6 +34,7 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 	private int _dificultad=15;
 
     public KhunPhanPuzzle() {
+            _enunciadoProblema="puzzle donde tienes q conseguir sacar la figura cuadrada del laberinto. Su salida esta en la posicion inferior central del puzzle.";
         	_nodosExpandidos=0;
             _resuelto=false;
     	  	_tablero = new String[4][5];
