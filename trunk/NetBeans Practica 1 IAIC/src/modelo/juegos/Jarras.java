@@ -12,7 +12,7 @@ import aima.search.framework.SuccessorFunction;
 public class Jarras extends InterfazJuego{
 
 	private int _jarra3=0, _jarra4=0;
-	private int _dificultad=2;
+	private int _dificultad=5;
 	
 	public Jarras(){
         _enunciadoProblema="Tenemos 2 jarras, una de 3 litros y otra de 4 y queremos llenar la de 4 litros con 2 litros exactos.";

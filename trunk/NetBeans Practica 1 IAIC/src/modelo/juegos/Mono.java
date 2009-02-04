@@ -44,7 +44,7 @@ public class Mono  extends InterfazJuego{
 	 */
 	private boolean _platano;
     
-    private int _dificultad=1;
+    private int _dificultad=4;
 
     
 	public Mono() {

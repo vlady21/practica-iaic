@@ -64,10 +64,10 @@ public class Micromundo extends Thread {
 					int problema=MatrizProblemas.getInstancia().ping(j, i);
 					int valorProblema=GestorJuegos.costeProblema(problema);
 					if(valor==0){
-						agua=(vecino.getAgua()-valorProblema*4);
-						oxigeno=vecino.getOxigeno()-10;
+						agua=(vecino.getAgua()-valorProblema*6);
+						oxigeno=vecino.getOxigeno()-20;
 					}else{
-						agua=vecino.getAgua()-7;
+						agua=vecino.getAgua()-10;
 						oxigeno=(vecino.getOxigeno()-valorProblema*3);
 					}
 					conectado.setAguaOxigeno(agua, oxigeno);
@@ -76,7 +76,7 @@ public class Micromundo extends Thread {
 				}
 			}
 		}
-	}
+    }
 	
 	public void generaInstaciaProblemaGlobal(){
 		_planeta=new Planeta(_listaPlanetas);

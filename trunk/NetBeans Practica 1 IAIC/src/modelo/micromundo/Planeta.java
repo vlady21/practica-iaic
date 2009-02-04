@@ -103,10 +103,13 @@ public class Planeta extends InterfazPlaneta{
 		int agua=_cantidadAgua;
 		int oxigeno=_cantidadOxigeno;
 		int valorMax=200; //100 agua + 100 oxigeno en estado final
-		_valorHeuristico=valorMax-agua-oxigeno;//cuanto mas se asemeje a 0 mas cerca del final estamos	
-	}
+		_valorHeuristico=(valorMax-agua-oxigeno)/5;//cuanto mas se asemeje a 0 mas cerca del final estamos
+    }
 	
 	public int dameValorHeuristico(){
+        generaHeuristica();
+        if(_numeroPlaneta>211)
+            return 0;
 		return _valorHeuristico;
 	}
 	

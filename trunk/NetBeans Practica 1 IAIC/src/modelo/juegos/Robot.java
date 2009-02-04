@@ -50,7 +50,7 @@ public class Robot  extends InterfazJuego{
 	 */
 	boolean _limpiaHabDer;
     
-    private int _dificultad=3;
+    private int _dificultad=6;
 
     
 	public Robot() {

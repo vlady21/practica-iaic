@@ -27,7 +27,7 @@ public class Puzzle8  extends InterfazJuego{
 	 */
 	private int [][] _tablero;
 	
-	private int _dificultad=6;
+	private int _dificultad=9;
 
     public Puzzle8() {
         _enunciadoProblema="Tenemos un tablero con 8 casillas descolocadas y hay que colocarlas en orden.";

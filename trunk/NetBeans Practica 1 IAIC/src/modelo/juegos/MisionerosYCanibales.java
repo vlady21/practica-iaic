@@ -27,7 +27,7 @@ public class MisionerosYCanibales  extends InterfazJuego{
      */
     private int _barcaIzq=1;
     
-    private int _dificultad=3;
+    private int _dificultad=6;
 
     public MisionerosYCanibales() {
         _enunciadoProblema="En una orilla hay 3 misioneros y 3 canibales y deben cruzar todos la orilla sabiendo que en el bote caben como mucho 2 personas y que no se pueden quedar en ninguna orilla mas canibales que misioneros.";

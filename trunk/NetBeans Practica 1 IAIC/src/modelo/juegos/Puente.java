@@ -49,7 +49,7 @@ public class Puente extends InterfazJuego{
 	 */
 	private int _tiempo;
 	
-	private int _dificultad=1;
+	private int _dificultad=4;
 	
 	public Puente() {
         _enunciadoProblema="Hay 4 amigos que desean pasar un puente en el menor tiempo posible ya que solo hay una linterna, indispensable para cruzar.";

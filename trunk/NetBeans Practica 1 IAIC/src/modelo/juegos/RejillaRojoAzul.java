@@ -16,7 +16,7 @@ public class RejillaRojoAzul extends InterfazJuego{
 	 */
 	private String [][] _tablero;
 	
-	private int _dificultad=4;
+	private int _dificultad=7;
 
     public RejillaRojoAzul() {
         _enunciadoProblema="Tenemos un tablero con las casillas pintadas de color rojo o azul y queremos que el numero de pares del mismo color sea minimo.";

@@ -29,7 +29,7 @@ public class Palillos  extends InterfazJuego{
 	 */
 	private int _turno;
     
-    private int _dificultad=1;
+    private int _dificultad=4;
 
     public Palillos() {
         _enunciadoProblema="Se trata de un juego para dos jugadores. Se parte de 23 palillos. Cada jugador, por turno, puede retirar uno, dos o tres palillos. Pierde el que retira el último.";

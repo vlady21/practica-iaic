@@ -10,7 +10,7 @@ import aima.search.framework.SuccessorFunction;
 
 public class Calculadora extends InterfazJuego{
 
-	private int _dificultad=2;
+	private int _dificultad=5;
 	private int _resultado = 304;
 	private int _num1, _num2, _num3, _num4;
 	

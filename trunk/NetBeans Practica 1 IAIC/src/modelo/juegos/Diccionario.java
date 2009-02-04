@@ -12,7 +12,7 @@ import aima.search.framework.SuccessorFunction;
 
 public class Diccionario extends InterfazJuego{
 
-	private int _dificultad=4;
+	private int _dificultad=7;
 	private String _palabra = "ARTE";
 	private Vector<String> _diccionario = new Vector<String>();
 	

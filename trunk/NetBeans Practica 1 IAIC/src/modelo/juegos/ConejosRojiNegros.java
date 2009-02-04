@@ -22,7 +22,7 @@ public class ConejosRojiNegros  extends InterfazJuego{
 	 */
 	private int [] _tablero;
 	
-	private int _dificultad=3;
+	private int _dificultad=6;
 
 	public ConejosRojiNegros() {
         _enunciadoProblema="Tenemos un grupo de tres conejos Rojos a la izquierda y otro grupo de tres conejos Negros a la derecha, ambos separados por un hueco y queremos conseguir que ambos grupos se posicionen de manera inversa a la original.";
