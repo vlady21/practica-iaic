@@ -30,6 +30,8 @@ public class VentanaComparativaGraficas extends JFrame{
 		setTitle("Grafica comparativa");
 		setResizable(false);
 		show();
+        repaint();
+        setAlwaysOnTop(true);
 	}
 	
 	public BufferedImage creaGrafica(){

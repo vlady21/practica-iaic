@@ -5,24 +5,29 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
-
+/*
+ * Se encarga de rellenar las matrices con los datos leidos del fichero de configuracion
+ * @author Jose Miguel Guerrero Hernandez 53466473Y
+ */
 public class GeneraMatrices {
-
 	private static GeneraMatrices _instancia=null;
-	
+
+    //Devuelve la instancia de la clase, si no esta creada la inicializa
 	public static GeneraMatrices dameInstancia(){
 		if(_instancia==null){
 			_instancia=new GeneraMatrices();
 		}
 		return _instancia;
 	}
-	
+
+    //Constructor que lee las conexiones
 	public GeneraMatrices(){
 		leerConexiones();
 	}
-	
+
+    //Lee la semilla para los valores "aleatorios" del fichero asignado para ello
 	public int dameSemilla(){
-		//leemos el fichero de conexiones
+		//leemos el fichero de la semilla
 		Properties propiedades=new Properties();
 		try{
 			FileInputStream entrada=new FileInputStream("config/semilla.properties");
@@ -30,11 +35,17 @@ public class GeneraMatrices {
 			entrada.close();
 		}
 		catch (Exception e){}
-		//obtenemos la conexion para el planeta que miramos
+		//obtenemos el valor de la semilla
 		String semilla=propiedades.getProperty("semilla");
 		return Integer.parseInt(semilla);
 	}
-	
+
+    /*
+     * Se encarga de leer el fichero de configuracion, para ello divide
+     * lo asignado al planeta dividiendolo a traves de las "," y luego
+     * obtiene los datos de 2:2:2 donde obtenemos con que planeta se conecta,
+     * que problema tiene asignado y el metodo de resolucion del problema.
+     */
 	public void leerConexiones(){
 		for(int i=0;i<216;i++){
 			//leemos el fichero de conexiones
@@ -48,21 +59,23 @@ public class GeneraMatrices {
 			//obtenemos la conexion para el planeta que miramos
 			String planetas=propiedades.getProperty(""+i);
 			StringTokenizer subCadsCampos=new StringTokenizer(planetas,",");
-			//obtenemos la lista de los planetas
+			//obtenemos la lista de los planetas que se conectan con el que estamos mirando
 			ArrayList<String> listaPlanetas=new ArrayList<String>();
 			while(subCadsCampos.hasMoreTokens()){
 				listaPlanetas.add(subCadsCampos.nextToken());
 			}
 			//conectamos el planeta con sus vecinos
 			for(int j=0;j<listaPlanetas.size();j++){
+                //obtenemos las partes de cada conexion
 				int dosPuntos1=listaPlanetas.get(j).indexOf(":");
 				int dosPuntos2=listaPlanetas.get(j).lastIndexOf(":");
+                //obtenemos el planeta con el que se conecta
 				String planeta=listaPlanetas.get(j).substring(0,dosPuntos1);
-				//System.out.println("PLANETA:"+i);
+                //obtenemos el problema que tiene asignada dicha conexion
 				String problema=listaPlanetas.get(j).substring(dosPuntos1+1,dosPuntos2);
-				//System.out.println(problema);
+                //obtenemos la forma de resolver el problema asignado
 				String solucion=listaPlanetas.get(j).substring(dosPuntos2+1);
-				//System.out.println(solucion);
+                //insertamos los valores en la matriz correspondiente
 				MatrizConexiones.getInstancia().conecta(i, Integer.parseInt(planeta));
 				MatrizProblemas.getInstancia().conecta(i, Integer.parseInt(planeta), Integer.parseInt(problema));
 				MatrizSolucionProblema.getInstancia().conecta(i, Integer.parseInt(planeta), Integer.parseInt(solucion));

@@ -1,7 +1,5 @@
 package modelo.micromundo;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +27,8 @@ public class Planeta extends InterfazPlaneta{
 	private int _cantidadOxigeno=0;
 	private int _cantidadAgua=0;
 	private ArrayList<Integer> _planetasVecinos=null;
-	private ArrayList<Integer> _costeplanetasVecinos=new ArrayList<Integer>();
 	
+    //Planeta inicial
 	public Planeta(){
 		_nodosExpandidos=0;
 		_numeroPlaneta=0;
@@ -41,8 +39,8 @@ public class Planeta extends InterfazPlaneta{
 		_listaPlanetasExpandidos=new ArrayList<Integer>();
 	}
 
+    //Genera el planeta inicial pero con la lista de planetas del micromundo
 	public Planeta(ArrayList<Planeta> planetas){
-		// planeta inicial
 		_nodosExpandidos=0;
 		_numeroPlaneta=0;
 		_pasoApaso=false;
@@ -53,12 +51,10 @@ public class Planeta extends InterfazPlaneta{
 		_planetasVecinos=MatrizConexiones.getInstancia().damePlanetasContiguos(_numeroPlaneta);
 		_cantidadAgua=0;
 		_cantidadOxigeno=0;
-		for(int i=0;i<_planetasVecinos.size();i++){
-			_costeplanetasVecinos.add(MatrizProblemas.getInstancia().ping(_numeroPlaneta, _planetasVecinos.get(i)));
-		}
 		generaHeuristica();
 	}
-	
+
+    //Creamos el planeta con el numero deseado y con la lista de los planetas del micromundo
 	public Planeta(int numeroPlaneta, ArrayList<Planeta> listaPlanetas){
 		_numeroPlaneta=numeroPlaneta;
 		_listaPlanetas=listaPlanetas;
@@ -70,14 +66,11 @@ public class Planeta extends InterfazPlaneta{
 			_cantidadAgua=100;
 		}
 		_planetasVecinos=MatrizConexiones.getInstancia().damePlanetasContiguos(_numeroPlaneta);
-		for(int i=0;i<_planetasVecinos.size();i++){
-			_costeplanetasVecinos.add(MatrizProblemas.getInstancia().ping(_numeroPlaneta, _planetasVecinos.get(i)));
-		}
 		generaHeuristica();
 	}
-	
+
+    //Asigna los valores de agua y oxigeno si son mayores que los que ya tenemos
 	public void setAguaOxigeno(int agua,int oxigeno){
-		//asignamos los valores si son mejores que los que tenemos
 		if(agua>_cantidadAgua){
 			_cantidadAgua=agua;
 		}
@@ -85,27 +78,32 @@ public class Planeta extends InterfazPlaneta{
 			_cantidadOxigeno=oxigeno;
 		}
 	}
-	
+
+    //Devuelve la cantidad de agua del planeta
 	public int getAgua(){
 		return _cantidadAgua;
 	}
-	
+
+    //Devuelve la cantidad de oxigeno del planeta
 	public int getOxigeno(){
 		return _cantidadOxigeno;
 	}
-	
-	public void asignaLista(ArrayList<Planeta> planetas){
-		_listaPlanetas=planetas;
-	}
-	
-	
+
+	/*
+     * Metodo que genera la heuristica, 200 sera el valor maximo
+     * del planeta objetivo al tener 100 de agua y 100 de oxigeno
+     * por lo que queremos hacerle 0, de ahi que sea 200 menos el
+     * valor de agua y oxigeno del planeta, dividiendolo entre 5
+     * para reducir el coste y hacerla mas admisible
+     */
 	public void generaHeuristica(){
 		int agua=_cantidadAgua;
 		int oxigeno=_cantidadOxigeno;
 		int valorMax=200; //100 agua + 100 oxigeno en estado final
 		_valorHeuristico=(valorMax-agua-oxigeno)/5;//cuanto mas se asemeje a 0 mas cerca del final estamos
     }
-	
+
+    //Devuelve el valor heuristico del planeta
 	public int dameValorHeuristico(){
         generaHeuristica();
         if(_numeroPlaneta>211)
@@ -216,8 +214,6 @@ public class Planeta extends InterfazPlaneta{
 				Planeta nuevoEstado=_listaPlanetas.get(planetaVecino);
 				
 				if (pasar && nuevoEstado.valido()){
-					Estadisticas.dameInstancia().insertaValorReal(coste);
-					Estadisticas.dameInstancia().insertaValorHeuristico(heuristica);
 					String datos=movimiento+" ,COSTE:"+coste;
 					sucesores.add(new Successor(datos, nuevoEstado));
 				}

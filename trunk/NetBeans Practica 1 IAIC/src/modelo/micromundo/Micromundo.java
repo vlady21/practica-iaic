@@ -196,6 +196,8 @@ public class Micromundo extends Thread {
                 String planeta2=action.substring(inicio2,fin2);
                 _solucion.add(planeta2);
             }
+            Estadisticas.dameInstancia().insertaValorReal(Integer.parseInt(numero.trim()));
+			Estadisticas.dameInstancia().insertaValorHeuristico(_listaPlanetas.get(Integer.parseInt(planeta1)).dameValorHeuristico());
 
 			_coste+=Integer.parseInt(numero.trim());
 			Log.dameInstancia().agregar(action);
