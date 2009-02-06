@@ -13,40 +13,40 @@ import modelo.matrices.GeneraMatrices;
 
 
 	/** Sea un micro-mundo formado por 3 habitaciones y un robot aspirador. 
-	 * Hay una habitaci�n a la izquierda, otra en el centro y otra a la derecha, 
+	 * Hay una habitación a la izquierda, otra en el centro y otra a la derecha,
 	 * cuyas alfombras pueden estar sucias o limpias. El robot puede estar en 
 	 * cualquiera de las habitaciones y puede ejecutar dos tipos de operaciones:
 	 * aspirar o moverse.
-	 * La operaci�n de aspirar requiere que la habitaci�n en la que se encuentra 
-	 * el robot est� sucia y su resultado es que dicha habitaci�n pasa a estar limpia. 
-	 * La operaci�n mover tiene dos opciones: mover hacia la izquierda, que requiere que haya
-	 *  alguna habitaci�n a la izquierda de aquella en la que se encuentra el robot, y mover 
-	 *  hacia la derecha que requiere la existencia de alguna habitaci�n situada a la derecha.
-	 *  En cualquier caso, los movimientos ser�n elementales, es decir, s�lo permitir�n el paso 
-	 *  a la habitaci�n contigua a la actual.
+	 * La operación de aspirar requiere que la habitación en la que se encuentra
+	 * el robot está sucia y su resultado es que dicha habitación pasa a estar limpia.
+	 * La operación mover tiene dos opciones: mover hacia la izquierda, que requiere que haya
+	 *  alguna habitación a la izquierda de aquella en la que se encuentra el robot, y mover
+	 *  hacia la derecha que requiere la existencia de alguna habitación situada a la derecha.
+	 *  En cualquier caso, los movimientos serán elementales, es decir, sólo permitirán el paso
+	 *  a la habitación contigua a la actual.
 	 */
 
 public class Robot  extends InterfazJuego{
 	/**
-	 * Indica la posici�n del robot-aspiradora:
-	 * 0. Est� en la habitaci�n de la izquierda.
-	 * 1. Est� en la habitaci�n del centro.
-	 * 2. Est� en la habitaci�n de la derecha.
+	 * Indica la posición del robot-aspiradora:
+	 * 0. Está en la habitación de la izquierda.
+	 * 1. Está en la habitación del centro.
+	 * 2. Está en la habitación de la derecha.
 	 */
 	int _posRobot;
 	
 	/**
-	 * Indica si la alfomrbra de la habitaci�n de la izquierda est� limpia.
+	 * Indica si la alfombra de la habitación de la izquierda está limpia.
 	 */
 	boolean _limpiaHabIzq;
 	
 	/**
-	 * Indica si la alfomrbra de la habitaci�n del centro est� limpia.
+	 * Indica si la alfombra de la habitación del centro está limpia.
 	 */
 	boolean _limpiaHabCen;
 	
 	/**
-	 * Indica si la alfomrbra de la habitaci�n de la derecha est� limpia.
+	 * Indica si la alfombra de la habitación de la derecha está limpia.
 	 */
 	boolean _limpiaHabDer;
     
@@ -131,8 +131,8 @@ public class Robot  extends InterfazJuego{
 		 		generado = false;
 		 		
 		 		switch(operador){
-		 		case 0:	// Aspirar habitaci�n.
-		 			// Comprobamos como est� la alfombra de la habitaci�n en la que est� el aspirador.
+		 		case 0:	// Aspirar habitación.
+		 			// Comprobamos como está la alfombra de la habitación en la que está el aspirador.
 		 			boolean limpiaHab = false;
 		 			switch (robot._posRobot){
 		 				case 0: 
@@ -146,12 +146,12 @@ public class Robot  extends InterfazJuego{
 		 					break;
 		 			}
 		 			
-		 			// Si no est� limpia, aplicamos operador.
+		 			// Si no está limpia, aplicamos operador.
 		 			if (!limpiaHab){
 		 				generado = true;
 		 				coste = 1;
 		 				movimiento = "aspirar";
-		 				// Limpiamos la habitaci�n.
+		 				// Limpiamos la habitación.
 			 			switch (robot._posRobot){
 			 				case 0: 
 			 					newlimpiaHabIzq = true;
@@ -172,8 +172,8 @@ public class Robot  extends InterfazJuego{
 			 			newrobot = robot._posRobot;
 		 			}
 		 			break;
-		 		case 1:	// Mover robot a la habitaci�n de la izquierda.
-		 			// Si el robot no est� en la habitaci�n de la izquierda.
+		 		case 1:	// Mover robot a la habitación de la izquierda.
+		 			// Si el robot no está en la habitación de la izquierda.
 		 			if (robot._posRobot!=0){
 		 				// Aplicamos operador.
 		 				generado = true;
@@ -187,8 +187,8 @@ public class Robot  extends InterfazJuego{
 	 					newlimpiaHabIzq = robot._limpiaHabIzq;
 		 			}
 		 			break;
-		 		case 2:	// Mover robot a la habitaci�n de la derecha.
-		 			// Si el robot no est� en la habitaci�n de la derecha.
+		 		case 2:	// Mover robot a la habitación de la derecha.
+		 			// Si el robot no está en la habitación de la derecha.
 		 			if (robot._posRobot!=2){
 		 				// Aplicamos operador.
 		 				generado = true;
@@ -225,8 +225,8 @@ public class Robot  extends InterfazJuego{
 		}
 	}
 
-	// Heur�stica: Mejor cuanto menor sea heuristica, es decir, cuanto menos componentes
-	// alfombras est�n sucias.
+	// Heurística: Mejor cuanto menor sea heurística, es decir, cuanto menos componentes
+	// alfombras estén sucias.
 
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {

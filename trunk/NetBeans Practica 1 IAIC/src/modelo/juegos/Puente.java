@@ -10,37 +10,37 @@ import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
 /*
- * Cuatro amigos deben cruzar un fr�gil puente de madera. Es de noche y es indispensable usar una linterna para
+ * Cuatro amigos deben cruzar un frágil puente de madera. Es de noche y es indispensable usar una linterna para
  * cruzarlo.
- * El puente s�lo puede aguantar el peso de dos personas como m�ximo y solo tienen una linterna.
+ * El puente sólo puede aguantar el peso de dos personas como máximo y solo tienen una linterna.
  * Tienen que cruzarlo antes de 15 minutos.
- * Mercedes tarda 8 minutos en cruzarlo, Javier 4 minutos,Carlos tarda 2 y Daniel 1.
+ * Mercedes tarda 8 minutos en cruzarlo, Javier 4 minutos, Carlos tarda 2 y Daniel 1.
 */
 
 public class Puente extends InterfazJuego{
 
 	/**
-	 * Posici�n de la linterna (Lado del puente: 1-izquierda, 0-derecha).
+	 * Posición de la linterna (Lado del puente: 1-izquierda, 0-derecha).
 	 */
 	private int _posLinterna;
 	
 	/**
-	 * Posici�n de Mercedes (Lado del puente: 1-izquierda, 0-derecha).
+	 * Posición de Mercedes (Lado del puente: 1-izquierda, 0-derecha).
 	 */
 	private int _posMercedes;
 	
 	/**
-	 * Posici�n de Javier (Lado del puente: 1-izquierda, 0-derecha).
+	 * Posición de Javier (Lado del puente: 1-izquierda, 0-derecha).
 	 */
 	private int _posJavier;
 	
 	/**
-	 * Posici�n de Carlos (Lado del puente: 1-izquierda, 0-derecha).
+	 * Posición de Carlos (Lado del puente: 1-izquierda, 0-derecha).
 	 */
 	private int _posCarlos;
 	
 	/**
-	 * Posici�n de Daniel (Lado del puente: 1-izquierda, 0-derecha).
+	 * Posición de Daniel (Lado del puente: 1-izquierda, 0-derecha).
 	 */
 	private int _posDaniel;	
 	
@@ -64,11 +64,7 @@ public class Puente extends InterfazJuego{
 	} 
 	
 	/**
-	 * Crea una instancia del estado actual del problema de el lobo la oveja y la col.
-	 * @param posicion del lobo
-	 * @param posicion de la oveja
-	 * @param posicion de la col
-	 * @param posicion de la barca
+	 * Crea una instancia del estado actual del problema del puente.
      */
 	
 	public Puente(int linterna, int mercedes, int javier, int carlos, int daniel, int tiempo) {
@@ -89,7 +85,7 @@ public class Puente extends InterfazJuego{
 		if(_nodosExpandidos>5000){
 			return false;
 		}
-		//Es v�lido si queda tiempo.
+		//Es válido si queda tiempo.
 		return (_tiempo>=0);
 	}
 	
@@ -133,7 +129,7 @@ public class Puente extends InterfazJuego{
 		 				newlinterna = 1 - puente._posLinterna;
 		 				//Cruza Mercedes.
 		 				newmercedes = 1 - puente._posMercedes;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newjavier = puente._posJavier;
 		 				newcarlos = puente._posCarlos;
 		 				newdaniel = puente._posDaniel;
@@ -151,7 +147,7 @@ public class Puente extends InterfazJuego{
 		 				newlinterna = 1 - puente._posLinterna;
 		 				//Cruza Javier
 		 				newjavier = 1 - puente._posJavier;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newmercedes = puente._posMercedes;
 		 				newcarlos = puente._posCarlos;
 		 				newdaniel = puente._posDaniel;
@@ -169,7 +165,7 @@ public class Puente extends InterfazJuego{
 		 				newlinterna = 1 - puente._posLinterna;
 		 				//Cruza Carlos.
 		 				newcarlos = 1 - puente._posCarlos;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newmercedes = puente._posMercedes;
 		 				newjavier = puente._posJavier;
 		 				newdaniel = puente._posDaniel;
@@ -187,7 +183,7 @@ public class Puente extends InterfazJuego{
 		 				newlinterna = 1 - puente._posLinterna;
 		 				//Cruza Daniel.
 		 				newdaniel = 1 - puente._posDaniel;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newmercedes = puente._posMercedes;
 		 				newjavier = puente._posJavier;
 		 				newcarlos = puente._posCarlos;
@@ -207,11 +203,11 @@ public class Puente extends InterfazJuego{
 		 				newmercedes = 1 - puente._posMercedes;
 		 				//Cruza Javier.
 		 				newjavier = 1 - puente._posJavier;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newcarlos = puente._posCarlos;
 		 				newdaniel = puente._posDaniel;
 		 				//Actualizar el coste y el tiempo.
-		 				coste = 8; // Tiempo del que m�s tarda en cruzar que es Mercedes.
+		 				coste = 8; // Tiempo del que más tarda en cruzar que es Mercedes.
 		 				newtiempo = (int) (puente._tiempo - coste);
 		 			}
 		 			break;
@@ -226,11 +222,11 @@ public class Puente extends InterfazJuego{
 		 				newmercedes = 1 - puente._posMercedes;
 		 				//Cruza Carlos.
 		 				newcarlos = 1 - puente._posCarlos;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newjavier = puente._posJavier;
 		 				newdaniel = puente._posDaniel;
 		 				//Actualizar el coste y el tiempo.
-		 				coste = 8; // Tiempo del que m�s tarda en cruzar que es Mercedes.
+		 				coste = 8; // Tiempo del que más tarda en cruzar que es Mercedes.
 		 				newtiempo = (int) (puente._tiempo - coste);
 		 			}
 		 			break;
@@ -245,11 +241,11 @@ public class Puente extends InterfazJuego{
 		 				newmercedes = 1 - puente._posMercedes;
 		 				//Cruza Daniel.
 		 				newdaniel = 1 - puente._posDaniel;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newjavier = puente._posJavier;
 		 				newcarlos = puente._posCarlos;
 		 				//Actualizar el coste y el tiempo.
-		 				coste = 8; // Tiempo del que m�s tarda en cruzar que es Mercedes.
+		 				coste = 8; // Tiempo del que más tarda en cruzar que es Mercedes.
 		 				newtiempo = (int) (puente._tiempo - coste);
 		 			}
 		 			break;
@@ -264,11 +260,11 @@ public class Puente extends InterfazJuego{
 		 				newjavier = 1 - puente._posJavier;
 		 				//Cruza Carlos.
 		 				newcarlos = 1 - puente._posCarlos;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newmercedes = puente._posMercedes;
 		 				newdaniel = puente._posDaniel;
 		 				//Actualizar el coste y el tiempo.
-		 				coste = 4; // Tiempo del que m�s tarda en cruzar que es Javier.
+		 				coste = 4; // Tiempo del que más tarda en cruzar que es Javier.
 		 				newtiempo = (int) (puente._tiempo - coste);
 		 			}
 		 			break;
@@ -283,11 +279,11 @@ public class Puente extends InterfazJuego{
 		 				newjavier = 1 - puente._posJavier;
 		 				//Cruza Daniel.
 		 				newdaniel = 1 - puente._posDaniel;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newmercedes = puente._posMercedes;
 		 				newcarlos = puente._posCarlos;
 		 				//Actualizar el coste y el tiempo.
-		 				coste = 4; // Tiempo del que m�s tarda en cruzar que es Javier.
+		 				coste = 4; // Tiempo del que más tarda en cruzar que es Javier.
 		 				newtiempo = (int) (puente._tiempo - coste);
 		 			}
 		 			break;
@@ -302,11 +298,11 @@ public class Puente extends InterfazJuego{
 		 				newcarlos = 1 - puente._posCarlos;
 		 				//Cruza Daniel.
 		 				newdaniel = 1 - puente._posDaniel;
-		 				// Los dem�s se quedan donde est�n.
+		 				// Los demás se quedan donde están.
 		 				newmercedes = puente._posMercedes;
 		 				newjavier = puente._posJavier;
 		 				//Actualizar el coste y el tiempo.
-		 				coste = 2; // Tiempo del que m�s tarda en cruzar que es Carlos.
+		 				coste = 2; // Tiempo del que más tarda en cruzar que es Carlos.
 		 				newtiempo = (int) (puente._tiempo - coste);
 		 			}
 		 			break;
@@ -329,7 +325,7 @@ public class Puente extends InterfazJuego{
 		public boolean isGoalState(Object state) {
 			_resuelto=false;
 			Puente puente=(Puente)state;
-			// Soluci�n si todos los componentes est�n a la derecha.
+			// Solución si todos los componentes están a la derecha.
 			if((puente._posLinterna == 0)&&(puente._posMercedes == 0)&&(puente._posJavier == 0)&&
 				(puente._posCarlos == 0)&&(puente._posDaniel == 0)){
 				_resuelto=true;
@@ -339,8 +335,8 @@ public class Puente extends InterfazJuego{
 		}
 	}
 	
-	// Heur�stica: Mejor cuanto menor sea heuristica, es decir, cuanto menos componentes
-	// est�n en el lado izquierdo teniendo en cuenta lo que tardan en cruzar.
+	// Heurística: Mejor cuanto menor sea heurística, es decir, cuanto menos componentes
+	// estén en el lado izquierdo teniendo en cuenta lo que tardan en cruzar.
 	
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
