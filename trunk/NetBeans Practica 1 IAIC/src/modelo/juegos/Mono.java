@@ -10,27 +10,27 @@ import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
 
-	/** <b>Juego del Mono:</b><br>
-	 * Hay un mono en la puerta de una habitaci�n. En el centro de la habitaci�n hay un
-	 * pl�tano colgado del techo. El mono est� hambriento y quiere conseguir el pl�tano
-	 * pero no alcanza porque est� muy alto. En la habitaci�n tambi�n hay una ventana y
-	 * debajo de ella hay una caja que le permitir�a alcanzar el pl�tano si se subiera a ella.
+	/** Juego del Mono:
+	 * Hay un mono en la puerta de una habitación. En el centro de la habitación hay un
+	 * plátano colgado del techo. El mono está hambriento y quiere conseguir el plátano
+	 * pero no alcanza porque está muy alto. En la habitación también hay una ventana y
+	 * debajo de ella hay una caja que le permitiría alcanzar el plátano si se subiera a ella.
 	 * El mono puede realizar las siguientes acciones: andar por el suelo, subirse a la caja,
-	 * empujar la caja (si el mono est� en la misma posici�n que la caja) y coger el pl�tano
-	 * (si est� subido encima de la caja y la caja est� justo debajo del pl�tano).<br>
-	 * 0: el mono/caja se encuentran en la puerta<br>
-	 * 1: el mono/caja se encuentran en la centro<br>
+	 * empujar la caja (si el mono está en la misma posici�n que la caja) y coger el plátano
+	 * (si está subido encima de la caja y la caja está justo debajo del plátano).
+	 * 0: el mono/caja se encuentran en la puerta
+	 * 1: el mono/caja se encuentran en la centro
 	 * 2: el mono/caja se encuentran en el ventana
 	 */
 
 public class Mono  extends InterfazJuego{
 	/**
-	 * Posicion del mono
+	 * Posición del mono
 	 */
 	private int _pos;
 	
 	/**
-	 * Posicion de la caja
+	 * Posición de la caja
 	 */
 	private int _caja;
 	
@@ -48,7 +48,7 @@ public class Mono  extends InterfazJuego{
 
     
 	public Mono() {
-        _enunciadoProblema="Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y posicionarse debajo.";
+        _enunciadoProblema="Hay un mono en la puerta de una habitacion y quiere coger el platano que esta colgado del techo en el centro, para ello tiene que subirse a una caja que esta en la ventana por lo que tiene que mover la caja y Posiciónarse debajo.";
 	    _pos = 0;
 	    _caja = 2;
 	    _sobreCaja = false;
@@ -189,10 +189,10 @@ public class Mono  extends InterfazJuego{
 		}
 	}
 
-	/* Para cada condici�n que no se cumpla para el objetivo, se suma uno. 
+	/* Para cada condición que no se cumpla para el objetivo, se suma uno.
 	Por ejemplo, si el mono no esta encima de la caja, en el centro de la 
-	habitaci�n, la caja no esta en el centro y el mono no tiene el pl�tano, la 
-	heur�stica vale 4.*/
+	habitación, la caja no esta en el centro y el mono no tiene el plátano, la
+	heurística vale 4.*/
 
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
