@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import observador.Observador;
 
 /*
  * Se encarga de rellenar las matrices con los datos leidos del fichero de configuracion
@@ -11,6 +14,7 @@ import java.util.StringTokenizer;
  */
 public class GeneraMatrices {
 	private static GeneraMatrices _instancia=null;
+    private Observador _observer;
 
     //Devuelve la instancia de la clase, si no esta creada la inicializa
 	public static GeneraMatrices dameInstancia(){
@@ -25,6 +29,11 @@ public class GeneraMatrices {
 		leerConexiones();
 	}
 
+    //asignamos el observador por si hay algun error
+    public void setObservador(Observador obs){
+        _observer=obs;
+    }
+
     //Lee la semilla para los valores "aleatorios" del fichero asignado para ello
 	public int dameSemilla(){
 		//leemos el fichero de la semilla
@@ -34,7 +43,12 @@ public class GeneraMatrices {
 			propiedades.load(entrada);
 			entrada.close();
 		}
-		catch (Exception e){}
+		catch (Exception e){
+            JOptionPane.showMessageDialog(new JPanel(),
+					"Error al abrir el fichero config/semilla.properties, \nes posible que no se encuentre en el sitio correspondiente.",
+					"Error",JOptionPane.INFORMATION_MESSAGE);
+
+        }
 		//obtenemos el valor de la semilla
 		String semilla=propiedades.getProperty("semilla");
 		return Integer.parseInt(semilla);
@@ -55,7 +69,11 @@ public class GeneraMatrices {
 				propiedades.load(entrada);
 				entrada.close();
 			}
-			catch (Exception e){}
+			catch (Exception e){
+                JOptionPane.showMessageDialog(new JPanel(),
+					"Error al abrir el fichero config/configuracion.properties, \nes posible que no se encuentre en el sitio correspondiente.",
+					"Error",JOptionPane.INFORMATION_MESSAGE);
+            }
 			//obtenemos la conexion para el planeta que miramos
 			String planetas=propiedades.getProperty(""+i);
 			StringTokenizer subCadsCampos=new StringTokenizer(planetas,",");

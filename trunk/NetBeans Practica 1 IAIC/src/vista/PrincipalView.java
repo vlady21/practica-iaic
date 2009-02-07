@@ -13,7 +13,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.SplashScreen;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import org.jdesktop.application.Action;
@@ -26,10 +25,8 @@ import java.awt.event.ActionListener;
 import java.util.Vector;
 import javax.swing.Timer;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JScrollBar;
 import javax.swing.JTextArea;
@@ -4547,5 +4544,4 @@ public class PrincipalView extends FrameView implements Observador{
      public void informacionStatus(String info){
         status("Buscando mundo con niveles de oxigeno y agua adecuados para vivir - "+info);
      }
-
 }
