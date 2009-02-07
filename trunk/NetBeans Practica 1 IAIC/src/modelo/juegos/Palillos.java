@@ -15,7 +15,8 @@ import aima.search.framework.SuccessorFunction;
 	 * Se parte de 23 palillos.
 	 * Cada jugador, por turno, puede retirar uno, dos o tres palillos.
 	 * Pierde el que retira el ultimo.
-	 *
+	 *     
+     * @author Mercedes Bernal Perez 71031656C
 	 */
 
 public class Palillos  extends InterfazJuego{
@@ -64,15 +65,13 @@ public class Palillos  extends InterfazJuego{
 		return aux;
 	}
 	
-	public boolean resuelto(){
-		return _resuelto;
-	}
-	
 	public int dificultad(){
 		return _dificultad;
 	}
 	
 	//------------------------------------------------- CLASES FUNCIONES
+
+    //GENERACION DE SUCESORES
 
 	@SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
@@ -107,6 +106,8 @@ public class Palillos  extends InterfazJuego{
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			Palillos palillos=(Palillos)state;
@@ -116,7 +117,9 @@ public class Palillos  extends InterfazJuego{
 			return _resuelto;
 		}
 	}
-	
+
+    //VALOR HEURISTICO
+
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
 			Palillos palillos =(Palillos)state;
