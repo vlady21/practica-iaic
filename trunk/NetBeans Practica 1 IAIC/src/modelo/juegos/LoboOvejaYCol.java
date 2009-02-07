@@ -9,6 +9,24 @@ import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
+/*
+     El juego del lobo, la oveja y la col se representa mediante cuatro variables.
+     booleanas que indican la posicion de cada uno de los personajes del problema.
+     Para todos ellos 'True' representa que el personaje esta situado a la izquierda
+     del rio y 'False' a la derecha.
+
+     En el estado inicial del problema todos los personajes estan situados a la
+     izquierda del rio.
+
+     El objetivo del problema es hacer que todos los personajes crucen el rio.
+     Para ello se debera tener en cuenta las siguientes restricciones:
+
+        El lobo se come a la oveja si se encuentran solos.
+        La oveja se come a la col si se encuentran solos.
+        El granjero solo puede llevar a un animal a la vez.
+
+     @author Victor Adail Ferrer 02662811-D
+ */
 public class LoboOvejaYCol extends InterfazJuego{
 
 	/**
@@ -202,6 +220,9 @@ public class LoboOvejaYCol extends InterfazJuego{
 		}
 	}
 
+	// COMPROBACION DEL ESTADO FINAL
+
+    // Comprobamos si han cruzado el rio todos los personajes
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			_resuelto=false;
@@ -213,7 +234,11 @@ public class LoboOvejaYCol extends InterfazJuego{
 			return _resuelto;
 		}
 	}
-	
+
+    /**
+      * Genera la heuristica para este problema, cuenta los personajes que no
+      * han cruzado el rio.
+      */
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
 			int heuristica = 0;

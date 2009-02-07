@@ -10,18 +10,45 @@ import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
+/*
+     El juego del KhunPhanPuzzle es un juego representado por un tablero de 4x5.
+     En el tablero se situan fichas de diferentes formas:
+
+        4 - Verticales         : V
+                                 V
+
+        1 - Horizontales       : HH
+
+        4 - Cuadrados pequenios: S
+
+        1 - Cuadrado Grande    : CC
+                                 CC
+
+     Su localizacion en el tablero es la siguiente:
+
+        VCCV
+        VCCV
+         HH
+        VSSV
+        VSSV
+
+     El objetivo del juevo es intentar conseguir que el cuadrado grande se situe
+     en la posicion de los cuadrados pequenios.
+
+     @author Victor Adail Ferrer 02662811-D
+ */
 public class KhunPhanPuzzle  extends InterfazJuego{
 
 
 	/**
-	 * Coordenada horizontal de las casilla libre
+	 * Coordenada horizontal de las casillas libres
 	 */
 	private int _x1;
 	private int _x2;
 	private Vector <String [][]> recorrido;
 
 	/**
-	 * Coordenada vertical de la casilla libre
+	 * Coordenada vertical de la casillas libres
 	 */
 	private int _y1;
 	private int _y2;
@@ -83,6 +110,9 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 		return problem;		
 	}
 
+    /*
+     * Debido a la dificultad del problema se ha tenido que implementar un control de ciclos
+     */
 	public boolean valido(String [][] _newTablero){
 		boolean result = true;
 		if(_nodosExpandidos>5000||contiene(_newTablero))
@@ -235,7 +265,7 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 				                		newy1 = miy1;
 				                		newx2 = mix2-1;
 				                		newy2 = miy2;
-				                        movimiento = "//Desplazar vertical a la derecha";
+				                        movimiento = "Desplazar vertical a la derecha";
 				                        generado = true;
 				                        coste=1;
 			                		}
@@ -269,7 +299,7 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 				                		newy1 = miy1;
 				                		newx2 = mix2+1;
 				                		newy2 = miy2;
-				                        movimiento = "//Desplazar vertical a la izquierda";
+				                        movimiento = "Desplazar vertical a la izquierda";
 				                        generado = true;
 				                        coste=1;
 			                		}
@@ -318,7 +348,7 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 			                		newy1 = miy1-1;
 			                		newx2 = mix2;
 			                		newy2 = miy2-1;
-			                        movimiento = "//Bajar horizontal";
+			                        movimiento = "Bajar horizontal";
 			                        generado = true;
 			                        coste=1;
 			                	}
@@ -336,7 +366,7 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 			                		newy1 = miy1+1;
 			                		newx2 = mix2;
 			                		newy2 = miy2+1;
-			                        movimiento = "//Subir horizontal";
+			                        movimiento = "Subir horizontal";
 			                        generado = true;
 			                        coste=1;
 			                	}
@@ -589,6 +619,9 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
+    // Comprobamos si el cuadrado esta situado en la posicion esperada
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			
@@ -600,12 +633,13 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 			 return _resuelto;
 		}
 	}
-	
+
+    /**
+      * Genera la heuristica para este problema, cuenta fichas del cuadrado no
+      * colocadas en la posicion objetiva.
+      */
 	public class ValorHeuristico implements HeuristicFunction{
-		 /**
-		  * Genera la heuristica para este problema, cuenta fichas descolocadas
-		  * @return devuelve la heuristica correpondiente float
-		  */
+		 
 		public int getHeuristicValue(Object state) {
 			KhunPhanPuzzle puzzle=(KhunPhanPuzzle)state;
 

@@ -9,6 +9,22 @@ import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
+/*
+     El juego de los conejos RojiNegros se representa mediante un array. Este
+     array tiene 7 posiciones y en el estaran situados los conejos rojos, negros
+     y el hueco. Su representacion sera la siguiente:
+
+        Conejo Rojo: 'R' Conejo Negro: 'N' Hueco: ' '
+
+     El estado inicial del problema son que los 3 conejos Rojos estan situados
+     a la izquierda y los conejos Negros a la derecha, ambos grupos separados
+     por un hueco.
+
+     El objetivo del problema es hacer que ambos grupos de conejos intercambien
+     su posicion. Para ello podran desplazarse al hueco o saltar hacia el.
+
+     @author Victor Adail Ferrer 02662811-D
+ */
 public class ConejosRojiNegros  extends InterfazJuego{
 
 
@@ -180,6 +196,9 @@ public class ConejosRojiNegros  extends InterfazJuego{
 		}
 	}
 
+	// COMPROBACION DEL ESTADO FINAL
+
+    // Los conejos estan situados en la posicion correcta
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			ConejosRojiNegros puzzle=(ConejosRojiNegros)state;
@@ -191,11 +210,11 @@ public class ConejosRojiNegros  extends InterfazJuego{
 		}
 	}
 	
+	//VALOR HEURISTICO
+
+    //Genera la heuristica para este problema, cuenta los conejos descolocados
 	public class ValorHeuristico implements HeuristicFunction{
-		 /**
-		  * Genera la heuristica para este problema, cuenta fichas descolocadas
-		  * @return devuelve la heuristica correpondiente float
-		  */
+		 
 		public int getHeuristicValue(Object state) {
 			ConejosRojiNegros puzzle=(ConejosRojiNegros)state;
 

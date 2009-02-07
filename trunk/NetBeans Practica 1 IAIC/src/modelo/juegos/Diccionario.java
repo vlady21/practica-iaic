@@ -10,10 +10,26 @@ import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
+/*
+     El juego del diccionario se representa mediante un vector de string que
+     sera el diccionario y un string con los caracteres desordenados que sera
+     la palabra a buscar. El objetivo es ordenar los caracteres de la palabra
+     para coseguir una palabra que se encuentre en el diccionario.
+
+     @author Victor Adail Ferrer 02662811-D
+ */
 public class Diccionario extends InterfazJuego{
 
 	private int _dificultad=7;
+
+    /**
+	 * Palabra a encontrar en el diccionario
+	 */
 	private String _palabra = "ARTE";
+
+    /**
+	 * Diccionario
+	 */
 	private Vector<String> _diccionario = new Vector<String>();
 	
 	public Diccionario(){
@@ -25,7 +41,11 @@ public class Diccionario extends InterfazJuego{
 		_diccionario.add("TRAE");
 		
 	}
-	
+
+    /**
+	 * Genera un nodo de la posicion del estado del juego en ese momento
+	 * @param String palabra a encontrar en el diccionario
+	 */
 	public Diccionario(String palabra){
 		_palabra=palabra;
 	}
@@ -42,7 +62,11 @@ public class Diccionario extends InterfazJuego{
 	public int dificultad(){
 		return _dificultad;
 	}
-	
+
+    /**
+	 * Genera el mensaje del estado en el que nos encontramos
+	 * @return String con el mensaje del estado en el que se encuentra
+	 */
 	public String toString(){
         
         return _palabra; 
@@ -50,6 +74,7 @@ public class Diccionario extends InterfazJuego{
 	
 	//------------------------------------------------- CLASES FUNCIONES
 
+	//GENERACION DE SUCESORES
 	@SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
 		public List<Successor> getSuccessors(Object state) {
@@ -106,6 +131,9 @@ public class Diccionario extends InterfazJuego{
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
+    // La ecuacion cumple con el resultado esperado
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			Diccionario dic =(Diccionario)state;
@@ -117,7 +145,11 @@ public class Diccionario extends InterfazJuego{
 			return _resuelto;
 		}
 	}
-	
+
+    //VALOR HEURISTICO
+
+    //Genera la heuristica para este problema, cuenta la diferencia que hay con
+    //las palabras del diccionario
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
 			Diccionario dic=(Diccionario)state;

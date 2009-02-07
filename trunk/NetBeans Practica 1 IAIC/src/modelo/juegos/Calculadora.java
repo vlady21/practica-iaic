@@ -8,10 +8,31 @@ import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
+/*
+     El juego de la calculadora se representa mediante 5 numeros de los cuales
+     los cuatro primeros son los operandos y el ultimo es el resultado esperado.
+     El objetivo del problema es que los operandos consigan obtener el resultado
+     esperado. Para ello los operandos deberan de cumplir la siguiente ecuacion:
+
+        Ecuacion: ((x1/x2)*x3)-x4 = resultadoEsperado
+
+     @author Victor Adail Ferrer 02662811-D
+ */
 public class Calculadora extends InterfazJuego{
 
+    /**
+	 * Dificultad del problema de la calculadora
+	 */
 	private int _dificultad=5;
+
+    /**
+	 * Resultado esperado de la ecuacion
+	 */
 	private int _resultado = 304;
+
+    /**
+	 * Operandos de la ecuacion
+	 */
 	private int _num1, _num2, _num3, _num4;
 	
 	public Calculadora(){
@@ -24,7 +45,14 @@ public class Calculadora extends InterfazJuego{
 		_num4= 20;
 		
 	}
-	
+
+    /**
+	 * Genera un nodo del problema calculadora con el estado del juego en ese momento
+	 * @param num1 operando numero1
+	 * @param num2 operando numero2
+	 * @param num3 operando numero3
+	 * @param num4 operando numero4
+	 */
 	public Calculadora(int num1, int num2, int num3, int num4){
 		_num1 =num1;
 		_num2= num2;
@@ -45,7 +73,11 @@ public class Calculadora extends InterfazJuego{
 	public int dificultad(){
 		return _dificultad;
 	}
-	
+
+    /**
+	 * Genera el mensaje del estado en el que nos encontramos
+	 * @return String con el mensaje del estado en el que se encuentra
+	 */
 	public String toString(){
         
         return _num1 + " / " + _num2 + " * " + _num3 + " - " + _num4; 
@@ -53,7 +85,8 @@ public class Calculadora extends InterfazJuego{
 	
 	//------------------------------------------------- CLASES FUNCIONES
 
-	@SuppressWarnings({"unchecked"})
+	//GENERACION DE SUCESORES
+    @SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
 		public List<Successor> getSuccessors(Object state) {
 			Calculadora cal=(Calculadora)state;
@@ -126,6 +159,9 @@ public class Calculadora extends InterfazJuego{
 		}
 	}
 
+	// COMPROBACION DEL ESTADO FINAL
+
+    // La ecuacion cumple con el resultado esperado
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			Calculadora cal =(Calculadora)state;
@@ -137,6 +173,9 @@ public class Calculadora extends InterfazJuego{
 		}
 	}
 	
+	//VALOR HEURISTICO
+
+    //Genera la heuristica para este problema, cuenta operandos descolocados
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
 			Calculadora cal=(Calculadora)state;
