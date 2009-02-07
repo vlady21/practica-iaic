@@ -4284,6 +4284,7 @@ public class PrincipalView extends FrameView implements Observador{
         String ia;
         ArrayList<Integer> pc = new ArrayList(1);
         int posicion = -1;
+            ArrayList<Integer> heuristicas;
 
         if(primera){
 
@@ -4310,7 +4311,7 @@ public class PrincipalView extends FrameView implements Observador{
                 }
                 stop = true;
             }else{
-                  for(i = 0; i<this.getComponentCount(); i++){
+                for(i = 0; i<this.getComponentCount(); i++){
 
                     componente = this.getComponent(i);
 
@@ -4318,6 +4319,12 @@ public class PrincipalView extends FrameView implements Observador{
                         listaPlanetas.add((JButton)componente);
                         listaPlanetas.elementAt(i).setEnabled(false);
                     }
+                }
+
+                for(i = 0; i<listaPlanetas.size(); i++){
+
+                    heuristicas = _micromundo.dameValoresHeuristica();
+                    listaPlanetas.elementAt(i).setToolTipText("Heuristica: " + heuristicas.get(i));
                 }
 
                 for(i = 0; i<listaPlanetas.size(); i++){
