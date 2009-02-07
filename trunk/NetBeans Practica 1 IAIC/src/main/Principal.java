@@ -32,32 +32,7 @@ public class Principal extends SingleFrameApplication {
 			Estadisticas.dameInstancia().setObserver(vista);
 
             show(vista);
-            //vista.getFrame().setVisible(false);
-            /*try {
-                 Thread.sleep(1);
-            }
-            catch(InterruptedException e) {
-            }*/
-            //vista.getFrame().setVisible(true);
-
-
-            /*ThreadSplash hiloInterfaz = new ThreadSplash();
-            hiloInterfaz.run();
-
-            ThreadSplashClose hiloInterfaza = new ThreadSplashClose();
-            hiloInterfaza.run();
-
-            
-            //sp.setVisible(true);
-            //sp.setAlwaysOnTop(true);
-
-            //sp.setVisible(false);
-            //vista.getFrame().setVisible(true);
-            
-            
-            //vista.getFrame().setAlwaysOnTop(true);
-*/
-
+          
 		}catch(Throwable e){e.printStackTrace();}
     }
 
@@ -88,33 +63,6 @@ public class Principal extends SingleFrameApplication {
         launch(Principal.class, args);
     }
 
-    /*public class ThreadSplash extends Thread {
-        public ThreadSplash() {
-
-        }
-        public void run() {
-
-            vista.getFrame().setVisible(false);
-            vista.getFrame().setAlwaysOnTop(false);
-            sp = new Splash();
-            sp.setVisible(true);
-            /*
-            try {
-                 ThreadSplash.sleep(3000);
-            }
-            catch(InterruptedException e) {
-            }
-
-            //vista.getFrame().setVisible(true);
-            //vista.getFrame().setAlwaysOnTop(true);
-            sp.setVisible(false);
-
-
-
-            //sp.setVisible(false);*//*
-        }
-    }
-*/
     public class ThreadSplashClose extends Thread {
         public ThreadSplashClose() {
 
@@ -126,12 +74,6 @@ public class Principal extends SingleFrameApplication {
             }
             catch(InterruptedException e) {
             }
-
-            //vista.getFrame().setVisible(true);
-            //vista.getFrame().setAlwaysOnTop(true);
-            //sp.setVisible(false);
-
-            //sp.setVisible(false);*/
         }
     }
 }
