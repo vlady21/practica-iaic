@@ -8,7 +8,16 @@ import aima.search.framework.HeuristicFunction;
 import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
-
+/*
+    Tres misioneros y tres caníbales están a la orilla de un río que quieren cruzar. Para ello
+    disponen de un bote que tiene como capacidad máxima 2 personas. El objetivo consiste en
+    conseguir que todos acaben en la otra orilla del río sin que en ningún momento los
+    misioneros estén en peligro de ser devorados por los caníbales. Se considera que los
+    misioneros están en peligro cuando, en un determinado lugar, el número de caníbales
+    supera al de misioneros.
+ 
+   @author Jose Miguel Guerrero Hernandez 53466473Y
+ */
 public class MisionerosYCanibales  extends InterfazJuego{
 	/**
      * Indica el numero de misioneros que estan a la izquierda del rio
@@ -49,9 +58,7 @@ public class MisionerosYCanibales  extends InterfazJuego{
 	    _misionerosIzq = misionerosIzq;
 	    _canibalesIzq = canibalesIzq;
 	    _barcaIzq = barcaIzq;
-	} 
-	
-	
+	} 	
 
 	public Problem getProblema() {
 		Problem problem = new Problem(new MisionerosYCanibales(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
@@ -70,15 +77,13 @@ public class MisionerosYCanibales  extends InterfazJuego{
 		return aux;
 	}
 	
-	public boolean resuelto(){
-		return _resuelto;
-	}
-	
 	public int dificultad(){
 		return _dificultad;
 	}
 	
 	//------------------------------------------------- CLASES FUNCIONES
+
+    //GENERACION DE SUCESORES
 
 	@SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
@@ -186,6 +191,9 @@ public class MisionerosYCanibales  extends InterfazJuego{
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
+    //no hay ni misioneros ni canibales a la izquierda
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			MisionerosYCanibales misioneros=(MisionerosYCanibales)state;
@@ -195,7 +203,10 @@ public class MisionerosYCanibales  extends InterfazJuego{
 			return _resuelto;
 		}
 	}
-	
+
+    //VALOR HEURISTICO
+
+    //cantidad de misiones y canibales a la izquierda menos el valor de la barca
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
 			MisionerosYCanibales misioneros=(MisionerosYCanibales)state;

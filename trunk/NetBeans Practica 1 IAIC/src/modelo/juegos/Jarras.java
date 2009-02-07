@@ -8,7 +8,14 @@ import aima.search.framework.HeuristicFunction;
 import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
+/*
+    Se tienen dos garrafas vacías con capacidades de 3 y 4 litros respectivamente pero sin
+    ninguna marca de medida parcial. Las garrafas pueden vaciarse o llenarse de agua, así
+    como verter el contenido de una a otra. El objetivo consiste en tener exactamente 2 litros de
+    agua en la garrafa de 4 litros.
 
+    @author Jose Miguel Guerrero Hernandez 53466473Y
+*/
 public class Jarras extends InterfazJuego{
 
 	private int _jarra3=0, _jarra4=0;
@@ -36,16 +43,14 @@ public class Jarras extends InterfazJuego{
 		return _nodosExpandidos<5000;
 	}
 	
-	public boolean resuelto(){
-		return _resuelto;
-	}
-	
 	public int dificultad(){
 		return _dificultad;
 	}
 	
 	
 	//------------------------------------------------- CLASES FUNCIONES
+
+    //GENERACION DE SUCESORES
 
 	@SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
@@ -127,6 +132,9 @@ public class Jarras extends InterfazJuego{
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
+    //si la jarra de 4 litros tiene 2 es final
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			Jarras ja=(Jarras)state;
@@ -136,12 +144,14 @@ public class Jarras extends InterfazJuego{
 			return _resuelto;
 		}
 	}
-	
+
+    //VALOR HEURISTICO
+
+    //el valor absoluto de la jarra -2, miramos cuando de cerca de 2 estamos
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
 			Jarras ja=(Jarras)state;
 			return Math.abs(ja._jarra4-2);
 		}
 	}
-
 }

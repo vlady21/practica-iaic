@@ -8,8 +8,16 @@ import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
-public class RejillaRojoAzul extends InterfazJuego{
+/*
+    Dada una rejilla de 3*3 casillas coloreadas en rojo (R) o azul (A), se pretende alcanzar
+    un estado de la rejilla en el que el número de pares de casillas adyacentes (en vertical y en
+    horizontal, pero no en diagonal) coloreadas del mismo color sea mínimo. Se dispone de 9
+    operadores que permiten cambiar el color de cada una de las casillas (de rojo a azul o
+    viceversa).
 
+    @author Jose Miguel Guerrero Hernandez 53466473Y
+ */
+public class RejillaRojoAzul extends InterfazJuego{
 
 	/**
 	 * Tablero que representa el puzzle
@@ -28,11 +36,9 @@ public class RejillaRojoAzul extends InterfazJuego{
    	  	_tablero[2][0] = "A"; _tablero[2][1] = "A"; _tablero[2][2] = "A";
 	} 
   
-	/**
-	 * Genera un nodo de ocho puzzle con el estado del juego en ese momento
+	/*
+	 * Genera un nodo del puzzle con el estado del juego en ese momento
 	 * @param tablero estado actual del problema
-	 * @param x situacion y del blanco
-	 * @param y situacion y del hueco
 	 */
 	public RejillaRojoAzul(String [][] tablero){
 		_tablero = new String [3][3];
@@ -40,7 +46,6 @@ public class RejillaRojoAzul extends InterfazJuego{
                 for(int j = 0; j<=2; j++)
                         _tablero[i][j] = tablero[i][j];
 	}	
-	
 
 	public Problem getProblema() {
 		Problem problem = new Problem(new RejillaRojoAzul(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
@@ -50,11 +55,6 @@ public class RejillaRojoAzul extends InterfazJuego{
 	public boolean valido(){
 		return (_nodosExpandidos<5000);
 	}
-	
-	public boolean resuelto(){
-		return _resuelto;
-	}
-	
 	
 	public int dificultad(){
 		return _dificultad;
@@ -82,6 +82,8 @@ public class RejillaRojoAzul extends InterfazJuego{
 	
 	//------------------------------------------------- CLASES FUNCIONES
 
+    //GENERACION DE SUCESORES
+
 	@SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
 		public List<Successor> getSuccessors(Object state) {
@@ -96,7 +98,6 @@ public class RejillaRojoAzul extends InterfazJuego{
 	        for(int i = 0; i<=2; i++)
                 for(int j = 0; j<=2; j++)
                 	mitablero[i][j] = puzzle._tablero[i][j];
-	        
 	        
 	        for(int operadores = 0; operadores<=8; operadores++){
 	                generado = false;
@@ -198,6 +199,9 @@ public class RejillaRojoAzul extends InterfazJuego{
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
+    //dos posibles finales con ningun par de colores adyacentes
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			RejillaRojoAzul puzzle=(RejillaRojoAzul)state;
@@ -212,18 +216,16 @@ public class RejillaRojoAzul extends InterfazJuego{
 			 return _resuelto;
 		}
 	}
-	
+
+    //VALOR HEURISTICO
+
+    //cantidad de pares del mismo colores tanto verticales como horizontales
 	public class ValorHeuristico implements HeuristicFunction{
-		 /**
-		  * Genera la heuristica para este problema, cuenta fichas descolocadas
-		  * @return devuelve la heuristica correpondiente float
-		  */
 		public int getHeuristicValue(Object state) {
 			RejillaRojoAzul puzzle=(RejillaRojoAzul)state;
-
 	        int valorHorizontal = 0;
 	        int valorVertical = 0;
-	        
+	        //cantidad de pares horizontales
 	        for(int i =0;i<=2;i++){
 	        	for(int j =0;j<=1;j++){
 		        	if(puzzle._tablero[i][j]==puzzle._tablero[i][j+1]){
@@ -231,7 +233,7 @@ public class RejillaRojoAzul extends InterfazJuego{
 		        	}
 		        }
 	        }
-	        
+	        //cantidad de pares verticales
 	        for(int i =0;i<=2;i++){
 	        	for(int j =0;j<=1;j++){
 		        	if(puzzle._tablero[j][i]==puzzle._tablero[j+1][i]){
@@ -242,5 +244,4 @@ public class RejillaRojoAzul extends InterfazJuego{
 	        return (valorHorizontal+valorVertical);
 		}
 	}
-
 }

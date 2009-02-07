@@ -39,10 +39,6 @@ public class Diccionario extends InterfazJuego{
 		return _nodosExpandidos<5000;
 	}
 	
-	public boolean resuelto(){
-		return _resuelto;
-	}
-	
 	public int dificultad(){
 		return _dificultad;
 	}

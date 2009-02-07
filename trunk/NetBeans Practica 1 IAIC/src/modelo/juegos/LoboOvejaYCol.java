@@ -78,10 +78,6 @@ public class LoboOvejaYCol extends InterfazJuego{
 		return aux;
 	}
 	
-	public boolean resuelto() {
-		return _resuelto;
-	}
-	
 	public int dificultad(){
 		return _dificultad;
 	}

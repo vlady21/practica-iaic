@@ -15,6 +15,12 @@ import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 import aima.search.framework.StepCostFunction;
 
+/*
+ * Representacion de un planeta del micromundo, los finales son aquellos mayor de 211,
+ * es decir, los 4 ultimos planetas siendo indiferente las conexiones que tengan.
+ *
+ * @author Jose Miguel Guerrero Hernandez 53466473Y
+ */
 public class Planeta extends InterfazPlaneta{	
 
 	private int _numeroPlaneta=0;
@@ -110,17 +116,24 @@ public class Planeta extends InterfazPlaneta{
             return 0;
 		return _valorHeuristico;
 	}
-	
+
+    /*
+     * Metodo que devuelve si se peude viajar entre dos planetas,
+     * para ello se obtiene de las matrices el problema y el
+     * algoritmo a utilizar, y se lo pasamos al gestor de juegos
+     * para que nos diga si tiene solucion o no.
+     */
 	public boolean resolverProblema(int planeta1, int planeta2){
 		//obtenemos el valor de la distancia que sera el numero de problema a resolver
 		int problema=MatrizProblemas.getInstancia().ping(planeta1, planeta2);
 		//obtenemos el valor del algoritmo para resolver el problema
 		int solucion=MatrizSolucionProblema.getInstancia().algoritmo(planeta1, planeta2);
-		
+		//asignamos el problema al gestor y nos devuelve si se puede solucionar con el algoritmo deseado
 		GestorJuegos.dameInstancia().asignarProblema(problema);
 		return GestorJuegos.dameInstancia().solucionar(solucion);
 	}
-	
+
+    //Instancia del problema para que AIMA lo utilice
 	public Problem getProblema(ArrayList<Planeta> planetas) {
 		Problem problem = new Problem(new Planeta(planetas), new Sucesores(), new EsFinal(),new ValorReal(), new ValorHeuristico());
         return problem;
@@ -153,6 +166,8 @@ public class Planeta extends InterfazPlaneta{
 
 	//------------------------------------------------- CLASES FUNCIONES
 
+    //GENERACION DE SUCESORES
+
 	@SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
 		public List<Successor> getSuccessors(Object state) {
@@ -165,16 +180,20 @@ public class Planeta extends InterfazPlaneta{
 			
             //colocamos la nave
             posicionarNave(valorPlaneta);
-            
-			//comprobamos si ya ha sido explorado el planeta y si no lo esta lo agregmos y expandimos
+
+            //escribimos en el log de la interfaz y en el fichero
+            Log.dameInstancia().agregar("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
+			_observer.escribeLog("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
+
+			//comprobamos si ya ha sido explorado el planeta y si no lo esta lo agregamos y expandimos
 			boolean expandir=false;
 			if(_listaPlanetasExpandidos.indexOf(valorPlaneta)==-1){
 				_listaPlanetasExpandidos.add(valorPlaneta);
 				expandir=true;
-			}
-
-            Log.dameInstancia().agregar("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
-			_observer.escribeLog("\n-- EXPLORO EL PLANETA "+(valorPlaneta+1));
+			}else{
+                Log.dameInstancia().agregar("\n** Planeta ya expandido. ");
+                _observer.escribeLog("\n** Planeta ya expandido. ");
+            }
 
 			String movimiento="";
 			int coste=0;
@@ -182,29 +201,35 @@ public class Planeta extends InterfazPlaneta{
 			//si hay que expandir comprobamos si podemos viajar a sus hijos
 			for(int siguiente=0;(siguiente<vecinos.size() && expandir);siguiente++){
 				_observer.informacionStatus("Explorando Planeta "+(valorPlaneta+1));
+               
+                //si se ejecuta paso a paso esperamos a que podamos avanzar
                 if(_pasoApaso){
                     while(!_siguiente){}
                     _siguiente=false;
                 }
-
+                //obtenemos un vecino
                 int planetaVecino=vecinos.get(siguiente);
 				movimiento="Paso del planeta "+(valorPlaneta+1)+" al planeta vecino "+(planetaVecino+1);
 				_observer.informacionStatus("Explorando Planeta "+(valorPlaneta+1)+": resolviendo problema para intentar viajar al Planeta "+(planetaVecino+1));
+                
+                //vemos si podemos viajar al planeta vecino
                 boolean pasar=resolverProblema(valorPlaneta,planetaVecino);
 				//como hemos cargado el juego, obtenemos su valor
 				coste=GestorJuegos.dameCosteProblema();
+                //si no podemos viajar
 				if(!pasar){
 					//obtenemos el valor de la distancia que sera el numero de problema a resolver
 					int problema=MatrizProblemas.getInstancia().ping(valorPlaneta, planetaVecino);
 					//obtenemos el valor del algoritmo para resolver el problema
 					int solucion=MatrizSolucionProblema.getInstancia().algoritmo(valorPlaneta, planetaVecino);
-					
+
+                    //conectamos el planeta con una linea roja
 					conectaPlanetas(valorPlaneta, planetaVecino, 0);
                     Log.dameInstancia().agregar("No puedo resolver el problema \""+GestorJuegos.dameInstancia().dameEnunciadoProblema()+"\" con el algoritmo \""+GestorJuegos.dameInstancia().dameNombreAlgoritmo()+"\" para viajar al planeta "+(planetaVecino+1));
                     _observer.escribeLog("No puedo resolver el problema \""+GestorJuegos.dameInstancia().dameEnunciadoProblema()+"\" con el algoritmo \""+GestorJuegos.dameInstancia().dameNombreAlgoritmo()+"\" para viajar al planeta "+(planetaVecino+1));
-
 				}else{
-                    //puede pasar
+                    //si puede viajar
+                    //conectamos el planeta con una linea verde
                     conectaPlanetas(valorPlaneta, planetaVecino, 1);
                     int heuristicaVecino=pla._listaPlanetas.get(planetaVecino).dameValorHeuristico();
                     Log.dameInstancia().agregar("* Puedo resolver el problema \""+GestorJuegos.dameInstancia().dameEnunciadoProblema()+"\" con el algoritmo \""+GestorJuegos.dameInstancia().dameNombreAlgoritmo()+"\" para viajar al planeta "+(planetaVecino+1)+" con coste real "+coste+" y heuristica "+heuristicaVecino);
@@ -212,17 +237,20 @@ public class Planeta extends InterfazPlaneta{
                 }
 
 				Planeta nuevoEstado=_listaPlanetas.get(planetaVecino);
-				
+				//si podemos viajar y el estado nuevo es valido
 				if (pasar && nuevoEstado.valido()){
+                    //agregamos a la accion el coste del paso de un planeta a otro.
 					String datos=movimiento+" ,COSTE:"+coste;
 					sucesores.add(new Successor(datos, nuevoEstado));
 				}
-
 			}
 			return sucesores;
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
+    //Si estamos en un planeta con mayor numero de 211 sera un estado final
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			Planeta pla=(Planeta)state;
@@ -232,7 +260,10 @@ public class Planeta extends InterfazPlaneta{
 			return _resuelto;
 		}
 	}
-	
+
+    //VALOR HEURISTICO
+
+    //devuelve el valor heuristico del planeta
 	public class ValorHeuristico implements HeuristicFunction{
 		public int getHeuristicValue(Object state) {
 			Planeta pla=(Planeta)state;
@@ -240,6 +271,12 @@ public class Planeta extends InterfazPlaneta{
 		}
 	}
 
+    //VALOR REAL
+
+    /*
+     * Obtenemos el coste de la accion sucedida entre la transicion, toda transicion
+     * va a tener la palabra COSTE: por lo que podemos extraer de ahi el valor real.
+     */
     public class ValorReal implements StepCostFunction {
         public Double calculateStepCost(Object fromState, Object toState, String action) {
             String coste=action.substring(action.lastIndexOf("COSTE:")+6);
@@ -251,6 +288,5 @@ public class Planeta extends InterfazPlaneta{
 			}
             return Double.parseDouble(""+numero);
         }
-    }
-	
+    }	
 }

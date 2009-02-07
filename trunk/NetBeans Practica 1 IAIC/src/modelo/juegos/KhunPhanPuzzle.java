@@ -113,11 +113,6 @@ public class KhunPhanPuzzle  extends InterfazJuego{
 		}
 		return false;
 	}
-
-	public boolean resuelto(){
-		return _resuelto;
-	}
-	
 	
 	public int dificultad(){
 		return _dificultad;

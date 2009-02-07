@@ -9,8 +9,19 @@ import aima.search.framework.Problem;
 import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
-public class Puzzle8  extends InterfazJuego{
+/*
+     El juego del puzzle se representa, sobre un tablero de 3x3 casillas.
+     8 de las casillas contienen una pieza o ficha que se puede deslizar a
+     lo largo del tablero horizontal y verticalmente. Las fichas vienen marcadas
+     con los números del 0 al 7, y el 8 representa a la casilla vacía, que
+     permite los movimientos de las fichas. El objetivo del problema es partiendo
+     de un tablero inicial con las fichas desordenadas alcanzar un tablero en
+     el que todas las fichas estén ordenadas en orden de las agujas del reloj,
+     dejando el hueco en la casilla central del tablero.
 
+     @author Jose Miguel Guerrero Hernandez 53466473Y
+ */
+public class Puzzle8  extends InterfazJuego{
 
 	/**
 	 * Coordenada horizontal de la casilla libre
@@ -50,15 +61,13 @@ public class Puzzle8  extends InterfazJuego{
 	 */
 	public Puzzle8(int [][] tablero, int x, int y){
 		_tablero = new int [3][3];
+	    _x = x;
+	    _y = y;
         for(int i = 0; i<=2; i++)
                 for(int j = 0; j<=2; j++)
                         _tablero[i][j] = tablero[i][j];
-
-	        _x = x;
-	        _y = y;
 	}	
 	
-
 	public Problem getProblema() {
 		Problem problem = new Problem(new Puzzle8(), new Sucesores(), new EsFinal(),new ValorReal() , new ValorHeuristico());
 		return problem;		
@@ -71,8 +80,7 @@ public class Puzzle8  extends InterfazJuego{
 	public boolean resuelto(){
 		return _resuelto;
 	}
-	
-	
+		
 	public int dificultad(){
 		return _dificultad;
 	}
@@ -99,6 +107,8 @@ public class Puzzle8  extends InterfazJuego{
 	
 	//------------------------------------------------- CLASES FUNCIONES
 
+    //GENERACION DE SUCESORES
+
 	@SuppressWarnings({"unchecked"})
 	public class Sucesores implements SuccessorFunction{
 		public List<Successor> getSuccessors(Object state) {
@@ -116,9 +126,6 @@ public class Puzzle8  extends InterfazJuego{
                 for(int j = 0; j<=2; j++)
                 	mitablero[i][j] = puzzle._tablero[i][j];
 
-	        
-	        
-	        
 	        for(int operadores = 0; operadores<=3; operadores++){
 	                generado = false;
 	                int newx = mix; 
@@ -170,7 +177,6 @@ public class Puzzle8  extends InterfazJuego{
 	                }
 
                 	Puzzle8 nuevoEstado = new Puzzle8(newtablero, newx, newy);
-                	
 	                if (generado && nuevoEstado.valido()){
 	                	String datos=movimiento+" ,COSTE:"+coste+"\n"+nuevoEstado;
 						sucesores.add(new Successor(datos, nuevoEstado));
@@ -180,6 +186,9 @@ public class Puzzle8  extends InterfazJuego{
 		}
 	}
 
+    // COMPROBACION DEL ESTADO FINAL
+
+    //las fichas estan colocadas
 	public class EsFinal implements GoalTest{
 		public boolean isGoalState(Object state) {
 			Puzzle8 puzzle=(Puzzle8)state;
@@ -190,15 +199,13 @@ public class Puzzle8  extends InterfazJuego{
 			 return _resuelto;
 		}
 	}
-	
+
+    //VALOR HEURISTICO
+
+    //Genera la heuristica para este problema, cuenta fichas descolocadas
 	public class ValorHeuristico implements HeuristicFunction{
-		 /**
-		  * Genera la heuristica para este problema, cuenta fichas descolocadas
-		  * @return devuelve la heuristica correpondiente float
-		  */
 		public int getHeuristicValue(Object state) {
 			Puzzle8 puzzle=(Puzzle8)state;
-
 	        int valor = 0;
 	        
 	        if (puzzle._tablero[0][0] != 1) valor++;
