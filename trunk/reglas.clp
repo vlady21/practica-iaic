@@ -23,17 +23,27 @@
 )
 
 
+; ****************************************
+; **		REGLAS ASPECTO TECNICO		**
+; ****************************************
 
 ;------------------------------------------------------------------------------
 ; ¿Donde buscar informacion?
 ;
 ;	DATOS ENTRADA:
-;		- estado_actual = busqueda
-;		- tipo_estudios = ["universitarios", "no_universitarios"]
-;		- conocimiento = ["investigacion", "basico"]
-;		- tipo_contrato = ["beca", "jornada"]
-;		- desea_informacion = ["si", "no"]
-;		- lee_prensa = ["si", "no"]
+;		- estado_actual = busqueda (asignacion por defecto)
+;
+;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
+;			¿Que estudios posee?
+;				- tipo_estudios = ["universitarios", "no_universitarios"]
+;			¿Que tipo de conocimiento posee?
+;				- conocimiento = ["investigacion", "basico"]
+;			¿Que tipo de contrato desea?
+;				- tipo_contrato = ["beca", "jornada"]
+;			¿Desea informacion adicional?
+;				- desea_informacion = ["si", "no"]
+;			¿Lee la prensa?
+;				- lee_prensa = ["si", "no"]
 ;------------------------------------------------------------------------------
 
 (defrule donde_buscar_info1 "Comprobamos si es apto para la investigacion"
@@ -252,10 +262,15 @@
 ; ¿Que tipo de contrato me interesa?
 ;
 ;	DATOS ENTRADA:
-;		- estado_actual = "contrato"
-;		- estudia = ["si", "no"]
-;		- conocimiento = ["investigacion", "basico"]
-;		- tiempo_libre = <numero entero positivo>;
+;		- estado_actual = "contrato"(asignacion por defecto)
+;
+;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
+;			¿Estudia actualmente?
+;				- estudia = ["si", "no"]
+;			¿Que tipo de conocimiento posee?
+;				- conocimiento = ["investigacion", "basico"]
+;			¿Cuanto tiempo libre posee?
+;				- tiempo_libre = <numero entero positivo>;
 ;------------------------------------------------------------------------------
 
 (defrule tipo_contrato1 "Comprobamos si le interesa una beca"
@@ -360,10 +375,15 @@
 ; ¿Que debo destacar de mi curriculum?
 ;
 ;	DATOS ENTRADA:
-;		- estado_actual = "curriculum"
-;		- tipo_estudios = ["universitarios", "no_universitarios"]
-;		- experiencia = ["si", "no"]
-;		- numero_paginas_CV = <numero entero positivo>
+;		- estado_actual = "curriculum"(asignacion por defecto)
+;
+;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
+;			¿Que estudios posee?
+;				- tipo_estudios = ["universitarios", "no_universitarios"]
+;			¿Tiene experiencia laboral?
+;				- experiencia = ["si", "no"]
+;			¿Cuantas paginas posee actualmente su curriculum?
+;				- numero_paginas_CV = <numero entero positivo>
 ;------------------------------------------------------------------------------
 
 (defrule destacar_curriculum1 "Comprobamos si debe destacar la formacion"
