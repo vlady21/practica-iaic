@@ -1,0 +1,21 @@
+        -----------------------------------------------------
+             Jess, the Rule Engine for the Java Platform
+                (C) 2002 Sandia National Laboratories
+        -----------------------------------------------------
+
+Congratulations on downloading a source code distribution of Jess.
+You'll need to compile Jess before you can run it. If you're on a
+UNIX-like system, you should be able to easily edit the enclosed
+Makefile and build Jess using a simple "make". The manual contains
+instructions on building Jess on Windows without using Makefile -- as
+well as a wealth of other useful information. Open docs/index.html in
+your favorite Web brower.
+
+The directory "examples" contains some tiny example scripts written in
+the Jess rule language. The directory jess/examples/ contains several
+more simple programs written in Java. The manual includes instructions
+on using these samples.
+
+Jess is copyrighted software; please read the file LICENSE for details.
+
+Questions or comments? Write to us at ejfried@ca.sandia.gov. 
