@@ -1,0 +1,18 @@
+recomendacion.10=Inscribete en ofertas de trabajo en el extranjero.\n Manera de presentar curriculum: Redacta el curriculum en el idioma extranjero. 
+recomendacion.11=Manera de presentar curriculum: Redacta el curriculum en el idioma extranjero. 
+recomendacion.12=Solicita en tu Facultad una beca Erasmus al país cuyo idioma hables o estes estudiando.\nManera de presentar curriculum: Resalta la realización de una beca en el extranjero. 
+recomendacion.13=Dirigete al COIE e inscribete a ofertas de practicas en el extranjero.\nManera de presentar curriculum: Resalta la realización de practicas en el extranjero. 
+recomendacion.14=Dirigite al CSIM para realiza cursos de idiomas.\nManera de presentar curriculum: Refleja en el curriculum los cursos de idiomas que realices. 
+recomendacion.15=Realiza cursos de certificación, Masters.\nManera de presentar curriculum: Refleja en el curriculum las certificaciones y masters que realizes. 
+recomendacion.16=Como tienes coche y carnet de conducir,y llevas bastante tiempo desempleado,  podrías considerar ofertas de empresas en las afueras de tu ciudad.\nManera de presentar curriculum: Pon que tienes coche y carnet de conducir. 
+recomendacion.17=Como llevas mucho tiempo en el paro, y dispones de tiempo, realiza los cursos para desempleados que ofrece el INEM.
+recomendacion.18=Como estas desempleado, dirigete al INEM para apuntarte al paro.          
+recomendacion.19=Como llevas mucho tiempo en el paro, te sugerimos que rebajes tus pretensiones económicas, y que aproveches que dispones de tiempo para terminar tus estudios, y potenciar así tu nivel formativo.
+
+recomendacion.20=Hacer un curriculum de tipo funcional resaltará tus puntos positivos y podrás emitir eventuales errores como cambios de trabajo o tiempos de parada.\nManera de presentar curriculum: cronológica Estabilidad y evolución ascendente
+recomendacion.21=Hacer un curriculum con elementos con orden cronológico, para mostrar tu estabilidad y la evolución ascendente de tu carrera.
+recomendacion.22=Dado tu perfil es aconsejable hacer un curriculum con cronologia inversa para resaltar las experiencias más recientes.
+recomendacion.23=Haz hincapié en el apartado "Formación Académica" sobre tus logros académicos.
+recomendacion.24=Haz hincapié en el apartado "Experiencia Laboral" sobre tus anteriores trabajos para eclipsar la falta de preparación.
+recomendacion.25=Manera de presentar curriculum: funcional, formación y experiencia en un ámbito determinado y seleccionar los puntos positivos y omitir los eventuales errores de recorrido (cambios de trabajo, parado).
+
