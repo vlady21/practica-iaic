@@ -4,6 +4,7 @@
 
 package vista;
 
+import java.awt.Component;
 import java.awt.Image;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
@@ -16,10 +17,21 @@ import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.StringTokenizer;
+import java.util.Vector;
+import javax.swing.DefaultCellEditor;
 import javax.swing.Timer;
 import javax.swing.Icon;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 /**
  * The application's main frame.
@@ -31,9 +43,19 @@ public class PrincipalView extends FrameView {
     SystemTray tray;
     PrincipalView interfaz;
     private boolean noFinalizar;
+    private Vector respuestasTablaTecnica;
+    private Vector respuestasTablaJuridica;
+    private Vector respuestasTablaAfectivo;
+    private Properties propTecnico;
+    private Properties propJuridico;
+    private Properties propAfectivo;
 
     public PrincipalView(SingleFrameApplication app) {
         super(app);
+
+        cargarPropiedades();
+
+        cargarRespuestasFormularios();
 
         initComponents();
 
@@ -109,6 +131,7 @@ public class PrincipalView extends FrameView {
         mensaje("Bienvenido","Bienvenido al asesor laboral.");
 
         status("Bienvenido al asesor laboral.");
+
     }
 
     @Action
@@ -119,6 +142,88 @@ public class PrincipalView extends FrameView {
             aboutBox.setLocationRelativeTo(mainFrame);
         }
         Principal.getApplication().show(aboutBox);
+    }
+
+    private void cargarPropiedades() {
+
+        propTecnico = getPropiedades("config/formularioTecnico.properties");
+        propJuridico = getPropiedades("config/formularioJuridico.properties");
+        propAfectivo = getPropiedades("config/formularioAfectivo.properties");
+    }
+
+    private void cargarRespuestasFormularios() {
+
+        String [] respuestas = null;
+
+        StringTokenizer st;
+
+        respuestasTablaTecnica = new Vector();
+        respuestasTablaJuridica = new Vector();
+        respuestasTablaAfectivo = new Vector();
+
+        int j;
+        int tam = propTecnico.size()/3;
+
+        for(int i = 1; i<=tam ; i++){
+
+            st = new StringTokenizer(propTecnico.getProperty("respuesta"+i),",");
+
+            respuestas = new String[st.countTokens()];
+
+            j = 0;
+
+            while(st.hasMoreTokens()){
+
+                respuestas[j] = st.nextToken();
+
+                j++;
+            }
+
+            respuestasTablaTecnica.add(respuestas);
+
+        }
+
+        tam = propJuridico.size()/3;
+
+        for(int i = 1; i<=tam ; i++){
+
+            st = new StringTokenizer(propJuridico.getProperty("respuesta"+i),",");
+
+            respuestas = new String[st.countTokens()];
+
+            j = 0;
+
+            while(st.hasMoreTokens()){
+
+                respuestas[j] = st.nextToken();
+
+                j++;
+            }
+
+            respuestasTablaJuridica.add(respuestas);
+
+        }
+
+        tam = propAfectivo.size()/3;
+
+        for(int i = 1; i<=tam ; i++){
+
+            st = new StringTokenizer(propAfectivo.getProperty("respuesta"+i),",");
+
+            respuestas = new String[st.countTokens()];
+
+            j = 0;
+
+            while(st.hasMoreTokens()){
+
+                respuestas[j] = st.nextToken();
+
+                j++;
+            }
+
+            respuestasTablaAfectivo.add(respuestas);
+
+        }
     }
 
     /** This method is called from within the constructor to
@@ -169,49 +274,13 @@ public class PrincipalView extends FrameView {
 
         scrollPanelTenico.setName("scrollPanelTenico"); // NOI18N
 
-        tablaTecnica.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Preguntas Formulario Técnico", "Respuestas"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        tablaTecnica.setModel(getModeloTabla("Técnico", propTecnico));
+        tablaTecnica.setName("tablaTecnica"); // NOI18N
+        tablaTecnica.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tablaTecnicaMouseMoved(evt);
             }
         });
-        tablaTecnica.setName("tablaTecnica"); // NOI18N
         scrollPanelTenico.setViewportView(tablaTecnica);
 
         javax.swing.GroupLayout formularioTecnicoLayout = new javax.swing.GroupLayout(formularioTecnico);
@@ -227,7 +296,7 @@ public class PrincipalView extends FrameView {
             formularioTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(formularioTecnicoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPanelTenico, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                .addComponent(scrollPanelTenico, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -238,56 +307,19 @@ public class PrincipalView extends FrameView {
 
         scrollPanelJuridico.setName("scrollPanelJuridico"); // NOI18N
 
-        tablaJuridica.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Preguntas Formulario Jurídico", "Respuestas"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        tablaJuridica.setModel(getModeloTabla("Jurídico", propJuridico));
+        tablaJuridica.setName("tablaJuridica"); // NOI18N
+        tablaJuridica.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tablaJuridicaMouseMoved(evt);
             }
         });
-        tablaJuridica.setName("tablaJuridica"); // NOI18N
         scrollPanelJuridico.setViewportView(tablaJuridica);
 
         javax.swing.GroupLayout formularioJuridicoLayout = new javax.swing.GroupLayout(formularioJuridico);
         formularioJuridico.setLayout(formularioJuridicoLayout);
         formularioJuridicoLayout.setHorizontalGroup(
             formularioJuridicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
             .addGroup(formularioJuridicoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrollPanelJuridico, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
@@ -295,7 +327,6 @@ public class PrincipalView extends FrameView {
         );
         formularioJuridicoLayout.setVerticalGroup(
             formularioJuridicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
             .addGroup(formularioJuridicoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrollPanelJuridico, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
@@ -309,56 +340,19 @@ public class PrincipalView extends FrameView {
 
         scrollPanelAfectivo.setName("scrollPanelAfectivo"); // NOI18N
 
-        tablaAfectiva.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Preguntas Formulario Coaching/Afectivo", "Respuestas"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        tablaAfectiva.setModel(getModeloTabla("Coaching/Afectivo", propAfectivo));
+        tablaAfectiva.setName("tablaAfectiva"); // NOI18N
+        tablaAfectiva.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tablaAfectivaMouseMoved(evt);
             }
         });
-        tablaAfectiva.setName("tablaAfectiva"); // NOI18N
         scrollPanelAfectivo.setViewportView(tablaAfectiva);
 
         javax.swing.GroupLayout formularioAfectivoLayout = new javax.swing.GroupLayout(formularioAfectivo);
         formularioAfectivo.setLayout(formularioAfectivoLayout);
         formularioAfectivoLayout.setHorizontalGroup(
             formularioAfectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
             .addGap(0, 395, Short.MAX_VALUE)
             .addGroup(formularioAfectivoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -367,7 +361,6 @@ public class PrincipalView extends FrameView {
         );
         formularioAfectivoLayout.setVerticalGroup(
             formularioAfectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
             .addGap(0, 279, Short.MAX_VALUE)
             .addGroup(formularioAfectivoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -502,6 +495,47 @@ public class PrincipalView extends FrameView {
         asesorar();
     }//GEN-LAST:event_botonAsesorarPresionado
 
+    private void tablaTecnicaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaTecnicaMouseMoved
+
+        int i = tablaTecnica.rowAtPoint(evt.getPoint());
+
+        String[] values = (String[]) respuestasTablaTecnica.get(i);
+        // These are the combobox values
+        //String[] values = new String[]{"item1", "item2", "item3"};
+
+        int vColIndex = 1;
+        TableColumn col = tablaTecnica.getColumnModel().getColumn(vColIndex);
+        col.setCellEditor(new MyComboBoxEditor(values));
+
+    }//GEN-LAST:event_tablaTecnicaMouseMoved
+
+    private void tablaJuridicaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJuridicaMouseMoved
+
+        int i = tablaJuridica.rowAtPoint(evt.getPoint());
+
+        String[] values = (String[]) respuestasTablaJuridica.get(i);
+        // These are the combobox values
+        //String[] values = new String[]{"item1", "item2", "item3"};
+
+        int vColIndex = 1;
+        TableColumn col = tablaJuridica.getColumnModel().getColumn(vColIndex);
+        col.setCellEditor(new MyComboBoxEditor(values));
+
+    }//GEN-LAST:event_tablaJuridicaMouseMoved
+
+    private void tablaAfectivaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAfectivaMouseMoved
+
+        int i = tablaAfectiva.rowAtPoint(evt.getPoint());
+
+        String[] values = (String[]) respuestasTablaAfectivo.get(i);
+        // These are the combobox values
+        //String[] values = new String[]{"item1", "item2", "item3"};
+
+        int vColIndex = 1;
+        TableColumn col = tablaAfectiva.getColumnModel().getColumn(vColIndex);
+        col.setCellEditor(new MyComboBoxEditor(values));
+    }//GEN-LAST:event_tablaAfectivaMouseMoved
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAsesorar;
     private javax.swing.JButton botonReiniciar;
@@ -613,7 +647,6 @@ public class PrincipalView extends FrameView {
 
     public void asesorar() {
         
-
         animeStatus("Generando ayuda para el asesorado");
         mensaje("Generando ayuda","Generando ayuda para el asesorado.");
 
@@ -678,5 +711,67 @@ public class PrincipalView extends FrameView {
             progressBar.setValue(0);
 
        }
+    }
+
+    public class MyComboBoxEditor extends DefaultCellEditor {
+        public MyComboBoxEditor(String[] items) {
+            super(new JComboBox(items));
+        }
+    }
+
+    /**
+     * Recupera el valor del fichero properties.
+     * @param String Fichero properties al que se desea acceder
+     * @return Properties
+     */
+    public static Properties getPropiedades(String ficheroProperties)
+    {
+      Properties propiedades = new Properties();
+
+      try {
+          FileInputStream fichero = new FileInputStream(ficheroProperties);
+          propiedades.load(fichero);
+          fichero.close();
+      } catch (Exception e) {
+          System.out.println("Error : " + e.toString());
+      }
+      return propiedades;
+    } // Fin getPropiedades()
+
+    public DefaultTableModel getModeloTabla(String tabla, Properties prop){
+
+        Vector data = new Vector();
+        Vector titulos = new Vector();
+        Vector aux;
+
+        int tam = prop.size()/3;
+
+        for(int i = 1; i<=tam; i++){
+
+            aux = new Vector();
+            aux.add(prop.getProperty("pregunta" + i));
+            aux.add(null);
+            data.add(aux);
+        }
+
+        titulos.add("Preguntas Formulario " + tabla);
+        titulos.add("Respuestas");
+
+        return new DefaultTableModel(data,titulos) {
+            Class[] types = new Class [] {
+                java.lang.String.class, javax.swing.JComboBox.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        };
     }
 }
