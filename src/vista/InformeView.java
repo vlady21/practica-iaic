@@ -11,18 +11,34 @@
 
 package vista;
 
+import conocimiento.LanzadorJess;
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Victor
  */
 public class InformeView extends javax.swing.JFrame {
 
+    private LanzadorJess lanzadorJess;
     /** Creates new form InformeView */
     public InformeView() {
         initComponents();
 
         this.setLocationRelativeTo(null);
         
+    }
+
+    InformeView(LanzadorJess lanzadorJess) {
+
+        this.lanzadorJess = lanzadorJess;
+        
+        initComponents();
+
+        this.setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to
@@ -34,20 +50,44 @@ public class InformeView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaPreguntas = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(InformeView.class);
         setTitle(resourceMap.getString("Form.title")); // NOI18N
         setAlwaysOnTop(true);
         setName("Form"); // NOI18N
 
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
+
+        tablaPreguntas.setModel(getModeloTabla());
+        tablaPreguntas.setToolTipText(resourceMap.getString("tablaPreguntas.toolTipText")); // NOI18N
+        tablaPreguntas.setName("tablaPreguntas"); // NOI18N
+        jScrollPane1.setViewportView(tablaPreguntas);
+
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                    .addComponent(jButton1))
+                .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -65,6 +105,68 @@ public class InformeView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablaPreguntas;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Recupera el valor del fichero properties.
+     * @param String Fichero properties al que se desea acceder
+     * @return Properties
+     */
+    public static Properties getPropiedades(String ficheroProperties)
+    {
+      Properties propiedades = new Properties();
+
+      try {
+          FileInputStream fichero = new FileInputStream(ficheroProperties);
+          propiedades.load(fichero);
+          fichero.close();
+      } catch (Exception e) {
+          System.out.println("Error : " + e.toString());
+      }
+      return propiedades;
+    } // Fin getPropiedades()
+
+    public DefaultTableModel getModeloTabla(){
+
+        Vector data = new Vector();
+        Vector titulos = new Vector();
+        Vector aux;
+
+        Properties prop = getPropiedades("config/preguntas.properties");
+
+        int tam = prop.size()/2;
+
+        for(int i = 1; i<=tam; i++){
+
+            aux = new Vector();
+            aux.add(false);
+            aux.add(prop.getProperty("pregunta" + i));
+            data.add(aux);
+        }
+
+        titulos.add("");
+        titulos.add("Preguntas");
+
+        return new DefaultTableModel(data,titulos) {
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            @Override
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        };
+    }
 }

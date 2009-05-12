@@ -4,12 +4,14 @@
 
 package vista;
 
+import conocimiento.LanzadorJess;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;
+import jess.JessException;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
@@ -46,16 +48,22 @@ public class PrincipalView extends FrameView {
     private Vector respuestasTablaTecnica;
     private Vector respuestasTablaJuridica;
     private Vector respuestasTablaAfectivo;
+    private Vector clavesTablaTecnica;
+    private Vector clavesTablaJuridica;
+    private Vector clavesTablaAfectivo;
     private Properties propTecnico;
     private Properties propJuridico;
     private Properties propAfectivo;
+    private LanzadorJess lanzadorJess;
 
     public PrincipalView(SingleFrameApplication app) {
         super(app);
 
         cargarPropiedades();
 
-        cargarRespuestasFormularios();
+        cargarFormularios();
+
+        cargarJess();
 
         initComponents();
 
@@ -144,6 +152,16 @@ public class PrincipalView extends FrameView {
         Principal.getApplication().show(aboutBox);
     }
 
+    private void cargarJess() {
+        try {
+            lanzadorJess = new LanzadorJess("log_grupoB09.txt", "reglasB09.clp");
+            lanzadorJess.arrancarJess();
+        } catch (JessException ex) {
+            menError("Error Jess", "Error al lanzar el modulo de JESS");
+        }
+
+    }
+
     private void cargarPropiedades() {
 
         propTecnico = getPropiedades("config/formularioTecnico.properties");
@@ -151,7 +169,7 @@ public class PrincipalView extends FrameView {
         propAfectivo = getPropiedades("config/formularioAfectivo.properties");
     }
 
-    private void cargarRespuestasFormularios() {
+    private void cargarFormularios() {
 
         String [] respuestas = null;
 
@@ -160,6 +178,10 @@ public class PrincipalView extends FrameView {
         respuestasTablaTecnica = new Vector();
         respuestasTablaJuridica = new Vector();
         respuestasTablaAfectivo = new Vector();
+
+        clavesTablaTecnica = new Vector();
+        clavesTablaJuridica = new Vector();
+        clavesTablaAfectivo = new Vector();
 
         int j;
         int tam = propTecnico.size()/3;
@@ -180,7 +202,8 @@ public class PrincipalView extends FrameView {
             }
 
             respuestasTablaTecnica.add(respuestas);
-
+    
+            clavesTablaTecnica.add(propTecnico.getProperty("hecho"+i));
         }
 
         tam = propJuridico.size()/3;
@@ -202,6 +225,7 @@ public class PrincipalView extends FrameView {
 
             respuestasTablaJuridica.add(respuestas);
 
+            clavesTablaJuridica.add(propJuridico.getProperty("hecho"+i));
         }
 
         tam = propAfectivo.size()/3;
@@ -223,6 +247,7 @@ public class PrincipalView extends FrameView {
 
             respuestasTablaAfectivo.add(respuestas);
 
+            clavesTablaAfectivo.add(propAfectivo.getProperty("hecho"+i));
         }
     }
 
@@ -582,6 +607,11 @@ public class PrincipalView extends FrameView {
 
     }
 
+    public void menError(String titulo, String mensaje) {
+        trayIcon.displayMessage(titulo, mensaje, TrayIcon.MessageType.ERROR);
+
+    }
+
     public void salir() {
         System.exit(0);
     }
@@ -590,21 +620,21 @@ public class PrincipalView extends FrameView {
 
         PopupMenu menu = new PopupMenu();
 
-        MenuItem conectarItem = new MenuItem("Reiniciar");
-        conectarItem.addActionListener(new ActionListener() {
+        MenuItem reiniciarItem = new MenuItem("Reiniciar");
+        reiniciarItem.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
             //reiniciar();
           }
         });
-        menu.add(conectarItem);
+        menu.add(reiniciarItem);
 
-        MenuItem desconectarItem = new MenuItem("Obtener asesoramiento");
-        desconectarItem.addActionListener(new ActionListener() {
+        MenuItem asesorarItem = new MenuItem("Obtener asesoramiento");
+        asesorarItem.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
             asesorar();
           }
         });
-        menu.add(desconectarItem);
+        menu.add(asesorarItem);
 
         MenuItem salirItem = new MenuItem("Salir");
         salirItem.addActionListener(new ActionListener() {
@@ -645,10 +675,32 @@ public class PrincipalView extends FrameView {
         statusAnimationLabel.setText(string);
     }
 
+    private void cargarFormulario(JTable tabla,Vector claves) throws Exception {
+
+        String clave,valor;
+
+        
+        for(int i = 0; i<claves.size(); i++){
+
+            clave = (String) claves.get(i);
+            valor = (String) tabla.getValueAt(i, 1);
+
+            if(valor==null)
+                valor = "no_def";
+
+            System.out.println("clave: " + clave);
+
+            System.out.println("valor: " + valor);
+
+            lanzadorJess.insertaSlotValue((String) claves.get(i), tabla.getValueAt(i, 1));
+
+        }
+    }
+
     public void asesorar() {
         
-        animeStatus("Generando ayuda para el asesorado");
-        mensaje("Generando ayuda","Generando ayuda para el asesorado.");
+        animeStatus("Generando informe de asesoramiento");
+        mensaje("Generando informe","Generando informe de asesoramiento.");
 
         statusAnimationLabel.setIcon(busyIcons[0]);
         busyIconIndex = 0;
@@ -668,23 +720,31 @@ public class PrincipalView extends FrameView {
     public class Asesor extends Thread
     {
 
+        @Override
        public void run()
        {
 
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            try{
+                cargarFormulario(tablaTecnica,clavesTablaTecnica);
+                cargarFormulario(tablaJuridica,clavesTablaJuridica);
+                cargarFormulario(tablaAfectiva,clavesTablaAfectivo);
+
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                status("Informe de asesoramiento generado.");
+                mensaje("Informe generado","Informe de asesoramiento generado.");
+
+                InformeView informe = new InformeView(lanzadorJess);
+                informe.setVisible(true);
+            }catch(Exception ex){
+                menError("Error Jess", "Error al cargar el formulario: " + ex.getMessage());
             }
 
             noFinalizar = false;
-
-            status("Informe de asesoramiento generado.");
-            mensaje("Informe generado","Informe de asesoramiento generado.");
-
-            InformeView informe = new InformeView();
-            informe.setVisible(true);
-
        }
     }
 
