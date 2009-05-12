@@ -692,7 +692,7 @@ public class PrincipalView extends FrameView {
 
             System.out.println("valor: " + valor);
 
-            lanzadorJess.insertaSlotValue((String) claves.get(i), tabla.getValueAt(i, 1));
+            lanzadorJess.insertaSlotValue(clave, valor);
 
         }
     }

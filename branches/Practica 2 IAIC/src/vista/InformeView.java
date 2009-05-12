@@ -4,7 +4,7 @@
  */
 
 /*
- * InformeView.java
+ * OpcionesView.java
  *
  * Created on 05-may-2009, 16:09:11
  */
@@ -13,9 +13,14 @@ package vista;
 
 import conocimiento.LanzadorJess;
 import java.io.FileInputStream;
+import java.net.URI;
 import java.util.Properties;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import jess.JessException;
 
 /**
  *
@@ -24,7 +29,9 @@ import javax.swing.table.DefaultTableModel;
 public class InformeView extends javax.swing.JFrame {
 
     private LanzadorJess lanzadorJess;
-    /** Creates new form InformeView */
+    private int tam;
+    private Vector claves;
+    /** Creates new form OpcionesView */
     public InformeView() {
         initComponents();
 
@@ -52,7 +59,7 @@ public class InformeView extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPreguntas = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        botonGenerar = new javax.swing.JButton();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(InformeView.class);
         setTitle(resourceMap.getString("Form.title")); // NOI18N
@@ -66,8 +73,13 @@ public class InformeView extends javax.swing.JFrame {
         tablaPreguntas.setName("tablaPreguntas"); // NOI18N
         jScrollPane1.setViewportView(tablaPreguntas);
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        botonGenerar.setText(resourceMap.getString("botonGenerar.text")); // NOI18N
+        botonGenerar.setName("botonGenerar"); // NOI18N
+        botonGenerar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                generar(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,14 +89,14 @@ public class InformeView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
-                    .addComponent(jButton1))
+                    .addComponent(botonGenerar))
                 .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(botonGenerar)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
                 .addContainerGap())
@@ -92,6 +104,48 @@ public class InformeView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void generar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generar
+
+
+
+      try {
+
+        for(int i = 0; i<tam ; i++){
+
+            if((Boolean) tablaPreguntas.getValueAt(i, 0)){
+
+                lanzadorJess.insertaSlotValue("estado_actual", claves.elementAt(i));
+
+                lanzadorJess.ejecutarJess();
+
+            }
+        }
+
+        String texto = lanzadorJess.dameConsejos();
+
+        while(texto.indexOf("   ")!=-1)
+            texto = texto.replaceAll("   ", "  ");
+
+        texto = texto.replaceAll("  ", "\n\t");
+
+        while(texto.indexOf("\t")!=-1)
+            texto = texto.replaceAll("\t", "    ");
+
+        VisualizadorView visualizador = new VisualizadorView(texto);
+        visualizador.setVisible(true);
+        visualizador.setAlwaysOnTop(true);
+        //JOptionPane.showMessageDialog(this, texto, "Informe de asesoramiento", JOptionPane.INFORMATION_MESSAGE);
+
+        
+      }catch(Exception e){
+
+          JOptionPane.showMessageDialog(this,"Error al generar el informe: " + e.getMessage(), "Error informe asesoramiento",JOptionPane.ERROR_MESSAGE);
+
+          e.printStackTrace();
+      }
+
+    }//GEN-LAST:event_generar
 
     /**
     * @param args the command line arguments
@@ -105,7 +159,7 @@ public class InformeView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonGenerar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaPreguntas;
     // End of variables declaration//GEN-END:variables
@@ -133,11 +187,12 @@ public class InformeView extends javax.swing.JFrame {
 
         Vector data = new Vector();
         Vector titulos = new Vector();
+        claves = new Vector();
         Vector aux;
 
         Properties prop = getPropiedades("config/preguntas.properties");
 
-        int tam = prop.size()/2;
+        tam = prop.size()/2;
 
         for(int i = 1; i<=tam; i++){
 
@@ -145,9 +200,10 @@ public class InformeView extends javax.swing.JFrame {
             aux.add(false);
             aux.add(prop.getProperty("pregunta" + i));
             data.add(aux);
+            claves.add(prop.getProperty("hecho" + i));
         }
 
-        titulos.add("");
+        titulos.add("Informacion que desea");
         titulos.add("Preguntas");
 
         return new DefaultTableModel(data,titulos) {
