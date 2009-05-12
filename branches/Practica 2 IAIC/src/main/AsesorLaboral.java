@@ -38,7 +38,7 @@ public class AsesorLaboral extends SingleFrameApplication {
             l.ejecutarJess();
         } catch (JessException ex) {
             Logger.getLogger(AsesorLaboral.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }/**/
 
         /* PRUEBA LANZAMIENTO JESS OTRAS REGLAS DISTINTAS
          *
