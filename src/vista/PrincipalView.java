@@ -725,6 +725,7 @@ public class PrincipalView extends FrameView {
        {
 
             try{
+                
                 cargarFormulario(tablaTecnica,clavesTablaTecnica);
                 cargarFormulario(tablaJuridica,clavesTablaJuridica);
                 cargarFormulario(tablaAfectiva,clavesTablaAfectivo);
@@ -742,6 +743,7 @@ public class PrincipalView extends FrameView {
                 informe.setVisible(true);
             }catch(Exception ex){
                 menError("Error Jess", "Error al cargar el formulario: " + ex.getMessage());
+                ex.printStackTrace();
             }
 
             noFinalizar = false;

@@ -107,10 +107,8 @@ public class InformeView extends javax.swing.JFrame {
 
     private void generar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generar
 
-
-
       try {
-
+        lanzadorJess.borrarConsejos();
         for(int i = 0; i<tam ; i++){
 
             if((Boolean) tablaPreguntas.getValueAt(i, 0)){
