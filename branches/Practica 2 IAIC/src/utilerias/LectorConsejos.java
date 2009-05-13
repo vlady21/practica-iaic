@@ -6,6 +6,7 @@
 package utilerias;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class LectorConsejos {
 
     public void leerConsejos(String fichero){
         try {
+            _texto="";
             _fichero = fichero;
             fr = new FileReader(_fichero);
             bf = new BufferedReader(fr);
@@ -31,11 +33,18 @@ public class LectorConsejos {
             while ((sCadena = bf.readLine()) != null) {
                 _texto += sCadena;
             }
+            bf.close();;
+            fr.close();;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LectorConsejos.class.getName()).log(Level.SEVERE, null, ex);
         }catch (IOException ex) {
                 Logger.getLogger(LectorConsejos.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void limpiarConsejos(String rutaficheroconsejos){
+        File fichero = new File(rutaficheroconsejos);
+        fichero.delete();
     }
 
     public String dameConsejos(){

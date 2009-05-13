@@ -46,7 +46,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelTenico" pref="268" max="32767" attributes="0"/>
+                          <Component id="scrollPanelTenico" pref="273" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -106,7 +106,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelJuridico" pref="268" max="32767" attributes="0"/>
+                          <Component id="scrollPanelJuridico" pref="273" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -166,7 +166,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelAfectivo" pref="268" max="32767" attributes="0"/>
+                          <Component id="scrollPanelAfectivo" pref="273" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
