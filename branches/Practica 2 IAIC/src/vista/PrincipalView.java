@@ -46,14 +46,14 @@ public class PrincipalView extends FrameView {
     PrincipalView interfaz;
     private boolean noFinalizar;
     private Vector respuestasTablaTecnica;
-    private Vector respuestasTablaJuridica;
-    private Vector respuestasTablaAfectivo;
+    //private Vector respuestasTablaJuridica;
+    //private Vector respuestasTablaAfectivo;
     private Vector clavesTablaTecnica;
-    private Vector clavesTablaJuridica;
-    private Vector clavesTablaAfectivo;
+    //private Vector clavesTablaJuridica;
+    //private Vector clavesTablaAfectivo;
     private Properties propTecnico;
-    private Properties propJuridico;
-    private Properties propAfectivo;
+    //private Properties propJuridico;
+    //private Properties propAfectivo;
     private LanzadorJess lanzadorJess;
 
     public PrincipalView(SingleFrameApplication app) {
@@ -164,9 +164,9 @@ public class PrincipalView extends FrameView {
 
     private void cargarPropiedades() {
 
-        propTecnico = getPropiedades("config/formularioTecnico.properties");
-        propJuridico = getPropiedades("config/formularioJuridico.properties");
-        propAfectivo = getPropiedades("config/formularioAfectivo.properties");
+        propTecnico = getPropiedades("config/formulario.properties");
+        //propJuridico = getPropiedades("config/formularioJuridico.properties");
+        //propAfectivo = getPropiedades("config/formularioAfectivo.properties");
     }
 
     private void cargarFormularios() {
@@ -176,12 +176,12 @@ public class PrincipalView extends FrameView {
         StringTokenizer st;
 
         respuestasTablaTecnica = new Vector();
-        respuestasTablaJuridica = new Vector();
-        respuestasTablaAfectivo = new Vector();
+        //respuestasTablaJuridica = new Vector();
+        //respuestasTablaAfectivo = new Vector();
 
         clavesTablaTecnica = new Vector();
-        clavesTablaJuridica = new Vector();
-        clavesTablaAfectivo = new Vector();
+        //clavesTablaJuridica = new Vector();
+        //clavesTablaAfectivo = new Vector();
 
         int j;
         int tam = propTecnico.size()/3;
@@ -205,7 +205,7 @@ public class PrincipalView extends FrameView {
     
             clavesTablaTecnica.add(propTecnico.getProperty("hecho"+i));
         }
-
+/*
         tam = propJuridico.size()/3;
 
         for(int i = 1; i<=tam ; i++){
@@ -248,7 +248,7 @@ public class PrincipalView extends FrameView {
             respuestasTablaAfectivo.add(respuestas);
 
             clavesTablaAfectivo.add(propAfectivo.getProperty("hecho"+i));
-        }
+        }*/
     }
 
     /** This method is called from within the constructor to
@@ -261,16 +261,9 @@ public class PrincipalView extends FrameView {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        panelFormularios = new javax.swing.JTabbedPane();
         formularioTecnico = new javax.swing.JPanel();
         scrollPanelTenico = new javax.swing.JScrollPane();
         tablaTecnica = new javax.swing.JTable();
-        formularioJuridico = new javax.swing.JPanel();
-        scrollPanelJuridico = new javax.swing.JScrollPane();
-        tablaJuridica = new javax.swing.JTable();
-        formularioAfectivo = new javax.swing.JPanel();
-        scrollPanelAfectivo = new javax.swing.JScrollPane();
-        tablaAfectiva = new javax.swing.JTable();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
@@ -289,11 +282,7 @@ public class PrincipalView extends FrameView {
         mainPanel.setName("mainPanel"); // NOI18N
         mainPanel.setLayout(new javax.swing.BoxLayout(mainPanel, javax.swing.BoxLayout.LINE_AXIS));
 
-        panelFormularios.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(PrincipalView.class);
-        panelFormularios.setToolTipText(resourceMap.getString("panelFormularios.toolTipText")); // NOI18N
-        panelFormularios.setName("panelFormularios"); // NOI18N
-
         formularioTecnico.setToolTipText(resourceMap.getString("formularioTecnico.toolTipText")); // NOI18N
         formularioTecnico.setName("formularioTecnico"); // NOI18N
 
@@ -314,7 +303,7 @@ public class PrincipalView extends FrameView {
             formularioTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(formularioTecnicoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPanelTenico, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                .addComponent(scrollPanelTenico, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
                 .addContainerGap())
         );
         formularioTecnicoLayout.setVerticalGroup(
@@ -322,80 +311,10 @@ public class PrincipalView extends FrameView {
             .addGroup(formularioTecnicoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrollPanelTenico, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addGap(5, 5, 5))
         );
 
-        panelFormularios.addTab(resourceMap.getString("formularioTecnico.TabConstraints.tabTitle"), null, formularioTecnico, resourceMap.getString("formularioTecnico.TabConstraints.tabToolTip")); // NOI18N
-
-        formularioJuridico.setToolTipText(resourceMap.getString("formularioJuridico.toolTipText")); // NOI18N
-        formularioJuridico.setName("formularioJuridico"); // NOI18N
-
-        scrollPanelJuridico.setName("scrollPanelJuridico"); // NOI18N
-
-        tablaJuridica.setModel(getModeloTabla("Jurídico", propJuridico));
-        tablaJuridica.setName("tablaJuridica"); // NOI18N
-        tablaJuridica.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                tablaJuridicaMouseMoved(evt);
-            }
-        });
-        scrollPanelJuridico.setViewportView(tablaJuridica);
-
-        javax.swing.GroupLayout formularioJuridicoLayout = new javax.swing.GroupLayout(formularioJuridico);
-        formularioJuridico.setLayout(formularioJuridicoLayout);
-        formularioJuridicoLayout.setHorizontalGroup(
-            formularioJuridicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(formularioJuridicoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPanelJuridico, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        formularioJuridicoLayout.setVerticalGroup(
-            formularioJuridicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(formularioJuridicoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPanelJuridico, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
-
-        panelFormularios.addTab(resourceMap.getString("formularioJuridico.TabConstraints.tabTitle"), null, formularioJuridico, resourceMap.getString("formularioJuridico.TabConstraints.tabToolTip")); // NOI18N
-
-        formularioAfectivo.setToolTipText(resourceMap.getString("formularioAfectivo.toolTipText")); // NOI18N
-        formularioAfectivo.setName("formularioAfectivo"); // NOI18N
-
-        scrollPanelAfectivo.setName("scrollPanelAfectivo"); // NOI18N
-
-        tablaAfectiva.setModel(getModeloTabla("Coaching/Afectivo", propAfectivo));
-        tablaAfectiva.setName("tablaAfectiva"); // NOI18N
-        tablaAfectiva.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                tablaAfectivaMouseMoved(evt);
-            }
-        });
-        scrollPanelAfectivo.setViewportView(tablaAfectiva);
-
-        javax.swing.GroupLayout formularioAfectivoLayout = new javax.swing.GroupLayout(formularioAfectivo);
-        formularioAfectivo.setLayout(formularioAfectivoLayout);
-        formularioAfectivoLayout.setHorizontalGroup(
-            formularioAfectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
-            .addGroup(formularioAfectivoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPanelAfectivo, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        formularioAfectivoLayout.setVerticalGroup(
-            formularioAfectivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
-            .addGroup(formularioAfectivoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPanelAfectivo, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
-
-        panelFormularios.addTab(resourceMap.getString("formularioAfectivo.TabConstraints.tabTitle"), null, formularioAfectivo, resourceMap.getString("formularioAfectivo.TabConstraints.tabToolTip")); // NOI18N
-
-        mainPanel.add(panelFormularios);
+        mainPanel.add(formularioTecnico);
 
         menuBar.setName("menuBar"); // NOI18N
 
@@ -492,6 +411,11 @@ public class PrincipalView extends FrameView {
         botonReiniciar.setPreferredSize(new java.awt.Dimension(60, 60));
         botonReiniciar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         botonReiniciar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botonReiniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botonReiniciarMousePressed(evt);
+            }
+        });
         toolBar.add(botonReiniciar);
 
         botonSalir.setAction(actionMap.get("quit")); // NOI18N
@@ -534,52 +458,24 @@ public class PrincipalView extends FrameView {
 
     }//GEN-LAST:event_tablaTecnicaMouseMoved
 
-    private void tablaJuridicaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJuridicaMouseMoved
+private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonReiniciarMousePressed
 
-        int i = tablaJuridica.rowAtPoint(evt.getPoint());
-
-        String[] values = (String[]) respuestasTablaJuridica.get(i);
-        // These are the combobox values
-        //String[] values = new String[]{"item1", "item2", "item3"};
-
-        int vColIndex = 1;
-        TableColumn col = tablaJuridica.getColumnModel().getColumn(vColIndex);
-        col.setCellEditor(new MyComboBoxEditor(values));
-
-    }//GEN-LAST:event_tablaJuridicaMouseMoved
-
-    private void tablaAfectivaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAfectivaMouseMoved
-
-        int i = tablaAfectiva.rowAtPoint(evt.getPoint());
-
-        String[] values = (String[]) respuestasTablaAfectivo.get(i);
-        // These are the combobox values
-        //String[] values = new String[]{"item1", "item2", "item3"};
-
-        int vColIndex = 1;
-        TableColumn col = tablaAfectiva.getColumnModel().getColumn(vColIndex);
-        col.setCellEditor(new MyComboBoxEditor(values));
-    }//GEN-LAST:event_tablaAfectivaMouseMoved
+    reiniciar();
+    
+}//GEN-LAST:event_botonReiniciarMousePressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAsesorar;
     private javax.swing.JButton botonReiniciar;
     private javax.swing.JButton botonSalir;
-    private javax.swing.JPanel formularioAfectivo;
-    private javax.swing.JPanel formularioJuridico;
     private javax.swing.JPanel formularioTecnico;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JTabbedPane panelFormularios;
     private javax.swing.JProgressBar progressBar;
-    private javax.swing.JScrollPane scrollPanelAfectivo;
-    private javax.swing.JScrollPane scrollPanelJuridico;
     private javax.swing.JScrollPane scrollPanelTenico;
     private javax.swing.JLabel statusAnimationLabel;
     private javax.swing.JLabel statusMessageLabel;
     private javax.swing.JPanel statusPanel;
-    private javax.swing.JTable tablaAfectiva;
-    private javax.swing.JTable tablaJuridica;
     private javax.swing.JTable tablaTecnica;
     private javax.swing.JToolBar toolBar;
     // End of variables declaration//GEN-END:variables
@@ -592,6 +488,18 @@ public class PrincipalView extends FrameView {
 
     private JDialog aboutBox;
 
+    public void reiniciar() {
+        
+        int tam = tablaTecnica.getRowCount();
+        
+        System.out.println(tam);
+        
+        for(int i = 0; i<tam; i++){
+
+            tablaTecnica.setValueAt(null, i, 1);
+        }    
+    }
+    
     public void mensaje(String titulo, String mensaje) {
         trayIcon.displayMessage(titulo, mensaje, TrayIcon.MessageType.NONE);
 
@@ -623,7 +531,7 @@ public class PrincipalView extends FrameView {
         MenuItem reiniciarItem = new MenuItem("Reiniciar");
         reiniciarItem.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
-            //reiniciar();
+            reiniciar();
           }
         });
         menu.add(reiniciarItem);
@@ -678,29 +586,50 @@ public class PrincipalView extends FrameView {
     private void cargarFormulario(JTable tabla,Vector claves) throws Exception {
 
         String clave,valor;
-
         
         for(int i = 0; i<claves.size(); i++){
 
             clave = (String) claves.get(i);
             valor = (String) tabla.getValueAt(i, 1);
 
-            if(valor==null)
-                valor = "no_def";
+            if(valor!=null){
+                
+                lanzadorJess.insertaSlotValue(clave, valor);
+            }
 
             System.out.println("clave: " + clave);
 
             System.out.println("valor: " + valor);
 
-            lanzadorJess.insertaSlotValue(clave, valor);
-
         }
+        
     }
 
+    private boolean comprobarFormulario(JTable tabla) throws Exception {
+
+        boolean result = true;
+        String valor;
+        
+        int tam = tabla.getRowCount();
+        
+        System.out.println(tam);
+        
+        for(int i = 0; i<tam&&result; i++){
+
+            valor = (String) tabla.getValueAt(i, 1);
+
+            if(valor==null){
+                result = false;
+            }
+        }        
+        
+        return result;
+    }
+    
     public void asesorar() {
         
-        animeStatus("Generando informe de asesoramiento");
-        mensaje("Generando informe","Generando informe de asesoramiento.");
+        animeStatus("Analizando informacion del asesorado");
+        mensaje("Analizando informacion","Analizando informacion del asesorado.");
 
         statusAnimationLabel.setIcon(busyIcons[0]);
         busyIconIndex = 0;
@@ -726,23 +655,34 @@ public class PrincipalView extends FrameView {
 
             try{
                 
-                cargarFormulario(tablaTecnica,clavesTablaTecnica);
-                cargarFormulario(tablaJuridica,clavesTablaJuridica);
-                cargarFormulario(tablaAfectiva,clavesTablaAfectivo);
-
                 try {
                     Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
-                status("Informe de asesoramiento generado.");
-                mensaje("Informe generado","Informe de asesoramiento generado.");
+                if(comprobarFormulario(tablaTecnica))
+                {
+                    cargarFormulario(tablaTecnica,clavesTablaTecnica);
+                    
+                    status("Informacion del asesorado analizada.");
+                    mensaje("Informacion analizada","Informacion del asesorado analizada.");
 
-                InformeView informe = new InformeView(lanzadorJess);
-                informe.setVisible(true);
+                    InformeView informe = new InformeView(lanzadorJess);
+                    informe.setVisible(true);
+                    
+                }else{
+                    
+                    status("Se han detectado preguntas sin respuesta.");
+                    menError("Respuestas incompletas","Se han detectado preguntas sin respuesta.");
+
+                }
+                //cargarFormulario(tablaJuridica,clavesTablaJuridica);
+                //cargarFormulario(tablaAfectiva,clavesTablaAfectivo);
+
+                
             }catch(Exception ex){
-                menError("Error Jess", "Error al cargar el formulario: " + ex.getMessage());
+                menError("Error respuestas", "Error al analizar respuestas: " + ex.getMessage());
                 ex.printStackTrace();
             }
 
@@ -816,7 +756,7 @@ public class PrincipalView extends FrameView {
             data.add(aux);
         }
 
-        titulos.add("Preguntas Formulario " + tabla);
+        titulos.add("Preguntas al asesorado");
         titulos.add("Respuestas");
 
         return new DefaultTableModel(data,titulos) {

@@ -63,7 +63,6 @@ public class InformeView extends javax.swing.JFrame {
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(InformeView.class);
         setTitle(resourceMap.getString("Form.title")); // NOI18N
-        setAlwaysOnTop(true);
         setName("Form"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N

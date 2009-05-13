@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.7">
+<Form version="1.5" maxVersion="1.6">
   <NonVisualComponents>
     <Container class="javax.swing.JPanel" name="mainPanel">
       <Properties>
@@ -9,193 +9,54 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JTabbedPane" name="panelFormularios">
+        <Container class="javax.swing.JPanel" name="formularioTecnico">
           <Properties>
-            <Property name="tabPlacement" type="int" value="2"/>
-            <Property name="toolTipText" type="java.lang.String" resourceKey="panelFormularios.toolTipText"/>
-            <Property name="name" type="java.lang.String" value="panelFormularios" noResource="true"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="formularioTecnico.toolTipText"/>
+            <Property name="name" type="java.lang.String" value="formularioTecnico" noResource="true"/>
           </Properties>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="scrollPanelTenico" pref="484" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="scrollPanelTenico" pref="268" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="formularioTecnico">
+            <Container class="javax.swing.JScrollPane" name="scrollPanelTenico">
               <Properties>
-                <Property name="toolTipText" type="java.lang.String" resourceKey="formularioTecnico.toolTipText"/>
-                <Property name="name" type="java.lang.String" value="formularioTecnico" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="scrollPanelTenico" noResource="true"/>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="T&#xe9;cnico" toolTip="Asesoramiento t&#xe9;cnico">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="formularioTecnico.TabConstraints.tabTitle"/>
-                    <Property name="tabToolTip" type="java.lang.String" resourceKey="formularioTecnico.TabConstraints.tabToolTip"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
 
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelTenico" pref="375" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelTenico" pref="273" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="scrollPanelTenico">
+                <Component class="javax.swing.JTable" name="tablaTecnica">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="scrollPanelTenico" noResource="true"/>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="getModeloTabla(&quot;T&#xe9;cnico&quot;, propTecnico)" type="code"/>
+                    </Property>
+                    <Property name="name" type="java.lang.String" value="tablaTecnica" noResource="true"/>
                   </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="tablaTecnica">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="getModeloTabla(&quot;T&#xe9;cnico&quot;, propTecnico)" type="code"/>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="tablaTecnica" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="tablaTecnicaMouseMoved"/>
-                      </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="formularioJuridico">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" resourceKey="formularioJuridico.toolTipText"/>
-                <Property name="name" type="java.lang.String" value="formularioJuridico" noResource="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Jur&#xed;dico" toolTip="Asesoramiento jur&#xed;dico">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="formularioJuridico.TabConstraints.tabTitle"/>
-                    <Property name="tabToolTip" type="java.lang.String" resourceKey="formularioJuridico.TabConstraints.tabToolTip"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelJuridico" pref="375" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelJuridico" pref="273" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="scrollPanelJuridico">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="scrollPanelJuridico" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="tablaJuridica">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="getModeloTabla(&quot;Jur&#xed;dico&quot;, propJuridico)" type="code"/>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="tablaJuridica" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="tablaJuridicaMouseMoved"/>
-                      </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="formularioAfectivo">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" resourceKey="formularioAfectivo.toolTipText"/>
-                <Property name="name" type="java.lang.String" value="formularioAfectivo" noResource="true"/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Coaching/Afectivo" toolTip="Asesoramiento de Coaching/Afectivo">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="formularioAfectivo.TabConstraints.tabTitle"/>
-                    <Property name="tabToolTip" type="java.lang.String" resourceKey="formularioAfectivo.TabConstraints.tabToolTip"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelAfectivo" pref="375" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="scrollPanelAfectivo" pref="273" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="scrollPanelAfectivo">
-                  <Properties>
-                    <Property name="name" type="java.lang.String" value="scrollPanelAfectivo" noResource="true"/>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="tablaAfectiva">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="getModeloTabla(&quot;Coaching/Afectivo&quot;, propAfectivo)" type="code"/>
-                        </Property>
-                        <Property name="name" type="java.lang.String" value="tablaAfectiva" noResource="true"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="tablaAfectivaMouseMoved"/>
-                      </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
+                  <Events>
+                    <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="tablaTecnicaMouseMoved"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -385,6 +246,9 @@
             <Property name="verticalAlignment" type="int" value="3"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonReiniciarMousePressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonSalir">
           <Properties>
