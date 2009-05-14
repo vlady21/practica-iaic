@@ -12,6 +12,7 @@
 package vista;
 
 import conocimiento.LanzadorJess;
+import conocimiento.Reglas_1;
 import java.io.FileInputStream;
 import java.net.URI;
 import java.util.Properties;
@@ -21,6 +22,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import jess.JessException;
+import utilerias.LectorConsejos;
 
 /**
  *
@@ -30,7 +32,7 @@ public class InformeView extends javax.swing.JFrame {
 
     private LanzadorJess lanzadorJess;
     private int tam;
-    private Vector claves;
+    private Vector<String> claves;
     /** Creates new form OpcionesView */
     public InformeView() {
         initComponents();
@@ -113,13 +115,16 @@ public class InformeView extends javax.swing.JFrame {
             if((Boolean) tablaPreguntas.getValueAt(i, 0)){
 
                 lanzadorJess.insertaSlotValue("estado_actual", claves.elementAt(i));
-
-                lanzadorJess.ejecutarJess();
+                if(claves.elementAt(i).equalsIgnoreCase("reglas_1")){
+                    Reglas_1.ejecutarReglas_1();
+                }else{               
+                    lanzadorJess.ejecutarJess();
+                }
 
             }
         }
 
-        String texto = lanzadorJess.dameConsejos();
+        String texto = LectorConsejos.dameConsejos();
 
         while(texto.indexOf("   ")!=-1)
             texto = texto.replaceAll("   ", "  ");
@@ -131,9 +136,9 @@ public class InformeView extends javax.swing.JFrame {
 
         VisualizadorView visualizador = new VisualizadorView(texto);
         visualizador.setVisible(true);
-        visualizador.setAlwaysOnTop(true);
+        visualizador.setAlwaysOnTop(false);
         //JOptionPane.showMessageDialog(this, texto, "Informe de asesoramiento", JOptionPane.INFORMATION_MESSAGE);
-
+        setVisible(false);
         
       }catch(Exception e){
 

@@ -110,13 +110,13 @@ public class LanzadorJess {
     }
 
     public void ejecutarJess() throws JessException{
-        _rete.executeCommand("(reset)");
+            _rete.executeCommand("(reset)");
           //insertamos el fact con los valores
 	      _rete.assertFact(_fact);
 
 	      //mostramos los hechos y las reglas por consola
-	      //_rete.executeCommand("(facts)");
-	      //_rete.executeCommand("(watch rules)");
+	      _rete.executeCommand("(facts)");
+	      _rete.executeCommand("(watch rules)");
 
 	      //ejecutamos jess
 	      _rete.executeCommand("(run)");
