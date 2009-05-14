@@ -953,7 +953,7 @@
 	(estado_actual "reglas_1")
 	(edad  ?edad)
 	(test (< ?edad 24))
-	(estudios "universitarios")
+	(tipo_estudios "universitarios")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (cap-aprender "si"))
@@ -976,7 +976,7 @@
 	(tiene-curriculum "si")
 	(tiempo-desempleado ?tiempo)
 	(test (< ?tiempo 5))
-        (experiencia ?experiencia)
+        (tiempo_experiencia ?experiencia)
 	(test (< ?experiencia 2))
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
@@ -996,7 +996,7 @@
 	"Asiste a una exposición de empleo, y deja su currículum"
 	(estado_actual "reglas_1")
 	(tiene-curriculum "si")
-	(experiencia ?experiencia)
+	(tiempo_experiencia ?experiencia)
 	(test (>= ?experiencia 2))
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
@@ -1061,7 +1061,7 @@
 	(estado_actual "reglas_1")
 	(pretensiones-salariales ?salario)
 	(test (> ?salario 1200))
-	(experiencia ?experiencia)
+	(tiempo_experiencia ?experiencia)
 	(test (< ?experiencia 2))
 	(not (idioma "frances"))
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
@@ -1082,7 +1082,7 @@
 (defrule hacerCursos
 	"El usuario debe hacer algunos cursos relacionados con sus intereses para renovarse"
 	(estado_actual "reglas_1")
-	(not (estudios "universitarios"))
+	(not (tipo_estudios "universitarios"))
 	(con-familia "si")
 	(reelabora-curriculum "si")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
@@ -1124,7 +1124,7 @@
 (defrule ponerseContactoUniversidad
 	"El usuario deberia ponerse en contacto con su universidad para buscar trabajo a partir de ella"
 	(estado_actual "reglas_1")
-	(estudios "universitarios")
+	(tipo_estudios "universitarios")
 	(idioma "ingles")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=> 
@@ -1166,7 +1166,7 @@
 (defrule ponerseContactoInstituto
 	"El usuario deberia ponerse en contacto con su instituto para buscar trabajo a partir de ella"
 	(estado_actual "reglas_1")
-	(estudios "modulo")
+	(tipo_estudios "modulo")
 	(idioma "ingles")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=> 
@@ -1271,7 +1271,7 @@
 (defrule cultura-general
 	"Si el trabajo no es altamente especializado y el usuario es muy joven, repasar sus conocimientos de cultura general y actualidad"
 	(estado_actual "reglas_1")
-	(trabajo-no-especializado "si")
+	(trabajo-no-especializado "no")
 	(edad ?usuario ?edad)
 	(test (< ?edad 21))
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
@@ -1311,7 +1311,7 @@
 (defrule solicitar-recomendacion
 	"El usuario puede solicitar recomendaciones de sus anteriores trabajos"
     (estado_actual "reglas_1")
-	(experiencia ?experiencia)
+	(tiempo_experiencia ?experiencia)
 	(reelabora-curriculum "si")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>

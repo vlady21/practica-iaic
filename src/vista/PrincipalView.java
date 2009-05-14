@@ -5,6 +5,7 @@
 package vista;
 
 import conocimiento.LanzadorJess;
+import conocimiento.Reglas_1;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -20,6 +21,7 @@ import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -39,7 +41,8 @@ import javax.swing.table.TableColumn;
  * The application's main frame.
  */
 public class PrincipalView extends FrameView {
-
+    private final String FICHERO_GUARDAR="log_grupoB09.txt";
+    private final String FICHERO_REGLAS="reglasB09.clp";
     static Image imagenTray;
     static TrayIcon trayIcon;
     SystemTray tray;
@@ -154,7 +157,7 @@ public class PrincipalView extends FrameView {
 
     private void cargarJess() {
         try {
-            lanzadorJess = new LanzadorJess("log_grupoB09.txt", "reglasB09.clp");
+            lanzadorJess = new LanzadorJess(FICHERO_GUARDAR, FICHERO_REGLAS);
             lanzadorJess.arrancarJess();
         } catch (JessException ex) {
             menError("Error Jess", "Error al lanzar el modulo de JESS");
@@ -165,8 +168,6 @@ public class PrincipalView extends FrameView {
     private void cargarPropiedades() {
 
         propTecnico = getPropiedades("config/formulario.properties");
-        //propJuridico = getPropiedades("config/formularioJuridico.properties");
-        //propAfectivo = getPropiedades("config/formularioAfectivo.properties");
     }
 
     private void cargarFormularios() {
@@ -586,15 +587,33 @@ private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FI
     private void cargarFormulario(JTable tabla,Vector claves) throws Exception {
 
         String clave,valor;
-        
+        ArrayList<String> valores_reglas1=new ArrayList<String>();
         for(int i = 0; i<claves.size(); i++){
 
             clave = (String) claves.get(i);
             valor = (String) tabla.getValueAt(i, 1);
 
-            if(valor!=null){
-                
-                lanzadorJess.insertaSlotValue(clave, valor);
+            int edad=0;
+            if(valor!=null){                
+            //TODO RELLENAR
+                if(clave.equalsIgnoreCase("rango_edad")){
+                    if(valor.equalsIgnoreCase("16-35")){
+                        valor="joven";
+                        edad=20;
+                    }else if(valor.equalsIgnoreCase("35-65")){
+                        valor="adulto";
+                        edad=45;
+                    }else{
+                        valor="jubilado";
+                        edad=70;
+                    }
+                    valores_reglas1.add(""+edad);
+                }
+                if(Reglas_1.pertenece(clave)){
+                    valores_reglas1.add(valor);
+                }else{
+                    lanzadorJess.insertaSlotValue(clave, valor);
+                }
             }
 
             System.out.println("clave: " + clave);
@@ -602,6 +621,8 @@ private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FI
             System.out.println("valor: " + valor);
 
         }
+
+        Reglas_1 reglas_1=new Reglas_1(valores_reglas1,FICHERO_GUARDAR, FICHERO_REGLAS);
         
     }
 
@@ -656,7 +677,7 @@ private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FI
             try{
                 
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

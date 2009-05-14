@@ -21,7 +21,7 @@ public class LectorConsejos {
     private FileReader fr = null;
     private BufferedReader bf = null;
     private String _fichero="";
-    private String _texto="";
+    private static String _texto="";
 
     public void leerConsejos(String fichero){
         try {
@@ -33,8 +33,8 @@ public class LectorConsejos {
             while ((sCadena = bf.readLine()) != null) {
                 _texto += sCadena;
             }
-            bf.close();;
-            fr.close();;
+            bf.close();
+            fr.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LectorConsejos.class.getName()).log(Level.SEVERE, null, ex);
         }catch (IOException ex) {
@@ -47,7 +47,7 @@ public class LectorConsejos {
         fichero.delete();
     }
 
-    public String dameConsejos(){
+    public static String dameConsejos(){
         return _texto;
     }
 }

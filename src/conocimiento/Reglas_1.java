@@ -18,10 +18,10 @@ public class Reglas_1 {
 
     private ArrayList<String> _listaSlot=null;
     private ArrayList<String> _listaValores=null;
-    private String _rutaficheroconsejos="log_grupoB09.txt";
+    private static String _rutaficheroconsejos="log_grupoB09.txt";
     private String _rutaficheroreglas="reglasB09.clp";
-    private LectorConsejos _lector=null;
-    private Rete _rete=null;
+    private static LectorConsejos _lector=null;
+    private static Rete _rete=null;
 
     public Reglas_1(ArrayList<String> listaValores,String rutafichero, String rutaficheroreglas) throws JessException{
         _listaValores=listaValores;
@@ -49,26 +49,12 @@ public class Reglas_1 {
                 insertarFact(_listaSlot.get(i),_listaValores.get(i),false);
             }
         }
-
-          //mostramos los hechos y las reglas por consola
-          //_rete.executeCommand("(watch facts)");
-          //_rete.executeCommand("(watch rules)");
-
-           //mostramos los hechos y las reglas por consola
-          _rete.executeCommand("(facts)");
-          _rete.executeCommand("(rules)");
-
-          //ejecutamos jess
-          _rete.executeCommand("(run)");
-
-          //leemos los consejos del fichero
-          _lector.leerConsejos(_rutaficheroconsejos);
     }
 
     public void rellenarFacts(){
         _listaSlot=new ArrayList<String>();
-        _listaSlot.add("estudios");
-        _listaSlot.add("experiencia");
+        _listaSlot.add("tipo_estudios");
+        _listaSlot.add("tiempo_experiencia");
         _listaSlot.add("tiempo-desempleado");
         _listaSlot.add("edad");
         _listaSlot.add("sexo");
@@ -88,11 +74,59 @@ public class Reglas_1 {
         _listaSlot.add("ultima-entrevista");
     }
 
-    public void insertarFact(String campoSlot, String valor, boolean esEntero) throws JessException{
+    public static void insertarFact(String campoSlot, String valor, boolean esEntero) throws JessException{
         if(esEntero){
             _rete.executeCommand("(assert ("+campoSlot+ " "+valor+"))");
+
+            System.out.println("(assert ("+campoSlot+ " "+valor+"))");
         }else{
             _rete.executeCommand("(assert ("+campoSlot+ " \""+valor+"\"))");
+
+            System.out.println("(assert ("+campoSlot+ " \""+valor+"\"))");
         }
     }
+
+    public static void ejecutarReglas_1() throws JessException{
+
+          //mostramos los hechos y las reglas por consola
+          _rete.executeCommand("(watch facts)");
+          _rete.executeCommand("(watch rules)");
+
+           //mostramos los hechos y las reglas por consola
+          _rete.executeCommand("(facts)");
+          //_rete.executeCommand("(rules)");
+
+          //ejecutamos jess
+          _rete.executeCommand("(run)");
+
+          //leemos los consejos del fichero
+          _lector.leerConsejos(_rutaficheroconsejos);
+    }
+
+    public static boolean pertenece(String campo){
+        if(
+                campo.equalsIgnoreCase("tipo_estudios") ||
+                campo.equalsIgnoreCase("tiempo_experiencia") ||
+                campo.equalsIgnoreCase("tiempo-desempleado") ||
+                campo.equalsIgnoreCase("edad") ||
+                campo.equalsIgnoreCase("sexo") ||
+                campo.equalsIgnoreCase("tiene-curriculum") ||
+                campo.equalsIgnoreCase("idioma") ||
+                campo.equalsIgnoreCase("interes") ||
+                campo.equalsIgnoreCase("tiene-coche") ||
+                campo.equalsIgnoreCase("carnet-conducir") ||
+                campo.equalsIgnoreCase("pretensiones-salariales") ||
+                campo.equalsIgnoreCase("meses-desde-ultimo-curso") ||
+                campo.equalsIgnoreCase("ultimo-trabajo") ||
+                campo.equalsIgnoreCase("tiempo-trabajando") ||
+                campo.equalsIgnoreCase("tiempo-desempleado") ||
+                campo.equalsIgnoreCase("trabajo-no-especializado") ||
+                campo.equalsIgnoreCase("experiencia-extranjero") ||
+                campo.equalsIgnoreCase("ultima-entrevista")
+                ){
+                return true;
+        }
+        return false;
+    }
+
 }
