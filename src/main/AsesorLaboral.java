@@ -6,10 +6,12 @@ package main;
 
 import conocimiento.LanzadorJess;
 import conocimiento.Reglas_1;
+import controlador.ControladorGUI;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jess.JessException;
+import modelo.ModeloFormularios;
 import vista.*;
 import org.jdesktop.application.SingleFrameApplication;
 
@@ -23,7 +25,12 @@ public class AsesorLaboral extends SingleFrameApplication {
      */
     public static void main(String[] args) {
 
-        Principal.lanzar(args);
+        ModeloFormularios modelo = new ModeloFormularios();
+
+        ControladorGUI controlador = new ControladorGUI();
+        controlador.setModelo(modelo);
+
+        Principal.lanzar(modelo, controlador);
 
         /* PRUEBA LANZAMIENTO JESS
          * 
@@ -49,6 +56,11 @@ public class AsesorLaboral extends SingleFrameApplication {
         }*/
     }
 
+    @Override
+    protected void startup() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+/*
     @Override
     protected void startup() {
         show(new PrincipalView(this));

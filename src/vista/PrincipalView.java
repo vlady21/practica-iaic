@@ -6,6 +6,7 @@ package vista;
 
 import conocimiento.LanzadorJess;
 import conocimiento.Reglas_1;
+import controlador.ControladorGUI;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -20,6 +21,7 @@ import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -36,11 +38,14 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import modelo.IZObservadorFormularios;
+import modelo.ModeloFormularios;
+import modelo.TablaFormulario;
 
 /**
  * The application's main frame.
  */
-public class PrincipalView extends FrameView {
+public class PrincipalView extends FrameView implements IZObservadorFormularios{
     private final String FICHERO_GUARDAR="log_grupoB09.txt";
     private final String FICHERO_REGLAS="reglasB09.clp";
     static Image imagenTray;
@@ -59,14 +64,25 @@ public class PrincipalView extends FrameView {
     //private Properties propAfectivo;
     private LanzadorJess lanzadorJess;
 
-    public PrincipalView(SingleFrameApplication app) {
+    private ModeloFormularios modelo;
+
+    private ControladorGUI controlador;
+
+    private TablaFormulario tblTecnico;
+    private TablaFormulario tblJuridico;
+    private TablaFormulario tblAfectivo;
+
+    public PrincipalView(SingleFrameApplication app, ModeloFormularios modelo, ControladorGUI controlador) {
+
         super(app);
 
-        cargarPropiedades();
+        this.modelo = modelo;
 
-        cargarFormularios();
+        this.controlador = controlador;
 
-        cargarJess();
+        modelo.attach(this);
+        
+        //cargarJess();
 
         initComponents();
 
@@ -165,93 +181,6 @@ public class PrincipalView extends FrameView {
 
     }
 
-    private void cargarPropiedades() {
-
-        propTecnico = getPropiedades("config/formulario.properties");
-    }
-
-    private void cargarFormularios() {
-
-        String [] respuestas = null;
-
-        StringTokenizer st;
-
-        respuestasTablaTecnica = new Vector();
-        //respuestasTablaJuridica = new Vector();
-        //respuestasTablaAfectivo = new Vector();
-
-        clavesTablaTecnica = new Vector();
-        //clavesTablaJuridica = new Vector();
-        //clavesTablaAfectivo = new Vector();
-
-        int j;
-        int tam = propTecnico.size()/3;
-
-        for(int i = 1; i<=tam ; i++){
-
-            st = new StringTokenizer(propTecnico.getProperty("respuesta"+i),",");
-
-            respuestas = new String[st.countTokens()];
-
-            j = 0;
-
-            while(st.hasMoreTokens()){
-
-                respuestas[j] = st.nextToken();
-
-                j++;
-            }
-
-            respuestasTablaTecnica.add(respuestas);
-    
-            clavesTablaTecnica.add(propTecnico.getProperty("hecho"+i));
-        }
-/*
-        tam = propJuridico.size()/3;
-
-        for(int i = 1; i<=tam ; i++){
-
-            st = new StringTokenizer(propJuridico.getProperty("respuesta"+i),",");
-
-            respuestas = new String[st.countTokens()];
-
-            j = 0;
-
-            while(st.hasMoreTokens()){
-
-                respuestas[j] = st.nextToken();
-
-                j++;
-            }
-
-            respuestasTablaJuridica.add(respuestas);
-
-            clavesTablaJuridica.add(propJuridico.getProperty("hecho"+i));
-        }
-
-        tam = propAfectivo.size()/3;
-
-        for(int i = 1; i<=tam ; i++){
-
-            st = new StringTokenizer(propAfectivo.getProperty("respuesta"+i),",");
-
-            respuestas = new String[st.countTokens()];
-
-            j = 0;
-
-            while(st.hasMoreTokens()){
-
-                respuestas[j] = st.nextToken();
-
-                j++;
-            }
-
-            respuestasTablaAfectivo.add(respuestas);
-
-            clavesTablaAfectivo.add(propAfectivo.getProperty("hecho"+i));
-        }*/
-    }
-
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -262,9 +191,16 @@ public class PrincipalView extends FrameView {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
+        panelFormularios = new javax.swing.JTabbedPane();
         formularioTecnico = new javax.swing.JPanel();
         scrollPanelTenico = new javax.swing.JScrollPane();
         tablaTecnica = new javax.swing.JTable();
+        formularioJuridico = new javax.swing.JPanel();
+        scrollPanelTenico1 = new javax.swing.JScrollPane();
+        tablaJuridico = new javax.swing.JTable();
+        formularioAfectivo = new javax.swing.JPanel();
+        scrollPanelTenico2 = new javax.swing.JScrollPane();
+        tablaAfectivo = new javax.swing.JTable();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
@@ -283,14 +219,29 @@ public class PrincipalView extends FrameView {
         mainPanel.setName("mainPanel"); // NOI18N
         mainPanel.setLayout(new javax.swing.BoxLayout(mainPanel, javax.swing.BoxLayout.LINE_AXIS));
 
+        panelFormularios.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        panelFormularios.setName("panelFormularios"); // NOI18N
+
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(PrincipalView.class);
         formularioTecnico.setToolTipText(resourceMap.getString("formularioTecnico.toolTipText")); // NOI18N
         formularioTecnico.setName("formularioTecnico"); // NOI18N
+        formularioTecnico.setLayout(new javax.swing.BoxLayout(formularioTecnico, javax.swing.BoxLayout.LINE_AXIS));
 
         scrollPanelTenico.setName("scrollPanelTenico"); // NOI18N
 
-        tablaTecnica.setModel(getModeloTabla("Técnico", propTecnico));
+        tablaTecnica.setModel(getModeloTabla(modelo.getTecnico()));
         tablaTecnica.setName("tablaTecnica"); // NOI18N
+        tablaTecnica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaTecnicaActualizar(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tablaTecnicaActualizar(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tablaTecnicaActualizar(evt);
+            }
+        });
         tablaTecnica.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 tablaTecnicaMouseMoved(evt);
@@ -298,24 +249,72 @@ public class PrincipalView extends FrameView {
         });
         scrollPanelTenico.setViewportView(tablaTecnica);
 
-        javax.swing.GroupLayout formularioTecnicoLayout = new javax.swing.GroupLayout(formularioTecnico);
-        formularioTecnico.setLayout(formularioTecnicoLayout);
-        formularioTecnicoLayout.setHorizontalGroup(
-            formularioTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(formularioTecnicoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPanelTenico, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        formularioTecnicoLayout.setVerticalGroup(
-            formularioTecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(formularioTecnicoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPanelTenico, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
-        );
+        formularioTecnico.add(scrollPanelTenico);
 
-        mainPanel.add(formularioTecnico);
+        panelFormularios.addTab(resourceMap.getString("formularioTecnico.TabConstraints.tabTitle"), formularioTecnico); // NOI18N
+
+        formularioJuridico.setToolTipText(resourceMap.getString("formularioJuridico.toolTipText")); // NOI18N
+        formularioJuridico.setName("formularioJuridico"); // NOI18N
+        formularioJuridico.setLayout(new javax.swing.BoxLayout(formularioJuridico, javax.swing.BoxLayout.LINE_AXIS));
+
+        scrollPanelTenico1.setName("scrollPanelTenico1"); // NOI18N
+
+        tablaJuridico.setModel(getModeloTabla(modelo.getJuridico()));
+        tablaJuridico.setName("tablaJuridico"); // NOI18N
+        tablaJuridico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaJuridicoActualizar(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tablaJuridicoActualizar(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tablaJuridicoActualizar(evt);
+            }
+        });
+        tablaJuridico.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tablaJuridicoMouseMoved(evt);
+            }
+        });
+        scrollPanelTenico1.setViewportView(tablaJuridico);
+
+        formularioJuridico.add(scrollPanelTenico1);
+
+        panelFormularios.addTab(resourceMap.getString("formularioJuridico.TabConstraints.tabTitle"), formularioJuridico); // NOI18N
+
+        formularioAfectivo.setToolTipText(resourceMap.getString("formularioAfectivo.toolTipText")); // NOI18N
+        formularioAfectivo.setName("formularioAfectivo"); // NOI18N
+        formularioAfectivo.setLayout(new javax.swing.BoxLayout(formularioAfectivo, javax.swing.BoxLayout.LINE_AXIS));
+
+        scrollPanelTenico2.setName("scrollPanelTenico2"); // NOI18N
+
+        tablaAfectivo.setModel(getModeloTabla(modelo.getAfectivo()));
+        tablaAfectivo.setName("tablaAfectivo"); // NOI18N
+        tablaAfectivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaAfectivoActualizar(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tablaAfectivoActualizar(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tablaAfectivoActualizar(evt);
+            }
+        });
+        tablaAfectivo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tablaAfectivoMouseMoved(evt);
+            }
+        });
+        scrollPanelTenico2.setViewportView(tablaAfectivo);
+
+        formularioAfectivo.add(scrollPanelTenico2);
+
+        panelFormularios.addTab(resourceMap.getString("formularioAfectivo.TabConstraints.tabTitle"), formularioAfectivo); // NOI18N
+
+        mainPanel.add(panelFormularios);
+        panelFormularios.getAccessibleContext().setAccessibleName(resourceMap.getString("jTabbedPane1.AccessibleContext.accessibleName")); // NOI18N
 
         menuBar.setName("menuBar"); // NOI18N
 
@@ -356,11 +355,11 @@ public class PrincipalView extends FrameView {
         statusPanel.setLayout(statusPanelLayout);
         statusPanelLayout.setHorizontalGroup(
             statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(statusPanelSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
+            .addComponent(statusPanelSeparator, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
             .addGroup(statusPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statusMessageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 334, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 339, Short.MAX_VALUE)
                 .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(statusAnimationLabel)
@@ -442,14 +441,14 @@ public class PrincipalView extends FrameView {
 
     private void botonAsesorarPresionado(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAsesorarPresionado
 
-        asesorar();
+        controlador.asesorar();
     }//GEN-LAST:event_botonAsesorarPresionado
 
     private void tablaTecnicaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaTecnicaMouseMoved
 
         int i = tablaTecnica.rowAtPoint(evt.getPoint());
 
-        String[] values = (String[]) respuestasTablaTecnica.get(i);
+        String[] values = (String[]) modelo.getTecnico().getRespuestas().get(i);
         // These are the combobox values
         //String[] values = new String[]{"item1", "item2", "item3"};
 
@@ -457,6 +456,7 @@ public class PrincipalView extends FrameView {
         TableColumn col = tablaTecnica.getColumnModel().getColumn(vColIndex);
         col.setCellEditor(new MyComboBoxEditor(values));
 
+        tablaTecnicaActualizar(null);
     }//GEN-LAST:event_tablaTecnicaMouseMoved
 
 private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonReiniciarMousePressed
@@ -465,18 +465,164 @@ private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FI
     
 }//GEN-LAST:event_botonReiniciarMousePressed
 
+private void tablaJuridicoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJuridicoMouseMoved
+
+    int i = tablaJuridico.rowAtPoint(evt.getPoint());
+
+    String[] values = (String[]) modelo.getJuridico().getRespuestas().get(i);
+    // These are the combobox values
+    //String[] values = new String[]{"item1", "item2", "item3"};
+
+    int vColIndex = 1;
+    TableColumn col = tablaJuridico.getColumnModel().getColumn(vColIndex);
+    col.setCellEditor(new MyComboBoxEditor(values));
+
+    tablaJuridicoActualizar(null);
+}//GEN-LAST:event_tablaJuridicoMouseMoved
+
+private void tablaAfectivoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAfectivoMouseMoved
+
+    int i = tablaAfectivo.rowAtPoint(evt.getPoint());
+
+    String[] values = (String[]) modelo.getAfectivo().getRespuestas().get(i);
+    // These are the combobox values
+    //String[] values = new String[]{"item1", "item2", "item3"};
+
+    int vColIndex = 1;
+    TableColumn col = tablaAfectivo.getColumnModel().getColumn(vColIndex);
+    col.setCellEditor(new MyComboBoxEditor(values));
+
+    tablaAfectivoActualizar(null);
+}//GEN-LAST:event_tablaAfectivoMouseMoved
+
+private void tablaTecnicaActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaTecnicaActualizar
+
+    Vector claves = modelo.getTecnico().getClaves();
+    Vector opcionesElegidas = modelo.getTecnico().getOpcionesElegidas();
+
+    String clave;
+    String valor,valor1,valor2;
+
+    valor = null;
+
+    int i = 0;
+    boolean noEncontrado = true;
+
+    while(noEncontrado && i<claves.size()){
+
+        valor1 = (String) tablaTecnica.getValueAt(i, 1);
+        valor2 = (String) opcionesElegidas.get(i);
+
+        try{
+            if(!valor1.equals(valor2))
+            {
+                noEncontrado = false;
+                valor = valor1;
+            }else{
+
+                i++;
+            }
+        }catch(Exception e){ i++;}
+    }
+
+    clave = (String) claves.get(i);
+
+    modelo.setState(clave, valor);
+
+}//GEN-LAST:event_tablaTecnicaActualizar
+
+private void tablaJuridicoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJuridicoActualizar
+
+
+    Vector claves = modelo.getJuridico().getClaves();
+    Vector opcionesElegidas = modelo.getJuridico().getOpcionesElegidas();
+
+    String clave;
+    String valor,valor1,valor2;
+
+    valor = null;
+
+    int i = 0;
+    boolean noEncontrado = true;
+
+    while(noEncontrado && i<claves.size()){
+
+        valor1 = (String) tablaJuridico.getValueAt(i, 1);
+        valor2 = (String) opcionesElegidas.get(i);
+
+        try{
+            if(!valor1.equals(valor2))
+            {
+                noEncontrado = false;
+                valor = valor1;
+            }else{
+
+                i++;
+            }
+        }catch(Exception e){ i++;}
+    }
+
+    clave = (String) claves.get(i);
+
+    modelo.setState(clave, valor);
+
+}//GEN-LAST:event_tablaJuridicoActualizar
+
+private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAfectivoActualizar
+
+    Vector claves = modelo.getAfectivo().getClaves();
+    Vector opcionesElegidas = modelo.getAfectivo().getOpcionesElegidas();
+
+    String clave;
+    String valor,valor1,valor2;
+
+    valor = null;
+
+    int i = 0;
+    boolean noEncontrado = true;
+
+    while(noEncontrado && i<claves.size()){
+
+        valor1 = (String) tablaAfectivo.getValueAt(i, 1);
+        valor2 = (String) opcionesElegidas.get(i);
+
+        try{
+            if(!valor1.equals(valor2))
+            {
+                noEncontrado = false;
+                valor = valor1;
+            }else{
+
+                i++;
+            }
+        }catch(Exception e){ i++;}
+    }
+
+    clave = (String) claves.get(i);
+
+    modelo.setState(clave, valor);
+
+}//GEN-LAST:event_tablaAfectivoActualizar
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAsesorar;
     private javax.swing.JButton botonReiniciar;
     private javax.swing.JButton botonSalir;
+    private javax.swing.JPanel formularioAfectivo;
+    private javax.swing.JPanel formularioJuridico;
     private javax.swing.JPanel formularioTecnico;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JTabbedPane panelFormularios;
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JScrollPane scrollPanelTenico;
+    private javax.swing.JScrollPane scrollPanelTenico1;
+    private javax.swing.JScrollPane scrollPanelTenico2;
     private javax.swing.JLabel statusAnimationLabel;
     private javax.swing.JLabel statusMessageLabel;
     private javax.swing.JPanel statusPanel;
+    private javax.swing.JTable tablaAfectivo;
+    private javax.swing.JTable tablaJuridico;
     private javax.swing.JTable tablaTecnica;
     private javax.swing.JToolBar toolBar;
     // End of variables declaration//GEN-END:variables
@@ -667,6 +813,37 @@ private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FI
 
     }
 
+    public void update() {
+
+        if(modelo.actualizadoTecnico()){
+
+            setModelo(tablaTecnica, modelo.getTecnico());
+        }
+        if(modelo.actualizadoJuridico()){
+
+            setModelo(tablaJuridico, modelo.getJuridico());
+        }
+        if(modelo.actualizadoAfectivo()){
+
+            setModelo(tablaAfectivo, modelo.getAfectivo());
+        }
+
+    }
+
+    public void setModelo(JTable jTable, TablaFormulario tabla) {
+
+        int tam = jTable.getRowCount();
+        Vector opciones = tabla.getOpcionesElegidas();
+
+        System.out.println(tam);
+        
+        for(int i = 0; i<tam; i++){
+
+            jTable.setValueAt(opciones.elementAt(i), i, 1);
+        }
+
+    }
+
     public class Asesor extends Thread
     {
 
@@ -761,23 +938,24 @@ private void botonReiniciarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FI
       return propiedades;
     } // Fin getPropiedades()
 
-    public DefaultTableModel getModeloTabla(String tabla, Properties prop){
+    public DefaultTableModel getModeloTabla(TablaFormulario tabla){
 
         Vector data = new Vector();
         Vector titulos = new Vector();
+        Vector preguntas = tabla.getPreguntas();
         Vector aux;
 
-        int tam = prop.size()/3;
+        int tam = preguntas.size();
 
-        for(int i = 1; i<=tam; i++){
+        for(int i = 0; i<tam; i++){
 
             aux = new Vector();
-            aux.add(prop.getProperty("pregunta" + i));
+            aux.add(preguntas.elementAt(i));
             aux.add(null);
             data.add(aux);
         }
 
-        titulos.add("Preguntas al asesorado");
+        titulos.add("Preguntas");
         titulos.add("Respuestas");
 
         return new DefaultTableModel(data,titulos) {
