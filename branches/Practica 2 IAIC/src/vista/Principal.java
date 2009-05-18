@@ -4,7 +4,9 @@
 
 package vista;
 
+import controlador.ControladorGUI;
 import main.ThreadSplash;
+import modelo.ModeloFormularios;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
 
@@ -14,12 +16,24 @@ import org.jdesktop.application.SingleFrameApplication;
 public class Principal extends SingleFrameApplication {
 
     private static ThreadSplash hiloSplash;
+    private static ModeloFormularios modelo;
+    private static ControladorGUI controlador;
+
+    public static void lanzar(ModeloFormularios modelo, ControladorGUI controlador) {
+        hiloSplash = new ThreadSplash();
+        hiloSplash.run();
+
+        Principal.modelo = modelo;
+        Principal.controlador = controlador;
+
+        launch(Principal.class,null);
+    }
 
     /**
      * At startup create and show the main frame of the application.
      */
     @Override protected void startup() {
-        show(new PrincipalView(this));
+        show(new PrincipalView(this, modelo, controlador));
     }
 
     /**
