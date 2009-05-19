@@ -1063,7 +1063,7 @@
 	(test (> ?salario 1200))
 	(tiempo_experiencia ?experiencia)
 	(test (< ?experiencia 2))
-	(not (idioma "frances"))
+	(not (idioma2 "si"))
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (rebaja-salario "si"))
@@ -1103,7 +1103,7 @@
 	"El usuario debería aprender idiomas para volver a ser competitivo en el mundo laboral"
 	(estado_actual "reglas_1")
 	(hacer-cursos "si")
-	(not (idioma "ingles"))
+	(not (idioma1 "si"))
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (hacer-curso-ingles "si"))
@@ -1125,7 +1125,7 @@
 	"El usuario deberia ponerse en contacto con su universidad para buscar trabajo a partir de ella"
 	(estado_actual "reglas_1")
 	(tipo_estudios "universitarios")
-	(idioma "ingles")
+	(idioma1 "si")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=> 
 	(assert (ponerseContactoUniversidad "si"))
@@ -1167,7 +1167,7 @@
 	"El usuario deberia ponerse en contacto con su instituto para buscar trabajo a partir de ella"
 	(estado_actual "reglas_1")
 	(tipo_estudios "modulo")
-	(idioma "ingles")
+	(idioma1 "si")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=> 
 	(assert (ponerseContactoInstituo "si"))

@@ -20,6 +20,8 @@ import utilerias.Propiedades;
  * @author Victor
  */
 public class ControladorConocimiento {
+    private final String FICHERO_GUARDAR="log_grupoB09.txt";
+    private final String FICHERO_REGLAS="reglasB09.clp";
     private ModeloFormularios modelo;
     private Properties configuracion;
     private LanzadorJess lanzadorJess;
@@ -114,7 +116,11 @@ public class ControladorConocimiento {
                     }
                 }
             }
+            if(Reglas_1.esUsable()){
+                Reglas_1 reglas_1=new Reglas_1(valores_reglas1,FICHERO_GUARDAR, FICHERO_REGLAS);
+            }
         } catch (Exception ex) {
+            ex.printStackTrace();
             throw new Exception("Error al cargar las respuestas en JESS");
         }
     }
@@ -156,6 +162,7 @@ public class ControladorConocimiento {
             return LectorConsejos.dameConsejos();
 
         } catch (Exception ex) {
+            ex.printStackTrace();
             throw new Exception("Error al obtener asesoramiento");
         }
 
