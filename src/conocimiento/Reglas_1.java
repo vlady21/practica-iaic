@@ -22,6 +22,7 @@ public class Reglas_1 {
     private String _rutaficheroreglas="reglasB09.clp";
     private static LectorConsejos _lector=null;
     private static Rete _rete=null;
+    private static boolean _usable=false;
 
     public Reglas_1(ArrayList<String> listaValores,String rutafichero, String rutaficheroreglas) throws JessException{
         _listaValores=listaValores;
@@ -29,6 +30,7 @@ public class Reglas_1 {
         _rutaficheroreglas=rutaficheroreglas;
         _lector=new LectorConsejos();
         _rete=new Rete();
+        _usable=false;
 
         rellenarFacts();
         
@@ -59,8 +61,8 @@ public class Reglas_1 {
         _listaSlot.add("edad");
         _listaSlot.add("sexo");
         _listaSlot.add("tiene-curriculum");
-        _listaSlot.add("idioma");
-        _listaSlot.add("idioma");
+        _listaSlot.add("idioma1");
+        _listaSlot.add("idioma2");
         _listaSlot.add("interes");
         _listaSlot.add("tiene-coche");
         _listaSlot.add("carnet-conducir");
@@ -68,7 +70,6 @@ public class Reglas_1 {
         _listaSlot.add("meses-desde-ultimo-curso");
         _listaSlot.add("ultimo-trabajo");
         _listaSlot.add("tiempo-trabajando");
-        _listaSlot.add("tiempo-desempleado");
         _listaSlot.add("trabajo-no-especializado");
         _listaSlot.add("experiencia-extranjero");
         _listaSlot.add("ultima-entrevista");
@@ -107,11 +108,11 @@ public class Reglas_1 {
         if(
                 campo.equalsIgnoreCase("tipo_estudios") ||
                 campo.equalsIgnoreCase("tiempo_experiencia") ||
-                campo.equalsIgnoreCase("tiempo-desempleado") ||
                 campo.equalsIgnoreCase("edad") ||
                 campo.equalsIgnoreCase("sexo") ||
                 campo.equalsIgnoreCase("tiene-curriculum") ||
-                campo.equalsIgnoreCase("idioma") ||
+                campo.equalsIgnoreCase("idioma1") ||
+                campo.equalsIgnoreCase("idioma2") ||
                 campo.equalsIgnoreCase("interes") ||
                 campo.equalsIgnoreCase("tiene-coche") ||
                 campo.equalsIgnoreCase("carnet-conducir") ||
@@ -124,9 +125,14 @@ public class Reglas_1 {
                 campo.equalsIgnoreCase("experiencia-extranjero") ||
                 campo.equalsIgnoreCase("ultima-entrevista")
                 ){
+                _usable=true;
                 return true;
         }
         return false;
+    }
+
+    public static boolean esUsable(){
+        return _usable;
     }
 
 }
