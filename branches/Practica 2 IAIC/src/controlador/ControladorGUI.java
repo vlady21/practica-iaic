@@ -5,6 +5,7 @@
 
 package controlador;
 
+import conocimiento.ControladorConocimiento;
 import modelo.ModeloFormularios;
 
 /**
@@ -15,8 +16,34 @@ public class ControladorGUI {
 
     private ModeloFormularios modelo;
 
-    public void asesorar() {
-        throw new UnsupportedOperationException("Not yet implemented");
+    //Asesoramiento tecnico
+	public final static int TECNICO = 0;
+
+    //Asesoramiento tecnico
+	public final static int JURIDICO = 1;
+
+    //Asesoramiento tecnico
+	public final static int AFECTIVO = 2;
+
+    public String asesorar(int asesoramiento) throws Exception {
+
+        String consejo = "";
+
+        ControladorConocimiento conocimiento = new ControladorConocimiento(modelo);
+
+        switch(asesoramiento){
+            case TECNICO:
+                consejo = conocimiento.AsesoramientoTecnico();
+                break;
+            case JURIDICO:
+                consejo = conocimiento.AsesoramientoJuridico();
+                break;
+            case AFECTIVO:
+                consejo = conocimiento.AsesoramientoAfectivo();
+                break;
+        }
+
+        return consejo;
     }
 
     public void setModelo(ModeloFormularios modelo) {

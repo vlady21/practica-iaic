@@ -12,6 +12,7 @@
         <Container class="javax.swing.JTabbedPane" name="panelFormularios">
           <Properties>
             <Property name="tabPlacement" type="int" value="2"/>
+            <Property name="toolTipText" type="java.lang.String" resourceKey="panelFormularios.toolTipText"/>
             <Property name="name" type="java.lang.String" value="panelFormularios" noResource="true"/>
           </Properties>
           <AccessibilityProperties>

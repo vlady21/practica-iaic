@@ -27,6 +27,8 @@ public class VisualizadorView extends javax.swing.JFrame {
         this.texto = texto;
 
         initComponents();
+
+        this.setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to
