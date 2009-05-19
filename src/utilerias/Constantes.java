@@ -11,6 +11,9 @@ package utilerias;
  */
 public class Constantes {
 
+    //Fichero de configuracion del formulario Afectivo
+	public static String CONFIGURACION = "config/configuracion.properties";
+
     //Fichero de configuracion del formulario Tecnico
 	public static String FORMULARIO_TECNICO = "config/formularioTecnico.properties";
 

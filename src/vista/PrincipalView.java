@@ -13,6 +13,8 @@ import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import jess.JessException;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
@@ -220,9 +222,10 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios{
         mainPanel.setLayout(new javax.swing.BoxLayout(mainPanel, javax.swing.BoxLayout.LINE_AXIS));
 
         panelFormularios.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(PrincipalView.class);
+        panelFormularios.setToolTipText(resourceMap.getString("panelFormularios.toolTipText")); // NOI18N
         panelFormularios.setName("panelFormularios"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(PrincipalView.class);
         formularioTecnico.setToolTipText(resourceMap.getString("formularioTecnico.toolTipText")); // NOI18N
         formularioTecnico.setName("formularioTecnico"); // NOI18N
         formularioTecnico.setLayout(new javax.swing.BoxLayout(formularioTecnico, javax.swing.BoxLayout.LINE_AXIS));
@@ -440,8 +443,7 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios{
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAsesorarPresionado(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAsesorarPresionado
-
-        controlador.asesorar();
+        asesorar();
     }//GEN-LAST:event_botonAsesorarPresionado
 
     private void tablaTecnicaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaTecnicaMouseMoved
@@ -497,110 +499,115 @@ private void tablaAfectivoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST
 
 private void tablaTecnicaActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaTecnicaActualizar
 
-    Vector claves = modelo.getTecnico().getClaves();
-    Vector opcionesElegidas = modelo.getTecnico().getOpcionesElegidas();
+    try{
+        Vector claves = modelo.getTecnico().getClaves();
+        Vector opcionesElegidas = modelo.getTecnico().getOpcionesElegidas();
 
-    String clave;
-    String valor,valor1,valor2;
+        String clave;
+        String valor,valor1,valor2;
 
-    valor = null;
+        valor = null;
 
-    int i = 0;
-    boolean noEncontrado = true;
+        int i = 0;
+        boolean noEncontrado = true;
 
-    while(noEncontrado && i<claves.size()){
+        while(noEncontrado && i<claves.size()){
 
-        valor1 = (String) tablaTecnica.getValueAt(i, 1);
-        valor2 = (String) opcionesElegidas.get(i);
+            valor1 = (String) tablaTecnica.getValueAt(i, 1);
+            valor2 = (String) opcionesElegidas.get(i);
 
-        try{
-            if(!valor1.equals(valor2))
-            {
-                noEncontrado = false;
-                valor = valor1;
-            }else{
+            try{
+                if(!valor1.equals(valor2))
+                {
+                    noEncontrado = false;
+                    valor = valor1;
+                }else{
 
-                i++;
-            }
-        }catch(Exception e){ i++;}
-    }
+                    i++;
+                }
+            }catch(Exception e){ i++;}
+        }
 
-    clave = (String) claves.get(i);
+        clave = (String) claves.get(i);
 
-    modelo.setState(clave, valor);
+        modelo.setState(clave, valor);
+    }catch(Exception e){}
 
 }//GEN-LAST:event_tablaTecnicaActualizar
 
 private void tablaJuridicoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJuridicoActualizar
 
 
-    Vector claves = modelo.getJuridico().getClaves();
-    Vector opcionesElegidas = modelo.getJuridico().getOpcionesElegidas();
+    try{
+        Vector claves = modelo.getJuridico().getClaves();
+        Vector opcionesElegidas = modelo.getJuridico().getOpcionesElegidas();
 
-    String clave;
-    String valor,valor1,valor2;
+        String clave;
+        String valor,valor1,valor2;
 
-    valor = null;
+        valor = null;
 
-    int i = 0;
-    boolean noEncontrado = true;
+        int i = 0;
+        boolean noEncontrado = true;
 
-    while(noEncontrado && i<claves.size()){
+        while(noEncontrado && i<claves.size()){
 
-        valor1 = (String) tablaJuridico.getValueAt(i, 1);
-        valor2 = (String) opcionesElegidas.get(i);
+            valor1 = (String) tablaJuridico.getValueAt(i, 1);
+            valor2 = (String) opcionesElegidas.get(i);
 
-        try{
-            if(!valor1.equals(valor2))
-            {
-                noEncontrado = false;
-                valor = valor1;
-            }else{
+            try{
+                if(!valor1.equals(valor2))
+                {
+                    noEncontrado = false;
+                    valor = valor1;
+                }else{
 
-                i++;
-            }
-        }catch(Exception e){ i++;}
-    }
+                    i++;
+                }
+            }catch(Exception e){ i++;}
+        }
 
-    clave = (String) claves.get(i);
+        clave = (String) claves.get(i);
 
-    modelo.setState(clave, valor);
-
+        modelo.setState(clave, valor);
+    }catch(Exception e){}
 }//GEN-LAST:event_tablaJuridicoActualizar
 
 private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAfectivoActualizar
 
-    Vector claves = modelo.getAfectivo().getClaves();
-    Vector opcionesElegidas = modelo.getAfectivo().getOpcionesElegidas();
+    try{
+        Vector claves = modelo.getAfectivo().getClaves();
+        Vector opcionesElegidas = modelo.getAfectivo().getOpcionesElegidas();
 
-    String clave;
-    String valor,valor1,valor2;
+        String clave;
+        String valor,valor1,valor2;
 
-    valor = null;
+        valor = null;
 
-    int i = 0;
-    boolean noEncontrado = true;
+        int i = 0;
+        boolean noEncontrado = true;
 
-    while(noEncontrado && i<claves.size()){
+        while(noEncontrado && i<claves.size()){
 
-        valor1 = (String) tablaAfectivo.getValueAt(i, 1);
-        valor2 = (String) opcionesElegidas.get(i);
+            valor1 = (String) tablaAfectivo.getValueAt(i, 1);
+            valor2 = (String) opcionesElegidas.get(i);
 
-        try{
-            if(!valor1.equals(valor2))
-            {
-                noEncontrado = false;
-                valor = valor1;
-            }else{
+            try{
+                if(!valor1.equals(valor2))
+                {
+                    noEncontrado = false;
+                    valor = valor1;
+                }else{
 
-                i++;
-            }
-        }catch(Exception e){ i++;}
-    }
+                    i++;
+                }
+            }catch(Exception e){ i++;}
+        }
 
-    clave = (String) claves.get(i);
+        clave = (String) claves.get(i);
 
-    modelo.setState(clave, valor);
+        modelo.setState(clave, valor);
+    }catch(Exception e){}
 
 }//GEN-LAST:event_tablaAfectivoActualizar
 
@@ -639,12 +646,30 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
         
         int tam = tablaTecnica.getRowCount();
         
-        System.out.println(tam);
-        
         for(int i = 0; i<tam; i++){
 
             tablaTecnica.setValueAt(null, i, 1);
-        }    
+
+            tablaTecnicaActualizar(null);
+        }
+
+        tam = tablaJuridico.getRowCount();
+
+        for(int i = 0; i<tam; i++){
+
+            tablaJuridico.setValueAt(null, i, 1);
+
+            tablaJuridicoActualizar(null);
+        }
+
+        tam = tablaAfectivo.getRowCount();
+
+        for(int i = 0; i<tam; i++){
+
+            tablaAfectivo.setValueAt(null, i, 1);
+
+            tablaAfectivoActualizar(null);
+        }
     }
     
     public void mensaje(String titulo, String mensaje) {
@@ -846,7 +871,6 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
 
     public class Asesor extends Thread
     {
-
         @Override
        public void run()
        {
@@ -859,16 +883,45 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
                     e.printStackTrace();
                 }
 
-                if(comprobarFormulario(tablaTecnica))
+                JTable tabla = null;
+
+                switch(panelFormularios.getSelectedIndex()){
+
+                    case ControladorGUI.TECNICO:
+                        tabla = tablaTecnica;
+                        break;
+                    case ControladorGUI.JURIDICO:
+                        tabla = tablaJuridico;
+                        break;
+                    case ControladorGUI.AFECTIVO:
+                        tabla = tablaAfectivo;
+                        break;
+                }
+
+                if(comprobarFormulario(tabla))
                 {
-                    cargarFormulario(tablaTecnica,clavesTablaTecnica);
-                    
+                    //cargarFormulario(tablaTecnica,clavesTablaTecnica);
+
+                    String texto = controlador.asesorar(panelFormularios.getSelectedIndex());
+
                     status("Informacion del asesorado analizada.");
                     mensaje("Informacion analizada","Informacion del asesorado analizada.");
 
-                    InformeView informe = new InformeView(lanzadorJess);
-                    informe.setVisible(true);
+                    /*InformeView informe = new InformeView(lanzadorJess);
+                    informe.setVisible(true);*/
                     
+                    while(texto.indexOf("   ")!=-1)
+                        texto = texto.replaceAll("   ", "  ");
+
+                    texto = texto.replaceAll("  ", "\n\t");
+
+                    while(texto.indexOf("\t")!=-1)
+                        texto = texto.replaceAll("\t", "    ");
+
+                    VisualizadorView visualizador = new VisualizadorView(texto);
+                    visualizador.setVisible(true);
+                    visualizador.setAlwaysOnTop(false);
+
                 }else{
                     
                     status("Se han detectado preguntas sin respuesta.");
@@ -879,9 +932,11 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
                 //cargarFormulario(tablaAfectiva,clavesTablaAfectivo);
 
                 
-            }catch(Exception ex){
-                menError("Error respuestas", "Error al analizar respuestas: " + ex.getMessage());
-                ex.printStackTrace();
+            } catch (Exception ex) {
+
+                status(ex.getMessage());
+                menError("Error informe asesoramiento", ex.getMessage());
+
             }
 
             noFinalizar = false;

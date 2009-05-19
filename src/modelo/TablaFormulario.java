@@ -15,10 +15,10 @@ import java.util.Vector;
  */
 public class TablaFormulario {
 
-    private Vector preguntas;
+    private Vector <String>preguntas;
     private Vector respuestas;
-    private Vector claves;
-    private Vector opcionesElegidas;
+    private Vector <String>claves;
+    private Vector <String>opcionesElegidas;
 
     public TablaFormulario(){
 
