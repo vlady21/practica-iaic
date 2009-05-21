@@ -44,7 +44,7 @@ public class ControladorConocimiento {
 
         cargarConocimiento(modelo.getAfectivo());
 
-        informe = obtenerAsesoramiento(modelo.getAfectivo());
+        informe = obtenerAsesoramiento(modelo.getAfectivo(),"REGLAS_AFECTIVO");
 
         return informe;
     }
@@ -59,7 +59,7 @@ public class ControladorConocimiento {
 
         cargarConocimiento(modelo.getJuridico());
 
-        informe = obtenerAsesoramiento(modelo.getJuridico());
+        informe = obtenerAsesoramiento(modelo.getJuridico(),"REGLAS_JURIDICO");
 
         return informe;
     }
@@ -74,7 +74,7 @@ public class ControladorConocimiento {
 
         cargarConocimiento(modelo.getTecnico());
 
-        informe = obtenerAsesoramiento(modelo.getTecnico());
+        informe = obtenerAsesoramiento(modelo.getTecnico(),"REGLAS_TECNICO");
 
         return informe;
     }
@@ -138,28 +138,59 @@ public class ControladorConocimiento {
         }
     }
 
-    private String obtenerAsesoramiento(TablaFormulario tabla) throws Exception {
+    private String obtenerAsesoramiento(TablaFormulario tabla, String reglas) throws Exception {
+
+        String informe = "";
+        String consejosNuevos = "";
+        String consejosAntiguos = "";
 
         try {
-            lanzadorJess.borrarConsejos();
-
+            
             StringTokenizer estados = new StringTokenizer(propiedadesTabla.getProperty("estados"),",");
 
             while(estados.hasMoreTokens()){
 
+                consejosNuevos = "";
+                consejosAntiguos = "";
+
                 String estado=estados.nextToken();
 
+                informe = informe + "\n\t***************************************************************";
+
+                informe = informe + "\n\t* CONSEJOS DE " + estado.toUpperCase();
+
+                informe = informe + "\n\t***************************************************************";
+
+                lanzadorJess.borrarConsejos();
+
+                iniciarJess(reglas);
+
+                cargarConocimiento(tabla);
+                
                 lanzadorJess.insertaSlotValue("estado_actual", estado);
 
                 if(estado.equalsIgnoreCase("reglas_1")){
                     Reglas_1.ejecutarReglas_1();
+                    consejosNuevos = LectorConsejos.dameConsejos();
+
                 }else{
                     lanzadorJess.ejecutarJess();
+                    consejosNuevos = LectorConsejos.dameConsejos();
+
+                    while(!consejosNuevos.equals(consejosAntiguos)){
+                        consejosAntiguos = consejosNuevos;
+                        lanzadorJess.borrarConsejos();
+                        lanzadorJess.ejecutarJess();
+                        consejosNuevos = LectorConsejos.dameConsejos();
+                        if(consejosNuevos.equals("")||consejosNuevos.length()<consejosAntiguos.length())
+                            consejosNuevos = consejosAntiguos;
+                    }
                 }
 
+                informe = informe + "\n" + consejosNuevos;
             }
 
-            return LectorConsejos.dameConsejos();
+            return informe;
 
         } catch (Exception ex) {
             ex.printStackTrace();
