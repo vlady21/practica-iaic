@@ -787,10 +787,6 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
                 }
             }
 
-            System.out.println("clave: " + clave);
-
-            System.out.println("valor: " + valor);
-
         }
 
         Reglas_1 reglas_1=new Reglas_1(valores_reglas1,FICHERO_GUARDAR, FICHERO_REGLAS);
@@ -803,8 +799,6 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
         String valor;
         
         int tam = tabla.getRowCount();
-        
-        System.out.println(tam);
         
         for(int i = 0; i<tam&&result; i++){
 
@@ -860,8 +854,6 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
         int tam = jTable.getRowCount();
         Vector opciones = tabla.getOpcionesElegidas();
 
-        System.out.println(tam);
-        
         for(int i = 0; i<tam; i++){
 
             jTable.setValueAt(opciones.elementAt(i), i, 1);
