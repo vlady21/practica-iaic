@@ -206,15 +206,11 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios,
                 FileInputStream  out = new FileInputStream(f);
                 ObjectInputStream  s = new ObjectInputStream (out);
 
-                modelo = new ModeloFormularios();
-
                 modelo.setTecnico((TablaFormulario)s.readObject());
                 modelo.setJuridico((TablaFormulario)s.readObject());
                 modelo.setAfectivo((TablaFormulario)s.readObject());
 
                 modelo.setCambio();
-
-                modelo.attach(this);
 
                 modelo.notifyObservers();
 
