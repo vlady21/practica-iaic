@@ -35,10 +35,8 @@ public class LectorConsejos {
             }
             bf.close();
             fr.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(LectorConsejos.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (IOException ex) {
-                Logger.getLogger(LectorConsejos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            
         }
     }
 

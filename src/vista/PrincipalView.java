@@ -43,13 +43,18 @@ import javax.swing.table.TableColumn;
 import modelo.IZObservadorFormularios;
 import modelo.ModeloFormularios;
 import modelo.TablaFormulario;
+import utilerias.Constantes;
+import utilerias.Propiedades;
 
 /**
  * The application's main frame.
  */
 public class PrincipalView extends FrameView implements IZObservadorFormularios{
-    private final String FICHERO_GUARDAR="log_grupoB09.txt";
-    private final String FICHERO_REGLAS="reglasB09.clp";
+
+    private Properties configuracion = Propiedades.getPropiedades(Constantes.CONFIGURACION);
+    private String FICHERO_GUARDAR=configuracion.getProperty("FICHERO_GUARDAR");
+    private String FICHERO_REGLAS=configuracion.getProperty("REGLAS_TECNICO");
+
     static Image imagenTray;
     static TrayIcon trayIcon;
     SystemTray tray;
@@ -910,7 +915,7 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
                     while(texto.indexOf("\t")!=-1)
                         texto = texto.replaceAll("\t", "    ");
 
-                    VisualizadorView visualizador = new VisualizadorView(texto);
+                    VisualizadorView visualizador = new VisualizadorView(texto,trayIcon);
                     visualizador.setVisible(true);
                     visualizador.setAlwaysOnTop(false);
 

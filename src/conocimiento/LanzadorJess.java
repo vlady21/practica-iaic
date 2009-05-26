@@ -5,20 +5,24 @@
 
 package conocimiento;
 
+import java.util.Properties;
 import jess.Fact;
 import jess.JessException;
 import jess.RU;
 import jess.Rete;
 import jess.Value;
+import utilerias.Constantes;
 import utilerias.LectorConsejos;
+import utilerias.Propiedades;
 
 /**
  *
  * @author Jose Miguel
  */
 public class LanzadorJess {
-    private String _rutaficheroconsejos="log_grupoB09.txt";
-    private String _rutaficheroreglas="reglasB09.clp";
+    private Properties configuracion = Propiedades.getPropiedades(Constantes.CONFIGURACION);
+    private String _rutaficheroconsejos=configuracion.getProperty("FICHERO_GUARDAR");
+    private String _rutaficheroreglas=configuracion.getProperty("REGLAS_TECNICO");
     private LectorConsejos _lector=null;
 	private	Fact _fact=null;
     private Rete _rete=null;

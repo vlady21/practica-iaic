@@ -20,8 +20,6 @@ import utilerias.Propiedades;
  * @author Victor
  */
 public class ControladorConocimiento {
-    private final String FICHERO_GUARDAR="log_grupoB09.txt";
-    private final String FICHERO_REGLAS="reglasB09.clp";
     private ModeloFormularios modelo;
     private Properties configuracion;
     private LanzadorJess lanzadorJess;
@@ -117,7 +115,7 @@ public class ControladorConocimiento {
                 }
             }
             if(Reglas_1.esUsable()){
-                Reglas_1 reglas_1=new Reglas_1(valores_reglas1,FICHERO_GUARDAR, FICHERO_REGLAS);
+                Reglas_1 reglas_1=new Reglas_1(valores_reglas1,configuracion.getProperty("FICHERO_GUARDAR"), configuracion.getProperty("REGLAS_TECNICO"));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -155,12 +153,6 @@ public class ControladorConocimiento {
 
                 String estado=estados.nextToken();
 
-                informe = informe + "\n\t***************************************************************";
-
-                informe = informe + "\n\t* CONSEJOS DE " + estado.toUpperCase();
-
-                informe = informe + "\n\t***************************************************************";
-
                 lanzadorJess.borrarConsejos();
 
                 iniciarJess(reglas);
@@ -187,7 +179,21 @@ public class ControladorConocimiento {
                     }
                 }
 
-                informe = informe + "\n" + consejosNuevos;
+                if(!consejosNuevos.trim().equals(""))
+                {
+                    informe = informe + " \n";
+
+                    informe = informe + "\n\t***************************************************************";
+
+                    informe = informe + "\n\t* CONSEJOS DE " + estado.toUpperCase() +".";
+
+                    informe = informe + "\n\t***************************************************************";
+
+                    informe = informe + " \n";
+
+                    informe = informe + "\n" + consejosNuevos;
+                }
+
             }
 
             return informe;
