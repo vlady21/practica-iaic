@@ -11,6 +11,7 @@
 
 package vista;
 
+import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.datatransfer.Clipboard;
@@ -48,7 +49,20 @@ public class VisualizadorView extends javax.swing.JFrame {
 
         initComponents();
 
+        this.setMaximumSize(new Dimension(640,480));
+
+        this.setSize(new Dimension(640,480));
+
+        this.setPreferredSize(new Dimension(640,480));
+
         this.setLocationRelativeTo(null);
+
+        this.setMaximumSize(new Dimension(640,480));
+
+        this.setSize(new Dimension(640,480));
+
+        this.setPreferredSize(new Dimension(640,480));
+
     }
 
     private String formatear(String texto) {
@@ -246,6 +260,7 @@ public class VisualizadorView extends javax.swing.JFrame {
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(vista.Principal.class).getContext().getResourceMap(VisualizadorView.class);
         setTitle(resourceMap.getString("Form.title")); // NOI18N
+        setIconImage(getIconImage());
         setName("Form"); // NOI18N
 
         jToolBar1.setRollover(true);
@@ -304,9 +319,11 @@ public class VisualizadorView extends javax.swing.JFrame {
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.NORTH);
 
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(800, 600));
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
         jTextPane1.setEditable(false);
+        jTextPane1.setMaximumSize(new java.awt.Dimension(800, 600));
         jTextPane1.setName("jTextPane1"); // NOI18N
         jTextPane1.setText(texto);
         jScrollPane1.setViewportView(jTextPane1);
