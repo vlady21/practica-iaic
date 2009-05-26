@@ -5,7 +5,9 @@
 
 package modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Vector;
 import utilerias.Constantes;
 import utilerias.Propiedades;
 
@@ -13,9 +15,9 @@ import utilerias.Propiedades;
  *
  * @author Victor
  */
-public class ModeloFormularios implements IZModeloFormularios {
+public class ModeloFormularios implements IZModeloFormularios, Serializable {
 
-    public ArrayList<IZObservadorFormularios> mObserver;
+    public Vector<IZObservadorFormularios> mObserver;
 
     private TablaFormulario tblTecnico;
     private TablaFormulario tblJuridico;
@@ -27,7 +29,7 @@ public class ModeloFormularios implements IZModeloFormularios {
 
     public ModeloFormularios(){
 
-        mObserver = new ArrayList<IZObservadorFormularios>();
+        mObserver = new Vector<IZObservadorFormularios>();
         modificadoTecnico = false;
         modificadoJuridico = false;
         modificadoAfectivo = false;
@@ -35,6 +37,24 @@ public class ModeloFormularios implements IZModeloFormularios {
         tblTecnico = new TablaFormulario(Propiedades.getPropiedades(Constantes.FORMULARIO_TECNICO));
         tblJuridico = new TablaFormulario(Propiedades.getPropiedades(Constantes.FORMULARIO_JURIDICO));
         tblAfectivo = new TablaFormulario(Propiedades.getPropiedades(Constantes.FORMULARIO_AFECTIVO));
+    }
+
+    public void setCambio(){
+        modificadoTecnico = true;
+        modificadoJuridico = true;
+        modificadoAfectivo = true;
+    }
+
+    public void setTecnico(TablaFormulario tabla){
+        tblTecnico = tabla;
+    }
+    
+    public void setJuridico(TablaFormulario tabla){
+        tblJuridico = tabla;
+    }
+    
+    public void setAfectivo(TablaFormulario tabla){
+        tblAfectivo = tabla;
     }
 
     public TablaFormulario getTecnico () {

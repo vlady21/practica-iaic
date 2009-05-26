@@ -5,6 +5,7 @@
 
 package modelo;
 
+import java.io.Serializable;
 import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -13,7 +14,7 @@ import java.util.Vector;
  *
  * @author Victor
  */
-public class TablaFormulario {
+public class TablaFormulario implements Serializable{
 
     private Vector <String>preguntas;
     private Vector respuestas;

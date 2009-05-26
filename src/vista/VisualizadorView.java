@@ -346,7 +346,6 @@ public class VisualizadorView extends javax.swing.JFrame {
 
             } catch (Exception e) {
 
-
                 trayIcon.displayMessage("Informe no guardado", "Error al guardar el informe en " + arch, TrayIcon.MessageType.ERROR);
 
             } finally {
