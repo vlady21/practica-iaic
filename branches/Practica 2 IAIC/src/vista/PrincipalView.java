@@ -24,7 +24,16 @@ import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.StringTokenizer;
@@ -34,7 +43,9 @@ import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -49,7 +60,7 @@ import utilerias.Propiedades;
 /**
  * The application's main frame.
  */
-public class PrincipalView extends FrameView implements IZObservadorFormularios{
+public class PrincipalView extends FrameView implements IZObservadorFormularios, Serializable{
 
     private Properties configuracion = Propiedades.getPropiedades(Constantes.CONFIGURACION);
     private String FICHERO_GUARDAR=configuracion.getProperty("FICHERO_GUARDAR");
@@ -178,12 +189,95 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios{
         Principal.getApplication().show(aboutBox);
     }
 
+    private void abrir() {
+
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setMultiSelectionEnabled(false);
+        jFileChooser.setCurrentDirectory(new File("."));
+        jFileChooser.setFileFilter(new FiltroASR());
+
+		int state = jFileChooser.showOpenDialog(mainPanel);
+
+		if (state == JFileChooser.APPROVE_OPTION) {
+			File f = jFileChooser.getSelectedFile();
+
+            try{
+
+                FileInputStream  out = new FileInputStream(f);
+                ObjectInputStream  s = new ObjectInputStream (out);
+
+                modelo = new ModeloFormularios();
+
+                modelo.setTecnico((TablaFormulario)s.readObject());
+                modelo.setJuridico((TablaFormulario)s.readObject());
+                modelo.setAfectivo((TablaFormulario)s.readObject());
+
+                modelo.setCambio();
+
+                modelo.attach(this);
+
+                modelo.notifyObservers();
+
+                s.close();
+
+                trayIcon.displayMessage("Formularios cargados correctamente", "Formularios cargados correctamente del archivo: " + f.getAbsolutePath(), TrayIcon.MessageType.INFO);
+
+            }catch(Exception e){
+
+                trayIcon.displayMessage("Error al cargar formularios", "Error al cargar formularios del archivo " + f.getAbsolutePath(), TrayIcon.MessageType.ERROR);
+
+                e.printStackTrace();
+            }
+		}
+
+    }
+
     private void cargarJess() {
         try {
             lanzadorJess = new LanzadorJess(FICHERO_GUARDAR, FICHERO_REGLAS);
             lanzadorJess.arrancarJess();
         } catch (JessException ex) {
             menError("Error Jess", "Error al lanzar el modulo de JESS");
+        }
+
+    }
+
+    private void guardar() {
+
+        File archivo=new File("");
+        String arch = null;
+        JFileChooser chooser = new JFileChooser(archivo.getAbsolutePath());
+        chooser.setFileFilter(new FiltroASR());
+        chooser.setCurrentDirectory(archivo);
+
+        //muestra la ventana de dialogo y asigna el valor del boton pulsado.
+        int returnVal = chooser.showSaveDialog(chooser);
+
+        //si se pulsa el boton guardar.
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+            archivo=chooser.getSelectedFile();
+            if(!archivo.getName().endsWith(".asr"))
+             arch = archivo.getAbsolutePath() + ".asr";
+            else
+             arch = archivo.getAbsolutePath();
+
+            try{
+
+                FileOutputStream out = new FileOutputStream(arch);
+                ObjectOutputStream s = new ObjectOutputStream(out);
+                s.writeObject(modelo.getTecnico());
+                s.writeObject(modelo.getJuridico());
+                s.writeObject(modelo.getAfectivo());
+                s.close();
+
+                trayIcon.displayMessage("Formularios guardados correctamente", "Formularios guardados correctamente en el archivo: " + arch, TrayIcon.MessageType.INFO);
+
+            }catch(Exception e){
+
+                trayIcon.displayMessage("Error al guardar formularios", "Error al guardar formularios en el archivo " + arch, TrayIcon.MessageType.ERROR);
+
+                e.printStackTrace();
+            }
         }
 
     }
@@ -220,6 +314,8 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios{
         progressBar = new javax.swing.JProgressBar();
         toolBar = new javax.swing.JToolBar();
         botonAsesorar = new javax.swing.JButton();
+        botonAbrir = new javax.swing.JButton();
+        botonGuardar = new javax.swing.JButton();
         botonReiniciar = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
 
@@ -406,6 +502,44 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios{
             }
         });
         toolBar.add(botonAsesorar);
+
+        botonAbrir.setIcon(resourceMap.getIcon("botonAbrir.icon")); // NOI18N
+        botonAbrir.setText(resourceMap.getString("botonAbrir.text")); // NOI18N
+        botonAbrir.setToolTipText(resourceMap.getString("botonAbrir.toolTipText")); // NOI18N
+        botonAbrir.setFocusable(false);
+        botonAbrir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonAbrir.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        botonAbrir.setMaximumSize(new java.awt.Dimension(60, 60));
+        botonAbrir.setMinimumSize(new java.awt.Dimension(60, 60));
+        botonAbrir.setName("botonAbrir"); // NOI18N
+        botonAbrir.setPreferredSize(new java.awt.Dimension(60, 60));
+        botonAbrir.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        botonAbrir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botonAbrir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botonAbrirMousePressed(evt);
+            }
+        });
+        toolBar.add(botonAbrir);
+
+        botonGuardar.setIcon(resourceMap.getIcon("botonGuardar.icon")); // NOI18N
+        botonGuardar.setText(resourceMap.getString("botonGuardar.text")); // NOI18N
+        botonGuardar.setToolTipText(resourceMap.getString("botonGuardar.toolTipText")); // NOI18N
+        botonGuardar.setFocusable(false);
+        botonGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonGuardar.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        botonGuardar.setMaximumSize(new java.awt.Dimension(60, 60));
+        botonGuardar.setMinimumSize(new java.awt.Dimension(60, 60));
+        botonGuardar.setName("botonGuardar"); // NOI18N
+        botonGuardar.setPreferredSize(new java.awt.Dimension(60, 60));
+        botonGuardar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        botonGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        botonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botonGuardarMousePressed(evt);
+            }
+        });
+        toolBar.add(botonGuardar);
 
         botonReiniciar.setIcon(resourceMap.getIcon("botonReiniciar.icon")); // NOI18N
         botonReiniciar.setText(resourceMap.getString("botonReiniciar.text")); // NOI18N
@@ -616,8 +750,20 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
 
 }//GEN-LAST:event_tablaAfectivoActualizar
 
+private void botonAbrirMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAbrirMousePressed
+
+    abrir();
+}//GEN-LAST:event_botonAbrirMousePressed
+
+private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMousePressed
+
+    guardar();
+}//GEN-LAST:event_botonGuardarMousePressed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAbrir;
     private javax.swing.JButton botonAsesorar;
+    private javax.swing.JButton botonGuardar;
     private javax.swing.JButton botonReiniciar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JPanel formularioAfectivo;
@@ -705,14 +851,6 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
 
         PopupMenu menu = new PopupMenu();
 
-        MenuItem reiniciarItem = new MenuItem("Reiniciar");
-        reiniciarItem.addActionListener(new ActionListener() {
-          public void actionPerformed(ActionEvent e) {
-            reiniciar();
-          }
-        });
-        menu.add(reiniciarItem);
-
         MenuItem asesorarItem = new MenuItem("Obtener asesoramiento");
         asesorarItem.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
@@ -720,6 +858,30 @@ private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
           }
         });
         menu.add(asesorarItem);
+
+        MenuItem abrirItem = new MenuItem("Abrir Formularios");
+        abrirItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            abrir();
+          }
+        });
+        menu.add(abrirItem);
+
+        MenuItem guardarItem = new MenuItem("Guardar Formularios");
+        abrirItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            guardar();
+          }
+        });
+        menu.add(guardarItem);
+
+        MenuItem reiniciarItem = new MenuItem("Reiniciar");
+        reiniciarItem.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            reiniciar();
+          }
+        });
+        menu.add(reiniciarItem);
 
         MenuItem salirItem = new MenuItem("Salir");
         salirItem.addActionListener(new ActionListener() {
