@@ -68,7 +68,7 @@
 	(slot tipo_trabajador)
 	(slot baja)
 	(slot grupo (default "0"))
-	(slot tipo_contrato)
+	(slot contrato)
 	(slot despedido)
 	(slot anios)
     
@@ -247,7 +247,7 @@
 ;
 ;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
 ;			¿Que tipo de contrato tiene/tenia?
-;				- tipo_contrato = ["indefinido", "temporal"]
+;				- contrato = ["indefinido", "temporal"]
 ;			¿Ha sido despedido?
 ;				- despedido = ["si", "no"]
 ;			¿Años trabajados?
@@ -255,9 +255,9 @@
 ;-------------------------------------------------------------------------------------------------------------------
 
 (defrule cobrar_paro1 "Tiene 4 meses por anio"
-    ; SI (estado_actual=cobrar_paro & tipo_contrato=indefinido & anios>0) 
+    ; SI (estado_actual=cobrar_paro & contrato=indefinido & anios>0) 
     ; 	ENTONCES mostrar consejo
-	?dat <- (datos (estado_actual "cobrar_paro")(despedido "si") (tipo_contrato "indefinido") (anios ?anios &:(> ?anios 0)) (ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
+	?dat <- (datos (estado_actual "cobrar_paro")(despedido "si") (contrato "indefinido") (anios ?anios &:(> ?anios 0)) (ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
     => 
     
     ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
@@ -270,9 +270,9 @@
 )
 
 (defrule cobrar_paro2 "Finiquito indefinido"
-    ; SI (estado_actual=cobrar_paro & tipo_contrato=indefinido & anios=0) 
+    ; SI (estado_actual=cobrar_paro & contrato=indefinido & anios=0) 
     ; 	ENTONCES mostrar consejo
-	?dat <- (datos (estado_actual "cobrar_paro") (despedido "si") (tipo_contrato "indefinido") (anios ?anios &:(= ?anios 0)) (ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
+	?dat <- (datos (estado_actual "cobrar_paro") (despedido "si") (contrato "indefinido") (anios ?anios &:(= ?anios 0)) (ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
     => 
     
     ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
@@ -285,9 +285,9 @@
 )
 
 (defrule cobrar_paro3 "Finiquito temporal"
-    ; SI (estado_actual=cobrar_paro & tipo_contrato=temporal) 
+    ; SI (estado_actual=cobrar_paro & contrato=temporal) 
     ; 	ENTONCES mostrar consejo
-	?dat <- (datos (estado_actual "cobrar_paro")(despedido "si") (tipo_contrato "temporal")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
+	?dat <- (datos (estado_actual "cobrar_paro")(despedido "si") (contrato "temporal")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
     => 
     
     ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)

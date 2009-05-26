@@ -18,6 +18,7 @@ import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.text.MessageFormat;
 import java.util.StringTokenizer;
 import javax.swing.JFileChooser;
 import utilerias.PrintText;
@@ -379,9 +380,7 @@ public class VisualizadorView extends javax.swing.JFrame {
 
     private void imprimir(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimir
         try {
-
-            String impreso = formatear(info);
-            PrintText.imprimir(impreso);
+            jTextPane1.print(new MessageFormat("Consejos del Asesor Laboral"), new MessageFormat("Página - {0}"));
         } catch (Exception ex) {
             trayIcon.displayMessage("Error impresion", "Error al imprimir el informe " + ex.getMessage(), TrayIcon.MessageType.ERROR);
         }
