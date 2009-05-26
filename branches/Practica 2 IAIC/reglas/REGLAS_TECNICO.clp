@@ -137,7 +137,7 @@
     ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Puede buscar empleo en el INEM o en la prensa.
+        Puede buscar empleo en el INEM o en la prensa. 
         Si lo que desea es dedicarse a la investigación puede ponerse en contacto con 
         cualquier universidad y que le informe de los grupos de investigación que tienen 
         actualmente, de todas formas al desear una beca, puede mirar en la página web del 
@@ -159,7 +159,7 @@
     ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Puede buscar empleo en el INEM o en la prensa.
+        Puede buscar empleo en el INEM o en la prensa. 
         
      	" crlf)
     (close ?fichero)    
@@ -196,36 +196,36 @@
         de Empleo (I.N.E.M.), en cuyas oficinas puedes inscribirte como demandante activo en 
         búsqueda de empleo, debiéndolo de hacer en aquella que más cerca se encuentre de tu 
         domicilio o localidad. Este paso es imprescindible para acceder a las ofertas de trabajo 
-        que se canalizan a través de este organismo.
-        
+        que se canalizan a través de este organismo. 
+         
 		¿Por qué puede ser interesante estar inscrito en él? porque es un espacio de búsqueda 
-        que te ofrece:
-			•	ENTRAR EN PROCESOS DE SELECCIÓN. 
-			•	LA POSIBILIDAD DE CONSEGUIR ORIENTACIÓN PROFESIONAL. 
-			•	REALIZAR CURSOS DE FORMACIÓN OCUPACIONAL DEL I.N.E.M. U OTROS ORGANISMOS. 
-			•	QUE TE INCLUYAN EN PROGRAMAS ESPECÍFICOS DE BÚSQUEDA DE EMPLEO
-        
+        que te ofrece:   
+			•	ENTRAR EN PROCESOS DE SELECCIÓN.   
+			•	LA POSIBILIDAD DE CONSEGUIR ORIENTACIÓN PROFESIONAL.   
+			•	REALIZAR CURSOS DE FORMACIÓN OCUPACIONAL DEL I.N.E.M. U OTROS ORGANISMOS.  
+			•	QUE TE INCLUYAN EN PROGRAMAS ESPECÍFICOS DE BÚSQUEDA DE EMPLEO.   
+         
 		Para registrarte como demandante debes llevar el carnet de identidad, y tu cartilla o 
         número de la Seguridad Social (lo tendrás en caso de haber trabajado con anterioridad), 
         así como las justificaciones académicas y profesionales. Como demandante rellenarás una 
         solicitud que se tramita mediante una entrevista personalizada. Deberías ir con una 
         orientación clara del sector profesional o de las actividades en las que te vayas a 
         inscribir. Si no la tuvieras, pídeles asesoramiento, están suficientemente preparados 
-        y disponen de la información para orientarte.
+        y disponen de la información para orientarte.  
         
-		Tienes dos formas de inscribirte en este organismo:
-			•	COMO CUALQUIER OTRO TRABAJADOR 
-			•	EN EL REGISTRO DE MINUSVÁLIDOS
-        
+		Tienes dos formas de inscribirte en este organismo:    
+			•	COMO CUALQUIER OTRO TRABAJADOR.    
+			•	EN EL REGISTRO DE MINUSVÁLIDOS.   
+         
 		Muchas personas con discapacidad de las que buscan trabajo se inscriben como demandantes 
         no discapacitados, porque piensan que si no, les puede restar posibilidades de encontrar 
-        un empleo.
-        
+        un empleo.  
+         
 		O bien te puedes inscribir en el registro de minusválidos. Lo más importante de esto es 
         que hay empresas que solicitan expresamente trabajadores con algún tipo de discapacidad 
         a este organismo. Para inscribirse en este registro, hay que presentar el Certificado 
-        Oficial de Minusvalía.
-        
+        Oficial de Minusvalía.  
+         
 		Una vez inscrito como demandante de empleo en tu oficina más cercana (la que te corresponde), 
         debes presentarte periódicamente en la fecha que aparece en tu tarjeta de demanda. Debes 
         renovarla en los días exactos indicados y acudir a la oficina de empleo cuando previamente 
@@ -233,27 +233,27 @@
         que en algunos programas o puestos es en sí un criterio añadido de selección, así como todos 
         los derechos derivados de tu inscripción. Debes comunicarles todos los cambios que consideres 
         importantes a nivel formativo y profesional que te puedan ayuda a encontrar trabajo.
-        
+         
 		Existen dos acciones y actitudes a la hora de estar inscrito en el I.N.E.M. para sacar el 
-        máximo beneficio o provecho:
+        máximo beneficio o provecho:   
         
-		ACCION ACTIVA Y ACTITUD POSITIVA
-			•	Realizar cursos de formación ocupacional 
-			•	Solicitar información y orientación laboral 
-			•	Preguntar por las ofertas actuales 
-			•	Pasarse periódicamente por la oficina
-        
-		ACCION O ACTITUD PASIVA  
-			•	Presentarse cuando señala la tarjeta de demanda 
-			•	Presentarse sólo cuando se es requerido 
-			•	No solicitar información
-        
+		ACCION ACTIVA Y ACTITUD POSITIVA:   
+			•	Realizar cursos de formación ocupacional.   
+			•	Solicitar información y orientación laboral.   
+			•	Preguntar por las ofertas actuales.   
+			•	Pasarse periódicamente por la oficina.  
+          
+		ACCION O ACTITUD PASIVA:   
+			•	Presentarse cuando señala la tarjeta de demanda.   
+			•	Presentarse sólo cuando se es requerido.   
+			•	No solicitar información.   
+          
 		De ti depende que emprendas una acción u otra, nosotros te recomendamos que emprendas la 
         primera. Acércate siempre que puedas o quieras, hay una sección de demandas actuales, 
         solicítalas, no te dé vergüenza el solicitar cuanta información creas necesaria para ti. 
         Por último, recordarte que estar inscrito como demandante de empleo en la oficina del 
         I.N.E.M. es un requisito previo para poder ser contratado y si ya estás trabajando puedes 
-        inscribirte como demandante de mejora de empleo.
+        inscribirte como demandante de mejora de empleo.  
         
      	" crlf)
     (close ?fichero)    
@@ -271,56 +271,57 @@
         Los medios de comunicación (sobre todo la prensa escrita) constituyen otra fuente de información
         valiosa en la búsqueda de empleo. En ellos puedes encontrar información interesante acerca del
         mercado laboral, ofertas de puestos de trabajo, actividades empresariales de nueva creación, 
-        nuevas ideas, etcétera. 
-        
+        nuevas ideas, etcétera.  
+         
 		En la prensa diaria aparecen anuncios de ofertas y demandas de trabajo, no sólo diariamente, 
         sino que algunos periódicos los concentran los fines de semana, sobre todo el domingo, como por 
         ejemplo: ABC, EL PAÍS (ambos de tirada nacional). Es otro espacio de búsqueda de empleo que 
-        puedes y debes utilizar.
-        
+        puedes y debes utilizar. 
+         
 		Para muchas empresas la prensa es el canal más habitual para captar a sus trabajadores. Normalmente 
         son empresas especializadas en selección de personal las que ponen los anuncios. Los perfiles son 
-        predefinidos y dan como resultado respuestas masivas.
-        
+        predefinidos y dan como resultado respuestas masivas. 
+         
 		Debes acostumbrarte a saber cuando salen y en que periódicos se concentra el mayor numero de ofertas.
 			
-        	ANUNCIOS EN LA PRENSA (OFERTAS):  
-				•	TIRADA O AMBITO LOCAL: 
-					o	Empresas ubicadas en tu zona. 
-        
-				•	TIRADA O AMBITO NACIONAL: 
-					o	Oferta más amplia y diversificada. 
-					o	Mas información sobre el mercado laboral en general 
-					o	Ofertas fuera de tu lugar de residencia.
-        
-				•	REVISTAS ESPECIALIZADAS: 
-					o	Información específica y bolsa de empleo.
-        
-			Ante una oferta interesante:
-				•	Responde rápidamente (en el plazo de cinco días). 
-				•	Envía una carta de presentación y el curriculum vitae
-        
+        	ANUNCIOS EN LA PRENSA (OFERTAS):   
+				•	TIRADA O AMBITO LOCAL:   
+					o	Empresas ubicadas en tu zona.  
+           
+				•	TIRADA O AMBITO NACIONAL:   
+					o	Oferta más amplia y diversificada.   
+					o	Mas información sobre el mercado laboral en general.  
+					o	Ofertas fuera de tu lugar de residencia.  
+           
+				•	REVISTAS ESPECIALIZADAS:   
+					o	Información específica y bolsa de empleo.  
+           
+			Ante una oferta interesante:  
+				•	Responde rápidamente (en el plazo de cinco días).   
+				•	Envía una carta de presentación y el curriculum vitae.  
+          
 		No te desanimes si crees no cumplir alguno de los requisitos exigidos. Piensa que la mayoría de las 
         demandas conlleva procesos de selección personalizados (entrevista personal). Puedes destacar por 
         otras cualidades de las que no eras consciente y que no están expuestas en el anuncio. Las personas 
-        que logran superar la entrevista personal tienen que superar a su vez un periodo de prueba.
-        
+        que logran superar la entrevista personal tienen que superar a su vez un periodo de prueba. 
+         
 		Recuerda que también puedes acceder o informarte por este canal sobre las convocatorias de empleo 
-        público-oposiciones, contrataciones laborales, en prácticas, etcétera.
-        
+        público-oposiciones, contrataciones laborales, en prácticas, etcétera. 
+         
 		Puedes utilizar este medio para ofrecer tus servicios profesionales (puedes crear tu demanda). Es otra 
         vía que te ofrece el mercado para poder acceder a un puesto de trabajo. Los pasos que debes seguir si 
-        optas por este caso serian:
-			1.	Saber lo que quieres: cómo hacerlo, que deberías poner, y que puedes o deseas conseguir. 
-			2.	Selecciona el medio o los medios de comunicación más acordes con lo que deseas para tu anuncio. 
+        optas por este caso serian:   
+             
+			1.	Saber lo que quieres: cómo hacerlo, que deberías poner, y que puedes o deseas conseguir.   
+			2.	Selecciona el medio o los medios de comunicación más acordes con lo que deseas para tu anuncio   
         		Esto dependerá de tus intereses y objetivos, no descartes el hacerlo en los de gran difusión 
         		(aunque su coste sea superior que en los locales) o tal vez, en aquellos de difusión especializada, 
-        		pero de menor divulgación. 
+        		pero de menor divulgación.   
 			3.	Crea un buen anuncio, en el que de manera atractiva y sencilla ofertes tus servicios. Intenta ser 
-        		original, pero teniendo en cuenta la sencillez y la claridad en el mismo. 
-			4.	Debes estar preparado por si te llaman para salir bien del proceso de selección.
-        
-     	" crlf)
+        		original, pero teniendo en cuenta la sencillez y la claridad en el mismo.   
+			4.	Debes estar preparado por si te llaman para salir bien del proceso de selección.    
+          
+     	" crlf) 
     (close ?fichero)    
 )
 
@@ -371,7 +372,7 @@
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Con los conocimientos de investigación y las " ?tiempo_libre " horas de las que dispone, le interesaría 
-        buscar un contrato que sea una beca de investigación.
+        buscar un contrato que sea una beca de investigación. 
         
      	" crlf)
     (close ?fichero)  
@@ -386,7 +387,7 @@
     ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Le interesa un contrato de beca, el cual sea flexible para poder asistir a clase.
+        Le interesa un contrato de beca, el cual sea flexible para poder asistir a clase. 
         
      	" crlf)
     (close ?fichero)  
@@ -431,7 +432,7 @@
     ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Aunque le interesaría una beca, con el tiempo libre que dispone, puede aceptar un trabajo a media jornada.
+        Aunque le interesaría una beca, con el tiempo libre que dispone, puede aceptar un trabajo a media jornada. 
         
      	" crlf)
     (close ?fichero)  

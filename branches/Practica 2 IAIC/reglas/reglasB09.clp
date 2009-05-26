@@ -2,8 +2,8 @@
 ; GRUPO B09
 ;
 ;	AUTORES:
-;		- José Miguel Guerrero Hernández
-;		- Víctor Adail Ferrer
+;		- Josï¿½ Miguel Guerrero Hernï¿½ndez
+;		- Vï¿½ctor Adail Ferrer
 ;
 ; Se ha definido una plantilla con los datos que utilizaremos para nuestras reglas.
 ; Aquellos que tienen un valor default, no son necesario asignarles valores, todos 
@@ -51,8 +51,8 @@
 ;	rete.executeCommand("(run)");
 ;
 ;	Para cualquier duda o consulta contactar con:
-;		- jomy.mc@gmail.com (José Miguel)
-;		- lolken@gmail.com 	(Víctor)
+;		- jomy.mc@gmail.com (Josï¿½ Miguel)
+;		- lolken@gmail.com 	(Vï¿½ctor)
 ;
 
 
@@ -60,7 +60,7 @@
     
 	; variable general para la seleccion de la pregunta
     (slot estado_actual)
-    (slot ruta_fichero_salida (default "log_grupoB09.txt"))        
+    (slot ruta_fichero_salida (default "reglas/log_grupoB09.txt"))
     (slot fichero_salida (default "ficheroGuardar"))   
     
     ; variables del aspecto tecnico
@@ -101,21 +101,21 @@
 ; ****************************************
 
 ;-------------------------------------------------------------------------------------------------------------------
-; 	PREGUNTA A LA QUE RESPONDE: ¿Donde buscar informacion?
+; 	PREGUNTA A LA QUE RESPONDE: ï¿½Donde buscar informacion?
 ;
 ;	DATOS ENTRADA:
 ;		- estado_actual = "busqueda" (asignacion por defecto)
 ;
 ;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
-;			¿Que estudios posee?
+;			ï¿½Que estudios posee?
 ;				- tipo_estudios = ["universitarios", "no_universitarios"]
-;			¿Que tipo de conocimiento posee?
+;			ï¿½Que tipo de conocimiento posee?
 ;				- conocimiento = ["investigacion", "basico"]
-;			¿Que tipo de contrato desea?
+;			ï¿½Que tipo de contrato desea?
 ;				- tipo_contrato = ["beca", "jornada"]
-;			¿Desea informacion adicional?
+;			ï¿½Desea informacion adicional?
 ;				- desea_informacion = ["si", "no"]
-;			¿Lee la prensa?
+;			ï¿½Lee la prensa?
 ;				- lee_prensa = ["si", "no"]
 ;-------------------------------------------------------------------------------------------------------------------
 
@@ -139,14 +139,14 @@
     ;si cumple los requisitos puede buscar en la prensa o en el inem (buscar_prensa=si & buscar_inem=si)
     (modify ?dat (buscar_prensa "si")(buscar_inem "si"))
     
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Puede buscar empleo en el INEM o en la prensa.
-        Si lo que desea es dedicarse a la investigación puede ponerse en contacto con 
-        cualquier universidad y que le informe de los grupos de investigación que tienen 
-        actualmente, de todas formas al desear una beca, puede mirar en la página web del 
-        ministerio de ciencia e innovación (http://web.micinn.es/contenido.asp).
+        Si lo que desea es dedicarse a la investigaciï¿½n puede ponerse en contacto con 
+        cualquier universidad y que le informe de los grupos de investigaciï¿½n que tienen 
+        actualmente, de todas formas al desear una beca, puede mirar en la pï¿½gina web del 
+        ministerio de ciencia e innovaciï¿½n (http://web.micinn.es/contenido.asp).
         
      	" crlf)
     (close ?fichero)    
@@ -161,7 +161,7 @@
     ;si cumple los requisitos puede buscar en la prensa o en el inem (buscar_prensa=si & buscar_inem=si)
     (modify ?dat (buscar_prensa "si")(buscar_inem "si"))
     
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Puede buscar empleo en el INEM o en la prensa.
@@ -179,7 +179,7 @@
     ;si cumple los requisitos puede buscar en la prensa (buscar_prensa=si)
     (modify ?dat (buscar_prensa "si"))
     
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Puede buscar empleo en la prensa.
@@ -194,70 +194,70 @@
 	?dat <- (datos (estado_actual "busqueda") (buscar_inem "si") (desea_informacion "si")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
     => 
        
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Esta es una fuente de búsqueda de empleo de carácter público, el Instituto Nacional 
+        Esta es una fuente de bï¿½squeda de empleo de carï¿½cter pï¿½blico, el Instituto Nacional 
         de Empleo (I.N.E.M.), en cuyas oficinas puedes inscribirte como demandante activo en 
-        búsqueda de empleo, debiéndolo de hacer en aquella que más cerca se encuentre de tu 
+        bï¿½squeda de empleo, debiï¿½ndolo de hacer en aquella que mï¿½s cerca se encuentre de tu 
         domicilio o localidad. Este paso es imprescindible para acceder a las ofertas de trabajo 
-        que se canalizan a través de este organismo.
+        que se canalizan a travï¿½s de este organismo.
         
-		¿Por qué puede ser interesante estar inscrito en él? porque es un espacio de búsqueda 
+		ï¿½Por quï¿½ puede ser interesante estar inscrito en ï¿½l? porque es un espacio de bï¿½squeda 
         que te ofrece:
-			•	ENTRAR EN PROCESOS DE SELECCIÓN. 
-			•	LA POSIBILIDAD DE CONSEGUIR ORIENTACIÓN PROFESIONAL. 
-			•	REALIZAR CURSOS DE FORMACIÓN OCUPACIONAL DEL I.N.E.M. U OTROS ORGANISMOS. 
-			•	QUE TE INCLUYAN EN PROGRAMAS ESPECÍFICOS DE BÚSQUEDA DE EMPLEO
+			ï¿½	ENTRAR EN PROCESOS DE SELECCIï¿½N. 
+			ï¿½	LA POSIBILIDAD DE CONSEGUIR ORIENTACIï¿½N PROFESIONAL. 
+			ï¿½	REALIZAR CURSOS DE FORMACIï¿½N OCUPACIONAL DEL I.N.E.M. U OTROS ORGANISMOS. 
+			ï¿½	QUE TE INCLUYAN EN PROGRAMAS ESPECï¿½FICOS DE Bï¿½SQUEDA DE EMPLEO
         
 		Para registrarte como demandante debes llevar el carnet de identidad, y tu cartilla o 
-        número de la Seguridad Social (lo tendrás en caso de haber trabajado con anterioridad), 
-        así como las justificaciones académicas y profesionales. Como demandante rellenarás una 
-        solicitud que se tramita mediante una entrevista personalizada. Deberías ir con una 
-        orientación clara del sector profesional o de las actividades en las que te vayas a 
-        inscribir. Si no la tuvieras, pídeles asesoramiento, están suficientemente preparados 
-        y disponen de la información para orientarte.
+        nï¿½mero de la Seguridad Social (lo tendrï¿½s en caso de haber trabajado con anterioridad), 
+        asï¿½ como las justificaciones acadï¿½micas y profesionales. Como demandante rellenarï¿½s una 
+        solicitud que se tramita mediante una entrevista personalizada. Deberï¿½as ir con una 
+        orientaciï¿½n clara del sector profesional o de las actividades en las que te vayas a 
+        inscribir. Si no la tuvieras, pï¿½deles asesoramiento, estï¿½n suficientemente preparados 
+        y disponen de la informaciï¿½n para orientarte.
         
 		Tienes dos formas de inscribirte en este organismo:
-			•	COMO CUALQUIER OTRO TRABAJADOR 
-			•	EN EL REGISTRO DE MINUSVÁLIDOS
+			ï¿½	COMO CUALQUIER OTRO TRABAJADOR 
+			ï¿½	EN EL REGISTRO DE MINUSVï¿½LIDOS
         
 		Muchas personas con discapacidad de las que buscan trabajo se inscriben como demandantes 
         no discapacitados, porque piensan que si no, les puede restar posibilidades de encontrar 
         un empleo.
         
-		O bien te puedes inscribir en el registro de minusválidos. Lo más importante de esto es 
-        que hay empresas que solicitan expresamente trabajadores con algún tipo de discapacidad 
+		O bien te puedes inscribir en el registro de minusvï¿½lidos. Lo mï¿½s importante de esto es 
+        que hay empresas que solicitan expresamente trabajadores con algï¿½n tipo de discapacidad 
         a este organismo. Para inscribirse en este registro, hay que presentar el Certificado 
-        Oficial de Minusvalía.
+        Oficial de Minusvalï¿½a.
         
-		Una vez inscrito como demandante de empleo en tu oficina más cercana (la que te corresponde), 
-        debes presentarte periódicamente en la fecha que aparece en tu tarjeta de demanda. Debes 
-        renovarla en los días exactos indicados y acudir a la oficina de empleo cuando previamente 
-        seas requerido. Si no la renuevas en estas fechas o no te presentas, perderás la antigüedad, 
-        que en algunos programas o puestos es en sí un criterio añadido de selección, así como todos 
-        los derechos derivados de tu inscripción. Debes comunicarles todos los cambios que consideres 
+		Una vez inscrito como demandante de empleo en tu oficina mï¿½s cercana (la que te corresponde), 
+        debes presentarte periï¿½dicamente en la fecha que aparece en tu tarjeta de demanda. Debes 
+        renovarla en los dï¿½as exactos indicados y acudir a la oficina de empleo cuando previamente 
+        seas requerido. Si no la renuevas en estas fechas o no te presentas, perderï¿½s la antigï¿½edad, 
+        que en algunos programas o puestos es en sï¿½ un criterio aï¿½adido de selecciï¿½n, asï¿½ como todos 
+        los derechos derivados de tu inscripciï¿½n. Debes comunicarles todos los cambios que consideres 
         importantes a nivel formativo y profesional que te puedan ayuda a encontrar trabajo.
         
 		Existen dos acciones y actitudes a la hora de estar inscrito en el I.N.E.M. para sacar el 
-        máximo beneficio o provecho:
+        mï¿½ximo beneficio o provecho:
         
 		ACCION ACTIVA Y ACTITUD POSITIVA
-			•	Realizar cursos de formación ocupacional 
-			•	Solicitar información y orientación laboral 
-			•	Preguntar por las ofertas actuales 
-			•	Pasarse periódicamente por la oficina
+			ï¿½	Realizar cursos de formaciï¿½n ocupacional 
+			ï¿½	Solicitar informaciï¿½n y orientaciï¿½n laboral 
+			ï¿½	Preguntar por las ofertas actuales 
+			ï¿½	Pasarse periï¿½dicamente por la oficina
         
 		ACCION O ACTITUD PASIVA  
-			•	Presentarse cuando señala la tarjeta de demanda 
-			•	Presentarse sólo cuando se es requerido 
-			•	No solicitar información
+			ï¿½	Presentarse cuando seï¿½ala la tarjeta de demanda 
+			ï¿½	Presentarse sï¿½lo cuando se es requerido 
+			ï¿½	No solicitar informaciï¿½n
         
-		De ti depende que emprendas una acción u otra, nosotros te recomendamos que emprendas la 
-        primera. Acércate siempre que puedas o quieras, hay una sección de demandas actuales, 
-        solicítalas, no te dé vergüenza el solicitar cuanta información creas necesaria para ti. 
-        Por último, recordarte que estar inscrito como demandante de empleo en la oficina del 
-        I.N.E.M. es un requisito previo para poder ser contratado y si ya estás trabajando puedes 
+		De ti depende que emprendas una acciï¿½n u otra, nosotros te recomendamos que emprendas la 
+        primera. Acï¿½rcate siempre que puedas o quieras, hay una secciï¿½n de demandas actuales, 
+        solicï¿½talas, no te dï¿½ vergï¿½enza el solicitar cuanta informaciï¿½n creas necesaria para ti. 
+        Por ï¿½ltimo, recordarte que estar inscrito como demandante de empleo en la oficina del 
+        I.N.E.M. es un requisito previo para poder ser contratado y si ya estï¿½s trabajando puedes 
         inscribirte como demandante de mejora de empleo.
         
      	" crlf)
@@ -270,60 +270,60 @@
 	?dat <- (datos (estado_actual "busqueda") (buscar_prensa "si") (desea_informacion "si")(lee_prensa "si")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
     => 
        
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Los medios de comunicación (sobre todo la prensa escrita) constituyen otra fuente de información
-        valiosa en la búsqueda de empleo. En ellos puedes encontrar información interesante acerca del
-        mercado laboral, ofertas de puestos de trabajo, actividades empresariales de nueva creación, 
-        nuevas ideas, etcétera. 
+        Los medios de comunicaciï¿½n (sobre todo la prensa escrita) constituyen otra fuente de informaciï¿½n
+        valiosa en la bï¿½squeda de empleo. En ellos puedes encontrar informaciï¿½n interesante acerca del
+        mercado laboral, ofertas de puestos de trabajo, actividades empresariales de nueva creaciï¿½n, 
+        nuevas ideas, etcï¿½tera. 
         
-		En la prensa diaria aparecen anuncios de ofertas y demandas de trabajo, no sólo diariamente, 
-        sino que algunos periódicos los concentran los fines de semana, sobre todo el domingo, como por 
-        ejemplo: ABC, EL PAÍS (ambos de tirada nacional). Es otro espacio de búsqueda de empleo que 
+		En la prensa diaria aparecen anuncios de ofertas y demandas de trabajo, no sï¿½lo diariamente, 
+        sino que algunos periï¿½dicos los concentran los fines de semana, sobre todo el domingo, como por 
+        ejemplo: ABC, EL PAï¿½S (ambos de tirada nacional). Es otro espacio de bï¿½squeda de empleo que 
         puedes y debes utilizar.
         
-		Para muchas empresas la prensa es el canal más habitual para captar a sus trabajadores. Normalmente 
-        son empresas especializadas en selección de personal las que ponen los anuncios. Los perfiles son 
+		Para muchas empresas la prensa es el canal mï¿½s habitual para captar a sus trabajadores. Normalmente 
+        son empresas especializadas en selecciï¿½n de personal las que ponen los anuncios. Los perfiles son 
         predefinidos y dan como resultado respuestas masivas.
         
-		Debes acostumbrarte a saber cuando salen y en que periódicos se concentra el mayor numero de ofertas.
+		Debes acostumbrarte a saber cuando salen y en que periï¿½dicos se concentra el mayor numero de ofertas.
 			
         	ANUNCIOS EN LA PRENSA (OFERTAS):  
-				•	TIRADA O AMBITO LOCAL: 
+				ï¿½	TIRADA O AMBITO LOCAL: 
 					o	Empresas ubicadas en tu zona. 
         
-				•	TIRADA O AMBITO NACIONAL: 
-					o	Oferta más amplia y diversificada. 
-					o	Mas información sobre el mercado laboral en general 
+				ï¿½	TIRADA O AMBITO NACIONAL: 
+					o	Oferta mï¿½s amplia y diversificada. 
+					o	Mas informaciï¿½n sobre el mercado laboral en general 
 					o	Ofertas fuera de tu lugar de residencia.
         
-				•	REVISTAS ESPECIALIZADAS: 
-					o	Información específica y bolsa de empleo.
+				ï¿½	REVISTAS ESPECIALIZADAS: 
+					o	Informaciï¿½n especï¿½fica y bolsa de empleo.
         
 			Ante una oferta interesante:
-				•	Responde rápidamente (en el plazo de cinco días). 
-				•	Envía una carta de presentación y el curriculum vitae
+				ï¿½	Responde rï¿½pidamente (en el plazo de cinco dï¿½as). 
+				ï¿½	Envï¿½a una carta de presentaciï¿½n y el curriculum vitae
         
-		No te desanimes si crees no cumplir alguno de los requisitos exigidos. Piensa que la mayoría de las 
-        demandas conlleva procesos de selección personalizados (entrevista personal). Puedes destacar por 
-        otras cualidades de las que no eras consciente y que no están expuestas en el anuncio. Las personas 
+		No te desanimes si crees no cumplir alguno de los requisitos exigidos. Piensa que la mayorï¿½a de las 
+        demandas conlleva procesos de selecciï¿½n personalizados (entrevista personal). Puedes destacar por 
+        otras cualidades de las que no eras consciente y que no estï¿½n expuestas en el anuncio. Las personas 
         que logran superar la entrevista personal tienen que superar a su vez un periodo de prueba.
         
-		Recuerda que también puedes acceder o informarte por este canal sobre las convocatorias de empleo 
-        público-oposiciones, contrataciones laborales, en prácticas, etcétera.
+		Recuerda que tambiï¿½n puedes acceder o informarte por este canal sobre las convocatorias de empleo 
+        pï¿½blico-oposiciones, contrataciones laborales, en prï¿½cticas, etcï¿½tera.
         
 		Puedes utilizar este medio para ofrecer tus servicios profesionales (puedes crear tu demanda). Es otra 
-        vía que te ofrece el mercado para poder acceder a un puesto de trabajo. Los pasos que debes seguir si 
+        vï¿½a que te ofrece el mercado para poder acceder a un puesto de trabajo. Los pasos que debes seguir si 
         optas por este caso serian:
-			1.	Saber lo que quieres: cómo hacerlo, que deberías poner, y que puedes o deseas conseguir. 
-			2.	Selecciona el medio o los medios de comunicación más acordes con lo que deseas para tu anuncio. 
-        		Esto dependerá de tus intereses y objetivos, no descartes el hacerlo en los de gran difusión 
-        		(aunque su coste sea superior que en los locales) o tal vez, en aquellos de difusión especializada, 
-        		pero de menor divulgación. 
+			1.	Saber lo que quieres: cï¿½mo hacerlo, que deberï¿½as poner, y que puedes o deseas conseguir. 
+			2.	Selecciona el medio o los medios de comunicaciï¿½n mï¿½s acordes con lo que deseas para tu anuncio. 
+        		Esto dependerï¿½ de tus intereses y objetivos, no descartes el hacerlo en los de gran difusiï¿½n 
+        		(aunque su coste sea superior que en los locales) o tal vez, en aquellos de difusiï¿½n especializada, 
+        		pero de menor divulgaciï¿½n. 
 			3.	Crea un buen anuncio, en el que de manera atractiva y sencilla ofertes tus servicios. Intenta ser 
         		original, pero teniendo en cuenta la sencillez y la claridad en el mismo. 
-			4.	Debes estar preparado por si te llaman para salir bien del proceso de selección.
+			4.	Debes estar preparado por si te llaman para salir bien del proceso de selecciï¿½n.
         
      	" crlf)
     (close ?fichero)    
@@ -332,17 +332,17 @@
 
 
 ;-------------------------------------------------------------------------------------------------------------------
-; 	PREGUNTA A LA QUE RESPONDE: ¿Que tipo de contrato me interesa?
+; 	PREGUNTA A LA QUE RESPONDE: ï¿½Que tipo de contrato me interesa?
 ;
 ;	DATOS ENTRADA:
 ;		- estado_actual = "contrato" (asignacion por defecto)
 ;
 ;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
-;			¿Estudia actualmente?
+;			ï¿½Estudia actualmente?
 ;				- estudia = ["si", "no"]
-;			¿Que tipo de conocimiento posee?
+;			ï¿½Que tipo de conocimiento posee?
 ;				- conocimiento = ["investigacion", "basico"]
-;			¿Cuanto tiempo libre posee?
+;			ï¿½Cuanto tiempo libre posee?
 ;				- tiempo_libre = <numero entero positivo>;
 ;-------------------------------------------------------------------------------------------------------------------
 
@@ -372,11 +372,11 @@
 	?dat <- (datos (estado_actual "contrato") (tipo_contrato "beca") (conocimiento "investigacion") (tiempo_libre ?tiempo_libre &:(<= ?tiempo_libre 6))(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Con los conocimientos de investigación y las " ?tiempo_libre " horas de las que dispone, le interesaría 
-        buscar un contrato que sea una beca de investigación.
+        Con los conocimientos de investigaciï¿½n y las " ?tiempo_libre " horas de las que dispone, le interesarï¿½a 
+        buscar un contrato que sea una beca de investigaciï¿½n.
         
      	" crlf)
     (close ?fichero)  
@@ -388,7 +388,7 @@
 	?dat <- (datos (estado_actual "contrato") (tipo_contrato "beca") (conocimiento ~"investigacion") (tiempo_libre ?tiempo_libre &:(<= ?tiempo_libre 6))(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Le interesa un contrato de beca, el cual sea flexible para poder asistir a clase.
@@ -403,10 +403,10 @@
 	?dat <- (datos (estado_actual "contrato") (tipo_contrato "jornada") (tiempo_libre ?tiempo_libre &:(<= ?tiempo_libre 6))(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Le interesaría un contrato a media jornada de unas 4-6 horas diarias.
+        Le interesarï¿½a un contrato a media jornada de unas 4-6 horas diarias.
         
      	" crlf)
     (close ?fichero)  
@@ -418,10 +418,10 @@
 	?dat <- (datos (estado_actual "contrato") (tipo_contrato "jornada") (tiempo_libre ?tiempo_libre &:(> ?tiempo_libre 6))(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Le interesaría un contrato a jornada completa, normalmente unas 8 horas diarias.
+        Le interesarï¿½a un contrato a jornada completa, normalmente unas 8 horas diarias.
         
      	" crlf)
     (close ?fichero)  
@@ -433,10 +433,10 @@
 	?dat <- (datos (estado_actual "contrato") (tipo_contrato "beca") (tiempo_libre ?tiempo_libre &:(> ?tiempo_libre 6))(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
     
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Aunque le interesaría una beca, con el tiempo libre que dispone, puede aceptar un trabajo a media jornada.
+        Aunque le interesarï¿½a una beca, con el tiempo libre que dispone, puede aceptar un trabajo a media jornada.
         
      	" crlf)
     (close ?fichero)  
@@ -445,17 +445,17 @@
 
 
 ;-------------------------------------------------------------------------------------------------------------------
-; 	PREGUNTA A LA QUE RESPONDE: ¿Que debo destacar de mi curriculum?
+; 	PREGUNTA A LA QUE RESPONDE: ï¿½Que debo destacar de mi curriculum?
 ;
 ;	DATOS ENTRADA:
 ;		- estado_actual = "curriculum" (asignacion por defecto)
 ;
 ;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
-;			¿Que estudios posee?
+;			ï¿½Que estudios posee?
 ;				- tipo_estudios = ["universitarios", "no_universitarios"]
-;			¿Tiene experiencia laboral?
+;			ï¿½Tiene experiencia laboral?
 ;				- experiencia = ["si", "no"]
-;			¿Cuantas paginas posee actualmente su curriculum?
+;			ï¿½Cuantas paginas posee actualmente su curriculum?
 ;				- numero_paginas_CV = <numero entero positivo>
 ;-------------------------------------------------------------------------------------------------------------------
 
@@ -485,12 +485,12 @@
 	?dat <- (datos (estado_actual "curriculum")  (numero_paginas_CV ?numero_paginas_CV &:(>= ?numero_paginas_CV 3))(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Debe de reducir el número de páginas de tu CV. Para ello, destaca tus habilidades interesantes para 
-        la oferta deseada en una página y elimina las que no sean necesarias para el puesto solicitado. 
-        Recuerda que la persona que revisa los currículum tiene 15 segundos para decidir seleccionarte.
+        Debe de reducir el nï¿½mero de pï¿½ginas de tu CV. Para ello, destaca tus habilidades interesantes para 
+        la oferta deseada en una pï¿½gina y elimina las que no sean necesarias para el puesto solicitado. 
+        Recuerda que la persona que revisa los currï¿½culum tiene 15 segundos para decidir seleccionarte.
         
      	" crlf)
     (close ?fichero) 
@@ -502,12 +502,12 @@
 	?dat <- (datos (estado_actual "curriculum")  (destacar_formacion "si")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Debería destacar su formación indique claramente los cursos, estudios, seminarios así como la titulación que posee. Si su 
-        calificación es superior a 2.55 destáquela, si le ha sido otorgada una mención, póngala en negrita y subrayada, igualmente 
-        indique su calificación indicando su calificación y el máximo que puede ser, por ejemplo: 2.55 sobre 4
+        Deberï¿½a destacar su formaciï¿½n indique claramente los cursos, estudios, seminarios asï¿½ como la titulaciï¿½n que posee. Si su 
+        calificaciï¿½n es superior a 2.55 destï¿½quela, si le ha sido otorgada una menciï¿½n, pï¿½ngala en negrita y subrayada, igualmente 
+        indique su calificaciï¿½n indicando su calificaciï¿½n y el mï¿½ximo que puede ser, por ejemplo: 2.55 sobre 4
      	
         " crlf)
     (close ?fichero) 
@@ -519,11 +519,11 @@
 	?dat <- (datos (estado_actual "curriculum")  (destacar_experiencia "si")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Destaque los trabajos que ha realizado, cual ha sido su función, el cargo y el tiempo que ha desempeñado, haga hincapié 
-        en aquellos trabajos que le han sido más fructíferos y haga que se note estos por encima, póngalos en cursiva o subráyelos.
+        Destaque los trabajos que ha realizado, cual ha sido su funciï¿½n, el cargo y el tiempo que ha desempeï¿½ado, haga hincapiï¿½ 
+        en aquellos trabajos que le han sido mï¿½s fructï¿½feros y haga que se note estos por encima, pï¿½ngalos en cursiva o subrï¿½yelos.
         
      	" crlf)
     (close ?fichero) 
@@ -536,19 +536,19 @@
 ; ********************************************
 
 ;-------------------------------------------------------------------------------------------------------------------
-; 	PREGUNTA A LA QUE RESPONDE: ¿Como debo orientar la busqueda de empleo?
+; 	PREGUNTA A LA QUE RESPONDE: ï¿½Como debo orientar la busqueda de empleo?
 ;
 ;	DATOS ENTRADA:
 ;		- estado_actual = "busqueda_empleo" (asignacion por defecto)
 ;
 ;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
-;			¿Edad?
+;			ï¿½Edad?
 ;				- rango_edad = ["joven", "adulto", "jubilado"]
-;			¿Ha sido rechazo en los ultimos procesos de seleccion?
+;			ï¿½Ha sido rechazo en los ultimos procesos de seleccion?
 ;				- rechazado = ["si", "no"]
-;			¿Cual es su situacion laboral?
+;			ï¿½Cual es su situacion laboral?
 ;				- situacion_laboral = ["desempleado", "trabajando_mediajornada", "trabajando_jornadacompleta", "trabajando_jornadaintensiva"]
-;			¿Esta estudiando actualmente o tiene pensado estudiar en un futuro?
+;			ï¿½Esta estudiando actualmente o tiene pensado estudiar en un futuro?
 ;				- estudio = ["si", "no"]
 ;-------------------------------------------------------------------------------------------------------------------
 
@@ -628,7 +628,7 @@
 	?dat <- (datos (estado_actual "busqueda_empleo") (estudio "si")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Debes de buscar ofertas de empleo que te permitan compatibilizar el trabajo con tus estudios.
@@ -643,15 +643,15 @@
 	?dat <- (datos (buscador "desempleado_rechazado")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Evita mandar tu CV a todas las ofertas que encuentres. Cuando intentas obtener trabajos para los que no estás calificado, 
-        te rechazan más seguido. Tómate el tiempo para preparar tu búsqueda de trabajo, apunta a lo que quieras y ejerce tu profesión 
-        con determinación de acero. No pierdas el tiempo enviando currículum para cargos que en realidad no quieres.
-        Mientras más centrado y específico seas, más poderosa será tu búsqueda de trabajo. Utiliza la carta de presentación y el CV 
-        como herramientas a la hora de realizar la búsqueda de trabajo. No utilices un CV en video si no lo requiere la oferta de 
-        trabajo solicitada. Personaliza la carta de presentación y actualiza tu CV con los datos más acordes a la oferta demandada.
+        Evita mandar tu CV a todas las ofertas que encuentres. Cuando intentas obtener trabajos para los que no estï¿½s calificado, 
+        te rechazan mï¿½s seguido. Tï¿½mate el tiempo para preparar tu bï¿½squeda de trabajo, apunta a lo que quieras y ejerce tu profesiï¿½n 
+        con determinaciï¿½n de acero. No pierdas el tiempo enviando currï¿½culum para cargos que en realidad no quieres.
+        Mientras mï¿½s centrado y especï¿½fico seas, mï¿½s poderosa serï¿½ tu bï¿½squeda de trabajo. Utiliza la carta de presentaciï¿½n y el CV 
+        como herramientas a la hora de realizar la bï¿½squeda de trabajo. No utilices un CV en video si no lo requiere la oferta de 
+        trabajo solicitada. Personaliza la carta de presentaciï¿½n y actualiza tu CV con los datos mï¿½s acordes a la oferta demandada.
         " crlf)
     (close ?fichero) 
 )
@@ -662,18 +662,18 @@
 	?dat <- (datos (buscador "trabajador_rechazado")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero "
 	  Si lo que quieres es combinar tu trabajo actual con otro, busca las ofertas que permitan compatibilizar ambos trabajos. 
 	  Si por el contrario quieres cambiar de trabajo intenta mantener en la medida de lo posible el actual trabajo hasta que 
 	  encuentres una oferta segura. Evita mandar tu CV a todas las ofertas que encuentres. Cuando intentas obtener trabajos 
-	  para los que no estás calificado, te rechazan más seguido. Tómate el tiempo para preparar tu búsqueda de trabajo, 
-	  apunta a lo que quieras y ejerce tu profesión con determinación de acero. No pierdas el tiempo enviando currículum para
-	  cargos que en realidad no quieres. Mientras más centrado y específico seas, más poderosa será tu búsqueda de trabajo. 
-	  Utiliza la carta de presentación y el CV como herramientas a la hora de realizar la búsqueda de trabajo. No utilices 
-	  un CV en video si no lo requiere la oferta de trabajo solicitada. Personaliza la carta de presentación y actualiza tu CV
-	  con los datos más acordes a la oferta demandada.
+	  para los que no estï¿½s calificado, te rechazan mï¿½s seguido. Tï¿½mate el tiempo para preparar tu bï¿½squeda de trabajo, 
+	  apunta a lo que quieras y ejerce tu profesiï¿½n con determinaciï¿½n de acero. No pierdas el tiempo enviando currï¿½culum para
+	  cargos que en realidad no quieres. Mientras mï¿½s centrado y especï¿½fico seas, mï¿½s poderosa serï¿½ tu bï¿½squeda de trabajo. 
+	  Utiliza la carta de presentaciï¿½n y el CV como herramientas a la hora de realizar la bï¿½squeda de trabajo. No utilices 
+	  un CV en video si no lo requiere la oferta de trabajo solicitada. Personaliza la carta de presentaciï¿½n y actualiza tu CV
+	  con los datos mï¿½s acordes a la oferta demandada.
 
         " crlf)
     (close ?fichero) 
@@ -685,12 +685,12 @@
 	?dat <- (datos (buscador "desempleado_no_rechazado")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero "
-	  Evita mandar tu CV a todas las ofertas que encuentres. Tómate el tiempo para preparar tu búsqueda de trabajo, apunta a lo
-	  que quieras y ejerce tu profesión con determinación de acero.
-	  No pierdas el tiempo enviando currículum para cargos que en realidad no quieres.
+	  Evita mandar tu CV a todas las ofertas que encuentres. Tï¿½mate el tiempo para preparar tu bï¿½squeda de trabajo, apunta a lo
+	  que quieras y ejerce tu profesiï¿½n con determinaciï¿½n de acero.
+	  No pierdas el tiempo enviando currï¿½culum para cargos que en realidad no quieres.
 
         " crlf)
     (close ?fichero) 
@@ -702,7 +702,7 @@
 	?dat <- (datos (buscador "trabajador_no_rechazado")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero "
 	    Si lo que quieres es combinar tu trabajo actual con otro, busca las ofertas que permitan compatibilizar ambos trabajos. 
@@ -719,7 +719,7 @@
 	?dat <- (datos (buscador "jubilado")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero "
         Busca trabajos que requieran una alta experiencia o si lo prefieres busca trabajos de voluntariados en la web 
@@ -732,21 +732,21 @@
 
 
 ;-------------------------------------------------------------------------------------------------------------------
-; 	PREGUNTA A LA QUE RESPONDE: ¿Como debo de realizar la entrevista de trabajo?
+; 	PREGUNTA A LA QUE RESPONDE: ï¿½Como debo de realizar la entrevista de trabajo?
 ;
 ;	DATOS ENTRADA:
 ;		- estado_actual = "entrevista" (asignacion por defecto)
 ;
 ;		PREGUNTAS A REALIZAR, POSIBLES CONTESTACIONES PARA ASIGNAR A LA VARIABLE INDICADA:
-;			¿Sexo?
+;			ï¿½Sexo?
 ;				- sexo = ["hombre", "mujer"]
-;			¿Ha sido seleccionado para una entrevista de trabajo?
+;			ï¿½Ha sido seleccionado para una entrevista de trabajo?
 ;				- seleccionado_entrevista = ["si", "no"]
-;			¿Conoce el perfil del puesto al que te has inscrito?
+;			ï¿½Conoce el perfil del puesto al que te has inscrito?
 ;				- conoce_perfil = ["si", "no"]
-;			¿Conoce la empresa empleadora?
+;			ï¿½Conoce la empresa empleadora?
 ;				- conoce_empresa = ["si", "no"]
-;			¿Conoce la forma correcta de realizar una entrevista de trabajo?
+;			ï¿½Conoce la forma correcta de realizar una entrevista de trabajo?
 ;				- conoce_protocolo = ["si", "no"]
 ;-------------------------------------------------------------------------------------------------------------------
 
@@ -758,17 +758,17 @@
 
     ;cumple los requisitos (entrevistado=sin_protocolo)
     (modify ?dat (entrevistado "sin_protocolo"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Nunca llames al entrevistador por su nombre a menos que te digan ‘Puedes llamarme Fred’ o una frase equivalente, 
-        dirígete al entrevistador de una manera formal.
-		No te vistas de manera demasiado sensual, informal, escandalosa ni uses demasiadas joyas. Vístete como lo harías 
+        Nunca llames al entrevistador por su nombre a menos que te digan ï¿½Puedes llamarme Fredï¿½ o una frase equivalente, 
+        dirï¿½gete al entrevistador de una manera formal.
+		No te vistas de manera demasiado sensual, informal, escandalosa ni uses demasiadas joyas. Vï¿½stete como lo harï¿½as 
         para el cargo que quieres obtener.
-		Un entrevistador no busca sólo un sí o un no como respuesta a sus preguntas. Aun así asegúrate de no hablar demasiado, 
+		Un entrevistador no busca sï¿½lo un sï¿½ o un no como respuesta a sus preguntas. Aun asï¿½ asegï¿½rate de no hablar demasiado, 
         ya que indica nerviosismo.
 		No hacer preguntas abiertas es una manera de demostrar que no te preocupa la empresa para la que te entrevistan. 
-        Haz preguntas como ‘¿Cuál cree usted que es el futuro de este cargo?’ o ‘¿Por qué hay una vacante para este cargo?’
+        Haz preguntas como ï¿½ï¿½Cuï¿½l cree usted que es el futuro de este cargo?ï¿½ o ï¿½ï¿½Por quï¿½ hay una vacante para este cargo?ï¿½
         
      	" crlf)
     (close ?fichero) 
@@ -800,11 +800,11 @@
 	?dat <- (datos (estado_actual "entrevista") (entrevistado "mujer_sin_protocolo")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         No te vistas de manera demasiado sensual, informal, escandalosa ni uses demasiadas joyas. 
-        Vístete como lo harías para el cargo que quieres obtener.
+        Vï¿½stete como lo harï¿½as para el cargo que quieres obtener.
      	
         " crlf)
     (close ?fichero) 
@@ -816,10 +816,10 @@
 	?dat <- (datos (estado_actual "entrevista") (entrevistado "hombre_sin_protocolo")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        No te vistas de manera informal o escandaloso. Vístete como lo harías para el cargo que quieres obtener.
+        No te vistas de manera informal o escandaloso. Vï¿½stete como lo harï¿½as para el cargo que quieres obtener.
      	
         " crlf)
     (close ?fichero) 
@@ -831,10 +831,10 @@
 	?dat <- (datos (estado_actual "entrevista") (seleccionado_entrevista "si") (conoce_perfil "no")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Antes de acudir a la entrevista de trabajo deberías informarte sobre el perfil de la oferta seleccionada.
+        Antes de acudir a la entrevista de trabajo deberï¿½as informarte sobre el perfil de la oferta seleccionada.
         
         " crlf)
     (close ?fichero) 
@@ -846,11 +846,11 @@
 	?dat <- (datos (estado_actual "entrevista") (seleccionado_entrevista "si") (conoce_empresa "no")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Una de las mayores decepciones es que un candidato no investigue lo suficiente de la compañía a la que postula. 
-        Investiga sobre la compañía en la que has empezado a formar parte del proceso de selección.
+        Una de las mayores decepciones es que un candidato no investigue lo suficiente de la compaï¿½ï¿½a a la que postula. 
+        Investiga sobre la compaï¿½ï¿½a en la que has empezado a formar parte del proceso de selecciï¿½n.
         
         " crlf)
     (close ?fichero) 
@@ -862,14 +862,14 @@
 	?dat <- (datos (estado_actual "entrevista") (seleccionado_entrevista "no")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Al no haber sido seleccionado para la entrevista, si se presenta es muy probable que haya más candidatos. 
+        Al no haber sido seleccionado para la entrevista, si se presenta es muy probable que haya mï¿½s candidatos. 
         No piense en que debe destacar por encima, muestre seguridad en sus contestaciones y demuestre su conocimiento sobre lo que 
-        se pregunte. Evite mirar de mal modo a algún candidato e intente si hay algún trabajo en grupo, demostrar su capacidad de trabajo, 
-        habla y manejo de la situación. Si debe simular dirigir a un equipo, intente demostrar que tiene dotes necesarios para ello sin ser 
-        brusco. Demuestre cercanía y educación en todo momento.
+        se pregunte. Evite mirar de mal modo a algï¿½n candidato e intente si hay algï¿½n trabajo en grupo, demostrar su capacidad de trabajo, 
+        habla y manejo de la situaciï¿½n. Si debe simular dirigir a un equipo, intente demostrar que tiene dotes necesarios para ello sin ser 
+        brusco. Demuestre cercanï¿½a y educaciï¿½n en todo momento.
         
         " crlf)
     (close ?fichero) 
@@ -881,13 +881,13 @@
 	?dat <- (datos (estado_actual "entrevista") (conoce_empresa "si") (conoce_perfil "si") (conoce_protocolo "si")(ruta_fichero_salida ?ruta)(fichero_salida ?fichero))
 	=> 
 
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Veo que conoce la empresa, el cargo al que aspira así como el protocolo. Procure no estar
+        Veo que conoce la empresa, el cargo al que aspira asï¿½ como el protocolo. Procure no estar
         nervioso, demuestre seriedad, de muestras de acercamiento por su parte, sea amable, no titubee,
-        procure mirar a la cara al entrevistador y no juegue con las manos (mover los dedos, coger y mover un bolígrafo, etc...).
-        Muestre educación y saber estar. Cuanto más preparado se le vea para el puesto, más probabilidades tiene de ser admitido.
+        procure mirar a la cara al entrevistador y no juegue con las manos (mover los dedos, coger y mover un bolï¿½grafo, etc...).
+        Muestre educaciï¿½n y saber estar. Cuanto mï¿½s preparado se le vea para el puesto, mï¿½s probabilidades tiene de ser admitido.
         Responda a lo que se le pregunte con respuestas directas y concisas, no de rodeos.
         
         " crlf)
@@ -897,48 +897,48 @@
 
 
 
-; ----------- AÑADIDAS -----------
+; ----------- Aï¿½ADIDAS -----------
 
 
 
-;; PRÁCTICA 2 -IAIC-
+;; PRï¿½CTICA 2 -IAIC-
 ;;
 ;; Reglas y hechos iniciales correspondientes a un
-;; asesor laboral con enfoque técnico.
+;; asesor laboral con enfoque tï¿½cnico.
 ;;
-;; Autores: Iñaki Goffard Giménez, Daniel Martín Carabias, Raúl Requero García
+;; Autores: Iï¿½aki Goffard Gimï¿½nez, Daniel Martï¿½n Carabias, Raï¿½l Requero Garcï¿½a
 ;;
-;; Curso: 4ºB
+;; Curso: 4ï¿½B
 ;;
-;; Para rellenar la base de hechos inicial (BH_0), el usuario deberá responder a ciertas
-;; preguntas realizadas desde la interfaz gráfica.
+;; Para rellenar la base de hechos inicial (BH_0), el usuario deberï¿½ responder a ciertas
+;; preguntas realizadas desde la interfaz grï¿½fica.
 ;;
 ;;  1. Nivel de estudios.
-;;  2. Experiencia laboral en años.
+;;  2. Experiencia laboral en aï¿½os.
 ;;  3. Tiempo que lleva desempleado en meses.
-;;  4. Edad del usuario en años.
+;;  4. Edad del usuario en aï¿½os.
 ;;  5. Sexo del usuario.
-;;  6. Currículum disponible.
+;;  6. Currï¿½culum disponible.
 ;;  7. Idiomas extranjeros que habla.
 ;;  8. Intereses del usuario.
 ;;  9. Tiene coche o no.
 ;; 10. Tiene carnet de conducir o no.
 ;; 11. Pretensiones salariales en euros.
-;; 12. Meses desde que realizó el último curso.
-;; 13. Última profesión que ha tenido el usuario.
+;; 12. Meses desde que realizï¿½ el ï¿½ltimo curso.
+;; 13. ï¿½ltima profesiï¿½n que ha tenido el usuario.
 ;; 14. Tiempo que llevaba trabajando.
 ;; 15. Tiempo que lleva desempleado.
-;; 16. Años de experiencia en el extranjero.
-;; 17. Fue aceptado o rechazado en su última entrevista.
+;; 16. Aï¿½os de experiencia en el extranjero.
+;; 17. Fue aceptado o rechazado en su ï¿½ltima entrevista.
 ;;
 
-;; Instrucciones de ejecución:
+;; Instrucciones de ejecuciï¿½n:
 ;;
 ;; 1. Almacenar el fichero Asesor.clp en la carpeta \bin de Jess.
 ;; 2. Cargar el fichero CLP con el comando (batch Asesor.clp).
 ;; 3. Cargar la base de hechos iniciales (BH_0) con el comando (reset).
 ;; 4. Ejecutar el motor de inferencia con el comando (run).
-;; 5. Se observarán los consejos obtenidos según se ejecutan las reglas.
+;; 5. Se observarï¿½n los consejos obtenidos segï¿½n se ejecutan las reglas.
 
 
 ;; Base de hechos inicial (preguntas respondidas por el usuario)
@@ -946,10 +946,10 @@
 ;; Reglas
 
 
-;; Si el usuario es joven y tiene estudios universitarios, da la impresión de tener una gran capacidad para aprender
+;; Si el usuario es joven y tiene estudios universitarios, da la impresiï¿½n de tener una gran capacidad para aprender
 
 (defrule capacidadAprender
-	"El usuario debe potenciar el hecho de que está muy capacitado para aprender y adaptarse"
+	"El usuario debe potenciar el hecho de que estï¿½ muy capacitado para aprender y adaptarse"
 	(estado_actual "reglas_1")
 	(edad  ?edad)
 	(test (< ?edad 24))
@@ -957,7 +957,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (cap-aprender "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Potencie su capacidad para aprender
@@ -968,10 +968,10 @@
 
 ;; Existen las denominadas exposiciones de empleo. Se trata de un evento presencial o virtual en el que empresarios
 ;; usan su tiempo para descubrir nuevos talentos. Se recomienda asistir solo como visitante si el candidato no tiene
-;; mucha experiencia y además hace poco que se ha quedado desempleado.
+;; mucha experiencia y ademï¿½s hace poco que se ha quedado desempleado.
 
 (defrule asistirExpoVisitante
-	"Asiste a una exposición de empleo pero como visitante"
+	"Asiste a una exposiciï¿½n de empleo pero como visitante"
 	(estado_actual "reglas_1")
 	(tiene-curriculum "si")
 	(tiempo-desempleado ?tiempo)
@@ -981,7 +981,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (asiste-Expo-visitante "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Seria recomendable que acudiera a una exposicion de empleo como visitante
@@ -990,10 +990,10 @@
     (close ?fichero)
 )
 
-;; Si en cambio el usuario dispone de una mínima experiencia laboral, es recomendable que asista y deje su currículum
+;; Si en cambio el usuario dispone de una mï¿½nima experiencia laboral, es recomendable que asista y deje su currï¿½culum
 
 (defrule asistirExpoActivamente
-	"Asiste a una exposición de empleo, y deja su currículum"
+	"Asiste a una exposiciï¿½n de empleo, y deja su currï¿½culum"
 	(estado_actual "reglas_1")
 	(tiene-curriculum "si")
 	(tiempo_experiencia ?experiencia)
@@ -1001,7 +1001,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (asiste-Expo-visitante "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Seria recomendable que acudiera a una exposicion de empleo y dejara su curriculum
@@ -1011,10 +1011,10 @@
 )
 
 ;; Si una persona llevaba mucho tiempo trabajando y se ha quedado recientemente en paro, es recomendable que reelabore
-;; su currículum, para así poner de manifiesto todo lo aprendido durante esos años.
+;; su currï¿½culum, para asï¿½ poner de manifiesto todo lo aprendido durante esos aï¿½os.
 
 (defrule reelaborarCurriculum
-	"Aconseja reelaborar el currículum del candidato"
+	"Aconseja reelaborar el currï¿½culum del candidato"
 	(estado_actual "reglas_1")
 	(tiempo-trabajando ?trabajando)
 	(test (> ?trabajando 10))
@@ -1023,7 +1023,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (reelabora-curriculum "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Le aconsejo que reelabore su curriculum
@@ -1032,7 +1032,7 @@
     (close ?fichero)
 )
 
-;; Si una persona llevaba mucho tiempo trabajando y se ha quedado recientemente en paro, también va a tener que renovar
+;; Si una persona llevaba mucho tiempo trabajando y se ha quedado recientemente en paro, tambiï¿½n va a tener que renovar
 ;; sus conocimientos para adaptarse al mercado. En el caso de que no tenga familia se le puede aconsejar cambiar
 ;; de ciudad.
 
@@ -1044,7 +1044,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (cambia-ciudad "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Considere la posibilidad de cambiar de ciudad
@@ -1053,11 +1053,11 @@
     (close ?fichero)
 )
 
-;; Si es un primer empleo, es recomendable que las pretensiones económicas no sean elevadas (menores a 1200 euros), excepto si
-;; el candidato sabe otro idioma extranjero (francés).
+;; Si es un primer empleo, es recomendable que las pretensiones econï¿½micas no sean elevadas (menores a 1200 euros), excepto si
+;; el candidato sabe otro idioma extranjero (francï¿½s).
 
 (defrule rebajarSalario
-	"Aconseja al candidato a reducir sus pretensiones económicas"
+	"Aconseja al candidato a reducir sus pretensiones econï¿½micas"
 	(estado_actual "reglas_1")
 	(pretensiones-salariales ?salario)
 	(test (> ?salario 1200))
@@ -1067,7 +1067,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (rebaja-salario "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Seria recomendable que rebajara sus pretensiones salariales
@@ -1076,7 +1076,7 @@
     (close ?fichero)
 )
 
-;; Si el candidato tiene familia, es más recomendable que haga cursos para renovar sus conocimientos, especialmente si no dispone de
+;; Si el candidato tiene familia, es mï¿½s recomendable que haga cursos para renovar sus conocimientos, especialmente si no dispone de
 ;; estudios universitarios
 
 (defrule hacerCursos
@@ -1088,7 +1088,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (hacer-cursos "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Es recomendable que haga un curso relacionado con sus intereses
@@ -1097,17 +1097,17 @@
     (close ?fichero)
 )
 
-;; Si se le ha recomendado hacer cursos, y no tiene idiomas, sería interesante que hiciera un curso de idiomas primero.
+;; Si se le ha recomendado hacer cursos, y no tiene idiomas, serï¿½a interesante que hiciera un curso de idiomas primero.
 
 (defrule hacerCursosIdiomas
-	"El usuario debería aprender idiomas para volver a ser competitivo en el mundo laboral"
+	"El usuario deberï¿½a aprender idiomas para volver a ser competitivo en el mundo laboral"
 	(estado_actual "reglas_1")
 	(hacer-cursos "si")
 	(not (idioma1 "si"))
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (hacer-curso-ingles "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Es recomendable que haga un curso de idiomas
@@ -1129,7 +1129,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=> 
 	(assert (ponerseContactoUniversidad "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Pongase en contacto con su universidad para tratar de buscar trabajo a partir de ella
@@ -1151,7 +1151,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=> 	
 	(assert (hacer-curso-informatica "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Hagase un curso de informatica para actualizar sus conocimientos en la materia
@@ -1171,7 +1171,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=> 
 	(assert (ponerseContactoInstituo "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Pongase en contacto con su instituto para tratar de buscar trabajo a partir de ella
@@ -1191,7 +1191,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (posibilidad-trasladarse "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Introduce en tu curriculum la posibilidad de trasladarte para mejorar tus posibilidades
@@ -1214,7 +1214,7 @@
 
 	=>
 	(assert (curso-mejorar-entrevista "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Hazte un curso para aprender ha hacer entrevistas para que cuando tengas que hacer una estes preparado
@@ -1234,7 +1234,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (pedir-subvencion-paro "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Para conseguir algo de dinero mientras buscas trabajo puedes pedir la subvencion que da el inem por desempleo
@@ -1256,7 +1256,7 @@
 	(assert (apuntado-inem "si"))
 	(assert (apuntado-ett "si"))
 	(assert (apuntado-paginas-trabajo "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Para mejorar tus posibilidades de buscar trabajo apuntate a las principales fuentes de ofertas de empleo
@@ -1266,7 +1266,7 @@
 )
 
 
-;;Si el usuario busca un trabajo no altamente especializado, que repase sus conocimientos generales sobre la actualidad. Se está poniendo de moda que muchas entrevistas de trabajo deriven hacia conversaciones sobre últimas noticias, libros o películas de moda que el usuario conozca,etc...
+;;Si el usuario busca un trabajo no altamente especializado, que repase sus conocimientos generales sobre la actualidad. Se estï¿½ poniendo de moda que muchas entrevistas de trabajo deriven hacia conversaciones sobre ï¿½ltimas noticias, libros o pelï¿½culas de moda que el usuario conozca,etc...
 
 (defrule cultura-general
 	"Si el trabajo no es altamente especializado y el usuario es muy joven, repasar sus conocimientos de cultura general y actualidad"
@@ -1277,7 +1277,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (cultura-general-preparada "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Preparese para una posible entrevista sobre temas de cultura general y de actualidad
@@ -1286,10 +1286,10 @@
     (close ?fichero)
 )
 
-;;Si el usuario ha fracasado varias ocasiones y ya ha hecho algún curso para mejorar las tácticas a la hora de realizar una entrevista, puede intentar informarse previamente de qué perfiles buscan y a qué se dedican exactamente las próximas empresas con las que contacte, para así dar una mejor impresión
+;;Si el usuario ha fracasado varias ocasiones y ya ha hecho algï¿½n curso para mejorar las tï¿½cticas a la hora de realizar una entrevista, puede intentar informarse previamente de quï¿½ perfiles buscan y a quï¿½ se dedican exactamente las prï¿½ximas empresas con las que contacte, para asï¿½ dar una mejor impresiï¿½n
 
 (defrule estudiar-empresas-objetivo
-	"EL usuario puede estudiar previamente los perfiles de las empresas, para dar mejor impresión en las entrevistas"
+	"EL usuario puede estudiar previamente los perfiles de las empresas, para dar mejor impresiï¿½n en las entrevistas"
 	(estado_actual "reglas_1")	
     (tiene-curriculum "si")
 	(ultima-entrevista "rechazado")
@@ -1297,7 +1297,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (estudiada-empresa-objetivo "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         El usuario puede estudiar previamente el perfil de los empleados y a que se dedica la empresa, para causar mejor impresion en la entrevista
@@ -1306,7 +1306,7 @@
     (close ?fichero)
 )
 
-;;Si el usuario tiene experiencia laboral y ha reelaborado su currículum ,puede solicitar cartas de recomendación de sus anteriores empleadores
+;;Si el usuario tiene experiencia laboral y ha reelaborado su currï¿½culum ,puede solicitar cartas de recomendaciï¿½n de sus anteriores empleadores
 
 (defrule solicitar-recomendacion
 	"El usuario puede solicitar recomendaciones de sus anteriores trabajos"
@@ -1316,7 +1316,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (pedir-recomendacion "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Para aumentar la buena imagen frente a un nuevo empleo, solicita una recomendacion
@@ -1325,16 +1325,16 @@
     (close ?fichero)
 ) 
 
-;;Si el usuario ha elaborado un currículum, es muy útil que lo acompañe con una carta de presentación
+;;Si el usuario ha elaborado un currï¿½culum, es muy ï¿½til que lo acompaï¿½e con una carta de presentaciï¿½n
 
 (defrule carta-presentacion
-	"Es muy útil acompañar el currículum con una carta de presentación"
+	"Es muy ï¿½til acompaï¿½ar el currï¿½culum con una carta de presentaciï¿½n"
 	(estado_actual "reglas_1")
 	(tiene-curriculum "si")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (adjuntar-carta-presentacion "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Es muy util adjuntar al curriculum, una carta de presentacion
@@ -1343,10 +1343,10 @@
     (close ?fichero)
 )
 
-;;Si el usuario tiene experiencia en viajes, ha vivido en el extranjero más de un año, etc... es muy útil que amplie el currículum incluyendo estos puntos
+;;Si el usuario tiene experiencia en viajes, ha vivido en el extranjero mï¿½s de un aï¿½o, etc... es muy ï¿½til que amplie el currï¿½culum incluyendo estos puntos
 
 (defrule ampliar-curriculum
-	"Incluir experiencias personales óptimas para el trabajo buscado"
+	"Incluir experiencias personales ï¿½ptimas para el trabajo buscado"
     (estado_actual "reglas_1")
 	(tiene-curriculum "si")
 	(experiencia-extranjero ?experiencia)
@@ -1354,7 +1354,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (ampliar-curriculum-usuario "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Si se tiene experiencia en el extranjero superior a un anio, es muy util incluirla en el curriculum
@@ -1364,7 +1364,7 @@
 )
 
 
-;;Si el usuario ha estudiado una empresa objetivo, es útil que estudie además la demanda actual del mercado laboral en ese sector
+;;Si el usuario ha estudiado una empresa objetivo, es ï¿½til que estudie ademï¿½s la demanda actual del mercado laboral en ese sector
 (defrule estudiar-mercado-laboral
 	"Estudiar las demandas del mercado laboral"
     (estado_actual "reglas_1")
@@ -1373,7 +1373,7 @@
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (estudiar-mercado-laboral-usuario "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
         Ademas de estudiar a una empresa objetivo, es util estar informado de la situacion actual del mercado laboral en ese sector
@@ -1382,20 +1382,20 @@
     (close ?fichero)
 )
 
-;;Si el usuario tiene capacidad de aprender, es muy útil que realice algún curso de postgrado
+;;Si el usuario tiene capacidad de aprender, es muy ï¿½til que realice algï¿½n curso de postgrado
 
 (defrule curso-postgrado
-	"Realizar algún máster, etc..."
+	"Realizar algï¿½n mï¿½ster, etc..."
     (estado_actual "reglas_1")
 	(cap-aprender "si")
 	(hacer-cursos "si")
     (ruta_fichero_salida ?ruta)(fichero_salida ?fichero)
 	=>
 	(assert (curso-postgrado-usuario "si"))
-    ;agregamos los resultados al fichero deseado (abrimos fichero, añadimos y lo cerramos)
+    ;agregamos los resultados al fichero deseado (abrimos fichero, aï¿½adimos y lo cerramos)
     (open ?ruta ?fichero "a")
     (printout ?fichero " 
-        Si el usuario tiene capacidad de aprender, deberia seguir realizando algún curso de postgrado
+        Si el usuario tiene capacidad de aprender, deberia seguir realizando algï¿½n curso de postgrado
         
         " crlf)
     (close ?fichero)

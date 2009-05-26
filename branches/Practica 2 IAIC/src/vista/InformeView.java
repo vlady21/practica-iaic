@@ -134,11 +134,11 @@ public class InformeView extends javax.swing.JFrame {
         while(texto.indexOf("\t")!=-1)
             texto = texto.replaceAll("\t", "    ");
 
-        VisualizadorView visualizador = new VisualizadorView(texto);
+        /*VisualizadorView visualizador = new VisualizadorView(texto);
         visualizador.setVisible(true);
         visualizador.setAlwaysOnTop(false);
         //JOptionPane.showMessageDialog(this, texto, "Informe de asesoramiento", JOptionPane.INFORMATION_MESSAGE);
-        setVisible(false);
+        setVisible(false);*/
         
       }catch(Exception e){
 

@@ -6,9 +6,12 @@
 package conocimiento;
 
 import java.util.ArrayList;
+import java.util.Properties;
 import jess.JessException;
 import jess.Rete;
+import utilerias.Constantes;
 import utilerias.LectorConsejos;
+import utilerias.Propiedades;
 
 /**
  *
@@ -18,8 +21,9 @@ public class Reglas_1 {
 
     private ArrayList<String> _listaSlot=null;
     private ArrayList<String> _listaValores=null;
-    private static String _rutaficheroconsejos="log_grupoB09.txt";
-    private String _rutaficheroreglas="reglasB09.clp";
+    private static Properties configuracion = Propiedades.getPropiedades(Constantes.CONFIGURACION);
+    private static String _rutaficheroconsejos=configuracion.getProperty("FICHERO_GUARDAR");
+    private String _rutaficheroreglas=configuracion.getProperty("REGLAS_TECNICO");
     private static LectorConsejos _lector=null;
     private static Rete _rete=null;
     private static boolean _usable=false;
