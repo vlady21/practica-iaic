@@ -22,7 +22,7 @@ import java.io.PrintWriter;
 import java.text.MessageFormat;
 import java.util.StringTokenizer;
 import javax.swing.JFileChooser;
-import utilerias.PrintText;
+import utilerias.EscribirConsejos;
 
 /**
  *
@@ -42,6 +42,7 @@ public class VisualizadorView extends javax.swing.JFrame {
 
         this.info = texto;
 
+        EscribirConsejos.escribe(texto);
         //texto = formatearInforme(texto);
 
         this.texto = texto;

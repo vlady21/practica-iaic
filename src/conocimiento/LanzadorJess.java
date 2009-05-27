@@ -12,6 +12,7 @@ import jess.RU;
 import jess.Rete;
 import jess.Value;
 import utilerias.Constantes;
+import utilerias.EscribirConsejos;
 import utilerias.LectorConsejos;
 import utilerias.Propiedades;
 
@@ -29,6 +30,7 @@ public class LanzadorJess {
 
     public LanzadorJess(String rutafichero, String rutaficheroreglas) throws JessException{
         _rutaficheroconsejos=rutafichero;
+        EscribirConsejos.asignaRuta(_rutaficheroconsejos);
         _rutaficheroreglas=rutaficheroreglas;
         _lector=new LectorConsejos();
         _rete=new Rete();
