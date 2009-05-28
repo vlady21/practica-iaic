@@ -864,7 +864,7 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
         menu.add(abrirItem);
 
         MenuItem guardarItem = new MenuItem("Guardar Formularios");
-        abrirItem.addActionListener(new ActionListener() {
+        guardarItem.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
             guardar();
           }

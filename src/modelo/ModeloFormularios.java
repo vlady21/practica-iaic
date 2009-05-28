@@ -116,5 +116,7 @@ public class ModeloFormularios implements IZModeloFormularios, Serializable {
         }
 
         modificadoTecnico = false;
+        modificadoJuridico = false;
+        modificadoAfectivo = false;
     }
 }
