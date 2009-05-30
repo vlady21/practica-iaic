@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp codebase="http://practica-iaic.googlecode.com/svn/trunk/Aplicacion/" href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>Asesor Laboral</title>
+        <vendor>IAIC Team</vendor>
+        <homepage href="http://groups.google.es/group/practicas-iaic"/>
+        <description>Asesor laboral colaborativo con diferentes enfoques (técnico, jurídico y coaching/afectivo).</description>
+        <description kind="short">Asesor Laboral</description>
+
+
+    <icon href="icono.png" kind="default"/>
+<offline-allowed/>
+</information>
+<security>
+<all-permissions/>
+</security>
+    <resources>
+<j2se version="1.6+"/>
+<jar eager="true" href="Practica 2 IAIC.jar" main="true"/>
+
+
+    <jar href="lib/appframework-1.0.3.jar"/>
+<jar href="lib/swing-worker-1.1.jar"/>
+<jar href="lib/jess.jar"/>
+</resources>
+    <application-desc main-class="main.AsesorLaboral">
+
+    </application-desc>
+</jnlp>
