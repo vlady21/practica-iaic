@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <jnlp codebase="http://practica-iaic.googlecode.com/svn/trunk/Aplicacion/" href="launch.jnlp" spec="1.0+">
     <information>
         <title>Asesor Laboral</title>
@@ -16,7 +16,7 @@
 </security>
     <resources>
 <j2se version="1.6+"/>
-<jar eager="true" href="Practica 2 IAIC.jar" main="true"/>
+<jar eager="true" href="Practica2IAIC.jar" main="true"/>
 
 
     <jar href="lib/appframework-1.0.3.jar"/>
