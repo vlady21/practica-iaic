@@ -11,7 +11,9 @@ import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
 
 /**
- * The main class of the application.
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class Principal extends SingleFrameApplication {
 

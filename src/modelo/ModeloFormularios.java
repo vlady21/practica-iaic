@@ -12,8 +12,9 @@ import utilerias.Constantes;
 import utilerias.Propiedades;
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class ModeloFormularios implements IZModeloFormularios, Serializable {
 

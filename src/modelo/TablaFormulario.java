@@ -11,8 +11,9 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class TablaFormulario implements Serializable{
 

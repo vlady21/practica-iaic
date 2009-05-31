@@ -9,8 +9,9 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class Propiedades {
 

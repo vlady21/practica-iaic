@@ -17,8 +17,9 @@ import java.awt.Image;
 import org.jdesktop.application.ResourceMap;
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class Splash extends javax.swing.JFrame {
 

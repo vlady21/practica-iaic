@@ -58,7 +58,9 @@ import utilerias.Constantes;
 import utilerias.Propiedades;
 
 /**
- * The application's main frame.
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class PrincipalView extends FrameView implements IZObservadorFormularios, Serializable{
 
