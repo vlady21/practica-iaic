@@ -112,7 +112,7 @@ public class LanzadorJess {
     /**
      * Metodo que devuelve los consejos del fichero.
      *
-     * @return String orrespondiente a los consejos generados.
+     * @return String correspondiente a los consejos generados.
      */
     public String dameConsejos(){
         return _lector.dameConsejos();

@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Clase utilizada para leer los ficheros de properties
  */
 
 package utilerias;

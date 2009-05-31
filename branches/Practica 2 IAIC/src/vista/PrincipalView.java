@@ -1,5 +1,5 @@
 /*
- * PrincipalView.java
+ * Interfaz principal de la aplicacion
  */
 
 package vista;
@@ -7,14 +7,11 @@ package vista;
 import conocimiento.LanzadorJess;
 import conocimiento.Reglas_1;
 import controlador.ControladorGUI;
-import java.awt.Component;
 import java.awt.Image;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import jess.JessException;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
@@ -23,20 +20,14 @@ import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Properties;
-import java.util.StringTokenizer;
 import java.util.Vector;
 import javax.swing.DefaultCellEditor;
 import javax.swing.Timer;
@@ -45,11 +36,8 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import modelo.IZObservadorFormularios;
 import modelo.ModeloFormularios;
@@ -73,25 +61,19 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios,
     SystemTray tray;
     PrincipalView interfaz;
     private boolean noFinalizar;
-    private Vector respuestasTablaTecnica;
-    //private Vector respuestasTablaJuridica;
-    //private Vector respuestasTablaAfectivo;
-    private Vector clavesTablaTecnica;
-    //private Vector clavesTablaJuridica;
-    //private Vector clavesTablaAfectivo;
-    private Properties propTecnico;
-    //private Properties propJuridico;
-    //private Properties propAfectivo;
+    
     private LanzadorJess lanzadorJess;
 
     private ModeloFormularios modelo;
 
     private ControladorGUI controlador;
 
-    private TablaFormulario tblTecnico;
-    private TablaFormulario tblJuridico;
-    private TablaFormulario tblAfectivo;
-
+    /*
+     * Constructor de la clase
+     * @param app: frame de la aplicacion
+     * @param modelo: modelo de la aplicacion
+     * @param controlador: controlador de la aplicacion
+     */
     public PrincipalView(SingleFrameApplication app, ModeloFormularios modelo, ControladorGUI controlador) {
 
         super(app);
@@ -109,10 +91,11 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios,
         // status bar initialization - message timeout, idle icon and busy animation, etc
         ResourceMap resourceMap = getResourceMap();
 
-        imagenTray = resourceMap.getImageIcon("Aplicacion.icon").getImage();
-        trayIcon = new TrayIcon(imagenTray, "Asesor Laboral");
-
         if (SystemTray.isSupported()) {
+
+            imagenTray = resourceMap.getImageIcon("Aplicacion.icon").getImage();
+            trayIcon = new TrayIcon(imagenTray, "Asesor Laboral");
+
             tray = SystemTray.getSystemTray();
 
             setPropiedadesTrayIcon(imagenTray, "Asesor Laboral");
@@ -191,6 +174,9 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios,
         Principal.getApplication().show(aboutBox);
     }
 
+    /*
+     * Metodo encargador de abrir un fichero asr
+     */
     private void abrir() {
 
         JFileChooser jFileChooser = new JFileChooser();
@@ -230,16 +216,9 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios,
 
     }
 
-    private void cargarJess() {
-        try {
-            lanzadorJess = new LanzadorJess(FICHERO_GUARDAR, FICHERO_REGLAS);
-            lanzadorJess.arrancarJess();
-        } catch (JessException ex) {
-            menError("Error Jess", "Error al lanzar el modulo de JESS");
-        }
-
-    }
-
+    /*
+     * Metodo encargador de guardar un fichero asr
+     */
     private void guardar() {
 
         File archivo=new File("");
@@ -588,9 +567,7 @@ public class PrincipalView extends FrameView implements IZObservadorFormularios,
         int i = tablaTecnica.rowAtPoint(evt.getPoint());
 
         String[] values = (String[]) modelo.getTecnico().getRespuestas().get(i);
-        // These are the combobox values
-        //String[] values = new String[]{"item1", "item2", "item3"};
-
+        
         int vColIndex = 1;
         TableColumn col = tablaTecnica.getColumnModel().getColumn(vColIndex);
         col.setCellEditor(new MyComboBoxEditor(values));
@@ -609,9 +586,7 @@ private void tablaJuridicoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST
     int i = tablaJuridico.rowAtPoint(evt.getPoint());
 
     String[] values = (String[]) modelo.getJuridico().getRespuestas().get(i);
-    // These are the combobox values
-    //String[] values = new String[]{"item1", "item2", "item3"};
-
+    
     int vColIndex = 1;
     TableColumn col = tablaJuridico.getColumnModel().getColumn(vColIndex);
     col.setCellEditor(new MyComboBoxEditor(values));
@@ -624,9 +599,7 @@ private void tablaAfectivoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST
     int i = tablaAfectivo.rowAtPoint(evt.getPoint());
 
     String[] values = (String[]) modelo.getAfectivo().getRespuestas().get(i);
-    // These are the combobox values
-    //String[] values = new String[]{"item1", "item2", "item3"};
-
+    
     int vColIndex = 1;
     TableColumn col = tablaAfectivo.getColumnModel().getColumn(vColIndex);
     col.setCellEditor(new MyComboBoxEditor(values));
@@ -634,6 +607,9 @@ private void tablaAfectivoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST
     tablaAfectivoActualizar(null);
 }//GEN-LAST:event_tablaAfectivoMouseMoved
 
+/*
+ * Metodo encargador de actualizar la tabla tecnica
+ */
 private void tablaTecnicaActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaTecnicaActualizar
 
     try{
@@ -672,6 +648,9 @@ private void tablaTecnicaActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:
 
 }//GEN-LAST:event_tablaTecnicaActualizar
 
+/*
+ * Metodo encargador de actualizar la tabla juridica
+ */
 private void tablaJuridicoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaJuridicoActualizar
 
 
@@ -710,6 +689,9 @@ private void tablaJuridicoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST
     }catch(Exception e){}
 }//GEN-LAST:event_tablaJuridicoActualizar
 
+/*
+ * Metodo encargador de actualizar la tabla afectivo
+ */
 private void tablaAfectivoActualizar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAfectivoActualizar
 
     try{
@@ -791,6 +773,9 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
 
     private JDialog aboutBox;
 
+    /*
+     * Metodo encargador de reiniciar la interfaz
+     */
     public void reiniciar() {
         
         int tam = tablaTecnica.getRowCount();
@@ -820,31 +805,53 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
             tablaAfectivoActualizar(null);
         }
     }
-    
+
+    /*
+     * Metodo encargador de mostrar un mensaje por el trayicon
+     */
     public void mensaje(String titulo, String mensaje) {
+        try{
         trayIcon.displayMessage(titulo, mensaje, TrayIcon.MessageType.NONE);
-
+        }catch(Exception e){}
     }
 
+    /*
+     * Metodo encargador de mostrar un mensaje por el trayicon
+     */
     public void menInfo(String titulo, String mensaje) {
+        try{
         trayIcon.displayMessage(titulo, mensaje, TrayIcon.MessageType.INFO);
-
+        }catch(Exception e){}
     }
 
+    /*
+     * Metodo encargador de mostrar un mensaje por el trayicon
+     */
     public void menAdvertencia(String titulo, String mensaje) {
+        try{
         trayIcon.displayMessage(titulo, mensaje, TrayIcon.MessageType.WARNING);
-
+        }catch(Exception e){}
     }
 
+    /*
+     * Metodo encargador de mostrar un mensaje por el trayicon
+     */
     public void menError(String titulo, String mensaje) {
+        try{
         trayIcon.displayMessage(titulo, mensaje, TrayIcon.MessageType.ERROR);
-
+        }catch(Exception e){}
     }
 
+    /*
+     * Metodo encargador de salir de la aplicacion
+     */
     public void salir() {
         System.exit(0);
     }
 
+    /*
+     * Metodo encargado de insertar las propiedades del trayicon
+     */
     private void setPropiedadesTrayIcon(Image imagen, String texto) {
 
         PopupMenu menu = new PopupMenu();
@@ -911,53 +918,24 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
             System.err.println("TrayIcon could not be added.");
         }
     }
-    
+
+    /*
+     * Metodo encargador de mostrar un mensaje por el status
+     */
     public void status(String string) {
         statusMessageLabel.setText(string);
     }
 
+    /*
+     * Metodo encargador de mostrar un mensaje por el status
+     */
     public void animeStatus(String string) {
         statusAnimationLabel.setText(string);
     }
 
-    private void cargarFormulario(JTable tabla,Vector claves) throws Exception {
-
-        String clave,valor;
-        ArrayList<String> valores_reglas1=new ArrayList<String>();
-        for(int i = 0; i<claves.size(); i++){
-
-            clave = (String) claves.get(i);
-            valor = (String) tabla.getValueAt(i, 1);
-
-            int edad=0;
-            if(valor!=null){                
-            //TODO RELLENAR
-                if(clave.equalsIgnoreCase("rango_edad")){
-                    if(valor.equalsIgnoreCase("16-35")){
-                        valor="joven";
-                        edad=20;
-                    }else if(valor.equalsIgnoreCase("35-65")){
-                        valor="adulto";
-                        edad=45;
-                    }else{
-                        valor="jubilado";
-                        edad=70;
-                    }
-                    valores_reglas1.add(""+edad);
-                }
-                if(Reglas_1.pertenece(clave)){
-                    valores_reglas1.add(valor);
-                }else{
-                    lanzadorJess.insertaSlotValue(clave, valor);
-                }
-            }
-
-        }
-
-        Reglas_1 reglas_1=new Reglas_1(valores_reglas1,FICHERO_GUARDAR, FICHERO_REGLAS);
-        
-    }
-
+    /*
+     * Metodo encargador de comprobar que los formularios esten completos
+     */
     private boolean comprobarFormulario(JTable tabla) throws Exception {
 
         boolean result = true;
@@ -976,7 +954,10 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
         
         return result;
     }
-    
+
+    /*
+     * Metodo encargador de obtener el asesoramiento
+     */
     public void asesorar() {
         
         animeStatus("Analizando informacion del asesorado");
@@ -997,6 +978,9 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
 
     }
 
+    /*
+     * Metodo encargador de actualizar la interfaz
+     */
     public void update() {
 
         if(modelo.actualizadoTecnico()){
@@ -1014,6 +998,9 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
 
     }
 
+    /*
+     * Metodo encargador de establecer el modelo
+     */
     public void setModelo(JTable jTable, TablaFormulario tabla) {
 
         int tam = jTable.getRowCount();
@@ -1026,6 +1013,9 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
 
     }
 
+    /*
+     * Metodo encargador de manejar el asesoramiento
+     */
     public class Asesor extends Thread
     {
         @Override
@@ -1057,15 +1047,13 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
 
                 if(comprobarFormulario(tabla))
                 {
-                    //cargarFormulario(tablaTecnica,clavesTablaTecnica);
-
+                    
                     String texto = controlador.asesorar(panelFormularios.getSelectedIndex());
 
                     status("Informacion del asesorado analizada.");
                     mensaje("Informacion analizada","Informacion del asesorado analizada.");
 
-                    /*InformeView informe = new InformeView(lanzadorJess);
-                    informe.setVisible(true);*/
+                    
                     
                     while(texto.indexOf("   ")!=-1)
                         texto = texto.replaceAll("   ", "  ");
@@ -1085,9 +1073,7 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
                     menError("Respuestas incompletas","Se han detectado preguntas sin respuesta.");
 
                 }
-                //cargarFormulario(tablaJuridica,clavesTablaJuridica);
-                //cargarFormulario(tablaAfectiva,clavesTablaAfectivo);
-
+                
                 
             } catch (Exception ex) {
 
@@ -1100,6 +1086,9 @@ private void botonGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRS
        }
     }
 
+    /*
+     * Metodo encargador de manejar la barra de status
+     */
     public class BarraStatus extends Thread
     {
 

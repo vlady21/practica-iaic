@@ -1,6 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase encargada de comunicar la interfaz grafica
+ * con el motor de conocimiento de JESS.
  */
 
 package conocimiento;
@@ -26,6 +26,11 @@ public class ControladorConocimiento {
     private LanzadorJess lanzadorJess;
     private Properties propiedadesTabla;
 
+    /**
+     * Contructor de la clase.
+     * @param modelo: modelo de la aplicacion sobre el que se quiere
+     * obtener asesoramiento
+     */
     public ControladorConocimiento(ModeloFormularios modelo) {
 
         this.modelo = modelo;
@@ -33,6 +38,9 @@ public class ControladorConocimiento {
         configuracion = Propiedades.getPropiedades(Constantes.CONFIGURACION);
     }
 
+    /**
+     * Metodo encargado de obtener asesoramiento afectivo
+     */
     public String AsesoramientoAfectivo() throws Exception {
 
         String informe = "";
@@ -48,6 +56,9 @@ public class ControladorConocimiento {
         return informe;
     }
 
+    /**
+     * Metodo encargado de obtener asesoramiento juridico
+     */
     public String AsesoramientoJuridico() throws Exception {
 
         String informe = "";
@@ -63,6 +74,9 @@ public class ControladorConocimiento {
         return informe;
     }
 
+    /**
+     * Metodo encargado de obtener asesoramiento tecnico
+     */
     public String AsesoramientoTecnico() throws Exception {
 
         String informe = "";
@@ -78,6 +92,10 @@ public class ControladorConocimiento {
         return informe;
     }
 
+    /**
+     * Metodo encargado de cargar los hechos en la base de conocimiento
+     * @param formulario: hechos sobre los que se va a obtener asesoramiento
+     */
     private void cargarConocimiento(TablaFormulario formulario) throws Exception {
         
         String clave,valor;
@@ -124,6 +142,10 @@ public class ControladorConocimiento {
         }
     }
 
+    /**
+     * Metodo encargado de iniciar el motor de JESS
+     * @param reglas: reglas que van a ser utilizadas por JESS
+     */
     private void iniciarJess(String regla) throws Exception {
 
         String fichero = configuracion.getProperty("FICHERO_GUARDAR");
@@ -137,6 +159,11 @@ public class ControladorConocimiento {
         }
     }
 
+    /**
+     * Metodo encargado de obtener asesoramiento generico
+     * @param tabla: hechos sobre los que se va a obtener asesoramiento
+     * @param reglas: reglas que van a ser utilizadas por JESS
+     */
     private String obtenerAsesoramiento(TablaFormulario tabla, String reglas) throws Exception {
 
         String informe = "";

@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Clase encargada de visualizar el informe de asesoramiento
  */
 
 /*
@@ -39,6 +38,11 @@ public class VisualizadorView extends javax.swing.JFrame {
         initComponents();
     }
 
+    /*
+     * Constructor de la clase
+     * @param texto: informe de asesoramiento
+     * @param trayicon: trayicon de la aplicacion
+     */
     VisualizadorView(String texto, TrayIcon trayIcon) {
 
         this.info = texto;
@@ -65,183 +69,6 @@ public class VisualizadorView extends javax.swing.JFrame {
 
         this.setPreferredSize(new Dimension(640,480));
 
-    }
-
-    private String formatear(String texto) {
-
-        int lineas = 120;
-        int resto;
-        String aux,informe = "";
-
-        while(texto.indexOf("  ")!=-1)
-            texto = texto.replaceAll("  ", " ");
-
-        texto = texto.replaceAll("\t", "    ");
-
-        StringTokenizer st = new StringTokenizer(texto,"\n");
-        int i;
-        boolean fin;
-
-        while(st.hasMoreTokens()){
-
-            aux = "";
-            fin=false;
-
-            do{
-                if(st.hasMoreTokens()){
-                    aux= aux + st.nextToken();
-
-                    if(aux.length()==1){
-
-                        aux = aux + "                                                                                  ";
-
-                        fin=true;
-                    }
-                    
-                    if(aux.trim().endsWith(".")){
-
-                        fin=true;
-                        aux=aux+"                                                         ";
-                    }
-                    if(aux.trim().endsWith("*")){
-
-                        fin=true;
-                        aux=aux+"                                                         ";
-                    }
-
-                    if(aux.trim().endsWith(":")){
-
-                        fin=true;
-                        aux=aux+"                                                         ";
-                    }
-                       
-                }else{
-                    fin=true;
-                }
-            }while(!fin);
-
-            resto=aux.length()%lineas;
-
-            if(aux.length()==1){
-
-                aux = aux + "                                                                                  ";
-                 
-            }
-
-            while(lineas-resto>0){
-                aux = aux + " ";
-                resto++;
-            }
-
-            informe = informe + aux;
-        }
-
-        return informe;
-    }
-
-    private String formatear2(String texto) {
-        int lineas = 120;
-        int resto;
-        String aux,informe = "";
-
-        StringTokenizer st = new StringTokenizer(texto,"\n");
-        int i;
-        boolean fin;
-
-        while(st.hasMoreTokens()){
-
-            aux = st.nextToken();
-
-            resto=aux.length()%lineas;
-
-            /*if(aux.length()==1){
-
-                aux = aux + "                                                                                  ";
-
-            }*/
-
-            while(lineas-resto>0){
-                aux = aux + " ";
-                resto++;
-            }
-
-            informe = informe + aux;
-
-        }
-
-        return informe;
-
-    }
-
-    private String formatearInforme(String texto) {
-
-        int lineas = 120;
-        int resto;
-        String aux,informe = "";
-
-        //texto = texto.replaceAll("\t", "    ");
-
-        while(texto.indexOf("  ")!=-1)
-            texto = texto.replaceAll("  ", " ");
-
-        StringTokenizer st = new StringTokenizer(texto,"\n");
-        int i;
-        boolean fin;
-
-        while(st.hasMoreTokens()){
-
-            aux = "";
-            fin=false;
-
-            do{
-                if(st.hasMoreTokens()){
-                    aux= aux + st.nextToken();
-
-                    if(aux.length()==1){
-
-                        fin=true;
-                    }
-
-                    texto = texto.replaceAll(".", ".\n");
-                    texto = texto.replaceAll(":", ":\n");
-
-                    aux=aux.trim();
-
-                    if(aux.trim().endsWith(".")){
-
-                        fin=true;
-                    }
-                    if(aux.trim().endsWith("*")){
-
-                        fin=true;
-                    }
-                    if(aux.trim().endsWith(":")){
-
-                        fin=true;
-                    }
-
-                }else{
-                    fin=true;
-                }
-            }while(!fin);
-/*
-            resto=aux.length()%lineas;
-
-            if(aux.length()==1){
-
-                aux = aux + "                                                                                  ";
-
-            }
-
-            while(lineas-resto>0){
-                aux = aux + " ";
-                resto++;
-            }*/
-
-            informe = informe + "\n" + aux;
-        }
-
-        return informe;
     }
 
     /** This method is called from within the constructor to
@@ -335,6 +162,9 @@ public class VisualizadorView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+     * Metodo encargador de guardar el informe
+     */
     private void guardar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardar
 
         File archivo=new File("");
@@ -384,6 +214,9 @@ public class VisualizadorView extends javax.swing.JFrame {
         
     }//GEN-LAST:event_guardar
 
+    /*
+     * Metodo encargador de copiar el informe en el portapapeles
+     */
     private void copiar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_copiar
 
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -397,6 +230,9 @@ public class VisualizadorView extends javax.swing.JFrame {
 
     }//GEN-LAST:event_copiar
 
+    /*
+     * Metodo encargador de imprimir el informe
+     */
     private void imprimir(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimir
         try {
             jTextPane1.print(new MessageFormat("Consejos del Asesor Laboral"), new MessageFormat("Página - {0}"));
