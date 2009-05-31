@@ -1,5 +1,5 @@
 /*
- * Principal.java
+ * Clase que representa el Fram de la aplicacion
  */
 
 package vista;
@@ -21,10 +21,13 @@ public class Principal extends SingleFrameApplication {
     private static ModeloFormularios modelo;
     private static ControladorGUI controlador;
 
+    /**
+     * Metodo para lanzar la aplicacion
+     * param modelo: modelo de la aplicacion
+     * param controlador: controlador de la aplicacion
+     */
     public static void lanzar(ModeloFormularios modelo, ControladorGUI controlador) {
-        hiloSplash = new ThreadSplash();
-        hiloSplash.run();
-
+        
         Principal.modelo = modelo;
         Principal.controlador = controlador;
 
@@ -65,6 +68,9 @@ public class Principal extends SingleFrameApplication {
         launch(Principal.class, args);
     }
 
+    /**
+     * Metodo para lanzar la aplicacion con argumentos
+     */
     public static void lanzar(String[] args) {
 
         hiloSplash = new ThreadSplash();

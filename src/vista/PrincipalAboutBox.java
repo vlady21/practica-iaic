@@ -1,5 +1,5 @@
 /*
- * PrincipalAboutBox.java
+ * Clase encargada del ABOUT de la aplicacion
  */
 
 package vista;

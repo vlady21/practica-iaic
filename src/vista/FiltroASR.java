@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Clase utilizada para crear un filtro de ficheros con extension ASR
  */
 
 package vista;
@@ -21,7 +20,7 @@ class FiltroASR  extends FileFilter {
      * la extension .asr y por lo tanto es valido para nosotros.
      *
      * @param fichero Fichero que se utiliza para hacer el filtro.
-     * @return Boolean True si es un archivo de tipo .rvs
+     * @return Boolean True si es un archivo de tipo .ars
      */
      public boolean accept(File fichero) {
             return fichero.getName().toLowerCase().endsWith(".asr")   || fichero.isDirectory();

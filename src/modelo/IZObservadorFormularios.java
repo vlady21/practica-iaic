@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Interfaz del observador de la aplicacion
  */
 
 package modelo;

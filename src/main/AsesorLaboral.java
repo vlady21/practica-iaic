@@ -1,5 +1,5 @@
 /*
- * AsesorLaboral.java
+ * Clase principal de la aplicacion
  */
 
 package main;
@@ -9,27 +9,23 @@ import modelo.ModeloFormularios;
 import vista.*;
 import org.jdesktop.application.SingleFrameApplication;
 
-/**
- * The main class of the application.
- */
+
 /**
  * AUTORES:
  * @author Victor Adaíl Ferrer
  * @author José Miguel Guerrero Hernández
  */
 public class AsesorLaboral extends SingleFrameApplication {
+    private static ThreadSplash hiloSplash;
     
     /**
      * Main method launching the application.
      */
     public static void main(String[] args) {
 
-        ModeloFormularios modelo = new ModeloFormularios();
+        hiloSplash = new ThreadSplash();
+        hiloSplash.run();
 
-        ControladorGUI controlador = new ControladorGUI();
-        controlador.setModelo(modelo);
-
-        Principal.lanzar(modelo, controlador);
     }
 
     @Override

@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Clase controladora de la aplicacion
  */
 
 package controlador;
@@ -15,6 +14,7 @@ import modelo.ModeloFormularios;
  */
 public class ControladorGUI {
 
+    //Modelo de la aplicacion
     private ModeloFormularios modelo;
 
     //Asesoramiento tecnico
@@ -26,6 +26,11 @@ public class ControladorGUI {
     //Asesoramiento tecnico
 	public final static int AFECTIVO = 2;
 
+    /**
+     * Metodo encargado de obtener asesoramiento
+     * @param asesoramiento: tipo de asesoramiento que se desa obtener
+     * @return String: informe de asesoramiento
+     */
     public String asesorar(int asesoramiento) throws Exception {
 
         String consejo = "";
@@ -47,6 +52,10 @@ public class ControladorGUI {
         return consejo;
     }
 
+    /**
+     * Metodo encargado de almacenar el modelo
+     * @param modelo: modelo de la aplicacion
+     */
     public void setModelo(ModeloFormularios modelo) {
         this.modelo = modelo;
     }
