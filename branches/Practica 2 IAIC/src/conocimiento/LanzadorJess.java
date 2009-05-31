@@ -1,6 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase encargada de ejecutar Jess y mediar con el, insertando
+ * valores en los slots correspondientes, tambien se encarga de
+ * leer/borrar los consejos generados.
  */
 
 package conocimiento;
@@ -17,95 +18,66 @@ import utilerias.LectorConsejos;
 import utilerias.Propiedades;
 
 /**
- *
- * @author Jose Miguel
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class LanzadorJess {
+    //propiedades
     private Properties configuracion = Propiedades.getPropiedades(Constantes.CONFIGURACION);
     private String _rutaficheroconsejos=configuracion.getProperty("FICHERO_GUARDAR");
     private String _rutaficheroreglas=configuracion.getProperty("REGLAS_TECNICO");
+    //lector de consejos
     private LectorConsejos _lector=null;
+    //hecho para insertar
 	private	Fact _fact=null;
+    //motor de inferencia
     private Rete _rete=null;
 
+    /**
+     * Contructor parametrizado
+     *
+     * @param rutafichero String correspondiente al fichero de salida para guardar el log.
+     * @param rutaficheroreglas String correspondiente al fichero donde se almacenan las reglas a ejecutar.
+     * @throws jess.JessException
+     */
     public LanzadorJess(String rutafichero, String rutaficheroreglas) throws JessException{
-        _rutaficheroconsejos=rutafichero;
+        //asignamos la ruta donde volcaremos el resultado final
         EscribirConsejos.asignaRuta(_rutaficheroconsejos);
+
+        _rutaficheroconsejos=rutafichero;
         _rutaficheroreglas=rutaficheroreglas;
+
+        //creamos el lector de consejos
         _lector=new LectorConsejos();
         _rete=new Rete();
     }
 
-    public void arrancarJess() throws JessException{
-        
+    /**
+     * Metodo que arranca Jess, resetea la MT, carga el fichero de reglas,
+     * obtiene el hecho (fact) de la template e inserta el valor del slot
+     * correspondiente al fichero de salida.
+     *
+     * @throws jess.JessException
+     */
+    public void arrancarJess() throws JessException{        
 		//limpiamos la MT
 		_rete.executeCommand("(reset)");
 		//cargamos el fichero con las reglas y la template
 		_rete.executeCommand("(batch "+_rutaficheroreglas+")");
-
+        //obtenemos el hecho correspondiente a la template
 		_fact = new Fact("datos", _rete);
         //cargamos el valor del slot del fichero con el valor de la ruta
         _fact.setSlotValue("ruta_fichero_salida", new Value(_rutaficheroconsejos, RU.STRING));
-
-		/*
-		 * PREGUNTA DONDE BUSCAR
-		 *
-		  f.setSlotValue("estado_actual", new Value("busqueda", RU.STRING));
-	      f.setSlotValue("tipo_estudios", new Value("no_universitarios", RU.STRING));
-	      f.setSlotValue("conocimiento", new Value("investigacion", RU.STRING));
-	      f.setSlotValue("tipo_contrato", new Value("beca", RU.STRING));
-
-	      f.setSlotValue("desea_informacion", new Value("si", RU.STRING));
-	      f.setSlotValue("lee_prensa", new Value("si", RU.STRING));
-	      f.setSlotValue("ruta_fichero_salida", new Value(ruta, RU.STRING));
-	     */
-
-		/*
-		 * PREGUNTA CURRICULUM
-		 *
-			f.setSlotValue("estado_actual", new Value("curriculum", RU.STRING));
-			f.setSlotValue("tipo_estudios", new Value("universitarios", RU.STRING));
-			f.setSlotValue("experiencia", new Value("no", RU.STRING));
-			f.setSlotValue("numero_paginas_CV", new Value(2, RU.INTEGER));
-			f.setSlotValue("ruta_fichero_salida", new Value(ruta, RU.STRING));
-		 */
-
-		/*
-		 * PREGUNTA CONTRATO
-		 *
-			f.setSlotValue("estado_actual", new Value("contrato", RU.STRING));
-			f.setSlotValue("estudia", new Value("si", RU.STRING));
-			f.setSlotValue("conocimiento", new Value("basico", RU.STRING));
-			f.setSlotValue("tiempo_libre", new Value(8, RU.INTEGER));
-			f.setSlotValue("ruta_fichero_salida", new Value(ruta, RU.STRING));
-		 */
-
-		/*
-		 * PREGUNTA ENTREVISTA
-		 *
-			f.setSlotValue("estado_actual", new Value("entrevista", RU.STRING));
-			f.setSlotValue("sexo", new Value("hombre", RU.STRING));
-			f.setSlotValue("seleccionado_entrevista", new Value("si", RU.STRING));
-			f.setSlotValue("conoce_perfil", new Value("no", RU.STRING));
-			f.setSlotValue("conoce_empresa", new Value("si", RU.STRING));
-			f.setSlotValue("conoce_protocolo", new Value("no", RU.STRING));
-			f.setSlotValue("ruta_fichero_salida", new Value(ruta, RU.STRING));
-
-		 */
-
-		/*
-		 * PREGUNTA BUSCAR EMPLEO
-		 * 
-			_fact.setSlotValue("estado_actual", new Value("busqueda_empleo", RU.STRING));
-			_fact.setSlotValue("rango_edad", new Value("joven", RU.STRING));
-			_fact.setSlotValue("rechazado", new Value("si", RU.STRING));
-			_fact.setSlotValue("situacion_laboral", new Value("trabajando_jornadacompleta", RU.STRING));
-			_fact.setSlotValue("estudio", new Value("no", RU.STRING));
-			
-		 */
-
     }
 
+    /**
+     * Metodo que asigna un valor a un determinado slot de la template.
+     *
+     * @param slot String correspondiente al nombre del slot a modificar
+     * @param valorSlot String correspondiente al valor del slot
+     * @throws jess.JessException
+     */
     public void insertaSlotValue(String slot, Object valorSlot) throws JessException{
         //si lo que me llega es un numero
         if(valorSlot instanceof Integer){
@@ -116,13 +88,19 @@ public class LanzadorJess {
     }
 
     public void ejecutarJess() throws JessException{
-            _rete.executeCommand("(reset)");
+          //limpiamos la MT
+          _rete.executeCommand("(reset)");
+
           //insertamos el fact con los valores
 	      _rete.assertFact(_fact);
 
 	      //mostramos los hechos y las reglas por consola
-	      _rete.executeCommand("(facts)");
+	      _rete.executeCommand("(watch facts)");
 	      _rete.executeCommand("(watch rules)");
+
+          //mostramos los hechos y las reglas por consola
+          _rete.executeCommand("(facts)");
+          _rete.executeCommand("(rules)");
 
 	      //ejecutamos jess
 	      _rete.executeCommand("(run)");
@@ -131,9 +109,18 @@ public class LanzadorJess {
           _lector.leerConsejos(_rutaficheroconsejos);
     }
 
+    /**
+     * Metodo que devuelve los consejos del fichero.
+     *
+     * @return String orrespondiente a los consejos generados.
+     */
     public String dameConsejos(){
         return _lector.dameConsejos();
     }
+
+    /**
+     * Metodo que limpia el fichero consejos.
+     */
     public void borrarConsejos(){
         _lector.limpiarConsejos(_rutaficheroconsejos);
     }

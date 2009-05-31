@@ -10,8 +10,9 @@ import javax.swing.filechooser.FileFilter;
 
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 class FiltroASR  extends FileFilter {
 

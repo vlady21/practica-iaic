@@ -16,8 +16,9 @@ import utilerias.LectorConsejos;
 import utilerias.Propiedades;
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class ControladorConocimiento {
     private ModeloFormularios modelo;

@@ -9,8 +9,9 @@ import conocimiento.ControladorConocimiento;
 import modelo.ModeloFormularios;
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class ControladorGUI {
 

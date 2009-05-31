@@ -25,8 +25,9 @@ import javax.swing.JFileChooser;
 import utilerias.EscribirConsejos;
 
 /**
- *
- * @author Victor
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class VisualizadorView extends javax.swing.JFrame {
     private String texto;

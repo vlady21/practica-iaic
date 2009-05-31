@@ -5,7 +5,11 @@
 package vista;
 
 import org.jdesktop.application.Action;
-
+/**
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
+ */
 public class PrincipalAboutBox extends javax.swing.JDialog {
 
     public PrincipalAboutBox(java.awt.Frame parent) {

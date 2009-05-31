@@ -1,21 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase utilizada para leer de un fichero.
  */
 
 package utilerias;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- *
- * @author Jose Miguel
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
  */
 public class LectorConsejos {
     private FileReader fr = null;
@@ -23,6 +19,11 @@ public class LectorConsejos {
     private String _fichero="";
     private static String _texto="";
 
+    /**
+     * Metodo que lee el texto de un determinado fichero
+     *
+     * @param fichero String correspondiente al fichero a leer.
+     */
     public void leerConsejos(String fichero){
         try {
             _texto="";
@@ -40,11 +41,20 @@ public class LectorConsejos {
         }
     }
 
+    /**
+     * Metodo que elimina el fichero de consejos para limpiar los consejos anteriores.
+     * @param rutaficheroconsejos String correspondiente al fichero eliminar.
+     */
     public void limpiarConsejos(String rutaficheroconsejos){
         File fichero = new File(rutaficheroconsejos);
         fichero.delete();
     }
 
+    /**
+     * Metodo que devuelve los consejos leidos.
+     * 
+     * @return String correspondiente a los consejos.
+     */
     public static String dameConsejos(){
         return _texto;
     }

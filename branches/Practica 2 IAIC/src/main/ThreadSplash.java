@@ -6,7 +6,11 @@
 package main;
 
 import vista.Splash;
-
+/**
+ * AUTORES:
+ * @author Victor Adaíl Ferrer
+ * @author José Miguel Guerrero Hernández
+ */
 public class ThreadSplash extends Thread {
         public ThreadSplash() {
 
